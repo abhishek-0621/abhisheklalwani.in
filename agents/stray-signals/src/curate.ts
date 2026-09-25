@@ -2,7 +2,8 @@ import { z } from "zod";
 import { config } from "./config";
 import { ensureBody } from "./collect";
 import { generate } from "./lib/llm";
-import { roundRobin } from "./balance";
+import { roundRobin, weightedShares } from "./balance";
+import type { Topic } from "./schema";
 import { mapPool } from "./lib/pool";
 import { isVerbatim } from "./lib/text";
 import { VERSE_TOPICS } from "./schema";
@@ -42,6 +43,8 @@ The quote:
 - For prose: copy 1-3 consecutive sentences EXACTLY as they appear in the text: same words, same order, no ellipses, no edits, no added quotation marks.
 - 15 to 55 words, understandable on its own, in the author's own voice. Prefer the essay's most surprising claim or most beautiful line. Avoid lines that just cite a study, report a fact, or set up the topic.
 
+Score quotable 1-5 for the quote you picked: 5 = a line someone would copy into a notebook and remember for days; 1 = it needs the essay around it to mean anything.
+
 The hook: at most 12 words, plain and specific, no hype, telling the reader what idea they will meet.
 
 The topic label: pick the most specific one. Anything about stars, planets, galaxies, the universe or spaceflight is "space". Why people think, feel and behave as they do is "psychology". How to reason well, biases, evidence and rationality is "thinking". Physics, biology and medicine are "science". Economics, markets, banks and wealth are "money". Poems are "poetry". Birds, animals, plants, landscapes and ecology are "nature". Essays about writing, books and reading are "writing". Use "ideas" only when none of the others fits.`;
@@ -59,6 +62,7 @@ const Verdict = z.object({
   depth: z.number().int().min(1).max(5),
   craft: z.number().int().min(1).max(5),
   timeless: z.number().int().min(1).max(5),
+  quotable: z.number().int().min(1).max(5).describe("How likely your quote is to stay with a stranger for days, standing entirely on its own"),
   quote: z.string(),
   hook: z.string(),
 });
@@ -83,7 +87,12 @@ export async function curate(candidates: Candidate[], cache: CurationCache, now:
   const perTopic = [...byTopic.values()].map((hosts) =>
     roundRobin([...hosts.values()].map((l) => l.sort((a, b) => b.likes - a.likes || (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "")))),
   );
-  const queue = roundRobin(perTopic).slice(0, config.maxNewCurations);
+  // Weighted budget: each topic may use at most 1.5x its weighted share of this run's judging.
+  const shares = weightedShares(config.maxNewCurations, config.topicWeights);
+  const topics = [...byTopic.keys()];
+  const queue = roundRobin(
+    perTopic.map((list, i) => list.slice(0, Math.ceil((shares[topics[i] as Topic] ?? config.maxNewCurations) * 1.5))),
+  ).slice(0, config.maxNewCurations);
 
   let done = 0;
   await mapPool(queue, config.curateConcurrency, async (c) => {
@@ -157,6 +166,8 @@ async function judge(c: Candidate, now: string, stats: CurateStats): Promise<Acc
     likes: c.likes,
     topic: v.topic,
     quality: score(v),
+    quotable: v.quotable,
+    words: c.words,
     quote,
     hook: v.hook.trim().slice(0, 120),
     reason: v.reason.slice(0, 240),

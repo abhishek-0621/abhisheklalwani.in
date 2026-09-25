@@ -52,6 +52,10 @@ export type Accepted = {
   topic: Topic;
   /** Curator score, 4-20. */
   quality: number;
+  /** 1-5: how likely the quote is to stay with a reader. Absent on older entries. */
+  quotable?: number;
+  /** Essay length, for favouring five-minute reads. Absent on older entries. */
+  words?: number;
   quote: string;
   hook: string;
   reason: string;

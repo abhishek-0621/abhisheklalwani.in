@@ -6,6 +6,7 @@ import { mapPool } from "./lib/pool";
 import { TOPICS } from "./schema";
 import { CATEGORIES } from "./seeds";
 import { activeByTopic } from "./balance";
+import type { Topic } from "./schema";
 import type { Publication, PublicationPool } from "./state";
 
 type SubstackPub = {
@@ -77,7 +78,8 @@ export async function discover(pool: PublicationPool, now: string, weekNumber: n
   // Spend leaderboard pages where topics are short of publications: 1 page if every topic
   // it covers is full, up to 4 when it covers the emptiest topics. Rotates deeper weekly.
   const counts = activeByTopic(pool);
-  const need = (t: (typeof TOPICS)[number]) => Math.max(0, config.targetPubsPerTopic - counts[t]);
+  const target = (t: Topic) => Math.round(config.targetPubsPerTopic * config.topicWeights[t]);
+  const need = (t: Topic) => Math.max(0, target(t) - counts[t]);
   const pages = CATEGORIES.flatMap((c) => {
     const gap = Math.max(...c.topics.map(need)) / config.targetPubsPerTopic;
     const n = 1 + Math.round(gap * 3);
@@ -115,7 +117,7 @@ export async function discover(pool: PublicationPool, now: string, weekNumber: n
     stats.screened++;
     // Balance the pool: a good fit for a topic that is already full waits in reserve.
     const fits = verdict.fits && verdict.topics.length > 0;
-    const open = verdict.topics.find((t) => counts[t] < config.targetPubsPerTopic);
+    const open = verdict.topics.find((t) => counts[t] < target(t));
     const topics = open ? [open, ...verdict.topics.filter((t) => t !== open)] : verdict.topics;
     const pub: Publication = {
       host,

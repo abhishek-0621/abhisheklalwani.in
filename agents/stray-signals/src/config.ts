@@ -1,4 +1,5 @@
 import path from "node:path";
+import type { Topic } from "./schema";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -45,8 +46,30 @@ export const config = {
   discovery: process.env.STRAY_SIGNALS_DISCOVERY !== "0",
   discoveryFanout: 12,
   maxNewPublicationsPerRun: int("STRAY_SIGNALS_MAX_NEW_PUBS", 40),
-  /** Balance: aim for this many active publications per topic; full topics stop growing. */
+  /** Balance: aim for this many active publications per topic (scaled by topic weight). */
   targetPubsPerTopic: int("STRAY_SIGNALS_PUBS_PER_TOPIC", 12),
+
+  /**
+   * Editorial tilt. The rotation is for thoughts outside work: more philosophy, psychology and
+   * clear thinking; less science. Shares of the list, publication targets and the weekly
+   * judging budget all scale with these weights.
+   */
+  topicWeights: {
+    philosophy: 1.3,
+    psychology: 1.3,
+    thinking: 1.2,
+    ideas: 1.1,
+    nature: 1.0,
+    poetry: 1.0,
+    writing: 1.0,
+    money: 0.9,
+    space: 0.8,
+    science: 0.5,
+  } satisfies Record<Topic, number>,
+
+  /** Five-minute reads win: essays in this word range get a selection bonus; very long ones a penalty. */
+  sweetSpotWords: [600, 2500] as const,
+  longReadWords: 4000,
 
   /** Drop a publication after this many runs with nothing accepted. */
   pruneAfterRuns: 4,

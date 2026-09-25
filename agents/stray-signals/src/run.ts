@@ -107,7 +107,7 @@ async function main() {
   const room = activeByTopic(pool);
   for (const p of Object.values(pool)) {
     const t = p.topics[0];
-    if (p.status === "reserve" && t && room[t] < config.targetPubsPerTopic) {
+    if (p.status === "reserve" && t && room[t] < Math.round(config.targetPubsPerTopic * config.topicWeights[t])) {
       p.status = "active";
       room[t]++;
     }
@@ -145,7 +145,7 @@ async function main() {
     `- Candidates: ${candidates.length} eligible, ${cur.judged} judged this run (${cur.accepted} accepted, ${cur.rejected} rejected, ${cur.errors} errors)`,
     `- Published: **${items.length}** essays from ${meta.publications} publications`,
     `- By topic: ${Object.entries(meta.byTopic).map(([t, n]) => `${t} ${n}`).join(" · ")}`,
-    `- Active publications per topic (target ${config.targetPubsPerTopic}): ${Object.entries(activeByTopic(pool)).map(([t, n]) => `${t} ${n}`).join(" · ")}`,
+    `- Active publications per topic (base target ${config.targetPubsPerTopic}, weighted): ${Object.entries(activeByTopic(pool)).map(([t, n]) => `${t} ${n}`).join(" · ")}`,
     disc?.added.length ? `\nNew publications: ${disc.added.join(", ")}` : "",
     "",
   ].join("\n");

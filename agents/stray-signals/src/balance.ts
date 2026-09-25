@@ -19,3 +19,9 @@ export function roundRobin<T>(groups: T[][]): T[] {
   for (let i = 0; groups.some((g) => i < g.length); i++) for (const g of groups) if (i < g.length) out.push(g[i]);
   return out;
 }
+
+/** Share of `total` owed to each topic under the editorial weights. */
+export function weightedShares(total: number, weights: Record<Topic, number>) {
+  const sum = TOPICS.reduce((acc, t) => acc + weights[t], 0);
+  return Object.fromEntries(TOPICS.map((t) => [t, (total * weights[t]) / sum])) as Record<Topic, number>;
+}

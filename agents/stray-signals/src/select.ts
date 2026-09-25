@@ -1,65 +1,60 @@
 import { config } from "./config";
+import { weightedShares } from "./balance";
 import { hashId } from "./lib/text";
 import { TOPICS, type Signal, type Topic } from "./schema";
 import type { Accepted, CurationCache } from "./state";
 
 /**
  * Builds the weekly rotation from every accepted post still in the cache.
- * Score = curator quality + a freshness bonus + a small per-week jitter, so the list
- * rotates even when the pool is stable. Caps keep any one publication or topic from
- * dominating; they relax only if the pool cannot otherwise fill the target.
+ * Score = curator quality + freshness + a five-minute-read bonus + quotability + a small
+ * per-week jitter (so the list rotates even when the pool is stable). Topic shares follow the
+ * editorial weights in config; caps keep any one publication or topic from dominating.
  */
 export function select(cache: CurationCache, week: string): Signal[] {
   const now = Date.now();
+  const [lo, hi] = config.sweetSpotWords;
   const pool = Object.entries(cache)
     .filter((e): e is [string, Accepted] => e[1].ok)
     .map(([url, a]) => {
       const ageDays = a.publishedAt ? (now - Date.parse(a.publishedAt)) / 86_400_000 : 365;
       const fresh = ageDays < 30 ? 1.5 : ageDays < 90 ? 0.8 : 0;
       const jitter = (Number.parseInt(hashId(url + week).replace(/\W/g, "").slice(0, 6), 36) % 1000) / 1000;
-      return { url, a, score: a.quality + fresh * 2 + jitter * 1.5 };
+      const read = !a.words ? 0 : a.words >= lo && a.words <= hi ? 1.5 : a.words > config.longReadWords ? -1.5 : 0;
+      const quotable = a.quotable ? (a.quotable - 3) * 0.8 : 0;
+      return { url, a, score: a.quality + fresh * 2 + jitter * 1.5 + read + quotable };
     })
     .sort((x, y) => y.score - x.score);
 
-  // With eleven topics, no single one may take more than a fifth of the list.
-  const topicCap = Math.ceil(config.targetSize * 0.2);
-  const fairShare = Math.floor(config.targetSize / TOPICS.length);
+  // Every topic is owed a share of the list in proportion to its editorial weight.
+  const share = weightedShares(config.targetSize, config.topicWeights);
   const chosen = new Map<string, Accepted>();
+  const perPub = new Map<string, number>();
+  const perTopic = new Map<Topic, number>();
+  const take = (url: string, a: Accepted) => {
+    chosen.set(url, a);
+    perPub.set(a.host, (perPub.get(a.host) ?? 0) + 1);
+    perTopic.set(a.topic, (perTopic.get(a.topic) ?? 0) + 1);
+  };
 
-  // Pass 1 — fair share: every topic gets up to targetSize / topics of its best essays,
-  // so a topic with fewer writers is never crowded out by a prolific one.
-  {
-    const perPub = new Map<string, number>();
-    for (const topic of TOPICS) {
-      let taken = 0;
-      for (const { url, a } of pool) {
-        if (taken >= fairShare) break;
-        if (a.topic !== topic || (perPub.get(a.host) ?? 0) >= config.maxPerPublication) continue;
-        chosen.set(url, a);
-        perPub.set(a.host, (perPub.get(a.host) ?? 0) + 1);
-        taken++;
-      }
+  // Pass 1 — fair share: each topic's best essays up to its weighted share, so a prolific
+  // topic can never crowd out a quieter one.
+  for (const topic of TOPICS) {
+    for (const { url, a } of pool) {
+      if ((perTopic.get(topic) ?? 0) >= Math.floor(share[topic])) break;
+      if (a.topic === topic && (perPub.get(a.host) ?? 0) < config.maxPerPublication) take(url, a);
     }
   }
 
-  // Pass 2 — fill the rest by score, with caps; pass 3 relaxes them only if still short.
-  for (const relax of [false, true]) {
-    const perPub = new Map<string, number>();
-    const perTopic = new Map<Topic, number>();
-    for (const a of chosen.values()) {
-      perPub.set(a.host, (perPub.get(a.host) ?? 0) + 1);
-      perTopic.set(a.topic, (perTopic.get(a.topic) ?? 0) + 1);
-    }
+  // Pass 2 — fill by score up to 1.5x each topic's share; pass 3 allows 2.5x only if still short.
+  // Never uncapped: a shorter balanced list beats a lopsided one.
+  for (const stretch of [1.5, 2.5]) {
     for (const { url, a } of pool) {
       if (chosen.size >= config.targetSize) break;
       if (chosen.has(url)) continue;
-      const pubCap = relax ? config.maxPerPublication * 2 : config.maxPerPublication;
+      const pubCap = stretch > 2 ? config.maxPerPublication * 2 : config.maxPerPublication;
       if ((perPub.get(a.host) ?? 0) >= pubCap) continue;
-      // Relaxing never lifts the topic cap entirely: a shorter balanced list beats a lopsided one.
-      if ((perTopic.get(a.topic) ?? 0) >= (relax ? topicCap * 2 : topicCap)) continue;
-      chosen.set(url, a);
-      perPub.set(a.host, (perPub.get(a.host) ?? 0) + 1);
-      perTopic.set(a.topic, (perTopic.get(a.topic) ?? 0) + 1);
+      if ((perTopic.get(a.topic) ?? 0) >= Math.ceil(share[a.topic] * stretch)) continue;
+      take(url, a);
     }
   }
 
