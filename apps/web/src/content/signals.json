@@ -1,0 +1,94 @@
+{
+  "version": "2026-W39",
+  "generatedAt": "2026-09-25T18:26:55.829Z",
+  "items": [
+    {
+      "id": "1ChlhO5oJN",
+      "url": "https://www.the-hinternet.com/p/a-ludicrous-no-brainer",
+      "title": "A Ludicrous No-Brainer",
+      "publication": "The Hinternet",
+      "author": "Hinternet Editorial Board",
+      "topic": "ideas",
+      "quote": "I, JSR, have been struggling these past few months to explain, in a first instance to myself, why it has lately felt so hard to write, or to write in a way that feels adequate to our moment, that feels true.",
+      "hook": "Why is writing so hard in the digital age?",
+      "publishedAt": "2026-09-19T12:41:19.000Z"
+    },
+    {
+      "id": "e8ssabLWRM",
+      "url": "https://davideagleman.substack.com/p/remembering-francis-crick",
+      "title": "Remembering Francis Crick",
+      "publication": "This is Your Brain On",
+      "author": "David Eagleman",
+      "topic": "science",
+      "quote": "He was one of the few people always willing to criticize his own ideas. He never filtered beliefs through his own ego and never hesitated to applaud other people’s theories.",
+      "hook": "Discover the humility and intellectual rigor of Francis Crick.",
+      "publishedAt": "2026-07-28T13:14:13.000Z"
+    },
+    {
+      "id": "kuoxa7aP7R",
+      "url": "https://thephysicsjournal.substack.com/p/the-one-way-speed-of-light-problem",
+      "title": "The One-Way Speed of Light Problem",
+      "publication": "The Physics Journal",
+      "author": "Dr. Manhattan",
+      "topic": "science",
+      "quote": "Reichenbach proposes that we assign the time of the reflection or arrival event at B as: where ε is any real number from 0 to 1. When ε = 1/2, we recover Einstein’s standard synchronization convention; the reflection event is assigned the midpoint of the round-trip, and the one-way speed of light is c in both directions.",
+      "hook": "Explore the hidden assumptions in measuring the speed of light.",
+      "publishedAt": "2026-05-08T21:53:49.000Z"
+    },
+    {
+      "id": "wilJljIV2B",
+      "url": "https://joecarlsmith.substack.com/p/fake-thinking-and-real-thinking",
+      "title": "Fake thinking and real thinking",
+      "publication": "Joe Carlsmith's Substack",
+      "author": "Joe Carlsmith",
+      "topic": "philosophy",
+      "quote": "Map vs. world: Is my mind directed at an abstraction, or it is trying to see past its model to the world beyond?",
+      "hook": "Explore the spectrum of 'fake vs. real' thinking",
+      "publishedAt": "2025-01-28T20:14:26.902Z"
+    },
+    {
+      "id": "dRTAD7P8hQ",
+      "url": "https://www.henrikkarlsson.xyz/p/friends-missed",
+      "title": "Sometimes the reason you can’t find people you resonate with is because you misread the ones you meet",
+      "publication": "Escaping Flatland",
+      "author": "Henrik Karlsson",
+      "topic": "philosophy",
+      "quote": "The third and deepest kinds of friendship, according to Aristotle, is a friendship of virtue. That is, you like a person because of their character. They might be fun, they might be useful, but even if they aren’t, you like them anyway.",
+      "hook": "Discover the enduring power of friendships of virtue.",
+      "publishedAt": "2025-04-23T16:41:51.245Z"
+    },
+    {
+      "id": "JlGj4UPQyq",
+      "url": "https://www.experimental-history.com/p/face-it-youre-a-crazy-person",
+      "title": "Face it: you're a crazy person",
+      "publication": "Experimental History",
+      "author": "Adam Mastroianni",
+      "topic": "philosophy",
+      "quote": "When you fully unpack any job, you’ll discover something astounding: only a crazy person should do it.",
+      "hook": "Discover why only a 'crazy person' should pursue certain careers.",
+      "publishedAt": "2025-06-24T12:12:10.012Z"
+    },
+    {
+      "id": "xH55TnxS2f",
+      "url": "https://www.experimental-history.com/p/the-decline-of-deviance",
+      "title": "The Decline of Deviance",
+      "publication": "Experimental History",
+      "author": "Adam Mastroianni",
+      "topic": "ideas",
+      "quote": "When you put all the data together, you see a stark shift in society that is on the one hand miraculous, fantastic, worthy of a ticker-tape parade. And a shift that is, on the other hand, dismal, depressing, and in need of immediate intervention.",
+      "hook": "Discover why society's weirdness is disappearing",
+      "publishedAt": "2025-10-28T15:21:32.615Z"
+    },
+    {
+      "id": "U2PhymHsps",
+      "url": "https://startswithabang.substack.com/p/ask-ethan-why-does-something-exist",
+      "title": "Ask Ethan: Why does something exist instead of nothing?",
+      "publication": "Starts With A Bang",
+      "author": "Starts With A Bang",
+      "topic": "science",
+      "quote": "Perhaps the most remarkable fact about the Universe, if you think about it on a truly fundamental level, is that it exists at all.",
+      "hook": "Why does the Universe exist instead of nothing?",
+      "publishedAt": "2025-12-24T17:01:54.353Z"
+    }
+  ]
+}

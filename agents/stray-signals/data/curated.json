@@ -1,0 +1,243 @@
+{
+  "https://davideagleman.substack.com/p/remembering-francis-crick": {
+    "ok": true,
+    "title": "Remembering Francis Crick",
+    "host": "davideagleman.substack.com",
+    "publication": "This is Your Brain On",
+    "author": "David Eagleman",
+    "publishedAt": "2026-07-28T13:14:13.000Z",
+    "likes": 0,
+    "topic": "science",
+    "quality": 17,
+    "quote": "He was one of the few people always willing to criticize his own ideas. He never filtered beliefs through his own ego and never hesitated to applaud other people’s theories.",
+    "hook": "Discover the humility and intellectual rigor of Francis Crick.",
+    "reason": "The essay 'Remembering Francis Crick' by David Eagleman is a reflective piece on the life and contributions of Francis Crick, focusing on his work in molecular biology and neuroscience. It provides a personal account of Crick's character an",
+    "model": "phi4:14b",
+    "curatedAt": "2026-09-25T18:12:49.734Z",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://erictopol.substack.com/p/our-preoccupation-with-protein-intake": {
+    "ok": false,
+    "why": "s15 below-bar: The post is a comprehensive review of the current understanding and misconceptions surrounding high protein intake, focusing on health benefits and safety concerns. It provides a balanc",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://joecarlsmith.substack.com/p/fake-thinking-and-real-thinking": {
+    "ok": true,
+    "title": "Fake thinking and real thinking",
+    "host": "joecarlsmith.substack.com",
+    "publication": "Joe Carlsmith's Substack",
+    "author": "Joe Carlsmith",
+    "publishedAt": "2025-01-28T20:14:26.902Z",
+    "likes": 183,
+    "topic": "philosophy",
+    "quality": 16,
+    "quote": "Map vs. world: Is my mind directed at an abstraction, or it is trying to see past its model to the world beyond?",
+    "hook": "Explore the spectrum of 'fake vs. real' thinking",
+    "reason": "The essay explores the spectrum of 'fake vs. real' thinking across various domains, including AI, philosophy, and everyday life. It delves into the nuances of how thinking can be more abstract or connected to reality, offering a thoughtful ",
+    "model": "phi4:14b",
+    "curatedAt": "2026-09-25T18:12:49.734Z",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://kyla.substack.com/p/the-ozempicization-of-the-economy": {
+    "ok": false,
+    "why": "tech density 4.2/1k words",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://philosophybear.substack.com/p/things-i-wish-the-left-got-about": {
+    "ok": false,
+    "why": "s10 off-topic,shallow: isShallow",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://planetocracy.org/p/a-failure-of-ambition": {
+    "ok": false,
+    "why": "s11 off-topic,partisan: isPartisan",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://samkriss.com/2021/12/12/free-jussie-smollett": {
+    "ok": false,
+    "why": "s9 off-topic,partisan: isPartisan",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://seantrott.substack.com/p/large-language-models-explained": {
+    "ok": false,
+    "why": "tech density 17.1/1k words",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://startswithabang.substack.com/p/ask-ethan-why-does-something-exist": {
+    "ok": true,
+    "title": "Ask Ethan: Why does something exist instead of nothing?",
+    "host": "startswithabang.substack.com",
+    "publication": "Starts With A Bang",
+    "author": "Starts With A Bang",
+    "publishedAt": "2025-12-24T17:01:54.353Z",
+    "likes": 73,
+    "topic": "science",
+    "quality": 16,
+    "quote": "Perhaps the most remarkable fact about the Universe, if you think about it on a truly fundamental level, is that it exists at all.",
+    "hook": "Why does the Universe exist instead of nothing?",
+    "reason": "The essay explores a profound philosophical and scientific question about the existence of the universe, fitting well within the 'science' and 'philosophy' topics. It delves into the limits of scientific inquiry regarding the 'why' of exist",
+    "model": "phi4:14b",
+    "curatedAt": "2026-09-25T18:12:49.734Z",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://theconvivialsociety.substack.com/p/if-your-world-is-not-enchanted-youre": {
+    "ok": false,
+    "why": "quote length 11",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://thephysicsjournal.substack.com/p/the-one-way-speed-of-light-problem": {
+    "ok": true,
+    "title": "The One-Way Speed of Light Problem",
+    "host": "thephysicsjournal.substack.com",
+    "publication": "The Physics Journal",
+    "author": "Dr. Manhattan",
+    "publishedAt": "2026-05-08T21:53:49.000Z",
+    "likes": 105,
+    "topic": "science",
+    "quality": 17,
+    "quote": "Reichenbach proposes that we assign the time of the reflection or arrival event at B as: where ε is any real number from 0 to 1. When ε = 1/2, we recover Einstein’s standard synchronization convention; the reflection event is assigned the midpoint of the round-trip, and the one-way speed of light is c in both directions.",
+    "hook": "Explore the hidden assumptions in measuring the speed of light.",
+    "reason": "The essay delves into the nuanced debate surrounding the one-way speed of light and its implications for special relativity and Lorentz Ether Theory. It presents a thoughtful exploration of synchronization conventions and their impact on ou",
+    "model": "phi4:14b",
+    "curatedAt": "2026-09-25T18:12:49.734Z",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.ageofinvention.xyz/p/age-of-invention-why-scotland-succeeded": {
+    "ok": false,
+    "why": "s15 below-bar: The essay explores the historical economic development of Scotland, focusing on how capital and financial institutions, rather than education, played a crucial role in its success. This",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.apricitas.io/p/how-tariffs-are-breaking-us-trade": {
+    "ok": false,
+    "why": "partisan density 8.7/1k words",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.astralcodexten.com/p/the-colors-of-her-coat": {
+    "ok": false,
+    "why": "tech density 4.8/1k words",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.astralcodexten.com/p/the-dilbert-afterlife": {
+    "ok": false,
+    "why": "partisan density 4.1/1k words",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.experimental-history.com/p/face-it-youre-a-crazy-person": {
+    "ok": true,
+    "title": "Face it: you're a crazy person",
+    "host": "www.experimental-history.com",
+    "publication": "Experimental History",
+    "author": "Adam Mastroianni",
+    "publishedAt": "2025-06-24T12:12:10.012Z",
+    "likes": 9816,
+    "topic": "philosophy",
+    "quality": 16,
+    "quote": "When you fully unpack any job, you’ll discover something astounding: only a crazy person should do it.",
+    "hook": "Discover why only a 'crazy person' should pursue certain careers.",
+    "reason": "The essay is a philosophical exploration of career choices and self-awareness, fitting the theme of 'how to live' and 'friendship' with oneself. It challenges conventional thinking about career aspirations and encourages deep self-reflectio",
+    "model": "phi4:14b",
+    "curatedAt": "2026-09-25T18:12:49.734Z",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.experimental-history.com/p/the-decline-of-deviance": {
+    "ok": true,
+    "title": "The Decline of Deviance",
+    "host": "www.experimental-history.com",
+    "publication": "Experimental History",
+    "author": "Adam Mastroianni",
+    "publishedAt": "2025-10-28T15:21:32.615Z",
+    "likes": 13404,
+    "topic": "ideas",
+    "quality": 16,
+    "quote": "When you put all the data together, you see a stark shift in society that is on the one hand miraculous, fantastic, worthy of a ticker-tape parade. And a shift that is, on the other hand, dismal, depressing, and in need of immediate intervention.",
+    "hook": "Discover why society's weirdness is disappearing",
+    "reason": "The essay 'The Decline of Deviance' explores a broad cultural shift towards conventionality across various sectors of society, including behavior, crime, art, and technology. It presents a compelling argument that deviance is on the decline",
+    "model": "phi4:14b",
+    "curatedAt": "2026-09-25T18:12:49.734Z",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.gurwinder.blog/p/how-social-media-shortens-your-life": {
+    "ok": false,
+    "why": "tech density 11.9/1k words",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.henrikkarlsson.xyz/p/friends-missed": {
+    "ok": true,
+    "title": "Sometimes the reason you can’t find people you resonate with is because you misread the ones you meet",
+    "host": "www.henrikkarlsson.xyz",
+    "publication": "Escaping Flatland",
+    "author": "Henrik Karlsson",
+    "publishedAt": "2025-04-23T16:41:51.245Z",
+    "likes": 11039,
+    "topic": "philosophy",
+    "quality": 16,
+    "quote": "The third and deepest kinds of friendship, according to Aristotle, is a friendship of virtue. That is, you like a person because of their character. They might be fun, they might be useful, but even if they aren’t, you like them anyway.",
+    "hook": "Discover the enduring power of friendships of virtue.",
+    "reason": "The essay 'Sometimes the reason you can’t find people you resonate with is because you misread the ones you meet' explores the theme of friendship, specifically the evolution and depth of human connections over time. It aligns with the phil",
+    "model": "phi4:14b",
+    "curatedAt": "2026-09-25T18:12:49.734Z",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.honest-broker.com/p/the-state-of-the-culture-2024": {
+    "ok": false,
+    "why": "tech density 7.9/1k words",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.ian-leslie.com/p/27-notes-on-growing-older": {
+    "ok": false,
+    "why": "s10 off-topic,shallow: isShallow",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.netinterest.co/p/the-demise-of-silicon-valley-bank": {
+    "ok": false,
+    "why": "s11 off-topic,partisan: isPartisan",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.noahpinion.blog/p/no-you-are-not-on-indigenous-land": {
+    "ok": false,
+    "why": "quote length 76",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.overcomingbias.com/p/betrayed-by-culture": {
+    "ok": false,
+    "why": "s15 below-bar: The essay 'Betrayed By Culture' from Overcoming Bias explores the complex relationship between individuals and their cultural norms, questioning the reliability and adaptability of cult",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.sciencefictions.org/p/science-is-political": {
+    "ok": false,
+    "why": "s11 off-topic,partisan: isPartisan",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.the-hinternet.com/p/a-ludicrous-no-brainer": {
+    "ok": true,
+    "title": "A Ludicrous No-Brainer",
+    "host": "justinehsmith.substack.com",
+    "publication": "The Hinternet",
+    "author": "Hinternet Editorial Board",
+    "publishedAt": "2026-09-19T12:41:19.000Z",
+    "likes": 0,
+    "topic": "ideas",
+    "quality": 16,
+    "quote": "I, JSR, have been struggling these past few months to explain, in a first instance to myself, why it has lately felt so hard to write, or to write in a way that feels adequate to our moment, that feels true.",
+    "hook": "Why is writing so hard in the digital age?",
+    "reason": "The essay 'A Ludicrous No-Brainer' from The Hinternet explores the transformation of writing in the digital age, making it a compelling fit for the 'ideas' topic. It delves into the philosophical implications of writing's evolution, questio",
+    "model": "phi4:14b",
+    "curatedAt": "2026-09-25T18:12:49.734Z",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.theintrinsicperspective.com/p/welcome-to-the-semantic-apocalypse": {
+    "ok": false,
+    "why": "tech density 10.1/1k words",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://www.thequantumcat.space/p/physics-a-list-of-free-resources-b8a": {
+    "ok": false,
+    "why": "s10 off-topic,shallow: isShallow",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  },
+  "https://yourlocalepidemiologist.substack.com/p/medicare-for-all-separating-the-slogan": {
+    "ok": false,
+    "why": "s15 below-bar: The essay delves into the complexities and practicalities of implementing Medicare for All, a topic that fits within the 'ideas' category due to its exploration of societal and economic",
+    "lastSeenAt": "2026-09-25T18:26:55.829Z"
+  }
+}

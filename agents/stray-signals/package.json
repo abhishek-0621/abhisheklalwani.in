@@ -1,0 +1,24 @@
+{
+  "name": "@al/stray-signals",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Weekly agent that crawls Substack's recommendation graph for exceptional essays outside tech, curates them with a local Ollama model, and publishes 500 verified quotes for the Stray Signals easter egg.",
+  "exports": {
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "run": "tsx src/run.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.11.1",
+    "ollama": "^0.6.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,10 +1,22 @@
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
+import type { ReactNode } from "react";
+import { SignalGlyph } from "@/components/signal/signal-glyph";
 import { GraphGlyph } from "@/components/ui/graph-glyph";
 import { Bezel, Eyebrow, Heading, PillLink, Section, Tag, stagger } from "@/components/ui/primitives";
 import { projects, type Project } from "@/content/projects";
 
+/** Per-project illustration shown on the featured card. */
+const visuals: Record<string, ReactNode> = {
+  graphmind: <GraphGlyph className="h-auto w-full" />,
+  "stray-signals": (
+    <div className="flex aspect-[44/31] items-center justify-center">
+      <SignalGlyph size={180} className="h-auto w-2/5 max-w-[180px]" />
+    </div>
+  ),
+};
+
 const statusLabel: Record<Project["status"], string> = {
-  live: "Live",
+  live: "Live on this site",
   local: "Demo on request",
   archived: "Archived",
 };
@@ -42,7 +54,7 @@ function FeaturedCard({ p }: { p: Project }) {
 
         <div className="flex flex-col justify-between gap-6 sm:gap-8">
           <div className="rounded-[var(--radius-core)] border border-line bg-ink-sunken/80 p-4">
-            <GraphGlyph className="h-auto w-full" />
+            {visuals[p.slug]}
           </div>
           <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[var(--radius-core)] border border-line bg-line">
             {p.metrics.map((m) => (

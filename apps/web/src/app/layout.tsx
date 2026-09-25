@@ -4,10 +4,12 @@ import type { Metadata, Viewport } from "next";
 import { Instrument_Serif } from "next/font/google";
 import type { ReactNode } from "react";
 import { SceneRoot } from "@/components/scene/scene-root";
+import { SignalLoader } from "@/components/signal/signal-loader";
 import { Footer } from "@/components/sections/footer";
 import { bootScript, Intro } from "@/components/ui/intro";
 import { Nav } from "@/components/ui/nav";
 import { RevealObserver } from "@/components/ui/reveal-observer";
+import signalMeta from "@/content/signals-meta.json";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -58,6 +60,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main className="relative z-10">{children}</main>
         <Footer />
         <RevealObserver />
+        <SignalLoader enabled={signalMeta.count > 0} />
       </body>
     </html>
   );

@@ -1,0 +1,513 @@
+{
+  "adamtooze.substack.com": {
+    "host": "adamtooze.substack.com",
+    "name": "Chartbook",
+    "id": 192845,
+    "description": "",
+    "topics": [
+      "money",
+      "ideas"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null
+  },
+  "agnescallard.substack.com": {
+    "host": "agnescallard.substack.com",
+    "name": "Agnes Callard",
+    "id": 3984299,
+    "description": "",
+    "topics": [
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "coreypowell.substack.com": {
+    "host": "coreypowell.substack.com",
+    "name": "Corey Powell",
+    "id": null,
+    "description": "",
+    "topics": [
+      "space",
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "davideagleman.substack.com": {
+    "host": "davideagleman.substack.com",
+    "name": "This is Your Brain On",
+    "id": 4699541,
+    "description": "",
+    "topics": [
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null
+  },
+  "erictopol.substack.com": {
+    "host": "erictopol.substack.com",
+    "name": "Ground Truths",
+    "id": 587835,
+    "description": "",
+    "topics": [
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "ianleslie.substack.com": {
+    "host": "ianleslie.substack.com",
+    "name": "The Ruffian",
+    "id": 54748,
+    "description": "",
+    "topics": [
+      "ideas"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "joecarlsmith.substack.com": {
+    "host": "joecarlsmith.substack.com",
+    "name": "Joe Carlsmith's Substack",
+    "id": 1022275,
+    "description": "",
+    "topics": [
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null
+  },
+  "justinehsmith.substack.com": {
+    "host": "justinehsmith.substack.com",
+    "name": "The Hinternet",
+    "id": 86329,
+    "description": "",
+    "topics": [
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null
+  },
+  "kyla.substack.com": {
+    "host": "kyla.substack.com",
+    "name": "Kyla’s Newsletter",
+    "id": 91531,
+    "description": "",
+    "topics": [
+      "money"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "philosophybear.substack.com": {
+    "host": "philosophybear.substack.com",
+    "name": "Philosophy bear",
+    "id": 39466,
+    "description": "",
+    "topics": [
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "planetocracy.org": {
+    "host": "planetocracy.org",
+    "name": "Planetocracy",
+    "id": 393508,
+    "description": "",
+    "topics": [
+      "space",
+      "ideas"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "seantrott.substack.com": {
+    "host": "seantrott.substack.com",
+    "name": "The Counterfactual",
+    "id": 1003231,
+    "description": "",
+    "topics": [
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "startalk.substack.com": {
+    "host": "startalk.substack.com",
+    "name": "The StarTalker",
+    "id": 8039672,
+    "description": "",
+    "topics": [
+      "space",
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "startswithabang.substack.com": {
+    "host": "startswithabang.substack.com",
+    "name": "Starts With A Bang",
+    "id": 3253406,
+    "description": "",
+    "topics": [
+      "space",
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null
+  },
+  "stuartritchie.substack.com": {
+    "host": "stuartritchie.substack.com",
+    "name": "Science Fictions",
+    "id": 823801,
+    "description": "",
+    "topics": [
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "theconvivialsociety.substack.com": {
+    "host": "theconvivialsociety.substack.com",
+    "name": "The Convivial Society",
+    "id": 6980,
+    "description": "",
+    "topics": [
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "thephysicsjournal.substack.com": {
+    "host": "thephysicsjournal.substack.com",
+    "name": "The Physics Journal",
+    "id": 2772509,
+    "description": "",
+    "topics": [
+      "science",
+      "space"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null
+  },
+  "www.ageofinvention.xyz": {
+    "host": "www.ageofinvention.xyz",
+    "name": "Age of Invention, by Anton Howes",
+    "id": 18480,
+    "description": "",
+    "topics": [
+      "ideas",
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.apricitas.io": {
+    "host": "www.apricitas.io",
+    "name": "Apricitas Economics",
+    "id": 377949,
+    "description": "",
+    "topics": [
+      "money"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.astralcodexten.com": {
+    "host": "www.astralcodexten.com",
+    "name": "Astral Codex Ten",
+    "id": 89120,
+    "description": "",
+    "topics": [
+      "ideas",
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.experimental-history.com": {
+    "host": "www.experimental-history.com",
+    "name": "Experimental History",
+    "id": 656797,
+    "description": "",
+    "topics": [
+      "science",
+      "ideas"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 2,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null
+  },
+  "www.gurwinder.blog": {
+    "host": "www.gurwinder.blog",
+    "name": "The Prism",
+    "id": 589242,
+    "description": "",
+    "topics": [
+      "ideas",
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.henrikkarlsson.xyz": {
+    "host": "www.henrikkarlsson.xyz",
+    "name": "Escaping Flatland",
+    "id": 313411,
+    "description": "",
+    "topics": [
+      "ideas",
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null
+  },
+  "www.honest-broker.com": {
+    "host": "www.honest-broker.com",
+    "name": "The Honest Broker",
+    "id": 296132,
+    "description": "",
+    "topics": [
+      "ideas",
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.netinterest.co": {
+    "host": "www.netinterest.co",
+    "name": "Net Interest",
+    "id": 43559,
+    "description": "",
+    "topics": [
+      "money"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.noahpinion.blog": {
+    "host": "www.noahpinion.blog",
+    "name": "Noahpinion",
+    "id": 35345,
+    "description": "",
+    "topics": [
+      "money"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.overcomingbias.com": {
+    "host": "www.overcomingbias.com",
+    "name": "Overcoming Bias",
+    "id": 1245641,
+    "description": "",
+    "topics": [
+      "ideas"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.samkriss.com": {
+    "host": "www.samkriss.com",
+    "name": "Idiot Joy Showland",
+    "id": null,
+    "description": "",
+    "topics": [
+      "ideas",
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.theintrinsicperspective.com": {
+    "host": "www.theintrinsicperspective.com",
+    "name": "The Intrinsic Perspective",
+    "id": 332996,
+    "description": "",
+    "topics": [
+      "science",
+      "philosophy"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "www.thequantumcat.space": {
+    "host": "www.thequantumcat.space",
+    "name": "The Quantum Cat",
+    "id": 910761,
+    "description": "",
+    "topics": [
+      "space",
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  },
+  "yourlocalepidemiologist.substack.com": {
+    "host": "yourlocalepidemiologist.substack.com",
+    "name": "Your Local Epidemiologist",
+    "id": 281219,
+    "description": "",
+    "topics": [
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T18:12:49.734Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 2,
+    "lastRecsCrawlAt": null
+  }
+}

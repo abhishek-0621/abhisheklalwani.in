@@ -1,0 +1,54 @@
+## The idea
+
+Somewhere on this site a small signal drifts in from the edge of the screen, lingers for a few seconds, and slips away. Catch it and it hands you one essay — a quote from it, and the link. Every visitor gets a different one. Nobody gets a repeat until the whole list has been handed out.
+
+The essays are chosen by an agent, not by me. Every week it goes looking for writing on philosophy, money, science, deep space and big ideas — deliberately far from the tech world — and keeps only what it would send to a curious friend.
+
+<SummonSignal>Catch one now</SummonSignal>
+
+## How the agent works
+
+<Pipeline
+  steps={[
+    { label: "Collect", detail: "Newest posts from each publication's RSS feed plus its most-liked posts from the archive. Free posts only, 700+ words, housekeeping filtered out." },
+    { label: "Discover", detail: "One hop across Substack's “recommended by” graph from the best-yielding writers, plus a rotating slice of the Science, Philosophy, Finance and History leaderboards.", model: true },
+    { label: "Guard", detail: "Counts technology and partisan terms per thousand words. Anything saturated is dropped before a model call is spent." },
+    { label: "Curate", detail: "A local model scores originality, depth, craft and timelessness, flags tech, shallow or partisan pieces, labels the topic and picks a passage.", model: true },
+    { label: "Verify", detail: "The quote must appear word-for-word in the source. One chance to fix it, then the essay is dropped rather than misquoted." },
+    { label: "Select & serve", detail: "Top 500 by score, freshness and a weekly jitter, capped per publication and per topic. A Redis counter walks a seeded shuffle, one visitor at a time." },
+  ]}
+/>
+
+It runs every Monday on my own Mac through `launchd`, using Ollama — no API bill. When it finishes it commits the new list and Vercel redeploys the site.
+
+## Discovery is a graph crawl
+
+Substack publications recommend each other. That forms a graph, and good writers cluster. Each week the agent takes the publications that produced the most accepted essays, reads who they recommend, and ranks unseen hosts by **in-degree** — how many trusted sources point at them. Leaderboards add breadth, but a recommendation from three good writers outranks a top-ten slot.
+
+Every candidate is screened by the model before it enters the pool, and writers that never yield an accepted essay are pruned after four runs. Scanning the Science leaderboard for space writers surfaced astrology and “quantum health” newsletters next to Ethan Siegel. That is the reason the screen exists.
+
+## Small models, honest guardrails
+
+A 14B model on a laptop is not a frontier model, so the design leans on structure rather than trust:
+
+- **Constrained decoding.** Every call uses Ollama's JSON-schema output, re-validated with zod. A malformed reply can't reach the pipeline.
+- **A rubric instead of a single score.** Asking for four 1–5 scores (originality, depth, craft, timelessness) and summing them in code spread the scores out; one 1–10 rating had every essay land on 7.
+- **Deterministic guards where models are weak.** The model under-flagged essays about AI art and social media. A term-density check catches them for free, before inference.
+- **Verification over generation.** Quotes are matched against the source after normalising typography. If the model paraphrases, the essay is dropped.
+
+## Choosing the model
+
+I ran the same 30 essays through two local models.
+
+| | gemma4 e4b | phi4 14b |
+| --- | --- | --- |
+| Speed on an M5 Pro | ~3 s / essay | ~11 s / essay |
+| Accepted | 17 / 30 | 9 / 30 |
+| Topic labels | almost all "ideas" | physics → science, friendship → philosophy |
+| Partisan pieces caught | missed several | caught them |
+
+phi4 is slower but judges like an editor, so it is the default. The weekly run only judges essays it has never seen, so after the first run it finishes in well under an hour.
+
+## Handing out the links
+
+The list lives in the repository as JSON; only a single integer lives in Redis. Visitor *n* this week receives position *n* of a shuffle seeded by the week's version. When the counter passes the end of the list, a new shuffle begins — so no link repeats until all of them have been given out. A cookie keeps your signal stable for the week, bots never consume a slot, and nothing is fetched until you actually click.

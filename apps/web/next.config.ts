@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 
 const config: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
-  transpilePackages: ["@al/ui"],
+  transpilePackages: ["@al/ui", "@al/stray-signals"],
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: {

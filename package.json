@@ -2,11 +2,18 @@
   "name": "abhisheklalwani.in",
   "private": true,
   "packageManager": "npm@11.19.0",
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "agents/*"
+  ],
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "signals": "npm run run --workspace @al/stray-signals --",
+    "signals:install": "zsh agents/stray-signals/scheduler/install.sh",
+    "signals:uninstall": "zsh agents/stray-signals/scheduler/uninstall.sh"
   },
   "devDependencies": {
     "turbo": "^2.11.4"

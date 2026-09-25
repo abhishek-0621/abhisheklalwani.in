@@ -3,8 +3,9 @@
 Portfolio + project hub. Turborepo monorepo, deployed on Vercel.
 
 ```
-apps/web          Next.js 16 portfolio (abhisheklalwani.in)
-packages/ui       Shared design tokens, <Orb /> loader, helpers — reused by every future app
+apps/web                 Next.js 16 portfolio (abhisheklalwani.in)
+packages/ui              Shared design tokens, <Orb /> loader, helpers — reused by every future app
+agents/stray-signals     Weekly local-LLM agent behind the "stray signal" easter egg
 ```
 
 ## Develop
@@ -29,6 +30,28 @@ A project with a live app gets its own Vercel project on a subdomain (`<slug>.ab
 - Loading states: `<Orb />` / `<OrbFallback />` from `@al/ui/orb` only (thinking-orbs).
 - Sections bind to a particle scene via `<Section scene={0-4}>`: 0 graph · 1 clusters · 2 layers · 3 pipeline · 4 orb.
 - Scroll reveals: add `className="reveal"` and `style={stagger(i)}`.
+
+## Stray Signals (easter egg + agent)
+
+A small signal peeks in from a screen edge now and then; clicking it reveals a quote and a link to one essay. Each visitor gets a different essay; none repeats until the week's list (up to 500) is used up.
+
+**Agent** — `agents/stray-signals`, runs on this Mac with Ollama (`phi4:14b` by default):
+
+```bash
+npm run signals -- --dry-run      # crawl only, no model calls, nothing written
+npm run signals -- --limit 50     # judge at most 50 new essays
+npm run signals -- --limit 0      # rebuild the published list from the cache
+npm run signals                   # full weekly run (first run ~2h, later runs ~30-45 min)
+npm run signals:install           # schedule it: Mondays 09:00 via launchd, then commit + push
+npm run signals:uninstall
+```
+
+Pipeline: collect (RSS + most-liked archive) → discover (Substack recommendation graph + category leaderboards, screened by the model) → term-density guards (tech / politics) → curate (4-criteria rubric, topic, quote) → verbatim quote check → select (caps per publication and topic) → write `apps/web/src/content/signals.json`.
+State lives in `agents/stray-signals/data/` (publication pool, verdict cache, last-run report). Env knobs: `STRAY_SIGNALS_MODEL`, `STRAY_SIGNALS_MAX_NEW`, `STRAY_SIGNALS_MIN_SCORE`, `STRAY_SIGNALS_TARGET`.
+
+**Serving** — `GET /api/signal` walks a seeded shuffle with a Redis counter (one integer per week) and pins the result in a cookie. Without Redis it falls back to random picks. Add Upstash Redis from the Vercel Marketplace; it sets `KV_REST_API_URL` / `KV_REST_API_TOKEN` (or `UPSTASH_REDIS_REST_*`), which the site reads automatically.
+
+Add `?signal` to any URL to make the signal peek immediately.
 
 ## Deploy (Vercel + GoDaddy)
 

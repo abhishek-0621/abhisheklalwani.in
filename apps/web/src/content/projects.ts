@@ -1,3 +1,5 @@
+import signalMeta from "./signals-meta.json";
+
 /**
  * Project registry. To add a project:
  *   1. append an entry here
@@ -38,6 +40,25 @@ export const projects: Project[] = [
       { value: "3", label: "LLMs benchmarked on 35 questions" },
     ],
     repo: "https://github.com/graphMindv2/graphmind",
+    featured: true,
+  },
+  {
+    slug: "stray-signals",
+    title: "Stray Signals",
+    tagline: "An agent that crawls Substack each week and hides one great essay for every visitor.",
+    summary:
+      "A local-LLM agent that walks Substack's recommendation graph, judges thousands of essays on philosophy, money, science and deep space, verifies every quote word-for-word, and publishes a rotation of up to 500 that this site hands out one visitor at a time.",
+    year: "2026",
+    role: "Design, agent and site integration",
+    status: "live",
+    tags: ["Agents", "Ollama", "Structured outputs", "Crawling", "Redis", "launchd"],
+    metrics: [
+      { value: String(signalMeta.count), label: "essays in this week's rotation" },
+      { value: String(signalMeta.publications), label: "publications represented" },
+      { value: String(signalMeta.candidatesReviewed), label: "essays judged so far" },
+      { value: "0", label: "repeats before the list runs out" },
+    ],
+    // Add `repo` once github.com/abhishek-0621/abhisheklalwani.in is public.
     featured: true,
   },
 ];
