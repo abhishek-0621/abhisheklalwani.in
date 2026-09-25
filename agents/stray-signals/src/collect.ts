@@ -3,6 +3,7 @@ import { config } from "./config";
 import { getJson, getText } from "./lib/http";
 import { mapPool } from "./lib/pool";
 import { canonicalUrl, decodeEntities, htmlToText, wordCount } from "./lib/text";
+import { VERSE_TOPICS } from "./schema";
 import type { Candidate, Publication } from "./state";
 
 type ArchivePost = {
@@ -55,7 +56,9 @@ async function collectOne(pub: Publication, updates: Map<string, Partial<Publica
   ]);
 
   if (!rss && !Array.isArray(top)) {
-    updates.set(pub.host, { status: "dead", note: "feed and archive unreachable" });
+    // Often just rate limiting: only give up after three failed runs in a row.
+    const failStreak = (pub.failStreak ?? 0) + 1;
+    updates.set(pub.host, failStreak >= 3 ? { status: "dead", failStreak, note: "unreachable for 3 runs" } : { failStreak });
     return [];
   }
 
@@ -116,8 +119,10 @@ async function collectOne(pub: Publication, updates: Map<string, Partial<Publica
     }
   }
 
-  if (!updates.has(pub.host)) updates.set(pub.host, { name: pubName });
-  return out.filter((c) => c.words >= config.minWords && !SKIP_TITLE.test(c.title));
+  updates.set(pub.host, { ...updates.get(pub.host), name: pubName, failStreak: 0 });
+  // Poems are short: verse publications only need enough text to judge.
+  const minWords = pub.topics.some((t) => VERSE_TOPICS.includes(t)) ? config.minWordsVerse : config.minWords;
+  return out.filter((c) => c.words >= minWords && !SKIP_TITLE.test(c.title));
 }
 
 /** Lazily fetches the full body for archive posts right before curation. */

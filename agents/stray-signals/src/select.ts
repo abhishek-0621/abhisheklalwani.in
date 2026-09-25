@@ -21,10 +21,28 @@ export function select(cache: CurationCache, week: string): Signal[] {
     })
     .sort((x, y) => y.score - x.score);
 
-  // With seven topics, no single one may take more than a quarter of the list.
-  const topicCap = Math.ceil(config.targetSize * 0.25);
+  // With eleven topics, no single one may take more than a fifth of the list.
+  const topicCap = Math.ceil(config.targetSize * 0.2);
+  const fairShare = Math.floor(config.targetSize / TOPICS.length);
   const chosen = new Map<string, Accepted>();
 
+  // Pass 1 — fair share: every topic gets up to targetSize / topics of its best essays,
+  // so a topic with fewer writers is never crowded out by a prolific one.
+  {
+    const perPub = new Map<string, number>();
+    for (const topic of TOPICS) {
+      let taken = 0;
+      for (const { url, a } of pool) {
+        if (taken >= fairShare) break;
+        if (a.topic !== topic || (perPub.get(a.host) ?? 0) >= config.maxPerPublication) continue;
+        chosen.set(url, a);
+        perPub.set(a.host, (perPub.get(a.host) ?? 0) + 1);
+        taken++;
+      }
+    }
+  }
+
+  // Pass 2 — fill the rest by score, with caps; pass 3 relaxes them only if still short.
   for (const relax of [false, true]) {
     const perPub = new Map<string, number>();
     const perTopic = new Map<Topic, number>();
@@ -37,7 +55,8 @@ export function select(cache: CurationCache, week: string): Signal[] {
       if (chosen.has(url)) continue;
       const pubCap = relax ? config.maxPerPublication * 2 : config.maxPerPublication;
       if ((perPub.get(a.host) ?? 0) >= pubCap) continue;
-      if (!relax && (perTopic.get(a.topic) ?? 0) >= topicCap) continue;
+      // Relaxing never lifts the topic cap entirely: a shorter balanced list beats a lopsided one.
+      if ((perTopic.get(a.topic) ?? 0) >= (relax ? topicCap * 2 : topicCap)) continue;
       chosen.set(url, a);
       perPub.set(a.host, (perPub.get(a.host) ?? 0) + 1);
       perTopic.set(a.topic, (perTopic.get(a.topic) ?? 0) + 1);

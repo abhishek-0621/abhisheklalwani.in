@@ -2,8 +2,10 @@ import { z } from "zod";
 import { config } from "./config";
 import { ensureBody } from "./collect";
 import { generate } from "./lib/llm";
+import { roundRobin } from "./balance";
 import { mapPool } from "./lib/pool";
 import { isVerbatim } from "./lib/text";
+import { VERSE_TOPICS } from "./schema";
 import type { Accepted, Candidate, CurationCache, Rejected } from "./state";
 
 const SYSTEM = `You are the curator of "Stray Signals": a hidden corner of a personal website that hands each visitor one remarkable essay to read. Readers are curious generalists who want to leave with a new way of seeing something. Judge one Substack post and, if it deserves a place, pick the passage that makes a stranger want to read it.
@@ -15,6 +17,9 @@ Topics that belong:
 - money: economics, finance, economic history, how markets and wealth actually work
 - science: physics, chemistry, biology, medicine, evolution, how science is done
 - space: astronomy, cosmology, planets, the search for life, exploration
+- nature: the living world — animals, birds, plants, forests, oceans, seasons, ecology, being outdoors
+- poetry: poems, and essays about reading a poem
+- writing: the craft of writing and the pleasure of reading — style, stories, books, language
 - ideas: big theories, history, thought experiments, unusual arguments about society or culture
 
 Reject (set the flag) when:
@@ -30,18 +35,21 @@ Score four criteria from 1 to 5. Be strict and use the whole range; a typical co
 - craft: 5 = memorable, precise, beautiful prose; 1 = clumsy or padded.
 - timeless: 5 = will be as worth reading in ten years; 1 = only makes sense this week.
 
+For a poem, read originality as freshness of image and voice, depth as emotional and imaginative depth, and craft as music, compression and form. Greeting-card verse, motivational lines and clichés are shallow.
+
 The quote:
-- Copy 1-3 consecutive sentences EXACTLY as they appear in the text: same words, same order, no ellipses, no edits, no added quotation marks.
+- For a poem: copy 2-6 consecutive lines EXACTLY, keeping the line breaks.
+- For prose: copy 1-3 consecutive sentences EXACTLY as they appear in the text: same words, same order, no ellipses, no edits, no added quotation marks.
 - 15 to 55 words, understandable on its own, in the author's own voice. Prefer the essay's most surprising claim or most beautiful line. Avoid lines that just cite a study, report a fact, or set up the topic.
 
 The hook: at most 12 words, plain and specific, no hype, telling the reader what idea they will meet.
 
-The topic label: pick the most specific one. Anything about stars, planets, galaxies, the universe or spaceflight is "space". Why people think, feel and behave as they do is "psychology". How to reason well, biases, evidence and rationality is "thinking". Physics, biology and medicine are "science". Economics, markets, banks and wealth are "money". Use "ideas" only when none of the others fits.`;
+The topic label: pick the most specific one. Anything about stars, planets, galaxies, the universe or spaceflight is "space". Why people think, feel and behave as they do is "psychology". How to reason well, biases, evidence and rationality is "thinking". Physics, biology and medicine are "science". Economics, markets, banks and wealth are "money". Poems are "poetry". Birds, animals, plants, landscapes and ecology are "nature". Essays about writing, books and reading are "writing". Use "ideas" only when none of the others fits.`;
 
 const Verdict = z.object({
   reason: z.string().describe("One sentence explaining the judgement"),
   // Specific topics first: small models drift toward whichever label they read last.
-  topic: z.enum(["space", "psychology", "thinking", "science", "money", "philosophy", "ideas"]),
+  topic: z.enum(["space", "nature", "poetry", "writing", "psychology", "thinking", "science", "money", "philosophy", "ideas"]),
   fitsTopics: z.boolean(),
   isTech: z.boolean(),
   isShallow: z.boolean(),
@@ -58,20 +66,24 @@ type Verdict = z.infer<typeof Verdict>;
 
 export type CurateStats = { judged: number; accepted: number; rejected: number; quoteRetries: number; errors: number };
 
-export async function curate(candidates: Candidate[], cache: CurationCache, now: string): Promise<CurateStats> {
+/** `topicOf` maps each publication host to its primary topic, for balancing the queue. */
+export async function curate(candidates: Candidate[], cache: CurationCache, now: string, topicOf: Map<string, string>): Promise<CurateStats> {
   const stats: CurateStats = { judged: 0, accepted: 0, rejected: 0, quoteRetries: 0, errors: 0 };
 
-  // Round-robin across publications, most-liked first within each, so a capped run
-  // samples the whole pool instead of spending its budget on a few prolific writers.
-  const byHost = new Map<string, Candidate[]>();
-  for (const c of candidates) if (!cache[c.url]) byHost.set(c.host, [...(byHost.get(c.host) ?? []), c]);
-  for (const list of byHost.values()) list.sort((a, b) => b.likes - a.likes || (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""));
-  const queue: Candidate[] = [];
-  for (let i = 0; queue.length < config.maxNewCurations; i++) {
-    const round = [...byHost.values()].map((l) => l[i]).filter(Boolean);
-    if (!round.length) break;
-    queue.push(...round.slice(0, config.maxNewCurations - queue.length));
+  // Balanced budget: rotate across topics, then across publications within a topic, most-liked
+  // first — so a capped run judges every topic evenly, however lopsided the pool is.
+  const byTopic = new Map<string, Map<string, Candidate[]>>();
+  for (const c of candidates) {
+    if (cache[c.url]) continue;
+    const topic = topicOf.get(c.host) ?? "ideas";
+    const hosts = byTopic.get(topic) ?? new Map<string, Candidate[]>();
+    hosts.set(c.host, [...(hosts.get(c.host) ?? []), c]);
+    byTopic.set(topic, hosts);
   }
+  const perTopic = [...byTopic.values()].map((hosts) =>
+    roundRobin([...hosts.values()].map((l) => l.sort((a, b) => b.likes - a.likes || (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "")))),
+  );
+  const queue = roundRobin(perTopic).slice(0, config.maxNewCurations);
 
   let done = 0;
   await mapPool(queue, config.curateConcurrency, async (c) => {
@@ -132,7 +144,8 @@ async function judge(c: Candidate, now: string, stats: CurateStats): Promise<Acc
 
   const quote = v.quote.trim().replace(/^["“]+|["”]+$/g, "");
   const words = quote.split(/\s+/).length;
-  if (words < 12 || words > 70) return reject(`quote length ${words}`, now);
+  const verse = VERSE_TOPICS.includes(v.topic);
+  if (words < (verse ? 6 : 12) || words > (verse ? 90 : 70)) return reject(`quote length ${words}`, now);
 
   return {
     ok: true,

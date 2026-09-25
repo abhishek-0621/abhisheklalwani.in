@@ -3,7 +3,10 @@
  * Keep this file dependency-free: the web app imports it as types only.
  */
 
-export const TOPICS = ["philosophy", "psychology", "thinking", "money", "science", "space", "ideas"] as const;
+export const TOPICS = ["philosophy", "psychology", "thinking", "money", "science", "space", "nature", "poetry", "writing", "ideas"] as const;
+
+/** Short-form topics: poems are judged, quoted and filtered differently from essays. */
+export const VERSE_TOPICS: readonly Topic[] = ["poetry"];
 export type Topic = (typeof TOPICS)[number];
 
 export const TOPIC_LABELS: Record<Topic, string> = {
@@ -13,7 +16,24 @@ export const TOPIC_LABELS: Record<Topic, string> = {
   money: "Money & economics",
   science: "Science",
   space: "Deep space",
+  nature: "Nature",
+  poetry: "Poetry",
+  writing: "Writing & reading",
   ideas: "Ideas & theories",
+};
+
+/** Chip labels for the "retune" picker. */
+export const TOPIC_SHORT: Record<Topic, string> = {
+  philosophy: "Philosophy",
+  psychology: "Psychology",
+  thinking: "Clear thinking",
+  money: "Money",
+  science: "Science",
+  space: "Deep space",
+  nature: "Nature",
+  poetry: "Poetry",
+  writing: "Writing",
+  ideas: "Big ideas",
 };
 
 /** One published essay in the weekly rotation. */

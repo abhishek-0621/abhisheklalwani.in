@@ -22,6 +22,21 @@ export const SEEDS: { host: string; topics: Topic[] }[] = [
   { host: "www.robkhenderson.com", topics: ["psychology"] },
   { host: "www.optimallyirrational.com", topics: ["psychology", "thinking"] },
   { host: "www.everythingisbullshit.blog", topics: ["thinking", "psychology"] },
+  // writing & reading
+  { host: "www.commonreader.co.uk", topics: ["writing"] },
+  { host: "katherinemay.substack.com", topics: ["writing", "nature"] },
+  { host: "www.personalcanon.com", topics: ["writing", "ideas"] },
+  { host: "georgesaunders.substack.com", topics: ["writing"] },
+  // poetry
+  { host: "maggiesmith.substack.com", topics: ["poetry", "writing"] },
+  { host: "jamescrews.substack.com", topics: ["poetry"] },
+  { host: "oxfordpoetry.substack.com", topics: ["poetry"] },
+  { host: "ordinaryplots.substack.com", topics: ["poetry"] },
+  // nature
+  { host: "lauraerickson.substack.com", topics: ["nature"] },
+  { host: "nerdyaboutnature.substack.com", topics: ["nature", "science"] },
+  { host: "mycostories.substack.com", topics: ["nature", "science"] },
+  { host: "www.thescrublands.com", topics: ["nature"] },
   // philosophy
   { host: "philosophybear.substack.com", topics: ["philosophy"] },
   { host: "theconvivialsociety.substack.com", topics: ["philosophy"] },
@@ -55,9 +70,11 @@ export const SEEDS: { host: string; topics: Topic[] }[] = [
  * rotating deeper each week. Subcategory filters are not supported by the endpoint,
  * so space writers are found through Science and the recommendation graph.
  */
-export const CATEGORIES: { id: number; name: string }[] = [
-  { id: 134, name: "Science" },
-  { id: 114, name: "Philosophy" },
-  { id: 153, name: "Finance" },
-  { id: 18, name: "History" },
+export const CATEGORIES: { id: number; name: string; topics: Topic[] }[] = [
+  { id: 134, name: "Science", topics: ["science", "space", "psychology"] },
+  { id: 114, name: "Philosophy", topics: ["philosophy", "thinking"] },
+  { id: 153, name: "Finance", topics: ["money"] },
+  { id: 18, name: "History", topics: ["ideas"] },
+  { id: 339, name: "Literature", topics: ["writing", "poetry"] },
+  { id: 15414, name: "Climate & Environment", topics: ["nature"] },
 ];

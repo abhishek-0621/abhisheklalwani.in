@@ -9,12 +9,15 @@ export type Publication = {
   description: string;
   topics: Topic[];
   source: "seed" | "recommendation" | "category";
-  status: "active" | "rejected" | "dead";
+  /** reserve = a good fit for a topic that already has enough publications; reconsidered when it has room. */
+  status: "active" | "reserve" | "rejected" | "dead";
   addedAt: string;
   /** How many other pool publications recommend this one (discovery signal). */
   inDegree: number;
   accepted: number;
   runsWithoutYield: number;
+  /** Consecutive runs where the feed could not be fetched; dead after 3. */
+  failStreak?: number;
   lastRecsCrawlAt: string | null;
   note?: string;
 };

@@ -30,6 +30,8 @@ export const config = {
   recentPerFeed: 15,
   topPerFeed: 12,
   minWords: 700,
+  /** Poetry publications: a poem only needs enough lines to judge. */
+  minWordsVerse: 60,
   /** Characters of body text sent to the curator (~2k tokens). */
   excerptChars: 9000,
 
@@ -37,12 +39,14 @@ export const config = {
   maxNewCurations: int("STRAY_SIGNALS_MAX_NEW", 700),
   /** Ollama serves one request at a time by default; 2 overlaps body fetching with generation. */
   curateConcurrency: int("STRAY_SIGNALS_CONCURRENCY", 2),
-  fetchConcurrency: 6,
+  fetchConcurrency: 4,
 
   /** Discovery crawls Substack's "recommended by" graph outward from publications that already yield good essays. */
   discovery: process.env.STRAY_SIGNALS_DISCOVERY !== "0",
   discoveryFanout: 12,
   maxNewPublicationsPerRun: int("STRAY_SIGNALS_MAX_NEW_PUBS", 40),
+  /** Balance: aim for this many active publications per topic; full topics stop growing. */
+  targetPubsPerTopic: int("STRAY_SIGNALS_PUBS_PER_TOPIC", 12),
 
   /** Drop a publication after this many runs with nothing accepted. */
   pruneAfterRuns: 4,

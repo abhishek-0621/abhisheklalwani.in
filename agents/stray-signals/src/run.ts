@@ -14,6 +14,7 @@ import { assertModelReady } from "./lib/llm";
 import { isoWeek, readJson, writeJson, writeText } from "./lib/store";
 import type { SignalFile, SignalMeta } from "./schema";
 import { SEEDS } from "./seeds";
+import { activeByTopic } from "./balance";
 import { select, topicCounts } from "./select";
 import type { CurationCache, PublicationPool } from "./state";
 
@@ -40,6 +41,7 @@ async function main() {
   // 1. Pool: persisted publications + any new seeds.
   const pool = await readJson<PublicationPool>(config.paths.publications, {});
   for (const s of SEEDS) {
+    if (pool[s.host]) pool[s.host].topics = s.topics; // seeds are the source of truth for their topics
     pool[s.host] ??= {
       host: s.host, name: s.host, id: null, description: "", topics: s.topics, source: "seed", status: "active",
       addedAt: now, inDegree: 0, accepted: 0, runsWithoutYield: 0, lastRecsCrawlAt: null,
@@ -77,14 +79,15 @@ async function main() {
     const perPub = new Map<string, number>();
     for (const c of candidates) perPub.set(c.publication, (perPub.get(c.publication) ?? 0) + 1);
     log(`Dry run — per publication:\n${[...perPub].map(([p, n]) => `    ${String(n).padStart(3)}  ${p}`).join("\n")}`);
-    const dead = Object.values(pool).filter((p) => p.status === "dead").map((p) => p.host);
-    if (dead.length) log(`  unreachable: ${dead.join(", ")}`);
+    const failing = [...updates].filter(([, u]) => (u.failStreak ?? 0) > 0).map(([h]) => h);
+    if (failing.length) log(`  unreachable this run (will retry): ${failing.join(", ")}`);
     return;
   }
 
   // 4. Curate: judge unseen posts with the local model, verify quotes.
   log(`Curating up to ${Math.min(fresh.length, config.maxNewCurations)} posts with ${config.model}…`);
-  const cur = await curate(candidates, cache, now);
+  const topicOf = new Map(Object.values(pool).map((p) => [p.host, p.topics[0] ?? "ideas"]));
+  const cur = await curate(candidates, cache, now, topicOf);
   log(`  judged ${cur.judged}: accepted ${cur.accepted}, rejected ${cur.rejected}, quote retries ${cur.quoteRetries}, errors ${cur.errors}`);
 
   // 5. Pool upkeep: credit publications, prune the ones that never yield, expire old verdicts.
@@ -98,6 +101,15 @@ async function main() {
     if (p.accepted === 0 && p.runsWithoutYield >= config.pruneAfterRuns) {
       p.status = "rejected";
       p.note = `no accepted essays after ${p.runsWithoutYield} runs`;
+    }
+  }
+  // Promote reserve publications into topics that now have room (e.g. after pruning).
+  const room = activeByTopic(pool);
+  for (const p of Object.values(pool)) {
+    const t = p.topics[0];
+    if (p.status === "reserve" && t && room[t] < config.targetPubsPerTopic) {
+      p.status = "active";
+      room[t]++;
     }
   }
   const ttl = Date.now() - config.cacheTtlDays * 86_400_000;
@@ -129,10 +141,11 @@ async function main() {
     `# Stray Signals — ${week}`,
     "",
     `- Model: \`${config.model}\` · ${mins} min`,
-    `- Pool: ${active.length} active publications${disc ? ` (+${disc.added.length} discovered, ${disc.rejected} rejected)` : ""}`,
+    `- Pool: ${active.length} active publications${disc ? ` (+${disc.added.length} discovered, ${disc.reserved} in reserve, ${disc.rejected} rejected)` : ""}`,
     `- Candidates: ${candidates.length} eligible, ${cur.judged} judged this run (${cur.accepted} accepted, ${cur.rejected} rejected, ${cur.errors} errors)`,
     `- Published: **${items.length}** essays from ${meta.publications} publications`,
     `- By topic: ${Object.entries(meta.byTopic).map(([t, n]) => `${t} ${n}`).join(" · ")}`,
+    `- Active publications per topic (target ${config.targetPubsPerTopic}): ${Object.entries(activeByTopic(pool)).map(([t, n]) => `${t} ${n}`).join(" · ")}`,
     disc?.added.length ? `\nNew publications: ${disc.added.join(", ")}` : "",
     "",
   ].join("\n");
