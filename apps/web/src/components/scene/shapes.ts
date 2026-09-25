@@ -3,18 +3,18 @@
  * the vertex shader blends between them as the page scrolls.
  *
  *   0 attractor — particles stream along an Aizawa strange attractor (animated in the shader)
- *   1 clusters  — embedding space: soft semantic clusters
+ *   1 galaxy    — a tilted three-armed spiral galaxy, turning (animated in the shader)
  *   2 layers    — neural net: dotted layer planes + inter-layer connections
  *   3 warp      — a tunnel of twisting rings streaming toward the viewer (animated in the shader)
  *   4 sphere    — the orb: fibonacci sphere with two orbit rings
  *
- * Scenes 0 and 3 store parameters, not positions: the shader computes where each
+ * Scenes 0, 1 and 3 store parameters, not positions: the shader computes where each
  * particle is from time, so those scenes keep moving instead of holding a pose.
  */
 export const SCENE_COUNT = 5;
 
 export type SceneBuffers = {
-  /** SCENE_COUNT × (N*3). Scene 0: (phase, jitterA, jitterB). Scene 3: (angle, radius, phase). */
+  /** SCENE_COUNT × (N*3). Scene 0: (phase, jitterA, jitterB). Scene 1: (radius, angle, height). Scene 3: (angle, radius, phase). */
   targets: Float32Array[];
   seed: Float32Array; // N*4: size, phase, twinkle, stagger
   flow0: Float32Array; // N*2: comet flag (1 / -1), speed multiplier
@@ -116,19 +116,26 @@ export function buildScenes(n: number): SceneBuffers {
     flow0[i * 2 + 1] = comet ? 3 + r() * 2 : 1;
   }
 
-  /* ---------------- 1 · embedding clusters ---------------- */
+  /* ---------------- 1 · spiral galaxy ---------------- */
+  // Stored in the galaxy's own plane: (radius, angle, height). The shader tilts and turns it.
   {
-    const centers: V3[] = Array.from({ length: 7 }, (_, k) => {
-      const a = (k / 7) * Math.PI * 2 + r() * 0.4;
-      return [Math.cos(a) * 1.7, (r() - 0.5) * 2.4, Math.sin(a) * 1.1];
-    });
+    const arms = 3;
     for (let i = 0; i < n; i++) {
-      if (r() < 0.04) {
-        put(1, i, [(r() - 0.5) * 4.5, (r() - 0.5) * 3.5, (r() - 0.5) * 2]);
+      const kind = r();
+      if (kind < 0.16) {
+        // bulge: a dense, slightly flattened core
+        const rad = Math.abs(gauss()) * 0.32;
+        put(1, i, [rad, r() * Math.PI * 2, gauss() * 0.12]);
+      } else if (kind < 0.9) {
+        // arms: logarithmic spirals, scatter widening with radius
+        const rad = 0.3 + Math.pow(r(), 0.85) * 2.2;
+        const arm = Math.floor(r() * arms);
+        const angle = (arm / arms) * Math.PI * 2 + Math.log(rad) * 2.4 + gauss() * (0.16 + rad * 0.07);
+        put(1, i, [rad, angle, gauss() * 0.05 * (1.2 - rad / 3)]);
       } else {
-        const c = centers[i % centers.length];
-        const spread = 0.11 + (i % centers.length) * 0.022;
-        put(1, i, jitter(c, spread));
+        // halo: faint stars between the arms
+        const rad = 0.4 + r() * 2.6;
+        put(1, i, [rad, r() * Math.PI * 2, gauss() * 0.18]);
       }
     }
   }

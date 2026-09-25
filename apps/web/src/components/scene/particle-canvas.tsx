@@ -50,7 +50,7 @@ function sceneLayout(width: number, height: number) {
   const wide = width >= 1024 && width / height > 1.1;
   // xyz offset, alpha — keeps shapes clear of the copy they sit behind.
   return wide
-    ? [new Vector4(2.4, 0.15, 0, 0.95), new Vector4(-3.1, 0, -0.5, 0.7), new Vector4(0, 0, -1.5, 0.32), new Vector4(-3.2, 0, 0, 0.85), new Vector4(0, 0, -2, 0.42)]
+    ? [new Vector4(2.4, 0.15, 0, 0.95), new Vector4(-2.75, 0, -0.8, 0.85), new Vector4(0, 0, -1.5, 0.32), new Vector4(-3.2, 0, 0, 0.85), new Vector4(0, 0, -2, 0.42)]
     : [new Vector4(0, 2.5, -1, 0.6), new Vector4(0, 0, -1, 0.35), new Vector4(0, 0, -1.5, 0.22), new Vector4(0, 0, -1, 0.3), new Vector4(0, 0, -1.5, 0.35)];
 }
 
@@ -60,6 +60,8 @@ function Field({ count, routeKey, onReady }: Props) {
   const progress = useRef(-1);
   const mouse = useRef({ x: 0, y: 0, tx: 0, ty: 0 });
   const readyFired = useRef(false);
+  // Hero flow tempo: drifts between lulls and rushes, with the occasional surge.
+  const tempo = useRef({ speed: 1, target: 1, nextChange: 0 });
   const { size, camera, gl } = useThree();
 
   const geometry = useMemo(() => {
@@ -95,6 +97,8 @@ function Field({ count, routeKey, onReady }: Props) {
         uAccent: { value: token("--color-accent", "#ff6a3d") },
         uAttractor: { value: attractorTex },
         uAttractorSize: { value: attractor.size },
+        uFlow: { value: 0 },
+        uSurge: { value: 0 },
       },
     });
     // gl/size are read once here; the layout effect below keeps them current.
@@ -140,6 +144,16 @@ function Field({ count, routeKey, onReady }: Props) {
     const dt = Math.min(delta, 0.05);
     const u = material.uniforms;
     u.uTime.value += dt;
+
+    const tp = tempo.current;
+    if (u.uTime.value > tp.nextChange) {
+      const roll = Math.random();
+      tp.target = roll < 0.18 ? 4 + Math.random() * 3 : roll < 0.45 ? 0.2 + Math.random() * 0.3 : 0.7 + Math.random() * 1.1;
+      tp.nextChange = u.uTime.value + (tp.target > 3 ? 1 + Math.random() * 1.2 : 2.5 + Math.random() * 4);
+    }
+    tp.speed += (tp.target - tp.speed) * (1 - Math.exp(-dt * (tp.target > tp.speed ? 3 : 1.2)));
+    u.uFlow.value += dt * tp.speed;
+    u.uSurge.value = Math.min(1, Math.max(0, (tp.speed - 1.5) / 3));
 
     const target = sample(frames.current, window.scrollY);
     if (progress.current < 0) progress.current = target;

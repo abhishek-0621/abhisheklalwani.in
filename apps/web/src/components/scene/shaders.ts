@@ -6,8 +6,10 @@ uniform float uSize;
 uniform vec4 uScene[5];
 uniform sampler2D uAttractor;
 uniform float uAttractorSize;   // texture is size x size samples
+uniform float uFlow;            // integrated attractor time: speeds up and slows down at random
+uniform float uSurge;           // 0..1 while the flow is rushing
 
-attribute vec3 aT1;
+attribute vec3 aT1;             // galaxy: radius, angle, height
 attribute vec3 aT2;
 attribute vec3 aT3;             // warp: angle, radius, phase
 attribute vec3 aT4;
@@ -45,9 +47,19 @@ void main() {
 
   // 0 - strange attractor: each particle rides the trajectory; comets overtake.
   bool comet = aFlow0.x > 0.0;
-  float t0 = fract(position.x + uTime * 0.0035 * aFlow0.y);
+  // Each stream has its own pace (seeded), so surges shear the flow apart.
+  float lane = 0.7 + aSeed.w * 0.6;
+  float t0 = fract(position.x + uFlow * 0.0035 * aFlow0.y * lane);
   vec3 p0 = attractorAt(t0) * 1.6 + vec3(position.y, position.z, (aSeed.z - 0.5) * 0.03);
   p0.xz = rot(uTime * 0.06) * p0.xz;
+
+  // 1 - galaxy: a rigid slow spin plus a little differential shear, tilted toward the viewer.
+  float gAngle = aT1.y + uTime * (0.05 + 0.05 / (aT1.x + 0.6));
+  vec3 g = vec3(cos(gAngle) * aT1.x, aT1.z, sin(gAngle) * aT1.x) * 0.95;
+  g.yz = rot(-0.5) * g.yz;
+  g.xy = rot(0.35) * g.xy;
+  vec3 p1 = g;
+  bool youngStar = aSeed.z > 0.986 && aT1.x > 0.4;
 
   // 3 - warp tunnel: rings rush from the vanishing point toward the viewer, twisting.
   float ph = fract(aT3.z + uTime * 0.035 * aFlow3.y);
@@ -57,7 +69,7 @@ void main() {
   vec3 p3 = vec3(cos(twist) * radius, sin(twist) * radius, tz);
   float tunnelFade = smoothstep(0.0, 0.2, ph) * (1.0 - smoothstep(0.82, 1.0, ph));
 
-  vec3 p = p0 * w0 + aT1 * w1 + aT2 * w2 + p3 * w3 + aT4 * w4;
+  vec3 p = p0 * w0 + p1 * w1 + aT2 * w2 + p3 * w3 + aT4 * w4;
   vec4 sc = uScene[0] * w0 + uScene[1] * w1 + uScene[2] * w2 + uScene[3] * w3 + uScene[4] * w4;
   p += sc.xyz;
 
@@ -66,7 +78,7 @@ void main() {
   float seedPh = aSeed.y;
   p += vec3(sin(seedPh + uTime * 0.7), cos(seedPh * 1.3 + uTime * 0.6), sin(seedPh * 0.7 + uTime * 0.5)) * (0.012 + transit * 0.4);
 
-  float pulse = (comet ? 1.0 : 0.0) * w0 + (aFlow3.x > 0.0 ? 1.0 : 0.0) * w3;
+  float pulse = (comet ? 1.0 + uSurge * 0.8 : 0.0) * w0 + (youngStar ? 0.9 : 0.0) * w1 + (aFlow3.x > 0.0 ? 1.0 : 0.0) * w3;
   vPulse = pulse;
 
   vec4 mv = modelViewMatrix * vec4(p, 1.0);
@@ -78,7 +90,8 @@ void main() {
 
   float depth = smoothstep(26.0, 4.0, -mv.z);
   float nearFade = smoothstep(0.8, 3.0, -mv.z);
-  vAlpha = sc.w * twinkle * (0.3 + 0.7 * depth) * nearFade * mix(1.0, tunnelFade, w3);
+  float core = 1.0 + w1 * smoothstep(0.5, 0.0, aT1.x) * 0.6;
+  vAlpha = sc.w * twinkle * core * (0.3 + 0.7 * depth) * nearFade * mix(1.0, tunnelFade, w3);
 }
 `;
 

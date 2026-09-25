@@ -23,10 +23,10 @@ export const site = {
 } as const;
 
 export const about = {
-  lead: "I build AI systems that have to work on Monday morning — retrieval that cites its sources, agents that stop and ask a human, and interfaces fast enough that nobody notices them.",
+  lead: "I turn scattered knowledge into systems you can ask questions of — and trust the answers you get back.",
   body: [
-    "Four years at Dassault Systèmes, first shipping web components for an enterprise platform used by 2,000+ people, now leading generative AI work: LLM assistants, tool-calling workflows with human checkpoints, and MCP integrations that let agents talk to enterprise software.",
-    "In parallel I am finishing an M.Tech in AI & ML at BITS Pilani, where I built GraphMind — a platform that turns documents, code, audio and repositories into knowledge graphs you can query.",
+    "For four years at Dassault Systèmes I have worked on both halves of that problem. First the interface: fast, well-tested web components for an enterprise platform used by more than 2,000 people. Now the intelligence: LLM assistants, tool-calling agents that pause for a human before they act, and MCP integrations that let those agents work inside real engineering software.",
+    "Outside work I am finishing an M.Tech in AI & ML at BITS Pilani, where I built GraphMind — hand it documents, code, audio or an entire repository and it gives back a knowledge graph you can explore, query, and pass to other agents. The parts I enjoy most are the unglamorous ones: evaluation, latency, and being able to explain why a model said what it said.",
   ],
   stats: [
     { value: "4+", label: "Years shipping production software" },
