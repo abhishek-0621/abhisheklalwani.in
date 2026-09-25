@@ -146,7 +146,7 @@ html[data-seen] {
 .signal-peek {
   transition: transform 1100ms var(--ease-out-expo);
   --hide: 130%;
-  --peek: 42%;
+  --peek: 28%;
 }
 .signal-peek[data-edge="left"] { transform: translate(calc(var(--hide) * -1), -50%); }
 .signal-peek[data-edge="right"] { transform: translate(var(--hide), -50%); }
@@ -154,7 +154,13 @@ html[data-seen] {
 .signal-peek[data-shown][data-edge="left"] { transform: translate(calc(var(--peek) * -1), -50%); }
 .signal-peek[data-shown][data-edge="right"] { transform: translate(var(--peek), -50%); }
 .signal-peek[data-shown][data-edge="bottom"] { transform: translate(-50%, var(--peek)); }
-.signal-peek[data-shown]:is(:hover, :focus-visible) { --peek: 6%; }
+.signal-peek[data-shown]:is(:hover, :focus-visible) { --peek: 4%; }
+/* On arrival the label shows briefly, so touch visitors (no hover) know what it is. */
+.signal-peek[data-shown] .signal-hint { animation: signal-hint 4.5s var(--ease-out-expo) 0.9s; }
+@keyframes signal-hint {
+  0%, 100% { opacity: 0; }
+  12%, 78% { opacity: 1; }
+}
 .signal-ring {
   transform-origin: 32px 32px;
   animation: signal-ring 2.8s var(--ease-out-expo) infinite;

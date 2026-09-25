@@ -1,14 +1,13 @@
-import { Redis } from "@upstash/redis";
 import type { Signal, SignalFile } from "@al/stray-signals/schema";
 import data from "@/content/signals.json";
 
 const file = data as SignalFile;
 
 /**
- * Rotation: a shared counter walks a seeded shuffle of the weekly list.
- * Visitor n gets permutation(version, cycle)[n mod len], so nobody repeats a link until
- * the whole list has been handed out; then a fresh shuffle starts (cycle + 1).
- * Nothing but one integer per week is stored.
+ * Rotation without server state: every visitor has a random seed (kept in their browser)
+ * and a counter n. Visitor catches essay permutation(seed, cycle)[n mod len], so they never
+ * see a repeat until they have caught every essay; then a fresh shuffle begins. Different
+ * seeds give different orders, so visitors are spread across the list at random.
  */
 function permutation(len: number, seed: string) {
   let h = 2166136261;
@@ -29,29 +28,15 @@ function permutation(len: number, seed: string) {
   return idx;
 }
 
-const redisUrl = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL;
-const redisToken = process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN;
-const redis = redisUrl && redisToken ? new Redis({ url: redisUrl, token: redisToken }) : null;
-
-/** Next position in the rotation. Without Redis (local dev) it falls back to random. */
-async function nextTicket(): Promise<number> {
-  if (!redis) return Math.floor(Math.random() * 1e9);
-  const key = `stray-signals:${file.version}:cursor`;
-  const n = await redis.incr(key);
-  if (n === 1) await redis.expire(key, 60 * 60 * 24 * 21);
-  return n - 1;
-}
-
 export const signalVersion = () => file.version;
 export const signalCount = () => file.items.length;
-export const findSignal = (id: string) => file.items.find((s) => s.id === id) ?? null;
 
-export async function assignSignal(): Promise<{ signal: Signal; ordinal: number } | null> {
+/** The n-th essay in this visitor's personal shuffle. */
+export function pickSignal(seed: string, n: number): { signal: Signal; ordinal: number } | null {
   const len = file.items.length;
   if (!len) return null;
-  const ticket = await nextTicket();
-  const cycle = Math.floor(ticket / len);
-  const pos = ticket % len;
-  const index = permutation(len, `${file.version}:${cycle}`)[pos];
+  const cycle = Math.floor(n / len);
+  const pos = n % len;
+  const index = permutation(len, `${file.version}:${seed}:${cycle}`)[pos];
   return { signal: file.items[index], ordinal: pos + 1 };
 }

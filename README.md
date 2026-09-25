@@ -49,7 +49,7 @@ npm run signals:uninstall
 Pipeline: collect (RSS + most-liked archive) → discover (Substack recommendation graph + category leaderboards, screened by the model) → term-density guards (tech / politics) → curate (4-criteria rubric, topic, quote) → verbatim quote check → select (caps per publication and topic) → write `apps/web/src/content/signals.json`.
 State lives in `agents/stray-signals/data/` (publication pool, verdict cache, last-run report). Env knobs: `STRAY_SIGNALS_MODEL`, `STRAY_SIGNALS_MAX_NEW`, `STRAY_SIGNALS_MIN_SCORE`, `STRAY_SIGNALS_TARGET`.
 
-**Serving** — `GET /api/signal` walks a seeded shuffle with a Redis counter (one integer per week) and pins the result in a cookie. Without Redis it falls back to random picks. Add Upstash Redis from the Vercel Marketplace; it sets `KV_REST_API_URL` / `KV_REST_API_TOKEN` (or `UPSTASH_REDIS_REST_*`), which the site reads automatically.
+**Serving** — `GET /api/signal?s=<seed>&n=<count>` is stateless: each visitor's browser keeps a random seed and a catch counter in localStorage, and the server returns position n of that visitor's seeded shuffle. No repeats per visitor until the list is exhausted; no database needed. The footer's "Catch a stray signal" opens it on demand.
 
 Add `?signal` to any URL to make the signal peek immediately.
 

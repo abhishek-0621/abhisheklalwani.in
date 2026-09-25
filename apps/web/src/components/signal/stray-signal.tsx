@@ -23,12 +23,27 @@ type Edge = "left" | "right" | "bottom";
 type Peek = { edge: Edge; offset: number };
 
 const SESSION_KEY = "al:signal-peeks";
-const MAX_PEEKS = 3;
-const VISIBLE_MS = 11_000;
+const CURSOR_KEY = "al:signal";
+const MAX_PEEKS = 6;
+const VISIBLE_MS = 16_000;
 const rand = (min: number, max: number) => min + Math.random() * (max - min);
 
+/** This visitor's personal shuffle: a random seed plus how many signals they have caught. */
+function readCursor(): { seed: string; n: number } {
+  try {
+    const c = JSON.parse(localStorage.getItem(CURSOR_KEY) ?? "null");
+    if (c && typeof c.seed === "string" && Number.isInteger(c.n)) return c;
+  } catch {}
+  return { seed: Math.random().toString(36).slice(2, 12).padEnd(8, "0"), n: 0 };
+}
+function writeCursor(c: { seed: string; n: number }) {
+  try {
+    localStorage.setItem(CURSOR_KEY, JSON.stringify(c));
+  } catch {}
+}
+
 /** Hidden → it peeks in from a random edge now and then, half out of frame, and slips away if ignored. */
-export function StraySignal() {
+export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) {
   const [peek, setPeek] = useState<Peek | null>(null);
   const [shown, setShown] = useState(false);
   const [open, setOpen] = useState(false);
@@ -39,7 +54,7 @@ export function StraySignal() {
 
   const later = (fn: () => void, ms: number) => timers.current.push(window.setTimeout(fn, ms));
 
-  // Schedule peeks: first after 20-45s, then every 45-100s, at most three per session.
+  // Schedule peeks: first after 8-14s, then every 25-50s, up to six per session.
   useEffect(() => {
     let count = 0;
     try {
@@ -59,25 +74,28 @@ export function StraySignal() {
         setPeek({ edge: edges[Math.floor(Math.random() * edges.length)], offset: rand(28, 72) });
         later(() => setShown(true), 60); // after mount, so the slide-in transition runs
         later(() => setShown(false), VISIBLE_MS);
-        schedule(VISIBLE_MS + rand(45_000, 100_000));
+        schedule(VISIBLE_MS + rand(25_000, 50_000));
       }, delay);
     // `?signal` in the URL summons a peek right away (for demos).
     if (forced) schedule(1500);
-    else if (count < MAX_PEEKS) schedule(rand(20_000, 45_000));
+    else if (count < MAX_PEEKS) schedule(rand(8_000, 14_000));
     const t = timers.current;
     return () => t.forEach(clearTimeout);
   }, []);
 
+  // Every catch tunes into the next essay in this visitor's shuffle — no repeats until they have seen them all.
   const tuneIn = useCallback(async () => {
     setOpen(true);
     setShown(false);
-    if (signal) return;
+    setSignal(null);
     setState("loading");
     const started = performance.now();
     try {
-      const res = await fetch("/api/signal", { cache: "no-store" });
+      const cursor = readCursor();
+      const res = await fetch(`/api/signal?s=${cursor.seed}&n=${cursor.n}`, { cache: "no-store" });
       if (res.status !== 200) throw new Error(String(res.status));
       const data = (await res.json()) as Payload;
+      writeCursor({ seed: cursor.seed, n: cursor.n + 1 });
       // Let the orb breathe for a beat — the reveal should feel like tuning in, not a page load.
       await new Promise((r) => setTimeout(r, Math.max(0, 900 - (performance.now() - started))));
       setSignal(data);
@@ -85,9 +103,14 @@ export function StraySignal() {
     } catch {
       setState("error");
     }
-  }, [signal]);
+  }, []);
 
-  // Anywhere on the site can summon it (e.g. the case study's "try it" button).
+  useEffect(() => {
+    if (openOnMount) void tuneIn();
+    // Only on mount: later summons arrive through the event below.
+  }, []);
+
+  // Anywhere on the site can summon it (the footer link, the case study's button).
   useEffect(() => {
     const onSummon = () => void tuneIn();
     window.addEventListener("stray-signal:summon", onSummon);
@@ -117,16 +140,16 @@ export function StraySignal() {
           className="signal-peek group fixed z-40 rounded-full p-1"
           style={place(peek)}
         >
-          <SignalGlyph className="signal-bob drop-shadow-[0_0_18px_rgba(255,106,61,0.35)]" />
+          <SignalGlyph size={64} className="signal-bob drop-shadow-[0_0_22px_rgba(255,106,61,0.55)]" />
           <span
             className={cn(
-              "pointer-events-none absolute whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.24em] text-fg-muted opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100",
+              "signal-hint pointer-events-none absolute whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.24em] text-fg opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100",
               peek.edge === "left" && "left-full top-1/2 ml-2 -translate-y-1/2",
               peek.edge === "right" && "right-full top-1/2 mr-2 -translate-y-1/2",
               peek.edge === "bottom" && "bottom-full left-1/2 mb-2 -translate-x-1/2",
             )}
           >
-            a stray signal
+            a stray signal · catch it
           </span>
         </button>
       )}

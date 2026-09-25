@@ -1,6 +1,6 @@
 ## The idea
 
-Somewhere on this site a small signal drifts in from the edge of the screen, lingers for a few seconds, and slips away. Catch it and it hands you one essay — a quote from it, and the link. Every visitor gets a different one. Nobody gets a repeat until the whole list has been handed out.
+Somewhere on this site a small signal drifts in from the edge of the screen, lingers for a few seconds, and slips away. Catch it and it hands you one essay — a quote from it, and the link. Catch it again and you get another. You never see the same essay twice until you have caught every one on the list.
 
 The essays are chosen by an agent, not by me. Every week it goes looking for writing on philosophy, money, science, deep space and big ideas — deliberately far from the tech world — and keeps only what it would send to a curious friend.
 
@@ -15,7 +15,7 @@ The essays are chosen by an agent, not by me. Every week it goes looking for wri
     { label: "Guard", detail: "Counts technology and partisan terms per thousand words. Anything saturated is dropped before a model call is spent." },
     { label: "Curate", detail: "A local model scores originality, depth, craft and timelessness, flags tech, shallow or partisan pieces, labels the topic and picks a passage.", model: true },
     { label: "Verify", detail: "The quote must appear word-for-word in the source. One chance to fix it, then the essay is dropped rather than misquoted." },
-    { label: "Select & serve", detail: "Top 500 by score, freshness and a weekly jitter, capped per publication and per topic. A Redis counter walks a seeded shuffle, one visitor at a time." },
+    { label: "Select & serve", detail: "Top 500 by score, freshness and a weekly jitter, capped per publication and per topic. Each visitor walks their own seeded shuffle of the list." },
   ]}
 />
 
@@ -51,4 +51,6 @@ phi4 is slower but judges like an editor, so it is the default. The weekly run o
 
 ## Handing out the links
 
-The list lives in the repository as JSON; only a single integer lives in Redis. Visitor *n* this week receives position *n* of a shuffle seeded by the week's version. When the counter passes the end of the list, a new shuffle begins — so no link repeats until all of them have been given out. A cookie keeps your signal stable for the week, bots never consume a slot, and nothing is fetched until you actually click.
+There is no database. The week's list ships with the site as JSON, and each visitor's browser keeps two things: a random seed and a count of how many signals they have caught. The server turns those into position *n* of a shuffle seeded by that visitor, so every catch is a new essay, nobody repeats until they have been through the whole list, and different visitors wander through it in different orders. Bots are turned away, and nothing is fetched until you actually click.
+
+If you never manage to catch it, there is a quieter way in at the bottom of every page.
