@@ -58,7 +58,7 @@ export const projects: Project[] = [
       { value: String(signalMeta.candidatesReviewed), label: "essays judged so far" },
       { value: "0", label: "repeats before the list runs out" },
     ],
-    // Add `repo` once github.com/abhishek-0621/abhisheklalwani.in is public.
+    repo: "https://github.com/abhishek-0621/abhisheklalwani.in/tree/main/agents/stray-signals",
     featured: true,
   },
 ];
