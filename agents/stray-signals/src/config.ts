@@ -1,5 +1,5 @@
 import path from "node:path";
-import type { Topic } from "./schema";
+import { TOPIC_WEIGHTS } from "./schema";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -20,10 +20,6 @@ export const config = {
   model: process.env.STRAY_SIGNALS_MODEL ?? "phi4:14b",
   ollamaHost: process.env.OLLAMA_HOST ?? "http://127.0.0.1:11434",
 
-  /** Size of the weekly rotation. */
-  targetSize: int("STRAY_SIGNALS_TARGET", 500),
-  /** Diversity: no publication may take more than this many slots. */
-  maxPerPublication: int("STRAY_SIGNALS_MAX_PER_PUB", 6),
   /** Minimum curator score (originality + depth + craft + timelessness, 4-20) to be eligible. */
   minScore: int("STRAY_SIGNALS_MIN_SCORE", 16),
 
@@ -49,32 +45,13 @@ export const config = {
   /** Balance: aim for this many active publications per topic (scaled by topic weight). */
   targetPubsPerTopic: int("STRAY_SIGNALS_PUBS_PER_TOPIC", 12),
 
-  /**
-   * Editorial tilt. The rotation is for thoughts outside work: more philosophy, psychology and
-   * clear thinking; less science. Shares of the list, publication targets and the weekly
-   * judging budget all scale with these weights.
-   */
-  topicWeights: {
-    philosophy: 1.3,
-    psychology: 1.3,
-    thinking: 1.2,
-    ideas: 1.1,
-    nature: 1.0,
-    poetry: 1.0,
-    writing: 1.0,
-    money: 0.9,
-    space: 0.8,
-    science: 0.5,
-  } satisfies Record<Topic, number>,
+  /** Editorial tilt (see TOPIC_WEIGHTS in schema.ts, shared with the site). */
+  topicWeights: TOPIC_WEIGHTS,
 
-  /** Five-minute reads win: essays in this word range get a selection bonus; very long ones a penalty. */
-  sweetSpotWords: [600, 2500] as const,
-  longReadWords: 4000,
+
 
   /** Drop a publication after this many runs with nothing accepted. */
   pruneAfterRuns: 4,
-  /** Forget cached verdicts for posts not seen in this many days. */
-  cacheTtlDays: 180,
 
   userAgent: "StraySignalsBot/1.0 (+https://abhisheklalwani.in/work/stray-signals)",
 

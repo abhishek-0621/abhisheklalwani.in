@@ -15,7 +15,7 @@ import { isoWeek, readJson, writeJson, writeText } from "./lib/store";
 import type { SignalFile, SignalMeta } from "./schema";
 import { SEEDS } from "./seeds";
 import { activeByTopic } from "./balance";
-import { select, topicCounts } from "./select";
+import { publishAll, topicCounts } from "./select";
 import type { CurationCache, PublicationPool } from "./state";
 
 const args = new Set(process.argv.slice(2));
@@ -112,11 +112,10 @@ async function main() {
       room[t]++;
     }
   }
-  const ttl = Date.now() - config.cacheTtlDays * 86_400_000;
-  for (const [url, e] of Object.entries(cache)) if (Date.parse(e.lastSeenAt) < ttl) delete cache[url];
+  // Nothing is ever deleted: every verdict is kept, and every accepted essay stays published.
 
   // 6. Select + publish.
-  const items = select(cache, week);
+  const items = publishAll(cache);
   const file: SignalFile = { version: week, generatedAt: now, items };
   const meta: SignalMeta = {
     version: week,

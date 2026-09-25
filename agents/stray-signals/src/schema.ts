@@ -22,6 +22,25 @@ export const TOPIC_LABELS: Record<Topic, string> = {
   ideas: "Ideas & theories",
 };
 
+/**
+ * Editorial tilt, shared by the agent and the site. Thoughts outside work first: more
+ * philosophy, psychology and clear thinking, less science. The agent uses these to size
+ * publication targets and its judging budget; the site uses them to choose which topic
+ * each catch comes from, so the balance holds however large the library grows.
+ */
+export const TOPIC_WEIGHTS: Record<Topic, number> = {
+  philosophy: 1.3,
+  psychology: 1.3,
+  thinking: 1.2,
+  ideas: 1.1,
+  nature: 1.0,
+  poetry: 1.0,
+  writing: 1.0,
+  money: 0.9,
+  space: 0.8,
+  science: 0.5,
+};
+
 /** Chip labels for the "retune" picker. */
 export const TOPIC_SHORT: Record<Topic, string> = {
   philosophy: "Philosophy",
@@ -50,6 +69,8 @@ export type Signal = {
   /** One-line teaser written by the curator. */
   hook: string;
   publishedAt: string | null;
+  /** Ranking hint (about 4-25): quality, plus bonuses for five-minute reads and memorable quotes. */
+  score?: number;
 };
 
 /** The file the website serves from: apps/web/src/content/signals.json */

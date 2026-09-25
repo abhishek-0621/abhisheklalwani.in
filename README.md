@@ -33,7 +33,7 @@ A project with a live app gets its own Vercel project on a subdomain (`<slug>.ab
 
 ## Stray Signals (easter egg + agent)
 
-A small signal peeks in from a screen edge now and then; clicking it reveals a quote and a link to one essay. Each visitor gets a different essay; none repeats until the week's list (up to 500) is used up.
+A small signal peeks in from a screen edge now and then; clicking it reveals a quote and a link to one essay. Every accepted essay stays in a library that only grows. Each catch picks a topic by editorial weight (`TOPIC_WEIGHTS` in `agents/stray-signals/src/schema.ts`), then the visitor's next unseen essay in that topic.
 
 **Agent** — `agents/stray-signals`, runs on this Mac with Ollama (`phi4:14b` by default):
 
@@ -47,7 +47,7 @@ npm run signals:uninstall
 ```
 
 Pipeline: collect (RSS + most-liked archive) → discover (Substack recommendation graph + category leaderboards, screened by the model) → term-density guards (tech / politics) → curate (4-criteria rubric, topic, quote) → verbatim quote check → select (caps per publication and topic) → write `apps/web/src/content/signals.json`.
-State lives in `agents/stray-signals/data/` (publication pool, verdict cache, last-run report). Env knobs: `STRAY_SIGNALS_MODEL`, `STRAY_SIGNALS_MAX_NEW`, `STRAY_SIGNALS_MIN_SCORE`, `STRAY_SIGNALS_TARGET`.
+State lives in `agents/stray-signals/data/` (publication pool, verdict cache, last-run report). Env knobs: `STRAY_SIGNALS_MODEL`, `STRAY_SIGNALS_MAX_NEW`, `STRAY_SIGNALS_MIN_SCORE`. Verdicts are never deleted.
 
 **Serving** — `GET /api/signal?s=<seed>&n=<count>` is stateless: each visitor's browser keeps a random seed and a catch counter in localStorage, and the server returns position n of that visitor's seeded shuffle. No repeats per visitor until the list is exhausted; no database needed. The footer's "Catch a stray signal" opens it on demand.
 

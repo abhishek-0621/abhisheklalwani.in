@@ -15,7 +15,7 @@ The essays are chosen by an agent, not by me. Every week it goes looking for wri
     { label: "Guard", detail: "Counts technology and partisan terms per thousand words. Anything saturated is dropped before a model call is spent." },
     { label: "Curate", detail: "A local model scores originality, depth, craft and timelessness, flags tech, shallow or partisan pieces, labels the topic and picks a passage.", model: true },
     { label: "Verify", detail: "The quote must appear word-for-word in the source. One chance to fix it, then the essay is dropped rather than misquoted." },
-    { label: "Select & serve", detail: "Top 500 by score, freshness and a weekly jitter, capped per publication and per topic. Each visitor walks their own seeded shuffle of the list." },
+    { label: "Publish & serve", detail: "Every accepted essay joins a library that only grows. Each catch picks a topic by editorial weight, then the visitor's next unseen essay in it." },
   ]}
 />
 
@@ -51,6 +51,8 @@ phi4 is slower but judges like an editor, so it is the default. The weekly run o
 
 ## Handing out the links
 
-There is no database. The week's list ships with the site as JSON, and each visitor's browser keeps two things: a random seed and a count of how many signals they have caught. The server turns those into position *n* of a shuffle seeded by that visitor, so every catch is a new essay, nobody repeats until they have been through the whole list, and different visitors wander through it in different orders. Bots are turned away, and nothing is fetched until you actually click.
+Nothing is ever thrown away. Every essay the curator accepts joins a library that only grows, and the site ships it as JSON. There is no database: each visitor's browser keeps a random seed and a count of how many signals they have caught.
+
+Each catch is chosen in two steps. First a topic, from a weighted round-robin that favours philosophy, psychology and clear thinking over science, so the balance holds however lopsided the library becomes. Then the visitor's next unseen essay within that topic, from a shuffle that leans toward five-minute reads and quotes that stand on their own. Nobody sees a repeat within a topic until they have read all of it. Bots are turned away, and nothing is fetched until you actually click.
 
 If you never manage to catch it, there is a quieter way in at the bottom of every page.

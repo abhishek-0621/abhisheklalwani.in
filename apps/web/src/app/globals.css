@@ -211,6 +211,38 @@ html[data-seen] {
   from { opacity: 0; transform: translateY(0.75rem); filter: blur(6px); }
 }
 
+/* Shuffle: two ghost cards fan out from behind the card and riffle back in. */
+.signal-deck::before,
+.signal-deck::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  border: 1px solid var(--color-line-strong);
+  background: var(--color-ink-raised);
+  opacity: 0;
+}
+.signal-deck[data-shuffling] { animation: deck-main 950ms var(--ease-spring); }
+.signal-deck[data-shuffling]::before { animation: deck-left 950ms var(--ease-spring); }
+.signal-deck[data-shuffling]::after { animation: deck-right 950ms var(--ease-spring); }
+@keyframes deck-main {
+  30% { transform: translateY(-8px) rotate(1.5deg) scale(0.97); }
+  62% { transform: translateY(2px) rotate(-1deg); }
+}
+@keyframes deck-left {
+  0% { opacity: 0; transform: none; }
+  30% { opacity: 1; transform: translate(-34px, 6px) rotate(-8deg); }
+  62% { opacity: 1; transform: translate(12px, -2px) rotate(3deg); }
+  100% { opacity: 0; transform: none; }
+}
+@keyframes deck-right {
+  0% { opacity: 0; transform: none; }
+  30% { opacity: 1; transform: translate(34px, 10px) rotate(8deg); }
+  62% { opacity: 1; transform: translate(-12px, 2px) rotate(-3deg); }
+  100% { opacity: 0; transform: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

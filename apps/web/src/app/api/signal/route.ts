@@ -1,6 +1,6 @@
 import { TOPIC_LABELS } from "@al/stray-signals/schema";
 import { NextResponse, type NextRequest } from "next/server";
-import { pickSignal, signalCount, signalVersion } from "@/lib/signals";
+import { pickSignal, signalVersion } from "@/lib/signals";
 
 export const dynamic = "force-dynamic";
 
@@ -23,7 +23,7 @@ export function GET(req: NextRequest) {
   if (!picked) return new NextResponse(null, { status: 204 });
 
   return NextResponse.json(
-    { ...picked.signal, topicLabel: TOPIC_LABELS[picked.signal.topic], ordinal: picked.ordinal, total: signalCount(), version: signalVersion() },
+    { ...picked.signal, topicLabel: TOPIC_LABELS[picked.signal.topic], version: signalVersion() },
     { headers: { "cache-control": "private, no-store" } },
   );
 }

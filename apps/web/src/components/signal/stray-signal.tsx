@@ -2,7 +2,7 @@
 
 import { cn } from "@al/ui/cn";
 import { Orb } from "@al/ui/orb";
-import { ArrowUpRight, X } from "@phosphor-icons/react";
+import { ArrowUpRight, Shuffle, X } from "@phosphor-icons/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SignalGlyph } from "./signal-glyph";
 
@@ -15,8 +15,6 @@ type Payload = {
   topicLabel: string;
   quote: string;
   hook: string;
-  ordinal: number;
-  total: number;
 };
 
 type Edge = "left" | "right" | "bottom";
@@ -49,6 +47,7 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
   const [open, setOpen] = useState(false);
   const [state, setState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [signal, setSignal] = useState<Payload | null>(null);
+  const [shuffling, setShuffling] = useState(false);
   const timers = useRef<number[]>([]);
   const dialogRef = useRef<HTMLDivElement>(null);
 
@@ -83,7 +82,17 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
     return () => t.forEach(clearTimeout);
   }, []);
 
-  // Every catch tunes into the next essay in this visitor's shuffle — no repeats until they have seen them all.
+  /** The next essay in this visitor's personal order — no repeats until they have seen the whole library. */
+  const fetchNext = async (): Promise<Payload> => {
+    const cursor = readCursor();
+    const res = await fetch(`/api/signal?s=${cursor.seed}&n=${cursor.n}`, { cache: "no-store" });
+    if (res.status !== 200) throw new Error(String(res.status));
+    const data = (await res.json()) as Payload;
+    writeCursor({ seed: cursor.seed, n: cursor.n + 1 });
+    return data;
+  };
+  const atLeast = (started: number, ms: number) => new Promise((r) => setTimeout(r, Math.max(0, ms - (performance.now() - started))));
+
   const tuneIn = useCallback(async () => {
     setOpen(true);
     setShown(false);
@@ -91,19 +100,31 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
     setState("loading");
     const started = performance.now();
     try {
-      const cursor = readCursor();
-      const res = await fetch(`/api/signal?s=${cursor.seed}&n=${cursor.n}`, { cache: "no-store" });
-      if (res.status !== 200) throw new Error(String(res.status));
-      const data = (await res.json()) as Payload;
-      writeCursor({ seed: cursor.seed, n: cursor.n + 1 });
+      const data = await fetchNext();
       // Let the orb breathe for a beat — the reveal should feel like tuning in, not a page load.
-      await new Promise((r) => setTimeout(r, Math.max(0, 900 - (performance.now() - started))));
+      await atLeast(started, 900);
       setSignal(data);
       setState("ready");
     } catch {
       setState("error");
     }
   }, []);
+
+  // Shuffle: the card fans into a small deck, riffles, and deals the next essay.
+  const shuffle = async () => {
+    if (shuffling) return;
+    setShuffling(true);
+    const started = performance.now();
+    try {
+      const data = await fetchNext();
+      await atLeast(started, 950);
+      setSignal(data);
+    } catch {
+      setState("error");
+    } finally {
+      setShuffling(false);
+    }
+  };
 
   useEffect(() => {
     if (openOnMount) void tuneIn();
@@ -163,7 +184,10 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
           tabIndex={-1}
           className="signal-card fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-[55] outline-none sm:inset-x-auto sm:bottom-6 sm:left-6 sm:w-[27rem]"
         >
-          <div className="rounded-[var(--radius-shell)] border border-line-strong bg-ink/80 p-1.5 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+          <div
+            data-shuffling={shuffling || undefined}
+            className="signal-deck relative isolate rounded-[var(--radius-shell)] border border-line-strong bg-ink/80 p-1.5 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] backdrop-blur-2xl"
+          >
             <div className="relative rounded-[var(--radius-core)] bg-ink-raised/95 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-6">
               <button
                 type="button"
@@ -177,11 +201,6 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
               <p id="signal-title" className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.24em] text-fg-faint">
                 <span className="size-1.5 rounded-full bg-accent" />
                 Stray signal
-                {signal && (
-                  <span className="text-fg-muted">
-                    — {String(signal.ordinal).padStart(3, "0")} / {signal.total}
-                  </span>
-                )}
               </p>
 
               <div aria-live="polite">
@@ -202,7 +221,10 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
                 )}
 
                 {state === "ready" && signal && (
-                  <div className="signal-reveal">
+                  <div
+                    key={signal.id}
+                    className={cn("signal-reveal transition-[opacity,filter] duration-300", shuffling && "opacity-15 blur-[3px]")}
+                  >
                     <blockquote className="mt-5 font-serif text-[1.45rem] italic leading-[1.3] tracking-[-0.01em] text-fg sm:text-[1.6rem]">
                       &ldquo;{signal.quote}&rdquo;
                     </blockquote>
@@ -216,6 +238,20 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
                       <span className="rounded-full border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-fg-muted">
                         {signal.topicLabel}
                       </span>
+                      <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => void shuffle()}
+                        aria-label="Shuffle — deal another essay"
+                        title="Shuffle"
+                        className="group flex size-11 items-center justify-center rounded-full border border-line-strong text-fg transition-[transform,border-color] duration-500 ease-[var(--ease-spring)] hover:border-fg-muted active:scale-95"
+                      >
+                        {shuffling ? (
+                          <Orb state="working" size={20} label="Shuffling" />
+                        ) : (
+                          <Shuffle size={16} weight="light" className="transition-transform duration-500 ease-[var(--ease-spring)] group-hover:rotate-180" />
+                        )}
+                      </button>
                       <a
                         href={signal.url}
                         target="_blank"
@@ -227,6 +263,7 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
                           <ArrowUpRight size={14} weight="light" />
                         </span>
                       </a>
+                      </div>
                     </div>
                   </div>
                 )}

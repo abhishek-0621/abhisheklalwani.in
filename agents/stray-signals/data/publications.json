@@ -49,8 +49,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0
   },
   "agnescallard.substack.com": {
     "host": "agnescallard.substack.com",
@@ -61,12 +62,14 @@
       "philosophy"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 0,
-    "runsWithoutYield": 3,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 4,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0,
+    "note": "no accepted essays after 4 runs"
   },
   "bigthinkbooks.substack.com": {
     "host": "bigthinkbooks.substack.com",
@@ -195,12 +198,14 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 0,
-    "runsWithoutYield": 3,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 4,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0,
+    "note": "no accepted essays after 4 runs"
   },
   "counterfeitbees.substack.com": {
     "host": "counterfeitbees.substack.com",
@@ -230,8 +235,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0
   },
   "dgardner.substack.com": {
     "host": "dgardner.substack.com",
@@ -285,8 +291,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 8,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0
   },
   "erikaaldendeb.substack.com": {
     "host": "erikaaldendeb.substack.com",
@@ -302,6 +309,23 @@
     "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The main subject of Erika’s Newsletter is biological engineering, which does not align with the specified topics of philosophy, money and economics, science, deep space, or big ideas or theories. While it "
+  },
+  "georgesaunders.substack.com": {
+    "host": "georgesaunders.substack.com",
+    "name": "Story Club with George Saunders",
+    "id": 567420,
+    "description": "",
+    "topics": [
+      "writing"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "grillbert.substack.com": {
     "host": "grillbert.substack.com",
@@ -333,8 +357,26 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0
+  },
+  "jamescrews.substack.com": {
+    "host": "jamescrews.substack.com",
+    "name": "Poetry Is Life",
+    "id": 1487227,
+    "description": "",
+    "topics": [
+      "poetry"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 3,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "joecarlsmith.substack.com": {
     "host": "joecarlsmith.substack.com",
@@ -349,8 +391,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 2,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 5,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0
   },
   "josieapeters.substack.com": {
     "host": "josieapeters.substack.com",
@@ -391,8 +434,27 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 2,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 5,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0
+  },
+  "katherinemay.substack.com": {
+    "host": "katherinemay.substack.com",
+    "name": "The Clearing by Katherine May",
+    "id": 50706,
+    "description": "",
+    "topics": [
+      "writing",
+      "nature"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 4,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "kyla.substack.com": {
     "host": "kyla.substack.com",
@@ -403,12 +465,49 @@
       "money"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 0,
-    "runsWithoutYield": 3,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 4,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0,
+    "note": "no accepted essays after 4 runs"
+  },
+  "lauraerickson.substack.com": {
+    "host": "lauraerickson.substack.com",
+    "name": "Laura Erickson's For the Birds",
+    "id": 1499424,
+    "description": "",
+    "topics": [
+      "nature"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 2,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
+  },
+  "maggiesmith.substack.com": {
+    "host": "maggiesmith.substack.com",
+    "name": "For Dear Life with Maggie Smith",
+    "id": 999179,
+    "description": "",
+    "topics": [
+      "poetry",
+      "writing"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "map.simonsarris.com": {
     "host": "map.simonsarris.com",
@@ -468,9 +567,28 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 7,
-    "runsWithoutYield": 0,
+    "runsWithoutYield": 3,
     "lastRecsCrawlAt": null,
-    "note": "rec:startswithabang.substack.com — The publication 'Mini Philosophy' appears to focus on exploring philosophical ideas, which aligns with the 'philosophy' topic of interest for 'Stray Signals'. The tagline suggests that it features essays o"
+    "note": "rec:startswithabang.substack.com — The publication 'Mini Philosophy' appears to focus on exploring philosophical ideas, which aligns with the 'philosophy' topic of interest for 'Stray Signals'. The tagline suggests that it features essays o",
+    "failStreak": 0
+  },
+  "mycostories.substack.com": {
+    "host": "mycostories.substack.com",
+    "name": "MycoStories",
+    "id": 3077856,
+    "description": "",
+    "topics": [
+      "nature",
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "nabeelqu.substack.com": {
     "host": "nabeelqu.substack.com",
@@ -508,6 +626,75 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.henrikkarlsson.xyz — The publication 'Monomythical' does not fit the criteria for 'Stray Signals' because its main subject is about living life online, which does not align with the specified topics of philosophy, money and economic"
   },
+  "nerdyaboutnature.substack.com": {
+    "host": "nerdyaboutnature.substack.com",
+    "name": "Nerdy About Nature",
+    "id": 3770931,
+    "description": "",
+    "topics": [
+      "nature",
+      "science"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
+  },
+  "ordinaryplots.substack.com": {
+    "host": "ordinaryplots.substack.com",
+    "name": "Ordinary Plots: Meditations on Poems + Verse",
+    "id": 56151,
+    "description": "",
+    "topics": [
+      "poetry"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 3,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
+  },
+  "oxfordpoetry.substack.com": {
+    "host": "oxfordpoetry.substack.com",
+    "name": "Oxford Poetry’s Substack",
+    "id": 4129926,
+    "description": "",
+    "topics": [
+      "poetry"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
+  },
+  "paulbloom.substack.com": {
+    "host": "paulbloom.substack.com",
+    "name": "Small Potatoes",
+    "id": 1900014,
+    "description": "",
+    "topics": [
+      "psychology"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 5,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
+  },
   "philosophybear.substack.com": {
     "host": "philosophybear.substack.com",
     "name": "Philosophy bear",
@@ -521,8 +708,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 7,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "planetocracy.org": {
     "host": "planetocracy.org",
@@ -538,8 +726,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "rabbitcavern.substack.com": {
     "host": "rabbitcavern.substack.com",
@@ -601,8 +790,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "someunpleasant.substack.com": {
     "host": "someunpleasant.substack.com",
@@ -618,9 +808,10 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 3,
-    "runsWithoutYield": 0,
+    "runsWithoutYield": 3,
     "lastRecsCrawlAt": null,
-    "note": "rec:www.experimental-history.com — The publication 'Some Unpleasant Arithmetic' fits the criteria for 'Stray Signals' as it focuses on economics, which is part of the money and economics category. The tagline indicates it deals with the 'di"
+    "note": "rec:www.experimental-history.com — The publication 'Some Unpleasant Arithmetic' fits the criteria for 'Stray Signals' as it focuses on economics, which is part of the money and economics category. The tagline indicates it deals with the 'di",
+    "failStreak": 0
   },
   "startalk.substack.com": {
     "host": "startalk.substack.com",
@@ -632,12 +823,14 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 0,
-    "runsWithoutYield": 3,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 4,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0,
+    "note": "no accepted essays after 4 runs"
   },
   "startswithabang.substack.com": {
     "host": "startswithabang.substack.com",
@@ -653,8 +846,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 12,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0
   },
   "stuartritchie.substack.com": {
     "host": "stuartritchie.substack.com",
@@ -669,8 +863,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "taxa.substack.com": {
     "host": "taxa.substack.com",
@@ -700,8 +895,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "thephysicsjournal.substack.com": {
     "host": "thephysicsjournal.substack.com",
@@ -717,8 +913,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 4,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 1
   },
   "visakanv.substack.com": {
     "host": "visakanv.substack.com",
@@ -764,8 +961,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 3,
     "accepted": 6,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "www.apricitas.io": {
     "host": "www.apricitas.io",
@@ -776,12 +974,14 @@
       "money"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 2,
     "accepted": 0,
-    "runsWithoutYield": 3,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 4,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0,
+    "note": "no accepted essays after 4 runs"
   },
   "www.astralcodexten.com": {
     "host": "www.astralcodexten.com",
@@ -797,8 +997,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 1,
     "accepted": 3,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 1
   },
   "www.cantgetmuchhigher.com": {
     "host": "www.cantgetmuchhigher.com",
@@ -815,6 +1016,23 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Can't Get Much Higher' focuses on the intersection of music and data, which does not align with the main subjects of philosophy, money and economics, science, deep space, or big ideas or t"
   },
+  "www.commonreader.co.uk": {
+    "host": "www.commonreader.co.uk",
+    "name": "The Common Reader",
+    "id": 120973,
+    "description": "",
+    "topics": [
+      "writing"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 1,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 1
+  },
   "www.derekthompson.org": {
     "host": "www.derekthompson.org",
     "name": "Derek Thompson",
@@ -830,6 +1048,24 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com, rec:erictopol.substack.com, rec:kyla.substack.com — The publication by Derek Thompson, while potentially insightful, does not fit the criteria for 'Stray Signals' because it covers a wide variety of topics "
   },
+  "www.everythingisbullshit.blog": {
+    "host": "www.everythingisbullshit.blog",
+    "name": "Everything Is Bullshit",
+    "id": 1490542,
+    "description": "",
+    "topics": [
+      "thinking",
+      "psychology"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 3,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 1
+  },
   "www.experimental-history.com": {
     "host": "www.experimental-history.com",
     "name": "Experimental History",
@@ -844,8 +1080,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 13,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0
   },
   "www.goodthoughts.blog": {
     "host": "www.goodthoughts.blog",
@@ -860,9 +1097,10 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 7,
-    "runsWithoutYield": 0,
+    "runsWithoutYield": 3,
     "lastRecsCrawlAt": null,
-    "note": "rec:joecarlsmith.substack.com — The publication 'Good Thoughts' focuses on consequentialist moral philosophy and analysis, which aligns with the philosophical aspect of the topics we recommend. However, it is important to ensure that the pu"
+    "note": "rec:joecarlsmith.substack.com — The publication 'Good Thoughts' focuses on consequentialist moral philosophy and analysis, which aligns with the philosophical aspect of the topics we recommend. However, it is important to ensure that the pu",
+    "failStreak": 1
   },
   "www.gurwinder.blog": {
     "host": "www.gurwinder.blog",
@@ -870,16 +1108,17 @@
     "id": 589242,
     "description": "",
     "topics": [
-      "ideas",
-      "philosophy"
+      "psychology",
+      "thinking"
     ],
     "source": "seed",
     "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "www.henrikkarlsson.xyz": {
     "host": "www.henrikkarlsson.xyz",
@@ -895,8 +1134,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 10,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z"
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
+    "failStreak": 0
   },
   "www.honest-broker.com": {
     "host": "www.honest-broker.com",
@@ -908,12 +1148,14 @@
       "philosophy"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 0,
-    "runsWithoutYield": 3,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 4,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0,
+    "note": "no accepted essays after 4 runs"
   },
   "www.kitchencounter.blog": {
     "host": "www.kitchencounter.blog",
@@ -937,9 +1179,10 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 6,
-    "runsWithoutYield": 0,
+    "runsWithoutYield": 3,
     "lastRecsCrawlAt": null,
-    "note": "rec:www.experimental-history.com — The publication 'Kitchen Counter' is recommended because it features essays, which aligns with the requirement for 'Stray Signals'. The tagline 'Essays about the world we create' suggests a focus on big id"
+    "note": "rec:www.experimental-history.com — The publication 'Kitchen Counter' is recommended because it features essays, which aligns with the requirement for 'Stray Signals'. The tagline 'Essays about the world we create' suggests a focus on big id",
+    "failStreak": 0
   },
   "www.maximum-progress.com": {
     "host": "www.maximum-progress.com",
@@ -956,9 +1199,10 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 7,
-    "runsWithoutYield": 0,
+    "runsWithoutYield": 3,
     "lastRecsCrawlAt": null,
-    "note": "rec:www.experimental-history.com — The publication 'Maximum Progress' fits the criteria as it focuses on economics, science, and philosophy, which are among the topics of interest for 'Stray Signals'. The tagline indicates that it publishes"
+    "note": "rec:www.experimental-history.com — The publication 'Maximum Progress' fits the criteria as it focuses on economics, science, and philosophy, which are among the topics of interest for 'Stray Signals'. The tagline indicates that it publishes",
+    "failStreak": 0
   },
   "www.mod171.com": {
     "host": "www.mod171.com",
@@ -973,9 +1217,10 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 6,
-    "runsWithoutYield": 0,
+    "runsWithoutYield": 3,
     "lastRecsCrawlAt": null,
-    "note": "rec:www.experimental-history.com — The publication 'MOD 171' seems to focus on the workings of the mind and the process of teaching, which aligns with the topic of science. The tagline suggests an exploration of cognitive processes and the "
+    "note": "rec:www.experimental-history.com — The publication 'MOD 171' seems to focus on the workings of the mind and the process of teaching, which aligns with the topic of science. The tagline suggests an exploration of cognitive processes and the ",
+    "failStreak": 1
   },
   "www.netinterest.co": {
     "host": "www.netinterest.co",
@@ -986,12 +1231,14 @@
       "money"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 1,
     "accepted": 0,
-    "runsWithoutYield": 3,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 4,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0,
+    "note": "no accepted essays after 4 runs"
   },
   "www.noahpinion.blog": {
     "host": "www.noahpinion.blog",
@@ -1002,12 +1249,14 @@
       "money"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 3,
     "accepted": 0,
-    "runsWithoutYield": 3,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 4,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0,
+    "note": "no accepted essays after 4 runs"
   },
   "www.oneusefulthing.org": {
     "host": "www.oneusefulthing.org",
@@ -1024,21 +1273,76 @@
     "lastRecsCrawlAt": null,
     "note": "rec:erictopol.substack.com — The publication 'One Useful Thing' focuses primarily on the implications of AI for work, education, and life. While it may touch on broad themes related to big ideas or theories, its main subject is technology a"
   },
+  "www.optimallyirrational.com": {
+    "host": "www.optimallyirrational.com",
+    "name": "Optimally Irrational",
+    "id": 1631989,
+    "description": "",
+    "topics": [
+      "psychology",
+      "thinking"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 3,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 1
+  },
   "www.overcomingbias.com": {
     "host": "www.overcomingbias.com",
     "name": "Overcoming Bias",
     "id": 1245641,
     "description": "",
     "topics": [
-      "ideas"
+      "ideas",
+      "thinking"
     ],
     "source": "seed",
     "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 6,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
+  },
+  "www.personalcanon.com": {
+    "host": "www.personalcanon.com",
+    "name": "personal canon",
+    "id": 2160572,
+    "description": "",
+    "topics": [
+      "writing",
+      "ideas"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 2,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
+  },
+  "www.robkhenderson.com": {
+    "host": "www.robkhenderson.com",
+    "name": "Rob Henderson's Newsletter",
+    "id": 800237,
+    "description": "",
+    "topics": [
+      "psychology"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 4,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "www.samkriss.com": {
     "host": "www.samkriss.com",
@@ -1054,8 +1358,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "www.science-forever.com": {
     "host": "www.science-forever.com",
@@ -1103,8 +1408,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 1,
     "accepted": 1,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   },
   "www.thepsmiths.com": {
     "host": "www.thepsmiths.com",
@@ -1135,8 +1441,26 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 7,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 1
+  },
+  "www.thescrublands.com": {
+    "host": "www.thescrublands.com",
+    "name": "www.thescrublands.com",
+    "id": 5667946,
+    "description": "",
+    "topics": [
+      "nature"
+    ],
+    "source": "seed",
+    "status": "active",
+    "addedAt": "2026-09-25T20:07:35.003Z",
+    "inDegree": 0,
+    "accepted": 2,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "failStreak": 1
   },
   "www.theseedsofscience.pub": {
     "host": "www.theseedsofscience.pub",
@@ -1151,9 +1475,10 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 11,
-    "runsWithoutYield": 0,
+    "runsWithoutYield": 3,
     "lastRecsCrawlAt": null,
-    "note": "rec:www.experimental-history.com — The publication 'Seeds of Science' focuses on publishing independent research and curating science writing, which aligns with the 'science' topic of interest for 'Stray Signals'. The tagline suggests a foc"
+    "note": "rec:www.experimental-history.com — The publication 'Seeds of Science' focuses on publishing independent research and curating science writing, which aligns with the 'science' topic of interest for 'Stray Signals'. The tagline suggests a foc",
+    "failStreak": 0
   },
   "yourlocalepidemiologist.substack.com": {
     "host": "yourlocalepidemiologist.substack.com",
@@ -1168,7 +1493,8 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
-    "runsWithoutYield": 0,
-    "lastRecsCrawlAt": null
+    "runsWithoutYield": 3,
+    "lastRecsCrawlAt": null,
+    "failStreak": 0
   }
 }
