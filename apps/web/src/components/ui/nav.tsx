@@ -43,6 +43,8 @@ export function Nav() {
           </ul>
           <a
             href={site.links.resume}
+            target="_blank"
+            rel="noopener"
             className="ml-2 hidden rounded-full bg-fg px-4 py-2 text-[13px] font-medium text-ink transition-transform duration-500 ease-[var(--ease-spring)] active:scale-[0.97] md:inline-block"
           >
             Résumé
@@ -73,6 +75,8 @@ export function Nav() {
               <Link
                 href={l.href}
                 prefetch={l.href.endsWith(".pdf") ? false : undefined}
+                target={l.href.endsWith(".pdf") ? "_blank" : undefined}
+                rel={l.href.endsWith(".pdf") ? "noopener" : undefined}
                 onClick={() => setOpen(false)}
                 tabIndex={open ? 0 : -1}
                 className={cn(

@@ -10,14 +10,14 @@ export function Experience() {
       </Heading>
 
       <ol className="relative mt-16 md:mt-20 lg:ml-[30%]">
-        <div aria-hidden className="spine absolute bottom-0 left-[5px] top-2 w-px overflow-hidden">
-          <div className="spine-packet" />
+        <div aria-hidden className="spine absolute bottom-0 left-[5px] top-2 w-px">
+          <div className="spine-fill absolute inset-0" />
         </div>
         {experience.map((e, i) => (
           <li key={e.title} className="reveal relative pb-14 pl-8 last:pb-0 sm:pl-10 md:pb-16" style={stagger(i)}>
             <span
               aria-hidden
-              className={`absolute left-0 top-2 size-[11px] ${e.kind === "role" ? "rotate-45 border border-accent bg-ink" : "rounded-full border border-line-strong bg-ink"}`}
+              className={`timeline-node absolute left-0 top-2 size-[11px] ${e.kind === "role" ? "rotate-45 border border-accent bg-ink" : "rounded-full border border-line-strong bg-ink"}`}
             />
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg-faint lg:absolute lg:-left-[calc(43%+2rem)] lg:top-1 lg:w-[40%] lg:text-right">
               {e.period}

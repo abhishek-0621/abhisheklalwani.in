@@ -2,8 +2,8 @@
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
-import { BufferAttribute, BufferGeometry, Color, ShaderMaterial, Vector4, type Points } from "three";
-import { buildScenes, SCENE_COUNT } from "./shapes";
+import { BufferAttribute, BufferGeometry, Color, DataTexture, FloatType, NearestFilter, RGBAFormat, ShaderMaterial, Vector4, type Points } from "three";
+import { buildAttractor, buildScenes, SCENE_COUNT } from "./shapes";
 import { fragmentShader, vertexShader } from "./shaders";
 
 type Props = {
@@ -50,8 +50,8 @@ function sceneLayout(width: number, height: number) {
   const wide = width >= 1024 && width / height > 1.1;
   // xyz offset, alpha — keeps shapes clear of the copy they sit behind.
   return wide
-    ? [new Vector4(2.1, 0, 0, 0.95), new Vector4(-3.1, 0, -0.5, 0.7), new Vector4(0, 0, -1.5, 0.32), new Vector4(0, 1.2, -2.5, 0.38), new Vector4(0, 0, -2, 0.42)]
-    : [new Vector4(0, 2.4, -1, 0.5), new Vector4(0, 0, -1, 0.35), new Vector4(0, 0, -1.5, 0.22), new Vector4(0, 0, -1, 0.28), new Vector4(0, 0, -1.5, 0.35)];
+    ? [new Vector4(2.4, 0.15, 0, 0.95), new Vector4(-3.1, 0, -0.5, 0.7), new Vector4(0, 0, -1.5, 0.32), new Vector4(-3.2, 0, 0, 0.85), new Vector4(0, 0, -2, 0.42)]
+    : [new Vector4(0, 2.5, -1, 0.6), new Vector4(0, 0, -1, 0.35), new Vector4(0, 0, -1.5, 0.22), new Vector4(0, 0, -1, 0.3), new Vector4(0, 0, -1.5, 0.35)];
 }
 
 function Field({ count, routeKey, onReady }: Props) {
@@ -63,19 +63,23 @@ function Field({ count, routeKey, onReady }: Props) {
   const { size, camera, gl } = useThree();
 
   const geometry = useMemo(() => {
-    const { targets, seed, pulseGraph, pulseFlow } = buildScenes(count);
+    const { targets, seed, flow0, flow3 } = buildScenes(count);
     const g = new BufferGeometry();
     g.setAttribute("position", new BufferAttribute(targets[0], 3));
     for (let s = 1; s < SCENE_COUNT; s++) g.setAttribute(`aT${s}`, new BufferAttribute(targets[s], 3));
     g.setAttribute("aSeed", new BufferAttribute(seed, 4));
-    g.setAttribute("aPulseGraph", new BufferAttribute(pulseGraph, 2));
-    g.setAttribute("aPulseFlow", new BufferAttribute(pulseFlow, 2));
+    g.setAttribute("aFlow0", new BufferAttribute(flow0, 2));
+    g.setAttribute("aFlow3", new BufferAttribute(flow3, 2));
     return g;
   }, [count]);
 
   const material = useMemo(() => {
     const css = getComputedStyle(document.documentElement);
     const token = (name: string, fallback: string) => new Color(css.getPropertyValue(name).trim() || fallback);
+    const attractor = buildAttractor();
+    const attractorTex = new DataTexture(attractor.data, attractor.size, attractor.size, RGBAFormat, FloatType);
+    attractorTex.minFilter = attractorTex.magFilter = NearestFilter;
+    attractorTex.needsUpdate = true;
     return new ShaderMaterial({
       vertexShader,
       fragmentShader,
@@ -89,6 +93,8 @@ function Field({ count, routeKey, onReady }: Props) {
         uScene: { value: sceneLayout(size.width, size.height) },
         uFg: { value: token("--color-fg", "#ededed") },
         uAccent: { value: token("--color-accent", "#ff6a3d") },
+        uAttractor: { value: attractorTex },
+        uAttractorSize: { value: attractor.size },
       },
     });
     // gl/size are read once here; the layout effect below keeps them current.
@@ -96,6 +102,7 @@ function Field({ count, routeKey, onReady }: Props) {
 
   useEffect(() => () => {
     geometry.dispose();
+    material.uniforms.uAttractor.value.dispose();
     material.dispose();
   }, [geometry, material]);
 

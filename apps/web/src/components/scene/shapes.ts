@@ -1,21 +1,71 @@
 /**
  * Target layouts for the particle field. Every scene uses the same N particles;
- * the vertex shader blends between these buffers as the page scrolls.
+ * the vertex shader blends between them as the page scrolls.
  *
- *   0 graph     — knowledge graph: hub nodes + dotted edges (retrieval pulses)
+ *   0 attractor — particles stream along an Aizawa strange attractor (animated in the shader)
  *   1 clusters  — embedding space: soft semantic clusters
  *   2 layers    — neural net: dotted layer planes + inter-layer connections
- *   3 pipeline  — agent workflow: nodes, a human checkpoint, a tool-call loop
+ *   3 warp      — a tunnel of twisting rings streaming toward the viewer (animated in the shader)
  *   4 sphere    — the orb: fibonacci sphere with two orbit rings
+ *
+ * Scenes 0 and 3 store parameters, not positions: the shader computes where each
+ * particle is from time, so those scenes keep moving instead of holding a pose.
  */
 export const SCENE_COUNT = 5;
 
 export type SceneBuffers = {
-  targets: Float32Array[]; // SCENE_COUNT × (N*3)
+  /** SCENE_COUNT × (N*3). Scene 0: (phase, jitterA, jitterB). Scene 3: (angle, radius, phase). */
+  targets: Float32Array[];
   seed: Float32Array; // N*4: size, phase, twinkle, stagger
-  pulseGraph: Float32Array; // N*2: t along edge (-1 = none), edge phase
-  pulseFlow: Float32Array; // N*2: t along pipeline (-1 = none), lane
+  flow0: Float32Array; // N*2: comet flag (1 / -1), speed multiplier
+  flow3: Float32Array; // N*2: packet flag (1 / -1), speed multiplier
 };
+
+/**
+ * Integrates the Aizawa attractor with RK4 and packs it as an RGBA float texture
+ * (xyz, normalised to a radius of ~1). The shader samples it by phase.
+ */
+export function buildAttractor(samples = 16384): { data: Float32Array; size: number } {
+  const a = 0.95, b = 0.7, c = 0.6, d = 3.5, e = 0.25, f = 0.1;
+  const deriv = (x: number, y: number, z: number): [number, number, number] => [
+    (z - b) * x - d * y,
+    d * x + (z - b) * y,
+    c + a * z - (z * z * z) / 3 - (x * x + y * y) * (1 + e * z) + f * z * x * x * x,
+  ];
+  const dt = 0.01;
+  let x = 0.1, y = 0, z = 0;
+  for (let i = 0; i < 2000; i++) {
+    // settle onto the attractor before recording
+    const k = deriv(x, y, z);
+    x += k[0] * dt; y += k[1] * dt; z += k[2] * dt;
+  }
+  const size = Math.ceil(Math.sqrt(samples));
+  const data = new Float32Array(size * size * 4);
+  const pts: [number, number, number][] = [];
+  for (let i = 0; i < size * size; i++) {
+    const k1 = deriv(x, y, z);
+    const k2 = deriv(x + (k1[0] * dt) / 2, y + (k1[1] * dt) / 2, z + (k1[2] * dt) / 2);
+    const k3 = deriv(x + (k2[0] * dt) / 2, y + (k2[1] * dt) / 2, z + (k2[2] * dt) / 2);
+    const k4 = deriv(x + k3[0] * dt, y + k3[1] * dt, z + k3[2] * dt);
+    x += ((k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0]) * dt) / 6;
+    y += ((k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1]) * dt) / 6;
+    z += ((k1[2] + 2 * k2[2] + 2 * k3[2] + k4[2]) * dt) / 6;
+    pts.push([x, y, z]);
+  }
+  // Centre it, stand its axis upright (attractor z → world y), scale to radius ~1.
+  let cx = 0, cy = 0, cz = 0;
+  for (const p of pts) { cx += p[0]; cy += p[1]; cz += p[2]; }
+  cx /= pts.length; cy /= pts.length; cz /= pts.length;
+  let r = 0;
+  for (const p of pts) r = Math.max(r, Math.hypot(p[0] - cx, p[1] - cy, p[2] - cz));
+  pts.forEach((p, i) => {
+    data[i * 4] = (p[0] - cx) / r;
+    data[i * 4 + 1] = (p[2] - cz) / r;
+    data[i * 4 + 2] = (p[1] - cy) / r;
+    data[i * 4 + 3] = 1;
+  });
+  return { data, size };
+}
 
 function rng(seed: number) {
   let s = seed >>> 0;
@@ -39,8 +89,8 @@ export function buildScenes(n: number): SceneBuffers {
 
   const targets = Array.from({ length: SCENE_COUNT }, () => new Float32Array(n * 3));
   const seed = new Float32Array(n * 4);
-  const pulseGraph = new Float32Array(n * 2).fill(-1);
-  const pulseFlow = new Float32Array(n * 2).fill(-1);
+  const flow0 = new Float32Array(n * 2).fill(-1);
+  const flow3 = new Float32Array(n * 2).fill(-1);
 
   for (let i = 0; i < n; i++) {
     seed[i * 4] = 0.55 + r() * 0.9;
@@ -57,47 +107,13 @@ export function buildScenes(n: number): SceneBuffers {
   const lerp3 = (a: V3, b: V3, t: number): V3 => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
   const jitter = (p: V3, s: number): V3 => [p[0] + gauss() * s, p[1] + gauss() * s, p[2] + gauss() * s];
 
-  /* ---------------- 0 · knowledge graph ---------------- */
-  {
-    const hubs: V3[] = [];
-    for (let h = 0; h < 46; h++) {
-      const u = r() * 2 - 1;
-      const th = r() * Math.PI * 2;
-      const rad = Math.cbrt(r());
-      const s = Math.sqrt(1 - u * u);
-      hubs.push([s * Math.cos(th) * 3.1 * rad, u * 2.1 * rad, s * Math.sin(th) * 1.8 * rad]);
-    }
-    const edges: [number, number][] = [];
-    const seen = new Set<string>();
-    hubs.forEach((a, ai) => {
-      const near = hubs
-        .map((b, bi) => ({ bi, d: (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2 }))
-        .filter((x) => x.bi !== ai)
-        .sort((x, y) => x.d - y.d)
-        .slice(0, r() < 0.3 ? 3 : 2);
-      for (const { bi } of near) {
-        const k = ai < bi ? `${ai}-${bi}` : `${bi}-${ai}`;
-        if (!seen.has(k)) {
-          seen.add(k);
-          edges.push([ai, bi]);
-        }
-      }
-    });
-    const hubShare = Math.floor(n * 0.28);
-    for (let i = 0; i < n; i++) {
-      if (i < hubShare) {
-        const h = hubs[i % hubs.length];
-        const big = i % hubs.length < 8 ? 0.13 : 0.07; // a few "important" entities
-        put(0, i, jitter(h, big));
-      } else {
-        const ei = i % edges.length;
-        const [a, b] = edges[ei];
-        const t = r();
-        put(0, i, jitter(lerp3(hubs[a], hubs[b], t), 0.012));
-        pulseGraph[i * 2] = t;
-        pulseGraph[i * 2 + 1] = (ei * 0.6180339) % 1;
-      }
-    }
+  /* ---------------- 0 · strange attractor ---------------- */
+  // Particles are spread evenly along the trajectory; the shader advances their phase.
+  for (let i = 0; i < n; i++) {
+    put(0, i, [i / n + r() * 0.0004, gauss() * 0.018, gauss() * 0.018]);
+    const comet = r() < 0.012;
+    flow0[i * 2] = comet ? 1 : -1;
+    flow0[i * 2 + 1] = comet ? 3 + r() * 2 : 1;
   }
 
   /* ---------------- 1 · embedding clusters ---------------- */
@@ -146,53 +162,23 @@ export function buildScenes(n: number): SceneBuffers {
     }
   }
 
-  /* ---------------- 3 · agent pipeline ---------------- */
+  /* ---------------- 3 · warp tunnel ---------------- */
+  // Rings of dots stream from a vanishing point toward the viewer; a few streaks and
+  // ember packets spiral through faster. Positions come from (angle, radius, phase) in the shader.
   {
-    const nodeCount = 6;
-    const checkpoint = 3; // human-in-the-loop
-    const nodes: V3[] = Array.from({ length: nodeCount }, (_, k) => {
-      const x = -3.6 + (k / (nodeCount - 1)) * 7.2;
-      return [x, Math.sin(k * 1.1) * 0.55, Math.cos(k * 0.9) * 0.4];
-    });
-    const loopTop = (t: number): V3 => {
-      // tool-call arc from node 1 to node 4
-      const a = nodes[1];
-      const b = nodes[4];
-      const p = lerp3(a, b, t);
-      return [p[0], p[1] + Math.sin(t * Math.PI) * 1.6, p[2] - Math.sin(t * Math.PI) * 0.6];
-    };
-    const ringShare = Math.floor(n * 0.36);
-    const pathShare = Math.floor(n * 0.46);
+    const rings = 20;
     for (let i = 0; i < n; i++) {
-      if (i < ringShare) {
-        const k = i % nodeCount;
-        const c = nodes[k];
-        const th = r() * Math.PI * 2;
-        if (k === checkpoint) {
-          // diamond outline
-          const q = (th / (Math.PI * 2)) * 4;
-          const side = Math.floor(q);
-          const f = q - side;
-          const corners: [number, number][] = [[0, 0.42], [0.42, 0], [0, -0.42], [-0.42, 0]];
-          const p0 = corners[side];
-          const p1 = corners[(side + 1) % 4];
-          put(3, i, jitter([c[0] + p0[0] + (p1[0] - p0[0]) * f, c[1] + p0[1] + (p1[1] - p0[1]) * f, c[2]], 0.01));
-        } else {
-          const rad = 0.3 + (r() < 0.25 ? 0.12 : 0);
-          put(3, i, jitter([c[0] + Math.cos(th) * rad, c[1] + Math.sin(th) * rad, c[2]], 0.01));
-        }
-      } else if (i < ringShare + pathShare) {
-        const seg = Math.floor(r() * (nodeCount - 1));
-        const t = r();
-        put(3, i, jitter(lerp3(nodes[seg], nodes[seg + 1], t), 0.01));
-        pulseFlow[i * 2] = (seg + t) / (nodeCount - 1);
-        pulseFlow[i * 2 + 1] = 0;
+      const kind = r();
+      const angle = r() * Math.PI * 2;
+      if (kind < 0.72) {
+        const ring = Math.floor(r() * rings);
+        put(3, i, [angle, 1.7 + gauss() * 0.025, ring / rings + gauss() * 0.001]);
       } else {
-        const t = r();
-        put(3, i, jitter(loopTop(t), 0.012));
-        pulseFlow[i * 2] = t;
-        pulseFlow[i * 2 + 1] = 1;
+        put(3, i, [angle, 0.5 + r() * 2.4, r()]);
       }
+      const packet = kind > 0.975;
+      flow3[i * 2] = packet ? 1 : -1;
+      flow3[i * 2 + 1] = packet ? 2.5 + r() * 1.5 : kind < 0.72 ? 1 : 1.6;
     }
   }
 
@@ -218,5 +204,5 @@ export function buildScenes(n: number): SceneBuffers {
     }
   }
 
-  return { targets, seed, pulseGraph, pulseFlow };
+  return { targets, seed, flow0, flow3 };
 }

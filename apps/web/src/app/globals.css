@@ -100,25 +100,46 @@ html[data-seen] {
 .spine {
   background: linear-gradient(to bottom, transparent, var(--color-line-strong) 8%, var(--color-line-strong) 92%, transparent);
 }
-.spine-packet {
-  position: absolute;
-  inset: 0;
-  transform: translate3d(0, -100%, 0);
-  animation: packet 5s var(--ease-spring) infinite;
+/* The line fills with ember as the visitor scrolls through the timeline (native scroll-driven animation). */
+.spine-fill {
+  transform-origin: top;
+  background: linear-gradient(to bottom, rgb(255 106 61 / 0.15), var(--color-accent));
+  box-shadow: 0 0 12px rgb(255 106 61 / 0.45);
+  animation: spine-grow linear both;
+  animation-timeline: view();
+  animation-range: cover 5% cover 65%;
 }
-.spine-packet::after {
+@keyframes spine-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@supports not (animation-timeline: view()) {
+  .spine-fill { opacity: 0.45; }
+}
+/* Each stage lights up as it arrives, with one ring pulse. */
+.timeline-node {
+  transition: background-color 600ms var(--ease-out-expo), box-shadow 600ms var(--ease-out-expo);
+}
+.reveal[data-in] > .timeline-node {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 14px rgb(255 106 61 / 0.6);
+  transition-delay: 350ms;
+}
+.timeline-node::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 1px;
-  height: 5rem;
-  background: linear-gradient(to bottom, transparent, var(--color-accent));
+  inset: -1px;
+  border: 1px solid var(--color-accent);
+  border-radius: inherit;
+  opacity: 0;
 }
-@keyframes packet {
-  to {
-    transform: translate3d(0, 0, 0);
-  }
+.reveal[data-in] > .timeline-node::after {
+  animation: node-ping 1.6s var(--ease-out-expo) 350ms;
+}
+@keyframes node-ping {
+  from { opacity: 0.9; transform: scale(1); }
+  to { opacity: 0; transform: scale(3.2); }
 }
 
 /* ---------- SVG flow dashes (architecture diagrams) ---------- */

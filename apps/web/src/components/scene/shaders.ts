@@ -4,17 +4,31 @@ uniform float uProgress;
 uniform float uPixelRatio;
 uniform float uSize;
 uniform vec4 uScene[5];
+uniform sampler2D uAttractor;
+uniform float uAttractorSize;   // texture is size x size samples
 
 attribute vec3 aT1;
 attribute vec3 aT2;
-attribute vec3 aT3;
+attribute vec3 aT3;             // warp: angle, radius, phase
 attribute vec3 aT4;
-attribute vec4 aSeed;        // size, phase, twinkle, stagger
-attribute vec2 aPulseGraph;  // t along edge, edge phase
-attribute vec2 aPulseFlow;   // t along pipeline, lane
+attribute vec4 aSeed;           // size, phase, twinkle, stagger
+attribute vec2 aFlow0;          // attractor: comet flag, speed
+attribute vec2 aFlow3;          // warp: packet flag, speed
 
 varying float vAlpha;
 varying float vPulse;
+
+vec3 attractorAt(float t) {
+  float n = uAttractorSize * uAttractorSize;
+  float fi = t * (n - 2.0);
+  float i0 = floor(fi);
+  float i1 = i0 + 1.0;
+  vec2 uv0 = (vec2(mod(i0, uAttractorSize), floor(i0 / uAttractorSize)) + 0.5) / uAttractorSize;
+  vec2 uv1 = (vec2(mod(i1, uAttractorSize), floor(i1 / uAttractorSize)) + 0.5) / uAttractorSize;
+  return mix(texture2D(uAttractor, uv0).xyz, texture2D(uAttractor, uv1).xyz, fi - i0);
+}
+
+mat2 rot(float a) { float c = cos(a), s = sin(a); return mat2(c, -s, s, c); }
 
 void main() {
   // Per-particle staggered morph so shapes dissolve and re-form organically.
@@ -29,40 +43,42 @@ void main() {
   float w3 = max(0.0, 1.0 - abs(pp - 3.0));
   float w4 = max(0.0, 1.0 - abs(pp - 4.0));
 
-  vec3 p = position * w0 + aT1 * w1 + aT2 * w2 + aT3 * w3 + aT4 * w4;
+  // 0 - strange attractor: each particle rides the trajectory; comets overtake.
+  bool comet = aFlow0.x > 0.0;
+  float t0 = fract(position.x + uTime * 0.0035 * aFlow0.y);
+  vec3 p0 = attractorAt(t0) * 1.6 + vec3(position.y, position.z, (aSeed.z - 0.5) * 0.03);
+  p0.xz = rot(uTime * 0.06) * p0.xz;
+
+  // 3 - warp tunnel: rings rush from the vanishing point toward the viewer, twisting.
+  float ph = fract(aT3.z + uTime * 0.035 * aFlow3.y);
+  float tz = mix(-22.0, 3.0, ph * ph);
+  float twist = aT3.x + tz * 0.09 + uTime * 0.12 * (aFlow3.x > 0.0 ? 2.5 : 1.0);
+  float radius = aT3.y * (1.0 + 0.07 * sin(tz * 0.5 - uTime * 1.3));
+  vec3 p3 = vec3(cos(twist) * radius, sin(twist) * radius, tz);
+  float tunnelFade = smoothstep(0.0, 0.2, ph) * (1.0 - smoothstep(0.82, 1.0, ph));
+
+  vec3 p = p0 * w0 + aT1 * w1 + aT2 * w2 + p3 * w3 + aT4 * w4;
   vec4 sc = uScene[0] * w0 + uScene[1] * w1 + uScene[2] * w2 + uScene[3] * w3 + uScene[4] * w4;
   p += sc.xyz;
 
   // Idle drift + a swarm-like swirl while in transit between shapes.
   float transit = sin(3.14159265 * fs);
-  float ph = aSeed.y;
-  p += vec3(sin(ph + uTime * 0.7), cos(ph * 1.3 + uTime * 0.6), sin(ph * 0.7 + uTime * 0.5)) * (0.018 + transit * 0.4);
+  float seedPh = aSeed.y;
+  p += vec3(sin(seedPh + uTime * 0.7), cos(seedPh * 1.3 + uTime * 0.6), sin(seedPh * 0.7 + uTime * 0.5)) * (0.012 + transit * 0.4);
 
-  // Retrieval pulses along a subset of graph edges.
-  float g = 0.0;
-  if (aPulseGraph.x >= 0.0 && fract(aPulseGraph.y * 7.13) > 0.62) {
-    float head = fract(uTime * 0.18 + aPulseGraph.y);
-    float d = head - aPulseGraph.x;
-    g = (d >= 0.0 && d < 0.22) ? 1.0 - d / 0.22 : 0.0;
-  }
-  // Packets travelling through the agent pipeline (lane 1 = tool-call loop).
-  float f = 0.0;
-  if (aPulseFlow.x >= 0.0) {
-    float head = fract(uTime * (0.09 + aPulseFlow.y * 0.05) + aPulseFlow.y * 0.37);
-    float d = head - aPulseFlow.x;
-    f = (d >= 0.0 && d < 0.07) ? 1.0 - d / 0.07 : 0.0;
-  }
-  float pulse = g * w0 + f * w3;
+  float pulse = (comet ? 1.0 : 0.0) * w0 + (aFlow3.x > 0.0 ? 1.0 : 0.0) * w3;
   vPulse = pulse;
 
   vec4 mv = modelViewMatrix * vec4(p, 1.0);
   gl_Position = projectionMatrix * mv;
 
-  float twinkle = 0.72 + 0.28 * sin(uTime * 1.3 + ph * 3.0 + aSeed.z * 6.28);
-  gl_PointSize = uSize * aSeed.x * (1.0 + pulse * 1.4) * uPixelRatio / -mv.z;
+  float twinkle = 0.72 + 0.28 * sin(uTime * 1.3 + seedPh * 3.0 + aSeed.z * 6.28);
+  float sizeBoost = 1.0 + pulse * 1.3;
+  gl_PointSize = min(uSize * aSeed.x * sizeBoost * uPixelRatio / -mv.z, 7.0 * uPixelRatio);
 
-  float depth = smoothstep(16.0, 4.0, -mv.z);
-  vAlpha = sc.w * twinkle * (0.3 + 0.7 * depth);
+  float depth = smoothstep(26.0, 4.0, -mv.z);
+  float nearFade = smoothstep(0.8, 3.0, -mv.z);
+  vAlpha = sc.w * twinkle * (0.3 + 0.7 * depth) * nearFade * mix(1.0, tunnelFade, w3);
 }
 `;
 
