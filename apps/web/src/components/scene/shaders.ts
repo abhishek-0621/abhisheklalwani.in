@@ -15,7 +15,7 @@ attribute vec3 aT3;             // warp: angle, radius, phase
 attribute vec3 aT4;
 attribute vec4 aSeed;           // size, phase, twinkle, stagger
 attribute vec2 aFlow0;          // nebula: hot-spot flag, ejecta flag
-attribute vec2 aFlow2;          // network: t along path (-1 = neuron), path phase
+attribute vec2 aFlow2;          // network: depth 0..1, edge weight (>0) or -activation (neuron)
 attribute vec2 aFlow3;          // warp: packet flag, speed
 
 varying float vAlpha;
@@ -56,23 +56,19 @@ void main() {
   vec3 p1 = g;
   bool youngStar = aSeed.z > 0.986 && aT1.x > 0.4;
 
-  // 2 - neural network: turned to show depth; signals run along the connection paths.
+  // 2 - neural network: one forward-pass wave sweeps input -> output as the page scrolls
+  // (and slowly on its own). Edges light in proportion to their weight; neurons glow as the
+  // wave reaches them and keep a fading afterglow.
   vec3 p2 = aT2;
-  p2.xz = rot(0.75) * p2.xz;
-  p2.yz = rot(-0.18) * p2.yz;
-  float signal = 0.0;
-  float fire = 0.0;
-  if (aFlow2.x >= 0.0) {
-    if (fract(aFlow2.y * 5.37) > 0.4) {
-      float head = fract(uScroll + uTime * 0.05 + aFlow2.y);
-      float d = head - aFlow2.x;
-      signal = (d >= 0.0 && d < 0.1) ? 1.0 - d / 0.1 : 0.0;
-    }
-  } else {
-    // Only a few neurons fire at a time, each briefly.
-    fire = smoothstep(0.985, 1.0, sin(uTime * 1.1 + aSeed.y * 9.0));
-  }
-  float netAlpha = aFlow2.x >= 0.0 ? 0.8 + signal * 1.2 : 1.1 + fire;
+  p2.xz = rot(0.42) * p2.xz;
+  float wave = fract(uScroll * 1.4 + uTime * 0.07) * 1.35 - 0.12;
+  float dd = aFlow2.x - wave;
+  bool neuron = aFlow2.y < 0.0;
+  float lit = neuron ? 0.0 : exp(-(dd * dd) / 0.0011) * aFlow2.y;
+  float act = neuron ? -aFlow2.y : 0.0;
+  float glow = neuron ? act * (exp(-(dd * dd) / 0.004) + (dd < 0.0 ? exp(dd * 7.0) * 0.35 : 0.0)) : 0.0;
+  float netAlpha = neuron ? 1.0 + glow * 1.5 : 0.2 + lit * 3.0;
+  float signal = lit * step(0.5, aFlow2.y) + glow;
 
   // 3 - warp tunnel: rings rush from the vanishing point toward the viewer, twisting.
   float ph = fract(aT3.z + uTime * 0.035 * aFlow3.y);
@@ -95,9 +91,10 @@ void main() {
   // Idle drift + a swarm-like swirl while in transit between shapes.
   float transit = sin(3.14159265 * fs);
   float seedPh = aSeed.y;
-  p += vec3(sin(seedPh + uTime * 0.7), cos(seedPh * 1.3 + uTime * 0.6), sin(seedPh * 0.7 + uTime * 0.5)) * (0.012 + transit * 0.4);
+  // (the network holds still so its lines stay crisp)
+  p += vec3(sin(seedPh + uTime * 0.7), cos(seedPh * 1.3 + uTime * 0.6), sin(seedPh * 0.7 + uTime * 0.5)) * (0.012 * (1.0 - w2) + transit * 0.4);
 
-  float pulse = (hot ? 0.9 + uSurge * 0.6 : 0.0) * w0 + (youngStar ? 0.9 : 0.0) * w1 + (signal + fire * 0.9) * w2 + (aFlow3.x > 0.0 ? 1.0 : 0.0) * w3;
+  float pulse = (hot ? 0.9 + uSurge * 0.6 : 0.0) * w0 + (youngStar ? 0.9 : 0.0) * w1 + signal * w2 + (aFlow3.x > 0.0 ? 1.0 : 0.0) * w3;
   vPulse = pulse;
 
   vec4 mv = modelViewMatrix * vec4(p, 1.0);

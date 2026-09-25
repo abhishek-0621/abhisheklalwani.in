@@ -23,16 +23,17 @@ export const site = {
 } as const;
 
 export const about = {
-  lead: "I turn scattered knowledge into systems you can ask questions of — and trust the answers you get back.",
+  lead: "I build AI systems that turn scattered knowledge into answers people can check — and trust.",
   body: [
-    "For four years at Dassault Systèmes I have worked on both halves of that problem. First the interface: fast, well-tested web components for an enterprise platform used by more than 2,000 people. Now the intelligence: LLM assistants, tool-calling agents that pause for a human before they act, and MCP integrations that let those agents work inside real engineering software.",
-    "Outside work I am finishing an M.Tech in AI & ML at BITS Pilani, where I built GraphMind — hand it documents, code, audio or an entire repository and it gives back a knowledge graph you can explore, query, and pass to other agents. The parts I enjoy most are the unglamorous ones: evaluation, latency, and being able to explain why a model said what it said.",
+    "At Dassault Systèmes I started on the interface side, building web components for an enterprise engineering platform. Today I lead generative-AI work there: assistants grounded in company knowledge, agents that pause for a human before they act, and MCP integrations that let them work inside real engineering tools.",
+    "I hold an M.Tech in Artificial Intelligence & Machine Learning from BITS Pilani. My thesis became GraphMind — give it documents, code, audio or a whole repository and it returns a knowledge graph you can explore, question, and hand to other agents.",
+    "Away from the keyboard I read far outside my field — philosophy, psychology, the odd poem. That is where the stray signals on this site come from.",
   ],
-  stats: [
-    { value: "4+", label: "Years shipping production software" },
-    { value: "60%", label: "Faster document retrieval from a production RAG pipeline" },
-    { value: "1,000+", label: "Users on LLM chatbot workflows" },
-    { value: "2.4×", label: "Lower token cost with graph-first retrieval" },
+  principles: [
+    { word: "Grounded", line: "An answer should point to where it came from." },
+    { word: "Accountable", line: "An agent should know when to stop and ask." },
+    { word: "Measured", line: "If it hasn't been evaluated, it isn't finished." },
+    { word: "Quiet", line: "The best interface is the one nobody notices." },
   ],
   stack: [
     "LangGraph", "MCP", "RAG", "Knowledge Graphs", "Neo4j", "FAISS", "FastAPI",
@@ -74,11 +75,11 @@ export const experience: ExperienceNode[] = [
     ],
   },
   {
-    period: "2024 — Sep 2026",
+    period: "2024 — 2026",
     title: "M.Tech, Artificial Intelligence & Machine Learning",
     org: "BITS Pilani",
     kind: "education",
-    points: ["Thesis project: GraphMind, a knowledge-graph retrieval platform."],
+    points: ["Completed. Thesis: GraphMind, a knowledge-graph retrieval platform."],
   },
   {
     period: "2022",

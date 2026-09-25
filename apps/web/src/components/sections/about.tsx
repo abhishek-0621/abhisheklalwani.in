@@ -17,17 +17,17 @@ export function About() {
           ))}
         </div>
 
-        <dl className="mt-16 grid grid-cols-2 border-t border-line">
-          {about.stats.map((s, i) => (
-            <div key={s.label} className={`reveal border-b border-line py-7 ${i % 2 === 0 ? "border-r pr-4 sm:pr-6" : "pl-4 sm:pl-6"}`} style={stagger(i)}>
-              <dt className="sr-only">{s.label}</dt>
-              <dd>
-                <span className="block font-serif text-4xl tracking-tight text-fg sm:text-5xl lg:text-6xl">{s.value}</span>
-                <span className="mt-2 block text-[13px] leading-snug text-fg-muted">{s.label}</span>
-              </dd>
-            </div>
+        <ul className="mt-16 grid grid-cols-1 border-t border-line sm:grid-cols-2">
+          {about.principles.map((p, i) => (
+            <li key={p.word} className={`reveal border-b border-line py-6 ${i % 2 === 0 ? "sm:border-r sm:pr-6" : "sm:pl-6"}`} style={stagger(i)}>
+              <span className="flex items-baseline gap-3">
+                <span className="font-mono text-[11px] text-accent">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-serif text-3xl tracking-tight text-fg sm:text-4xl">{p.word}</span>
+              </span>
+              <span className="mt-2 block pl-7 text-[14px] leading-snug text-fg-muted">{p.line}</span>
+            </li>
           ))}
-        </dl>
+        </ul>
       </div>
 
       <div className="relative mt-24 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]" aria-label="Tools I use">

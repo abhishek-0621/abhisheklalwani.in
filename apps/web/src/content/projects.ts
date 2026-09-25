@@ -30,7 +30,7 @@ export const projects: Project[] = [
     summary:
       "A multimodal knowledge-graph platform: documents, code, audio, video and whole repositories become queryable Neo4j graphs, with GraphRAG chat and an MCP server so other agents can use them.",
     year: "2026",
-    role: "Architect & sole engineer — M.Tech project, BITS Pilani",
+    role: "Architect & sole engineer — M.Tech thesis, BITS Pilani",
     status: "local",
     tags: ["GraphRAG", "Neo4j", "FastAPI", "Celery", "MCP", "Lit"],
     metrics: [

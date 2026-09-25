@@ -4,7 +4,7 @@
  *
  *   0 big bang  — a nebula that detonates from a single point on load, then breathes (shader-animated)
  *   1 galaxy    — a tilted three-armed spiral galaxy, turning (animated in the shader)
- *   2 network   — a 4-layer neural net: neurons plus dotted connection paths that carry signals
+ *   2 network   — a fully connected 5-8-8-3 net; a forward-pass wave sweeps through it (shader-animated)
  *   3 warp      — a tunnel of twisting rings streaming toward the viewer (animated in the shader)
  *   4 sphere    — the orb: fibonacci sphere with two orbit rings
  *
@@ -18,7 +18,7 @@ export type SceneBuffers = {
   targets: Float32Array[];
   seed: Float32Array; // N*4: size, phase, twinkle, stagger
   flow0: Float32Array; // N*2: hot-spot flag (1 / -1), ejecta flag (1 / -1)
-  flow2: Float32Array; // N*2: t along a connection path (-1 = neuron), path phase
+  flow2: Float32Array; // N*2: depth through the net (0..1), edge weight (>0) or -activation (<0, neuron)
   flow3: Float32Array; // N*2: packet flag (1 / -1), speed multiplier
 };
 
@@ -112,37 +112,36 @@ export function buildScenes(n: number): SceneBuffers {
   }
 
   /* ---------------- 2 · neural network ---------------- */
-  // Neurons are tight clusters on a grid per layer; connection paths thread one neuron in every
-  // layer (hub neurons are shared, so paths fan in and out). The shader runs signals along them.
+  // A classic fully connected net drawn in dots: neurons are small rings, every connection an
+  // evenly spaced dotted line. flow2 carries each dot's depth through the net plus its edge
+  // weight (or neuron activation), so the shader can sweep a forward pass through it.
   {
-    const layers = [
-      { x: -2.7, rows: 5, h: 2.4 },
-      { x: -0.9, rows: 7, h: 3.2 },
-      { x: 0.9, rows: 7, h: 3.2 },
-      { x: 2.7, rows: 3, h: 1.4 },
-    ];
-    const neurons = layers.map((l) => {
-      const pts: V3[] = [];
-      for (let a = 0; a < l.rows; a++)
-        for (let b = 0; b < l.rows; b++) pts.push([l.x, (a / (l.rows - 1) - 0.5) * l.h, (b / (l.rows - 1) - 0.5) * l.h * 0.7]);
-      return pts;
-    });
-    // Hubs: a handful of neurons per layer carry most paths, like strong learned weights.
-    const hubs = neurons.map((layer) => layer.filter(() => r() < 0.3));
-    const pick = (li: number) => (r() < 0.65 && hubs[li].length ? hubs[li][Math.floor(r() * hubs[li].length)] : neurons[li][Math.floor(r() * neurons[li].length)]);
-    const paths = Array.from({ length: 120 }, () => layers.map((_, li) => pick(li)));
-    const allNeurons = neurons.flat();
-    const neuronShare = Math.floor(n * 0.22);
+    const counts = [5, 8, 8, 3];
+    const xs = [-2.8, -0.95, 0.95, 2.8];
+    const gap = 0.63;
+    const neurons = counts.map((c, l) => Array.from({ length: c }, (_, k) => [xs[l], (k - (c - 1) / 2) * gap, (r() - 0.5) * 0.35] as V3));
+    const edges: { a: V3; b: V3; layer: number; weight: number }[] = [];
+    for (let l = 0; l < 3; l++)
+      for (const a of neurons[l]) for (const b of neurons[l + 1]) edges.push({ a, b, layer: l, weight: Math.pow(r(), 1.6) * 0.9 + 0.1 });
+    const all = neurons.flatMap((layer, l) => layer.map((p) => ({ p, depth: l / 3, activation: 0.3 + r() * 0.7 })));
+    const perNeuron = 40;
+    const neuronDots = all.length * perNeuron;
+    const perEdge = Math.floor((n - neuronDots) / edges.length);
     for (let i = 0; i < n; i++) {
-      if (i < neuronShare) {
-        put(2, i, jitter(allNeurons[i % allNeurons.length], 0.028));
+      if (i < neuronDots) {
+        const nr = all[Math.floor(i / perNeuron)];
+        const u = r() * 2 - 1, th = r() * Math.PI * 2, sq = Math.sqrt(1 - u * u);
+        const rad = i % perNeuron < 8 ? r() * 0.03 : 0.085;
+        put(2, i, [nr.p[0] + sq * Math.cos(th) * rad, nr.p[1] + u * rad, nr.p[2] + sq * Math.sin(th) * rad]);
+        flow2[i * 2] = nr.depth;
+        flow2[i * 2 + 1] = -nr.activation;
       } else {
-        const pi = i % paths.length;
-        const t = r();
-        const seg = Math.min(2, Math.floor(t * 3));
-        put(2, i, jitter(lerp3(paths[pi][seg], paths[pi][seg + 1], t * 3 - seg), 0.004));
-        flow2[i * 2] = t;
-        flow2[i * 2 + 1] = (pi * 0.6180339) % 1;
+        const j = i - neuronDots;
+        const e = edges[Math.min(edges.length - 1, Math.floor(j / Math.max(1, perEdge)))];
+        const t = ((j % Math.max(1, perEdge)) + 0.5) / Math.max(1, perEdge);
+        put(2, i, lerp3(e.a, e.b, 0.06 + t * 0.88));
+        flow2[i * 2] = (e.layer + t) / 3;
+        flow2[i * 2 + 1] = e.weight;
       }
     }
   }
