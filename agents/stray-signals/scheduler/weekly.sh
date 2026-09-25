@@ -31,5 +31,7 @@ if git diff --cached --quiet -- "${outputs[@]}"; then
 fi
 week="$(node -e 'const d=require("./apps/web/src/content/signals-meta.json");console.log(d.version)')"
 git commit --quiet -m "chore(signals): weekly refresh ${week}" -- "${outputs[@]}"
+# The run takes a while: pick up anything pushed meanwhile before publishing.
+git pull --rebase --autostash --quiet origin main
 git push --quiet origin main
 echo "Pushed ${week}; Vercel will redeploy."
