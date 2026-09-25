@@ -21,7 +21,8 @@ export function select(cache: CurationCache, week: string): Signal[] {
     })
     .sort((x, y) => y.score - x.score);
 
-  const topicCap = Math.ceil(config.targetSize * 0.3);
+  // With seven topics, no single one may take more than a quarter of the list.
+  const topicCap = Math.ceil(config.targetSize * 0.25);
   const chosen = new Map<string, Accepted>();
 
   for (const relax of [false, true]) {

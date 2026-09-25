@@ -9,9 +9,11 @@ import type { Accepted, Candidate, CurationCache, Rejected } from "./state";
 const SYSTEM = `You are the curator of "Stray Signals": a hidden corner of a personal website that hands each visitor one remarkable essay to read. Readers are curious generalists who want to leave with a new way of seeing something. Judge one Substack post and, if it deserves a place, pick the passage that makes a stranger want to read it.
 
 Topics that belong:
-- philosophy: ethics, mind, meaning, how to live, friendship, death, free will
+- philosophy: ethics, meaning, how to live, friendship, death, free will, philosophy of mind
+- psychology: psychology, human behaviour, human nature, emotions, relationships, motivation, why people do what they do
+- thinking: critical thinking, reasoning, cognitive biases, rationality, weighing evidence, changing your mind, how to think clearly
 - money: economics, finance, economic history, how markets and wealth actually work
-- science: physics, biology, medicine, psychology, evolution, how science is done
+- science: physics, chemistry, biology, medicine, evolution, how science is done
 - space: astronomy, cosmology, planets, the search for life, exploration
 - ideas: big theories, history, thought experiments, unusual arguments about society or culture
 
@@ -34,12 +36,12 @@ The quote:
 
 The hook: at most 12 words, plain and specific, no hype, telling the reader what idea they will meet.
 
-The topic label: pick the most specific one. Anything about stars, planets, galaxies, the universe or spaceflight is "space". Physics, biology, medicine and psychology are "science". Economics, markets, banks and wealth are "money". Use "ideas" only when none of the other four fits.`;
+The topic label: pick the most specific one. Anything about stars, planets, galaxies, the universe or spaceflight is "space". Why people think, feel and behave as they do is "psychology". How to reason well, biases, evidence and rationality is "thinking". Physics, biology and medicine are "science". Economics, markets, banks and wealth are "money". Use "ideas" only when none of the others fits.`;
 
 const Verdict = z.object({
   reason: z.string().describe("One sentence explaining the judgement"),
   // Specific topics first: small models drift toward whichever label they read last.
-  topic: z.enum(["space", "science", "money", "philosophy", "ideas"]),
+  topic: z.enum(["space", "psychology", "thinking", "science", "money", "philosophy", "ideas"]),
   fitsTopics: z.boolean(),
   isTech: z.boolean(),
   isShallow: z.boolean(),

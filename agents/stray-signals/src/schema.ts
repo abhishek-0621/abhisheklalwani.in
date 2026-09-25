@@ -3,11 +3,13 @@
  * Keep this file dependency-free: the web app imports it as types only.
  */
 
-export const TOPICS = ["philosophy", "money", "science", "space", "ideas"] as const;
+export const TOPICS = ["philosophy", "psychology", "thinking", "money", "science", "space", "ideas"] as const;
 export type Topic = (typeof TOPICS)[number];
 
 export const TOPIC_LABELS: Record<Topic, string> = {
   philosophy: "Philosophy",
+  psychology: "Psychology & human nature",
+  thinking: "Critical thinking",
   money: "Money & economics",
   science: "Science",
   space: "Deep space",
