@@ -41,7 +41,9 @@ export function Hero() {
             Now — Generative AI & MCP tooling at <span className="text-fg">Dassault Systèmes</span>
           </span>
         </div>
-        <span className="hidden font-mono text-[10px] uppercase tracking-[0.24em] text-fg-faint md:block">Scroll</span>
+        <span className="hidden font-mono text-[10px] uppercase tracking-[0.24em] text-fg-faint md:block">
+          Click to detonate <span className="mx-2 text-accent">·</span> Scroll
+        </span>
       </div>
     </Section>
   );

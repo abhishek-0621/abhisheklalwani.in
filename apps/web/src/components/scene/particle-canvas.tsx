@@ -2,8 +2,8 @@
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
-import { BufferAttribute, BufferGeometry, Color, DataTexture, FloatType, NearestFilter, RGBAFormat, ShaderMaterial, Vector4, type Points } from "three";
-import { buildAttractor, buildScenes, SCENE_COUNT } from "./shapes";
+import { BufferAttribute, BufferGeometry, Color, ShaderMaterial, Vector4, type Points } from "three";
+import { buildScenes, SCENE_COUNT } from "./shapes";
 import { fragmentShader, vertexShader } from "./shaders";
 
 type Props = {
@@ -50,7 +50,7 @@ function sceneLayout(width: number, height: number) {
   const wide = width >= 1024 && width / height > 1.1;
   // xyz offset, alpha — keeps shapes clear of the copy they sit behind.
   return wide
-    ? [new Vector4(2.4, 0.15, 0, 0.95), new Vector4(-2.75, 0, -0.8, 0.85), new Vector4(0, 0, -1.5, 0.32), new Vector4(-3.2, 0, 0, 0.85), new Vector4(0, 0, -2, 0.42)]
+    ? [new Vector4(2.3, 0.1, 0, 1), new Vector4(-2.75, 0, -0.8, 0.85), new Vector4(0, 0, -1.2, 0.5), new Vector4(-3.2, 0, 0, 0.85), new Vector4(0, 0, -2, 0.42)]
     : [new Vector4(0, 2.5, -1, 0.6), new Vector4(0, 0, -1, 0.35), new Vector4(0, 0, -1.5, 0.22), new Vector4(0, 0, -1, 0.3), new Vector4(0, 0, -1.5, 0.35)];
 }
 
@@ -60,17 +60,18 @@ function Field({ count, routeKey, onReady }: Props) {
   const progress = useRef(-1);
   const mouse = useRef({ x: 0, y: 0, tx: 0, ty: 0 });
   const readyFired = useRef(false);
-  // Hero flow tempo: drifts between lulls and rushes, with the occasional surge.
-  const tempo = useRef({ speed: 1, target: 1, nextChange: 0 });
+  // Nebula flares: calm breathing, punctuated at random by a swell.
+  const flare = useRef({ level: 0, target: 0, nextChange: 4 });
   const { size, camera, gl } = useThree();
 
   const geometry = useMemo(() => {
-    const { targets, seed, flow0, flow3 } = buildScenes(count);
+    const { targets, seed, flow0, flow2, flow3 } = buildScenes(count);
     const g = new BufferGeometry();
     g.setAttribute("position", new BufferAttribute(targets[0], 3));
     for (let s = 1; s < SCENE_COUNT; s++) g.setAttribute(`aT${s}`, new BufferAttribute(targets[s], 3));
     g.setAttribute("aSeed", new BufferAttribute(seed, 4));
     g.setAttribute("aFlow0", new BufferAttribute(flow0, 2));
+    g.setAttribute("aFlow2", new BufferAttribute(flow2, 2));
     g.setAttribute("aFlow3", new BufferAttribute(flow3, 2));
     return g;
   }, [count]);
@@ -78,10 +79,6 @@ function Field({ count, routeKey, onReady }: Props) {
   const material = useMemo(() => {
     const css = getComputedStyle(document.documentElement);
     const token = (name: string, fallback: string) => new Color(css.getPropertyValue(name).trim() || fallback);
-    const attractor = buildAttractor();
-    const attractorTex = new DataTexture(attractor.data, attractor.size, attractor.size, RGBAFormat, FloatType);
-    attractorTex.minFilter = attractorTex.magFilter = NearestFilter;
-    attractorTex.needsUpdate = true;
     return new ShaderMaterial({
       vertexShader,
       fragmentShader,
@@ -95,10 +92,10 @@ function Field({ count, routeKey, onReady }: Props) {
         uScene: { value: sceneLayout(size.width, size.height) },
         uFg: { value: token("--color-fg", "#ededed") },
         uAccent: { value: token("--color-accent", "#ff6a3d") },
-        uAttractor: { value: attractorTex },
-        uAttractorSize: { value: attractor.size },
-        uFlow: { value: 0 },
+        uBang: { value: 0 },
+        uKick: { value: 100 },
         uSurge: { value: 0 },
+        uScroll: { value: 0 },
       },
     });
     // gl/size are read once here; the layout effect below keeps them current.
@@ -106,7 +103,6 @@ function Field({ count, routeKey, onReady }: Props) {
 
   useEffect(() => () => {
     geometry.dispose();
-    material.uniforms.uAttractor.value.dispose();
     material.dispose();
   }, [geometry, material]);
 
@@ -131,6 +127,17 @@ function Field({ count, routeKey, onReady }: Props) {
     };
   }, [routeKey]);
 
+  // Click anywhere in the hero (not on a link or button) for another shockwave.
+  useEffect(() => {
+    const onDown = (e: PointerEvent) => {
+      const t = e.target as Element | null;
+      if (!t?.closest('[data-scene="0"]') || t.closest("a, button")) return;
+      material.uniforms.uKick.value = 0;
+    };
+    window.addEventListener("pointerdown", onDown, { passive: true });
+    return () => window.removeEventListener("pointerdown", onDown);
+  }, [material]);
+
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
       mouse.current.tx = (e.clientX / window.innerWidth) * 2 - 1;
@@ -145,15 +152,17 @@ function Field({ count, routeKey, onReady }: Props) {
     const u = material.uniforms;
     u.uTime.value += dt;
 
-    const tp = tempo.current;
-    if (u.uTime.value > tp.nextChange) {
-      const roll = Math.random();
-      tp.target = roll < 0.18 ? 4 + Math.random() * 3 : roll < 0.45 ? 0.2 + Math.random() * 0.3 : 0.7 + Math.random() * 1.1;
-      tp.nextChange = u.uTime.value + (tp.target > 3 ? 1 + Math.random() * 1.2 : 2.5 + Math.random() * 4);
+    u.uBang.value += dt;
+    u.uKick.value += dt;
+    u.uScroll.value = window.scrollY * 0.00045;
+    const fl = flare.current;
+    if (u.uTime.value > fl.nextChange) {
+      const swell = fl.target === 0 && Math.random() < 0.6;
+      fl.target = swell ? 0.6 + Math.random() * 0.4 : 0;
+      fl.nextChange = u.uTime.value + (swell ? 0.8 + Math.random() * 0.8 : 3 + Math.random() * 5);
     }
-    tp.speed += (tp.target - tp.speed) * (1 - Math.exp(-dt * (tp.target > tp.speed ? 3 : 1.2)));
-    u.uFlow.value += dt * tp.speed;
-    u.uSurge.value = Math.min(1, Math.max(0, (tp.speed - 1.5) / 3));
+    fl.level += (fl.target - fl.level) * (1 - Math.exp(-dt * (fl.target > fl.level ? 4 : 1.5)));
+    u.uSurge.value = fl.level;
 
     const target = sample(frames.current, window.scrollY);
     if (progress.current < 0) progress.current = target;

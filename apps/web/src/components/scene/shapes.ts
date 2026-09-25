@@ -2,9 +2,9 @@
  * Target layouts for the particle field. Every scene uses the same N particles;
  * the vertex shader blends between them as the page scrolls.
  *
- *   0 attractor — particles stream along an Aizawa strange attractor (animated in the shader)
+ *   0 big bang  — a nebula that detonates from a single point on load, then breathes (shader-animated)
  *   1 galaxy    — a tilted three-armed spiral galaxy, turning (animated in the shader)
- *   2 layers    — neural net: dotted layer planes + inter-layer connections
+ *   2 network   — a 4-layer neural net: neurons plus dotted connection paths that carry signals
  *   3 warp      — a tunnel of twisting rings streaming toward the viewer (animated in the shader)
  *   4 sphere    — the orb: fibonacci sphere with two orbit rings
  *
@@ -14,58 +14,13 @@
 export const SCENE_COUNT = 5;
 
 export type SceneBuffers = {
-  /** SCENE_COUNT × (N*3). Scene 0: (phase, jitterA, jitterB). Scene 1: (radius, angle, height). Scene 3: (angle, radius, phase). */
+  /** SCENE_COUNT × (N*3). Scene 0: nebula rest position. Scene 1: (radius, angle, height). Scene 3: (angle, radius, phase). */
   targets: Float32Array[];
   seed: Float32Array; // N*4: size, phase, twinkle, stagger
-  flow0: Float32Array; // N*2: comet flag (1 / -1), speed multiplier
+  flow0: Float32Array; // N*2: hot-spot flag (1 / -1), ejecta flag (1 / -1)
+  flow2: Float32Array; // N*2: t along a connection path (-1 = neuron), path phase
   flow3: Float32Array; // N*2: packet flag (1 / -1), speed multiplier
 };
-
-/**
- * Integrates the Aizawa attractor with RK4 and packs it as an RGBA float texture
- * (xyz, normalised to a radius of ~1). The shader samples it by phase.
- */
-export function buildAttractor(samples = 16384): { data: Float32Array; size: number } {
-  const a = 0.95, b = 0.7, c = 0.6, d = 3.5, e = 0.25, f = 0.1;
-  const deriv = (x: number, y: number, z: number): [number, number, number] => [
-    (z - b) * x - d * y,
-    d * x + (z - b) * y,
-    c + a * z - (z * z * z) / 3 - (x * x + y * y) * (1 + e * z) + f * z * x * x * x,
-  ];
-  const dt = 0.01;
-  let x = 0.1, y = 0, z = 0;
-  for (let i = 0; i < 2000; i++) {
-    // settle onto the attractor before recording
-    const k = deriv(x, y, z);
-    x += k[0] * dt; y += k[1] * dt; z += k[2] * dt;
-  }
-  const size = Math.ceil(Math.sqrt(samples));
-  const data = new Float32Array(size * size * 4);
-  const pts: [number, number, number][] = [];
-  for (let i = 0; i < size * size; i++) {
-    const k1 = deriv(x, y, z);
-    const k2 = deriv(x + (k1[0] * dt) / 2, y + (k1[1] * dt) / 2, z + (k1[2] * dt) / 2);
-    const k3 = deriv(x + (k2[0] * dt) / 2, y + (k2[1] * dt) / 2, z + (k2[2] * dt) / 2);
-    const k4 = deriv(x + k3[0] * dt, y + k3[1] * dt, z + k3[2] * dt);
-    x += ((k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0]) * dt) / 6;
-    y += ((k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1]) * dt) / 6;
-    z += ((k1[2] + 2 * k2[2] + 2 * k3[2] + k4[2]) * dt) / 6;
-    pts.push([x, y, z]);
-  }
-  // Centre it, stand its axis upright (attractor z → world y), scale to radius ~1.
-  let cx = 0, cy = 0, cz = 0;
-  for (const p of pts) { cx += p[0]; cy += p[1]; cz += p[2]; }
-  cx /= pts.length; cy /= pts.length; cz /= pts.length;
-  let r = 0;
-  for (const p of pts) r = Math.max(r, Math.hypot(p[0] - cx, p[1] - cy, p[2] - cz));
-  pts.forEach((p, i) => {
-    data[i * 4] = (p[0] - cx) / r;
-    data[i * 4 + 1] = (p[2] - cz) / r;
-    data[i * 4 + 2] = (p[1] - cy) / r;
-    data[i * 4 + 3] = 1;
-  });
-  return { data, size };
-}
 
 function rng(seed: number) {
   let s = seed >>> 0;
@@ -90,6 +45,7 @@ export function buildScenes(n: number): SceneBuffers {
   const targets = Array.from({ length: SCENE_COUNT }, () => new Float32Array(n * 3));
   const seed = new Float32Array(n * 4);
   const flow0 = new Float32Array(n * 2).fill(-1);
+  const flow2 = new Float32Array(n * 2).fill(-1);
   const flow3 = new Float32Array(n * 2).fill(-1);
 
   for (let i = 0; i < n; i++) {
@@ -107,13 +63,28 @@ export function buildScenes(n: number): SceneBuffers {
   const lerp3 = (a: V3, b: V3, t: number): V3 => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
   const jitter = (p: V3, s: number): V3 => [p[0] + gauss() * s, p[1] + gauss() * s, p[2] + gauss() * s];
 
-  /* ---------------- 0 · strange attractor ---------------- */
-  // Particles are spread evenly along the trajectory; the shader advances their phase.
-  for (let i = 0; i < n; i++) {
-    put(0, i, [i / n + r() * 0.0004, gauss() * 0.018, gauss() * 0.018]);
-    const comet = r() < 0.012;
-    flow0[i * 2] = comet ? 1 : -1;
-    flow0[i * 2 + 1] = comet ? 3 + r() * 2 : 1;
+  /* ---------------- 0 · nebula (big bang) ---------------- */
+  // Rest shape after the explosion: a filamentary shell, an inner haze and outward ejecta rays.
+  // The shader animates the detonation by scaling these positions from the centre.
+  {
+    const wobble = (x: number, y: number, z: number) =>
+      Math.sin(x * 3.1 + y * 1.7) * 0.5 + Math.sin(y * 4.3 - z * 2.9) * 0.3 + Math.sin(z * 5.7 + x * 2.3) * 0.2;
+    for (let i = 0; i < n; i++) {
+      // random direction on the sphere
+      const u = r() * 2 - 1;
+      const th = r() * Math.PI * 2;
+      const sq = Math.sqrt(1 - u * u);
+      const d: V3 = [sq * Math.cos(th), u, sq * Math.sin(th)];
+      const w = wobble(d[0] * 2, d[1] * 2, d[2] * 2);
+      const kind = r();
+      let rad: number;
+      if (kind < 0.6) rad = 1.55 + w * 0.32 + gauss() * 0.05; // filamentary shell
+      else if (kind < 0.86) rad = Math.abs(gauss()) * 0.55; // inner haze
+      else rad = 1.9 + Math.pow(r(), 1.8) * 1.5; // ejecta rays
+      put(0, i, [d[0] * rad, d[1] * rad * 0.92, d[2] * rad]);
+      flow0[i * 2] = kind < 0.6 && w > 0.55 && r() < 0.45 ? 1 : -1; // ember hot spots on the densest filaments
+      flow0[i * 2 + 1] = kind >= 0.86 ? 1 : -1;
+    }
   }
 
   /* ---------------- 1 · spiral galaxy ---------------- */
@@ -140,31 +111,38 @@ export function buildScenes(n: number): SceneBuffers {
     }
   }
 
-  /* ---------------- 2 · neural layers ---------------- */
+  /* ---------------- 2 · neural network ---------------- */
+  // Neurons are tight clusters on a grid per layer; connection paths thread one neuron in every
+  // layer (hub neurons are shared, so paths fan in and out). The shader runs signals along them.
   {
     const layers = [
-      { x: -2.7, rows: 10, h: 2.8 },
-      { x: -0.9, rows: 14, h: 3.4 },
-      { x: 0.9, rows: 14, h: 3.4 },
-      { x: 2.7, rows: 6, h: 1.8 },
+      { x: -2.7, rows: 5, h: 2.4 },
+      { x: -0.9, rows: 7, h: 3.2 },
+      { x: 0.9, rows: 7, h: 3.2 },
+      { x: 2.7, rows: 3, h: 1.4 },
     ];
-    const lattice = layers.map((l) => {
+    const neurons = layers.map((l) => {
       const pts: V3[] = [];
       for (let a = 0; a < l.rows; a++)
-        for (let b = 0; b < l.rows; b++)
-          pts.push([l.x, (a / (l.rows - 1) - 0.5) * l.h, (b / (l.rows - 1) - 0.5) * l.h * 0.6]);
+        for (let b = 0; b < l.rows; b++) pts.push([l.x, (a / (l.rows - 1) - 0.5) * l.h, (b / (l.rows - 1) - 0.5) * l.h * 0.7]);
       return pts;
     });
-    const planeShare = Math.floor(n * 0.55);
+    // Hubs: a handful of neurons per layer carry most paths, like strong learned weights.
+    const hubs = neurons.map((layer) => layer.filter(() => r() < 0.3));
+    const pick = (li: number) => (r() < 0.65 && hubs[li].length ? hubs[li][Math.floor(r() * hubs[li].length)] : neurons[li][Math.floor(r() * neurons[li].length)]);
+    const paths = Array.from({ length: 120 }, () => layers.map((_, li) => pick(li)));
+    const allNeurons = neurons.flat();
+    const neuronShare = Math.floor(n * 0.22);
     for (let i = 0; i < n; i++) {
-      if (i < planeShare) {
-        const l = lattice[i % lattice.length];
-        put(2, i, jitter(l[Math.floor(r() * l.length)], 0.008));
+      if (i < neuronShare) {
+        put(2, i, jitter(allNeurons[i % allNeurons.length], 0.028));
       } else {
-        const li = Math.floor(r() * (lattice.length - 1));
-        const a = lattice[li][Math.floor(r() * lattice[li].length)];
-        const b = lattice[li + 1][Math.floor(r() * lattice[li + 1].length)];
-        put(2, i, lerp3(a, b, r()));
+        const pi = i % paths.length;
+        const t = r();
+        const seg = Math.min(2, Math.floor(t * 3));
+        put(2, i, jitter(lerp3(paths[pi][seg], paths[pi][seg + 1], t * 3 - seg), 0.004));
+        flow2[i * 2] = t;
+        flow2[i * 2 + 1] = (pi * 0.6180339) % 1;
       }
     }
   }
@@ -211,5 +189,5 @@ export function buildScenes(n: number): SceneBuffers {
     }
   }
 
-  return { targets, seed, flow0, flow3 };
+  return { targets, seed, flow0, flow2, flow3 };
 }
