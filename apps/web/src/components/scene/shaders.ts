@@ -82,7 +82,13 @@ void main() {
   vec3 p3 = vec3(cos(twist) * radius, sin(twist) * radius, tz);
   float tunnelFade = smoothstep(0.0, 0.2, ph) * (1.0 - smoothstep(0.82, 1.0, ph));
 
-  vec3 p = p0 * w0 + p1 * w1 + p2 * w2 + p3 * w3 + aT4 * w4;
+  // 4 - orb: the sphere turns on a slightly tilted axis; its rings orbit faster the other way.
+  vec3 p4 = aT4;
+  bool ringDot = length(aT4) > 2.0;
+  p4.xz = rot(uTime * (ringDot ? -0.32 : 0.16)) * p4.xz;
+  p4.xy = rot(0.28) * p4.xy;
+
+  vec3 p = p0 * w0 + p1 * w1 + p2 * w2 + p3 * w3 + p4 * w4;
   vec4 sc = uScene[0] * w0 + uScene[1] * w1 + uScene[2] * w2 + uScene[3] * w3 + uScene[4] * w4;
   p += sc.xyz;
 

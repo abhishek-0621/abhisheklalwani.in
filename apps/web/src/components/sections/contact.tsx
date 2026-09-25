@@ -1,4 +1,4 @@
-import { EnvelopeSimple, FileText, GithubLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { FileText, GithubLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 import { CopyEmail } from "@/components/ui/copy-email";
 import { Eyebrow, PillLink, Section, stagger } from "@/components/ui/primitives";
 import { site } from "@/content/site";
@@ -17,11 +17,6 @@ export function Contact() {
         <CopyEmail email={site.email} />
       </div>
       <ul className="reveal mt-6 flex max-w-xl flex-wrap justify-center gap-2 sm:gap-3" style={stagger(4)} aria-label="Contact links">
-        <li>
-          <PillLink mail variant="ghost" icon={<EnvelopeSimple size={14} weight="light" />}>
-            Gmail
-          </PillLink>
-        </li>
         <li>
           <PillLink href={site.links.whatsapp} variant="ghost" external icon={<WhatsappLogo size={14} weight="light" />}>
             WhatsApp
