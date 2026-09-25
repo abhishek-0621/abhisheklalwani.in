@@ -1,0 +1,56 @@
+## The problem
+
+Vector search is good at finding a paragraph that *looks like* the question. It is much worse at questions whose answer is spread across documents — *a patient on warfarin is prescribed fluconazole; what should be monitored, and why?* That answer lives in the relationships between entities, not in any single chunk.
+
+GraphMind makes those relationships first-class. You upload anything — PDFs, Markdown, source code, audio, video, or an entire git repository — and it builds a knowledge graph you can explore visually, query in Cypher, chat with, or hand to another agent over MCP.
+
+<Callout>Ingest anything, keep the relationships, and let both people and agents ask questions of them.</Callout>
+
+## Architecture
+
+<Architecture />
+
+- **Ingestion** runs in Celery workers. Per-format extractors (PDF, code, Whisper for audio/video, repo walker) feed an extraction chain: Claude, then local Ollama, then spaCy as a fallback, so it works with or without an API key.
+- **Storage** is Neo4j for the graph, FAISS for embeddings, MinIO for raw files. Projects → Sources → Files form a hierarchy, and composite graphs aggregate across a whole source or project.
+- **Merging** deduplicates entities by canonical name across files, so the same drug mentioned in six documents becomes one node with six sets of relationships.
+- **Frontend** is Lit + Redux Toolkit with a Cytoscape canvas: K-hop explorer, BFS replay of how the graph grew, a Cypher panel, streaming GraphRAG chat beside the graph, and 50-step undo/redo.
+- **Live progress** streams over Server-Sent Events backed by Redis pub/sub, with a Gantt view per ingestion task.
+
+## Retrieval modes
+
+The same `/retrieval/search` endpoint runs three explicit modes so they can be compared honestly:
+
+| Mode | What it does |
+| --- | --- |
+| Vector RAG | Embedding search only — the baseline |
+| GraphRAG | Vector search, then graph-hop expansion from the retrieved chunks |
+| Graph-first | Resolves the question's entities in the graph first and answers from their neighbourhood, skipping vector search when they are found |
+
+## Measured, not claimed
+
+I built an evaluation harness on a real corpus: 19 public documents (14 FDA drug labels plus disease fact sheets) merged into one connected graph, and 35 hand-written questions tagged by hop count. Each question ran through every mode on three local models — deepseek-r1:8b, gemma4 and llama3.1:8b — scored with BLEU, ROUGE-L, BERTScore and RAGAS-style faithfulness, precision and recall.
+
+- GraphRAG beat vector RAG on **faithfulness, context precision and context recall for all three models** — the direction held across every model tested.
+- The gain concentrates in **multi-hop questions**; on single-hop recall the two are close, which is the expected, falsifiable shape.
+- Plain GraphRAG cost 1.5–1.7× more tokens. **Graph-first mode brought token cost down by about 2.4×** by answering from the entity neighbourhood instead of stuffing chunks.
+
+## An MCP server for agents
+
+GraphMind exposes its knowledge base at `POST /api/v1/mcp` as JSON-RPC tools, so Claude Desktop, Cursor or any MCP client can use it without custom glue:
+
+```json
+{ "mcpServers": { "graphmind": { "url": "http://localhost:8000/api/v1/mcp" } } }
+```
+
+Tools: `list_projects`, `list_graphs`, `search_entities`, `get_neighbors`, `get_graph_schema`, `graphrag_query`, `get_project_entities`.
+
+## Details that mattered
+
+- **Deterministic tabular extraction with human review.** Tables are parsed without the LLM and queued for approval, which roughly halved input tokens on table-heavy documents.
+- **Graph versioning and lineage**, so every entity can be traced back to the file and chunk it came from.
+- **Model benchmarking in the product.** A built-in dashboard scores 2–11B Ollama models on entity extraction (F1, precision, recall, latency) against a gold set, and every chat reply records its token usage.
+- **Threads, not forks, for Celery.** The prefork pool crashed when PyTorch and spaCy were forked; a thread pool removed the failure mode entirely.
+
+## Numbers
+
+330+ commits, 110+ tests, six export formats (Markdown, JSON, CSV, Cypher, JSON-LD, RDF/Turtle), and one `docker compose up` to run the whole stack.

@@ -1,0 +1,26 @@
+/*
+ * Design tokens shared by every app on *.abhisheklalwani.in.
+ * Change the accent here and it propagates to CSS, Tailwind and the WebGL scene.
+ */
+@theme static {
+  --color-ink: #0a0a0a;
+  --color-ink-raised: #111111;
+  --color-ink-sunken: #070707;
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.14);
+  --color-fg: #ededed;
+  --color-fg-muted: #8a8a8a;
+  --color-fg-faint: #5a5a5a;
+  --color-accent: #ff6a3d;
+  --color-accent-soft: rgb(255 106 61 / 0.12);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+  --font-serif: var(--font-instrument-serif), "Iowan Old Style", Georgia, serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --radius-shell: 1.5rem;
+  --radius-core: calc(1.5rem - 0.375rem);
+}

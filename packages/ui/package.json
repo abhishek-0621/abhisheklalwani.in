@@ -1,0 +1,25 @@
+{
+  "name": "@al/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "exports": {
+    "./tokens.css": "./src/tokens.css",
+    "./orb": "./src/orb.tsx",
+    "./cn": "./src/cn.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "thinking-orbs": "^0.3.2"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "typescript": "^5.9.3"
+  }
+}
