@@ -28,7 +28,7 @@ export function Hero() {
         </p>
         <div className="reveal flex flex-wrap gap-3 md:justify-end" style={stagger(11)}>
           <PillLink href="/#work">View work</PillLink>
-          <PillLink href={site.links.resume} variant="ghost" download icon={<FileText size={14} weight="light" />}>
+          <PillLink href={site.links.resume} variant="ghost" download={site.links.resumeFilename} icon={<FileText size={14} weight="light" />}>
             Résumé
           </PillLink>
         </div>

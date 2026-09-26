@@ -2,7 +2,7 @@
 
 Vector search is good at finding a paragraph that *looks like* the question. It is much worse at questions whose answer is spread across documents — *a patient on warfarin is prescribed fluconazole; what should be monitored, and why?* That answer lives in the relationships between entities, not in any single chunk.
 
-GraphMind makes those relationships first-class. You upload anything — PDFs, Markdown, source code, audio, video, or an entire git repository — and it builds a knowledge graph you can explore visually, query in Cypher, chat with, or hand to another agent over MCP.
+I built GraphMind end to end — ingestion, extraction, storage, retrieval, the interface and the agent API — to make those relationships first-class. You upload anything — PDFs, Markdown, source code, audio, video, or an entire git repository — and it builds a knowledge graph you can explore visually, query in Cypher, chat with, or hand to another agent over MCP.
 
 <Callout>Ingest anything, keep the relationships, and let both people and agents ask questions of them.</Callout>
 
@@ -11,7 +11,7 @@ GraphMind makes those relationships first-class. You upload anything — PDFs, M
 <Architecture />
 
 - **Ingestion** runs in Celery workers. Per-format extractors (PDF, code, Whisper for audio/video, repo walker) feed an extraction chain: Claude, then local Ollama, then spaCy as a fallback, so it works with or without an API key.
-- **Storage** is Neo4j for the graph, FAISS for embeddings, MinIO for raw files. Projects → Sources → Files form a hierarchy, and composite graphs aggregate across a whole source or project.
+- **Storage** is Neo4j for both the graph and the embeddings (its native vector index), and MinIO for raw files. Projects → Sources → Files form a hierarchy, and composite graphs aggregate across a whole source or project.
 - **Merging** deduplicates entities by canonical name across files, so the same drug mentioned in six documents becomes one node with six sets of relationships.
 - **Frontend** is Lit + Redux Toolkit with a Cytoscape canvas: K-hop explorer, BFS replay of how the graph grew, a Cypher panel, streaming GraphRAG chat beside the graph, and 50-step undo/redo.
 - **Live progress** streams over Server-Sent Events backed by Redis pub/sub, with a Gantt view per ingestion task.
@@ -24,15 +24,40 @@ The same `/retrieval/search` endpoint runs three explicit modes so they can be c
 | --- | --- |
 | Vector RAG | Embedding search only — the baseline |
 | GraphRAG | Vector search, then graph-hop expansion from the retrieved chunks |
-| Graph-first | Resolves the question's entities in the graph first and answers from their neighbourhood, skipping vector search when they are found |
+| Graph-first *(default)* | Resolves the question's entities in the graph first and answers from their neighbourhood, skipping vector search when they are found |
 
-## Measured, not claimed
+## GraphRAG vs vector RAG: measured, not claimed
 
-I built an evaluation harness on a real corpus: 19 public documents (14 FDA drug labels plus disease fact sheets) merged into one connected graph, and 35 hand-written questions tagged by hop count. Each question ran through every mode on three local models — deepseek-r1:8b, gemma4 and llama3.1:8b — scored with BLEU, ROUGE-L, BERTScore and RAGAS-style faithfulness, precision and recall.
+I built an evaluation harness on a real corpus: 19 public documents (14 FDA drug labels plus disease fact sheets) merged into one connected graph, and 35 hand-written questions tagged by how many hops the answer needs — *what is warfarin used for?* is one hop; *a patient on warfarin takes aspirin for arthritis, what compounded risk follows?* is three. Every question ran through each mode on three local models — deepseek-r1:8b, gemma4 and llama3.1:8b — with the same graph, embeddings and index, scored with BLEU, ROUGE-L, BERTScore and RAGAS-style faithfulness, context precision and context recall.
 
-- GraphRAG beat vector RAG on **faithfulness, context precision and context recall for all three models** — the direction held across every model tested.
-- The gain concentrates in **multi-hop questions**; on single-hop recall the two are close, which is the expected, falsifiable shape.
-- Plain GraphRAG cost 1.5–1.7× more tokens. **Graph-first mode brought token cost down by about 2.4×** by answering from the entity neighbourhood instead of stuffing chunks.
+| | Faithfulness Δ | Context precision Δ | Context recall Δ |
+| --- | --- | --- | --- |
+| deepseek-r1:8b | +0.09 | +0.02 | +0.03 |
+| gemma4 | +0.07 | +0.03 | +0.05 |
+| llama3.1:8b | +0.03 | +0.07 | +0.03 |
+
+*Δ = GraphRAG minus vector RAG, overall. Positive means GraphRAG was better.*
+
+- **GraphRAG was more faithful and more precise with every model tested.** Answers stayed closer to the retrieved evidence, and the evidence it retrieved was more on-topic.
+- **The gap widens where relationships matter.** On multi-hop questions deepseek-r1's faithfulness was 0.86 with GraphRAG against 0.47 with vector search; on single-hop recall the two are close — the shape you would predict, which is what makes the result believable.
+- **It isn't free.** Walking the graph on top of vector search added context: GraphRAG used 1.5–1.7× the tokens of plain vector RAG.
+
+## Making GraphRAG cheap: graph-first retrieval
+
+That token overhead is the problem graph-first retrieval solves, and it is now the default path for every chat answer and MCP query. The idea: if the question names things the graph already knows, answer from the graph's exact edges and skip the chunk dump entirely.
+
+1. **Route.** Schema and tabular-aggregation questions go to their own fast paths first.
+2. **Resolve the question's own entities.** Entity names are matched from the question text itself against the graph — not from retrieved chunks, as plain GraphRAG does.
+3. **Pull their neighbourhood.** For each matched entity, fetch its connections up to the configured depth.
+4. **Answer from triples.** The context becomes compact lines like `warfarin --[interacts_with]--> fluconazole` — exact edges, not summarised text — so nothing is lost by leaving the source passages out.
+5. **Report confidence.** With no ranked chunks to score, the answer carries a corroboration signal instead: more connected triples around the matched entities means more structure behind the answer (floor 0.5, saturating at six triples).
+6. **Fall back, never force.** If no entity matches, or a match has no connections, the request drops straight to vector search, near-duplicate filtering, graph expansion and windowed chunk retrieval. It is a router, not a graph-only policy.
+
+Measured on gemma4 across the same 35 questions:
+
+- **Tokens per question fell 59%** — 2,376 on average, against 5,808 for plain GraphRAG and 3,946 for vector RAG. That is the 2.4× saving, and graph-first ends up cheaper than vector search too.
+- **Faithfulness held**: 0.93, against 0.94 before the optimisation.
+- **The trade-off, stated plainly:** RAGAS context precision and recall score retrieved *passages*, and graph-first deliberately retrieves none — so those two metrics fall (precision 0.65 → 0.27). The fast path fired on all 35 questions; its answers stayed as faithful while reading a fraction of the text.
 
 ## An MCP server for agents
 
@@ -51,6 +76,8 @@ Tools: `list_projects`, `list_graphs`, `search_entities`, `get_neighbors`, `get_
 - **Model benchmarking in the product.** A built-in dashboard scores 2–11B Ollama models on entity extraction (F1, precision, recall, latency) against a gold set, and every chat reply records its token usage.
 - **Threads, not forks, for Celery.** The prefork pool crashed when PyTorch and spaCy were forked; a thread pool removed the failure mode entirely.
 
-## Numbers
+## Built as a platform, run from my own server
 
-330+ commits, 110+ tests, six export formats (Markdown, JSON, CSV, Cypher, JSON-LD, RDF/Turtle), and one `docker compose up` to run the whole stack.
+GraphMind is not a notebook demo. Six services — Neo4j, Redis, MinIO, the FastAPI backend, Celery workers and the web app — start with a single `docker compose up`, and a production overlay adds automatic TLS with every internal service closed to the internet. Ingestion workers scale horizontally, the graph and vector index share one database, and everything the UI does is available through the API and MCP.
+
+Today it runs live from a local server I host myself, which is how you can open it from this site; the same stack is ready to deploy to any cloud host unchanged. Graphs export to Markdown, JSON, CSV, Cypher, JSON-LD and RDF/Turtle.

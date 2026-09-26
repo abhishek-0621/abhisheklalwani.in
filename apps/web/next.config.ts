@@ -13,7 +13,11 @@ const config: NextConfig = {
     return [
       {
         source: "/resume.pdf",
-        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          // Opens in the browser's viewer; saving from there uses this name too.
+          { key: "Content-Disposition", value: 'inline; filename="Abhishek_Lalwani_AI_Engineer.pdf"' },
+        ],
       },
       {
         source: "/(.*)",

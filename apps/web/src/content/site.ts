@@ -24,6 +24,8 @@ export const site = {
     gmail: `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(mailSubject)}`,
     mailto: `mailto:${email}?subject=${encodeURIComponent(mailSubject)}`,
     resume: "/resume.pdf",
+    /** The name visitors save the résumé as. */
+    resumeFilename: "Abhishek_Lalwani_AI_Engineer.pdf",
   },
 } as const;
 

@@ -18,7 +18,7 @@ export type Project = {
   tags: string[];
   metrics: { value: string; label: string }[];
   repo?: string;
-  /** Live app — lives on its own subdomain, e.g. https://graphmind.abhisheklalwani.in */
+  /** The live app, e.g. /graphmind (served from Abhishek's Mac through src/proxy.ts). */
   demo?: string;
   featured?: boolean;
 };
@@ -29,16 +29,16 @@ export const projects: Project[] = [
     title: "GraphMind",
     tagline: "Turn anything into a knowledge graph you can ask questions of.",
     summary:
-      "A multimodal knowledge-graph platform: documents, code, audio, video and whole repositories become queryable Neo4j graphs, with GraphRAG chat and an MCP server so other agents can use them.",
+      "A knowledge-graph platform I built end to end: documents, code, audio, video and whole repositories become queryable graphs, with GraphRAG chat and an MCP server for other agents. In a controlled evaluation it answered more faithfully than vector RAG on every model tested — and its graph-first retrieval cut tokens by 59% without losing faithfulness.",
     year: "2026",
     role: "Architect & sole engineer — M.Tech thesis, BITS Pilani",
     status: "selfhosted",
     tags: ["GraphRAG", "Neo4j", "FastAPI", "Celery", "MCP", "Lit"],
     metrics: [
-      { value: "2.4×", label: "lower token cost, graph-first mode" },
-      { value: "330+", label: "commits" },
-      { value: "110+", label: "tests" },
-      { value: "3", label: "LLMs benchmarked on 35 questions" },
+      { value: "3 / 3", label: "models where GraphRAG beat vector RAG on faithfulness and precision" },
+      { value: "0.86", label: "multi-hop faithfulness, vs 0.47 for vector RAG (deepseek-r1)" },
+      { value: "−59%", label: "tokens per answer with graph-first retrieval" },
+      { value: "0.93", label: "faithfulness kept after the token cut (0.94 before)" },
     ],
     repo: "https://github.com/graphMindv2/graphmind",
     demo: "/graphmind",

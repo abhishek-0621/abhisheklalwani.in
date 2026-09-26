@@ -61,7 +61,8 @@ export function PillLink({
   children: ReactNode;
   variant?: "solid" | "ghost";
   external?: boolean;
-  download?: boolean;
+  /** true, or the filename to save as. */
+  download?: boolean | string;
   /** Email me: Gmail compose on desktop, native mail app on touch devices. */
   mail?: boolean;
   icon?: ReactNode;
@@ -92,7 +93,7 @@ export function PillLink({
   if (!href) return null;
   if (external || download)
     return (
-      <a href={href} className={cls} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} download={download || undefined}>
+      <a href={href} className={cls} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} download={download === true ? "" : download || undefined}>
         {inner}
       </a>
     );

@@ -33,7 +33,7 @@ export function Contact() {
           </PillLink>
         </li>
         <li>
-          <PillLink href={site.links.resume} variant="ghost" download icon={<FileText size={14} weight="light" />}>
+          <PillLink href={site.links.resume} variant="ghost" download={site.links.resumeFilename} icon={<FileText size={14} weight="light" />}>
             Résumé
           </PillLink>
         </li>
