@@ -24,7 +24,7 @@ export function CopyEmail({ email }: { email: string }) {
         type="button"
         onClick={copy}
         aria-label={copied ? "Email copied" : "Copy email"}
-        className="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-fg transition-transform duration-500 ease-[var(--ease-spring)] hover:scale-105 active:scale-95"
+        className="flex size-9 shrink-0 items-center justify-center rounded-full bg-fg/10 text-fg transition-transform duration-500 ease-[var(--ease-spring)] hover:scale-105 active:scale-95"
       >
         {copied ? <Check size={14} weight="light" className="text-accent" /> : <Copy size={14} weight="light" />}
       </button>

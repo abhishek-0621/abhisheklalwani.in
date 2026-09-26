@@ -106,6 +106,18 @@ function Field({ count, routeKey, onReady }: Props) {
     material.dispose();
   }, [geometry, material]);
 
+  // Re-read the colour tokens when the theme changes (dark dots on paper in light mode).
+  useEffect(() => {
+    const sync = () => {
+      const css = getComputedStyle(document.documentElement);
+      material.uniforms.uFg.value.set(css.getPropertyValue("--color-fg").trim() || "#ededed");
+      material.uniforms.uAccent.value.set(css.getPropertyValue("--color-accent").trim() || "#ff6a3d");
+    };
+    const mo = new MutationObserver(sync);
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => mo.disconnect();
+  }, [material]);
+
   // Viewport-dependent layout + camera distance.
   useEffect(() => {
     const aspect = size.width / size.height;

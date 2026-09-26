@@ -7,6 +7,9 @@
   :root {
     color-scheme: dark;
   }
+  :root[data-theme="light"] {
+    color-scheme: light;
+  }
   html {
     background: var(--color-ink);
     color: var(--color-fg);

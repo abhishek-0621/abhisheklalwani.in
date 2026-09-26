@@ -193,7 +193,7 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="absolute right-3 top-3 flex size-8 items-center justify-center rounded-full text-fg-muted transition-colors hover:bg-white/5 hover:text-fg"
+                className="absolute right-3 top-3 flex size-8 items-center justify-center rounded-full text-fg-muted transition-colors hover:bg-fg/5 hover:text-fg"
               >
                 <X size={14} weight="light" />
               </button>

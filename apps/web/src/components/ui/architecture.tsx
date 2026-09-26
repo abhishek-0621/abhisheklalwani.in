@@ -33,13 +33,13 @@ const links = [
 
 export function Architecture() {
   return (
-    <figure className="not-prose my-10 rounded-[var(--radius-shell)] border border-line bg-white/[0.02] p-1.5">
+    <figure className="not-prose my-10 rounded-[var(--radius-shell)] border border-line bg-fg/[0.02] p-1.5">
       <div className="rounded-[var(--radius-core)] bg-ink-sunken p-4 md:p-6">
         <svg viewBox="0 0 875 370" className="hidden h-auto w-full md:block" fill="none" role="img" aria-label="GraphMind architecture diagram">
           {links.map((l, i) => (
             <g key={i}>
-              <path d={l.d} stroke="rgb(255 255 255 / 0.12)" />
-              <path d={l.d} className="flow" stroke={l.hot ? "var(--color-accent)" : "rgb(255 255 255 / 0.4)"} />
+              <path d={l.d} stroke="var(--color-line-strong)" />
+              <path d={l.d} className="flow" stroke={l.hot ? "var(--color-accent)" : "var(--color-fg-faint)"} />
               {l.hot && (
                 <circle r="2.5" fill="var(--color-accent)">
                   <animateMotion dur={`${2.4 + i * 0.3}s`} repeatCount="indefinite" path={l.d} />
@@ -49,7 +49,7 @@ export function Architecture() {
           ))}
           {boxes.map((b) => (
             <g key={b.id}>
-              <rect x={b.x} y={b.y} width={b.w} height={H} rx="12" fill="#111" stroke="rgb(255 255 255 / 0.12)" />
+              <rect x={b.x} y={b.y} width={b.w} height={H} rx="12" fill="var(--color-ink-raised)" stroke="var(--color-line-strong)" />
               <text x={b.x + 16} y={b.y + 24} fill="var(--color-fg)" fontSize="14" fontFamily="var(--font-sans)">
                 {b.label}
               </text>

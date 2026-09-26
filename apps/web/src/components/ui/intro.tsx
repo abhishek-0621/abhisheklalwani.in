@@ -14,4 +14,4 @@ export function Intro() {
 }
 
 /** Runs before paint: marks JS availability and repeat visits. */
-export const bootScript = `(()=>{const d=document.documentElement;d.dataset.js="";try{if(sessionStorage.getItem("al:seen"))d.dataset.seen="";else sessionStorage.setItem("al:seen","1")}catch(e){}})()`;
+export const bootScript = `(()=>{const d=document.documentElement;d.dataset.js="";try{var t=localStorage.getItem("al:theme");d.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")}catch(e){d.dataset.theme="dark"}try{if(sessionStorage.getItem("al:seen"))d.dataset.seen="";else sessionStorage.setItem("al:seen","1")}catch(e){}})()`;

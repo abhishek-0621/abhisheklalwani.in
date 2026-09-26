@@ -21,7 +21,7 @@ export default function WorkIndex() {
           <li key={p.slug} className="reveal" style={stagger(i)}>
             <Link
               href={`/work/${p.slug}`}
-              className="group grid grid-cols-[2rem_1fr_auto] items-baseline gap-3 border-b border-line py-7 sm:grid-cols-[3rem_1fr_auto] sm:gap-4 md:py-8 transition-colors duration-500 hover:bg-white/[0.02] md:grid-cols-[4rem_1fr_1fr_auto] md:px-4"
+              className="group grid grid-cols-[2rem_1fr_auto] items-baseline gap-3 border-b border-line py-7 sm:grid-cols-[3rem_1fr_auto] sm:gap-4 md:py-8 transition-colors duration-500 hover:bg-fg/[0.02] md:grid-cols-[4rem_1fr_1fr_auto] md:px-4"
             >
               <span className="font-mono text-[11px] text-fg-faint">{String(i + 1).padStart(2, "0")}</span>
               <span className="font-serif text-4xl tracking-tight text-fg transition-transform duration-500 ease-[var(--ease-spring)] group-hover:translate-x-2 md:text-5xl">

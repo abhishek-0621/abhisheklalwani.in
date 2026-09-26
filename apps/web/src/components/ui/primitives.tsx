@@ -68,7 +68,7 @@ export function PillLink({
 }) {
   const cls = cn(
     "group inline-flex items-center gap-3 rounded-full py-1.5 pl-5 pr-1.5 text-sm font-medium transition-[transform,background-color,color] duration-500 ease-[var(--ease-spring)] active:scale-[0.97]",
-    variant === "solid" ? "bg-fg text-ink hover:bg-white" : "border border-line-strong text-fg hover:border-fg-muted",
+    variant === "solid" ? "bg-fg text-ink hover:bg-fg/90" : "border border-line-strong text-fg hover:border-fg-muted",
   );
   const inner = (
     <>
@@ -76,7 +76,7 @@ export function PillLink({
       <span
         className={cn(
           "flex size-8 items-center justify-center rounded-full transition-transform duration-500 ease-[var(--ease-spring)] group-hover:-translate-y-px group-hover:translate-x-0.5 group-hover:scale-105",
-          variant === "solid" ? "bg-ink/10" : "bg-white/10",
+          variant === "solid" ? "bg-ink/10" : "bg-fg/10",
         )}
       >
         {icon ?? <ArrowUpRight size={14} weight="light" />}
@@ -106,7 +106,7 @@ export function PillLink({
 /** Double-bezel card: machined outer tray + inner core with a hairline highlight. */
 export function Bezel({ children, className, coreClassName, style }: { children: ReactNode; className?: string; coreClassName?: string; style?: CSSProperties }) {
   return (
-    <div className={cn("rounded-[var(--radius-shell)] border border-line bg-white/[0.02] p-1.5", className)} style={style}>
+    <div className={cn("rounded-[var(--radius-shell)] border border-line bg-fg/[0.02] p-1.5", className)} style={style}>
       <div className={cn("h-full rounded-[var(--radius-core)] bg-ink-raised/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]", coreClassName)}>{children}</div>
     </div>
   );

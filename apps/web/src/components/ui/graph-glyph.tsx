@@ -13,7 +13,7 @@ export function GraphGlyph({ className }: { className?: string }) {
   const d = path.map((n, i) => `${i ? "L" : "M"}${nodes[n][0]} ${nodes[n][1]}`).join(" ");
   return (
     <svg viewBox="0 0 440 310" className={className} fill="none" aria-hidden>
-      <g stroke="rgb(255 255 255 / 0.14)" strokeWidth="1">
+      <g stroke="var(--color-line-strong)" strokeWidth="1">
         {edges.map(([a, b]) => (
           <line key={`${a}-${b}`} x1={nodes[a][0]} y1={nodes[a][1]} x2={nodes[b][0]} y2={nodes[b][1]} strokeDasharray="1 4" />
         ))}

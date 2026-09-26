@@ -24,3 +24,17 @@
   --radius-shell: 1.5rem;
   --radius-core: calc(1.5rem - 0.375rem);
 }
+
+/* Light theme: warm paper, near-black ink, a deeper ember so accent text stays readable. */
+:root[data-theme="light"] {
+  --color-ink: #f6f5f1;
+  --color-ink-raised: #ffffff;
+  --color-ink-sunken: #eeece6;
+  --color-line: rgb(0 0 0 / 0.08);
+  --color-line-strong: rgb(0 0 0 / 0.15);
+  --color-fg: #141414;
+  --color-fg-muted: #5f5f5c;
+  --color-fg-faint: #8f8e89;
+  --color-accent: #e0532a;
+  --color-accent-soft: rgb(224 83 42 / 0.12);
+}

@@ -36,7 +36,7 @@ export function SummonSignal({ children = "Tune in now" }: { children?: React.Re
       className="group my-6 inline-flex items-center gap-3 rounded-full border border-line-strong py-1.5 pl-5 pr-1.5 text-sm font-medium text-fg transition-[transform,border-color] duration-500 ease-[var(--ease-spring)] hover:border-fg-muted active:scale-[0.97]"
     >
       {children}
-      <span className="flex size-8 items-center justify-center rounded-full bg-white/10">
+      <span className="flex size-8 items-center justify-center rounded-full bg-fg/10">
         <span className="size-2 rounded-full bg-accent shadow-[0_0_12px_var(--color-accent)]" />
       </span>
     </button>

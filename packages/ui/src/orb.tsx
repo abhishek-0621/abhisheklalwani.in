@@ -13,7 +13,7 @@ type OrbProps = {
 
 /** The only loading indicator used across the site. Pinned to the dark palette. */
 export function Orb({ state = "connecting", size = 64, label, className }: OrbProps) {
-  return <ThinkingOrb state={state} size={size} theme="dark" aria-label={label} className={className} />;
+  return <ThinkingOrb state={state} size={size} theme="auto" aria-label={label} className={className} />;
 }
 
 /** Centered orb for route-level and section-level suspense boundaries. */

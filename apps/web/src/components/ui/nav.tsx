@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { site } from "@/content/site";
+import { ThemeToggle } from "./theme-toggle";
 
 // In page order, so the highlight moves left to right as you scroll down.
 const links = [
@@ -93,7 +94,7 @@ export function Nav() {
           <ul className="relative hidden items-center md:flex">
             <span
               aria-hidden
-              className="absolute inset-y-0 left-0 rounded-full bg-white/[0.09] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,width,opacity] duration-500 ease-[var(--ease-spring)]"
+              className="absolute inset-y-0 left-0 rounded-full bg-fg/[0.09] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,width,opacity] duration-500 ease-[var(--ease-spring)]"
               style={{ transform: `translateX(${pill?.x ?? 0}px)`, width: pill?.w ?? 0, opacity: pill ? 1 : 0 }}
             />
             {links.map((l) => {
@@ -118,6 +119,7 @@ export function Nav() {
               );
             })}
           </ul>
+          <ThemeToggle />
           <a
             href={site.links.resume}
             target="_blank"
@@ -137,7 +139,7 @@ export function Nav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
-            className="relative size-10 rounded-full bg-white/5 md:hidden"
+            className="relative size-10 rounded-full bg-fg/5 md:hidden"
           >
             <span className={cn("absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 bg-fg transition-transform duration-500 ease-[var(--ease-spring)]", open ? "rotate-45" : "-translate-y-[3px]")} />
             <span className={cn("absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 bg-fg transition-transform duration-500 ease-[var(--ease-spring)]", open ? "-rotate-45" : "translate-y-[3px]")} />
