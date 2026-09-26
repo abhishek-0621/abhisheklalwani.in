@@ -50,7 +50,7 @@ function sceneLayout(width: number, height: number) {
   const wide = width >= 1024 && width / height > 1.1;
   // xyz offset, alpha — keeps shapes clear of the copy they sit behind.
   return wide
-    ? [new Vector4(2.3, 0.1, 0, 1), new Vector4(-2.75, 0, -0.8, 0.85), new Vector4(0, 0, -1.2, 0.5), new Vector4(-3.2, 0, 0, 0.85), new Vector4(0, 0, -2, 0.42), new Vector4(0, 0, -1.2, 0.7)]
+    ? [new Vector4(2.3, 0.1, 0, 1), new Vector4(-2.75, 0, -0.8, 0.85), new Vector4(0, 0, -1.2, 0.5), new Vector4(-3.2, 0, 0, 0.85), new Vector4(0, 0, -2, 0.42), new Vector4(0, 0, -1.2, 0.62)]
     : [new Vector4(0, 2.5, -1, 0.6), new Vector4(0, 0, -1, 0.35), new Vector4(0, 0, -1.5, 0.22), new Vector4(0, 0, -1, 0.3), new Vector4(0, 0, -1.5, 0.35), new Vector4(0, 0.4, -1.5, 0.45)];
 }
 

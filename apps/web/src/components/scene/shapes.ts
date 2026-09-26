@@ -21,7 +21,7 @@ export type SceneBuffers = {
   flow0: Float32Array; // N*2: hot-spot flag (1 / -1), ejecta flag (1 / -1)
   flow2: Float32Array; // N*2: depth through the net (0..1), edge weight (>0) or -activation (<0, neuron)
   flow3: Float32Array; // N*2: packet flag (1 / -1), speed multiplier
-  flow5: Float32Array; // N*2: t along a relation (-1 = entity), relation phase
+  flow5: Float32Array; // N*2: relation (t, phase) or entity (-1 - glowPhase, sizeFactor)
 };
 
 function rng(seed: number) {
@@ -192,45 +192,74 @@ export function buildScenes(n: number): SceneBuffers {
   }
 
   /* ---------------- 5 · knowledge graph ---------------- */
-  // Entities are dot clusters (a few larger "important" ones); each relation is an evenly
-  // dotted line to one of its nearest neighbours. flow5 lets the shader run retrieval pulses
-  // hop by hop along the relations.
+  // A wide, fairly flat graph that fills the screen: nodes are spaced apart (Poisson-style),
+  // sized by importance (hubs, mid nodes, leaves), and linked to nearby nodes, hubs fanning out
+  // further. Node dots carry flow5 = (-1 - glowPhase, sizeFactor); relation dots carry
+  // (t along the relation, relation phase) so the shader can run pulses between entities.
   {
-    const hubs: V3[] = Array.from({ length: 42 }, () => {
-      const u = r() * 2 - 1, th = r() * Math.PI * 2, rad = Math.cbrt(r()), s = Math.sqrt(1 - u * u);
-      return [s * Math.cos(th) * 3.4 * rad, u * 2.1 * rad, s * Math.sin(th) * 1.8 * rad];
-    });
-    const edges: [number, number][] = [];
+    const W = 5.6, H = 3.3;
+    const nodes: { p: V3; size: number; kind: 0 | 1 | 2 }[] = [];
+    for (let tries = 0; nodes.length < 58 && tries < 6000; tries++) {
+      const p: V3 = [(r() * 2 - 1) * W, (r() * 2 - 1) * H, (r() * 2 - 1) * 0.9];
+      if (nodes.every((n) => Math.hypot(n.p[0] - p[0], n.p[1] - p[1]) > 0.95)) {
+        const k = nodes.length;
+        const kind = k < 6 ? 0 : k < 22 ? 1 : 2; // 6 hubs, 16 mid, the rest leaves
+        nodes.push({ p, kind, size: kind === 0 ? 2.4 : kind === 1 ? 1.6 : 1 });
+      }
+    }
+    const edges: [number, number, number][] = []; // a, b, length
     const seen = new Set<string>();
-    hubs.forEach((a, ai) => {
-      const near = hubs
-        .map((b, bi) => ({ bi, d: (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2 }))
-        .filter((x) => x.bi !== ai)
+    nodes.forEach((n, i) => {
+      const fan = n.kind === 0 ? 5 : n.kind === 1 ? 3 : 2;
+      const near = nodes
+        .map((m, j) => ({ j, d: Math.hypot(m.p[0] - n.p[0], m.p[1] - n.p[1], m.p[2] - n.p[2]) }))
+        .filter((x) => x.j !== i && x.d < (n.kind === 0 ? 3.4 : 2.3))
         .sort((x, y) => x.d - y.d)
-        .slice(0, r() < 0.35 ? 3 : 2);
-      for (const { bi } of near) {
-        const k = ai < bi ? `${ai}-${bi}` : `${bi}-${ai}`;
-        if (!seen.has(k)) {
-          seen.add(k);
-          edges.push([ai, bi]);
+        .slice(0, fan);
+      for (const { j, d } of near) {
+        const key = i < j ? `${i}-${j}` : `${j}-${i}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          edges.push([i, j, d]);
         }
       }
     });
-    const entityDots = Math.floor(n * 0.3);
-    const perEdge = Math.max(1, Math.floor((n - entityDots) / edges.length));
-    for (let i = 0; i < n; i++) {
-      if (i < entityDots) {
-        const h = i % hubs.length;
-        put(5, i, jitter(hubs[h], h < 7 ? 0.11 : 0.055));
-      } else {
-        const j = i - entityDots;
-        const ei = Math.min(edges.length - 1, Math.floor(j / perEdge));
-        const t = ((j % perEdge) + 0.5) / perEdge;
-        const [a, b] = edges[ei];
-        put(5, i, jitter(lerp3(hubs[a], hubs[b], 0.04 + t * 0.92), 0.005));
+    // Node dots: a disc per node, dot budget proportional to its area.
+    const nodeBudget = Math.floor(n * 0.26);
+    const weights = nodes.map((nd) => nd.size * nd.size);
+    const wSum = weights.reduce((a2, b2) => a2 + b2, 0);
+    let i = 0;
+    nodes.forEach((nd, k) => {
+      const count = Math.max(6, Math.round((weights[k] / wSum) * nodeBudget));
+      const radius = 0.05 * nd.size;
+      const phase = (k * 0.618034) % 1;
+      for (let c = 0; c < count && i < n; c++, i++) {
+        const u = r() * 2 - 1, th = r() * Math.PI * 2, sq = Math.sqrt(1 - u * u), rad = radius * Math.cbrt(r());
+        put(5, i, [nd.p[0] + sq * Math.cos(th) * rad, nd.p[1] + u * rad, nd.p[2] + sq * Math.sin(th) * rad]);
+        flow5[i * 2] = -1 - phase;
+        flow5[i * 2 + 1] = nd.size;
+      }
+    });
+    // Relation dots: evenly spaced, budget proportional to length so dot density is uniform.
+    const totalLen = edges.reduce((a2, e) => a2 + e[2], 0);
+    const remaining = n - i;
+    edges.forEach(([ea, eb, len], ei) => {
+      const count = Math.max(4, Math.floor((len / totalLen) * remaining));
+      const A = nodes[ea], B = nodes[eb];
+      const start = (0.05 * A.size) / len, end = 1 - (0.05 * B.size) / len;
+      for (let c = 0; c < count && i < n; c++, i++) {
+        const t = (c + 0.5) / count;
+        put(5, i, lerp3(A.p, B.p, start + t * (end - start)));
         flow5[i * 2] = t;
         flow5[i * 2 + 1] = (ei * 0.6180339) % 1;
       }
+    });
+    // Any leftover dots sit on the hubs.
+    for (; i < n; i++) {
+      const nd = nodes[i % 6];
+      put(5, i, jitter(nd.p, 0.05 * nd.size));
+      flow5[i * 2] = -1 - (((i % 6) * 0.618034) % 1);
+      flow5[i * 2 + 1] = nd.size;
     }
   }
 

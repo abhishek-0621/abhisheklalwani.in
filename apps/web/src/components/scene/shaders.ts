@@ -87,16 +87,23 @@ void main() {
   p4.xz = rot(uTime * (ringDot ? -0.32 : 0.16)) * p4.xz;
   p4.xy = rot(0.28) * p4.xy;
 
-  // 5 - knowledge graph: turns slowly; ember retrieval pulses run along a subset of relations.
+  // 5 - knowledge graph: sways gently; pulses travel along relations and entities glow in turn.
   vec3 p5 = aT5;
-  p5.xz = rot(uTime * 0.05) * p5.xz;
+  p5.xz = rot(sin(uTime * 0.12) * 0.22) * p5.xz;
+  bool entity = aFlow5.x < 0.0;
   float hop = 0.0;
-  if (aFlow5.x >= 0.0 && fract(aFlow5.y * 7.13) > 0.5) {
-    float head = fract(uTime * 0.22 + aFlow5.y);
+  float nodeGlow = 0.0;
+  if (!entity && fract(aFlow5.y * 7.13) > 0.55) {
+    float head = fract(uTime * 0.3 + aFlow5.y);
     float dh = head - aFlow5.x;
-    hop = (dh >= 0.0 && dh < 0.18) ? 1.0 - dh / 0.18 : 0.0;
+    hop = (dh >= 0.0 && dh < 0.25) ? 1.0 - dh / 0.25 : 0.0;
   }
-  float graphAlpha = aFlow5.x >= 0.0 ? 0.55 + hop : 1.0;
+  if (entity) {
+    float gp = -aFlow5.x - 1.0;
+    nodeGlow = smoothstep(0.9, 1.0, sin(uTime * 0.8 + gp * 40.0));
+  }
+  float graphAlpha = entity ? 1.1 + nodeGlow * 0.8 : 0.32 + hop * 1.8;
+  float graphSize = entity ? aFlow5.y : 1.0;
 
   vec3 p = p0 * w0 + p1 * w1 + p2 * w2 + p3 * w3 + p4 * w4 + p5 * w5;
   vec4 sc = uScene[0] * w0 + uScene[1] * w1 + uScene[2] * w2 + uScene[3] * w3 + uScene[4] * w4 + uScene[5] * w5;
@@ -108,15 +115,15 @@ void main() {
   // (the network holds still so its lines stay crisp)
   p += vec3(sin(seedPh + uTime * 0.7), cos(seedPh * 1.3 + uTime * 0.6), sin(seedPh * 0.7 + uTime * 0.5)) * (0.012 * (1.0 - w2) + transit * 0.4);
 
-  float pulse = (hot ? 0.9 + uSurge * 0.6 : 0.0) * w0 + (youngStar ? 0.9 : 0.0) * w1 + signal * w2 + (aFlow3.x > 0.0 ? 1.0 : 0.0) * w3 + hop * w5;
+  float pulse = (hot ? 0.9 + uSurge * 0.6 : 0.0) * w0 + (youngStar ? 0.9 : 0.0) * w1 + signal * w2 + (aFlow3.x > 0.0 ? 1.0 : 0.0) * w3 + (hop + nodeGlow) * w5;
   vPulse = pulse;
 
   vec4 mv = modelViewMatrix * vec4(p, 1.0);
   gl_Position = projectionMatrix * mv;
 
   float twinkle = 0.72 + 0.28 * sin(uTime * 1.3 + seedPh * 3.0 + aSeed.z * 6.28);
-  float sizeBoost = 1.0 + pulse * 1.3 + flash * 1.6 * w0;
-  gl_PointSize = min(uSize * aSeed.x * sizeBoost * uPixelRatio / -mv.z, 7.0 * uPixelRatio);
+  float sizeBoost = (1.0 + pulse * 1.3 + flash * 1.6 * w0) * mix(1.0, graphSize, w5);
+  gl_PointSize = min(uSize * aSeed.x * sizeBoost * uPixelRatio / -mv.z, 9.0 * uPixelRatio);
 
   float depth = smoothstep(26.0, 4.0, -mv.z);
   float nearFade = smoothstep(0.8, 3.0, -mv.z);
