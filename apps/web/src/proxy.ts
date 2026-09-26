@@ -32,7 +32,9 @@ export async function proxy(req: NextRequest) {
   const headers = new Headers(req.headers);
   headers.set("x-graphmind-proxy", SECRET);
   headers.set("x-graphmind-client-ip", clientIp(req));
-  const target = new URL(req.nextUrl.pathname + req.nextUrl.search, ORIGIN);
+  // Next strips trailing slashes before this runs, but the Mac serves the app at /graphmind/.
+  const path = req.nextUrl.pathname === "/graphmind" ? "/graphmind/" : req.nextUrl.pathname;
+  const target = new URL(path + req.nextUrl.search, ORIGIN);
   return NextResponse.rewrite(target, { request: { headers } });
 }
 
