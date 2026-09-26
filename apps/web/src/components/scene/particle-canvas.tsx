@@ -177,10 +177,14 @@ function Field({ count, routeKey, onReady }: Props) {
     fl.level += (fl.target - fl.level) * (1 - Math.exp(-dt * (fl.target > fl.level ? 4 : 1.5)));
     u.uSurge.value = fl.level;
 
-    const target = sample(frames.current, window.scrollY);
-    if (progress.current < 0) progress.current = target;
-    progress.current += (target - progress.current) * (1 - Math.exp(-dt * 3.2));
-    u.uProgress.value = Math.min(SCENE_COUNT - 1, Math.max(0, progress.current));
+    // Until the page's sections are measured there is no target; starting from 0 would sweep
+    // through every scene on load, so hold still and snap to the page's own scene once known.
+    if (frames.current.length) {
+      const target = sample(frames.current, window.scrollY);
+      if (progress.current < 0) progress.current = target;
+      progress.current += (target - progress.current) * (1 - Math.exp(-dt * 3.2));
+      u.uProgress.value = Math.min(SCENE_COUNT - 1, Math.max(0, progress.current));
+    }
 
     const m = mouse.current;
     m.x += (m.tx - m.x) * (1 - Math.exp(-dt * 2.5));
