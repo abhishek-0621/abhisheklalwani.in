@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { MailLink } from "./mail-link";
 
-type SceneIndex = 0 | 1 | 2 | 3 | 4;
+type SceneIndex = 0 | 1 | 2 | 3 | 4 | 5;
 
 /** A page section bound to a particle scene. Sections set the rhythm: huge vertical space. */
 export function Section({

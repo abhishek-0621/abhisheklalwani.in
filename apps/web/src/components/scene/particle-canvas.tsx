@@ -50,8 +50,8 @@ function sceneLayout(width: number, height: number) {
   const wide = width >= 1024 && width / height > 1.1;
   // xyz offset, alpha — keeps shapes clear of the copy they sit behind.
   return wide
-    ? [new Vector4(2.3, 0.1, 0, 1), new Vector4(-2.75, 0, -0.8, 0.85), new Vector4(0, 0, -1.2, 0.5), new Vector4(-3.2, 0, 0, 0.85), new Vector4(0, 0, -2, 0.42)]
-    : [new Vector4(0, 2.5, -1, 0.6), new Vector4(0, 0, -1, 0.35), new Vector4(0, 0, -1.5, 0.22), new Vector4(0, 0, -1, 0.3), new Vector4(0, 0, -1.5, 0.35)];
+    ? [new Vector4(2.3, 0.1, 0, 1), new Vector4(-2.75, 0, -0.8, 0.85), new Vector4(0, 0, -1.2, 0.5), new Vector4(-3.2, 0, 0, 0.85), new Vector4(0, 0, -2, 0.42), new Vector4(0, 0, -1.2, 0.7)]
+    : [new Vector4(0, 2.5, -1, 0.6), new Vector4(0, 0, -1, 0.35), new Vector4(0, 0, -1.5, 0.22), new Vector4(0, 0, -1, 0.3), new Vector4(0, 0, -1.5, 0.35), new Vector4(0, 0.4, -1.5, 0.45)];
 }
 
 function Field({ count, routeKey, onReady }: Props) {
@@ -65,7 +65,7 @@ function Field({ count, routeKey, onReady }: Props) {
   const { size, camera, gl } = useThree();
 
   const geometry = useMemo(() => {
-    const { targets, seed, flow0, flow2, flow3 } = buildScenes(count);
+    const { targets, seed, flow0, flow2, flow3, flow5 } = buildScenes(count);
     const g = new BufferGeometry();
     g.setAttribute("position", new BufferAttribute(targets[0], 3));
     for (let s = 1; s < SCENE_COUNT; s++) g.setAttribute(`aT${s}`, new BufferAttribute(targets[s], 3));
@@ -73,6 +73,7 @@ function Field({ count, routeKey, onReady }: Props) {
     g.setAttribute("aFlow0", new BufferAttribute(flow0, 2));
     g.setAttribute("aFlow2", new BufferAttribute(flow2, 2));
     g.setAttribute("aFlow3", new BufferAttribute(flow3, 2));
+    g.setAttribute("aFlow5", new BufferAttribute(flow5, 2));
     return g;
   }, [count]);
 

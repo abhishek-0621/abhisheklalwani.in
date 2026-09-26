@@ -7,11 +7,12 @@
  *   2 network   — a fully connected 5-8-8-3 net; a forward-pass wave sweeps through it (shader-animated)
  *   3 warp      — a tunnel of twisting rings streaming toward the viewer (animated in the shader)
  *   4 sphere    — the orb: fibonacci sphere with two orbit rings
+ *   5 graph     — a knowledge graph: entity clusters, dotted relations, retrieval pulses (GraphMind)
  *
  * Scenes 0, 1 and 3 store parameters, not positions: the shader computes where each
  * particle is from time, so those scenes keep moving instead of holding a pose.
  */
-export const SCENE_COUNT = 5;
+export const SCENE_COUNT = 6;
 
 export type SceneBuffers = {
   /** SCENE_COUNT × (N*3). Scene 0: nebula rest position. Scene 1: (radius, angle, height). Scene 3: (angle, radius, phase). */
@@ -20,6 +21,7 @@ export type SceneBuffers = {
   flow0: Float32Array; // N*2: hot-spot flag (1 / -1), ejecta flag (1 / -1)
   flow2: Float32Array; // N*2: depth through the net (0..1), edge weight (>0) or -activation (<0, neuron)
   flow3: Float32Array; // N*2: packet flag (1 / -1), speed multiplier
+  flow5: Float32Array; // N*2: t along a relation (-1 = entity), relation phase
 };
 
 function rng(seed: number) {
@@ -47,6 +49,7 @@ export function buildScenes(n: number): SceneBuffers {
   const flow0 = new Float32Array(n * 2).fill(-1);
   const flow2 = new Float32Array(n * 2).fill(-1);
   const flow3 = new Float32Array(n * 2).fill(-1);
+  const flow5 = new Float32Array(n * 2).fill(-1);
 
   for (let i = 0; i < n; i++) {
     seed[i * 4] = 0.55 + r() * 0.9;
@@ -188,5 +191,48 @@ export function buildScenes(n: number): SceneBuffers {
     }
   }
 
-  return { targets, seed, flow0, flow2, flow3 };
+  /* ---------------- 5 · knowledge graph ---------------- */
+  // Entities are dot clusters (a few larger "important" ones); each relation is an evenly
+  // dotted line to one of its nearest neighbours. flow5 lets the shader run retrieval pulses
+  // hop by hop along the relations.
+  {
+    const hubs: V3[] = Array.from({ length: 42 }, () => {
+      const u = r() * 2 - 1, th = r() * Math.PI * 2, rad = Math.cbrt(r()), s = Math.sqrt(1 - u * u);
+      return [s * Math.cos(th) * 3.4 * rad, u * 2.1 * rad, s * Math.sin(th) * 1.8 * rad];
+    });
+    const edges: [number, number][] = [];
+    const seen = new Set<string>();
+    hubs.forEach((a, ai) => {
+      const near = hubs
+        .map((b, bi) => ({ bi, d: (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2 }))
+        .filter((x) => x.bi !== ai)
+        .sort((x, y) => x.d - y.d)
+        .slice(0, r() < 0.35 ? 3 : 2);
+      for (const { bi } of near) {
+        const k = ai < bi ? `${ai}-${bi}` : `${bi}-${ai}`;
+        if (!seen.has(k)) {
+          seen.add(k);
+          edges.push([ai, bi]);
+        }
+      }
+    });
+    const entityDots = Math.floor(n * 0.3);
+    const perEdge = Math.max(1, Math.floor((n - entityDots) / edges.length));
+    for (let i = 0; i < n; i++) {
+      if (i < entityDots) {
+        const h = i % hubs.length;
+        put(5, i, jitter(hubs[h], h < 7 ? 0.11 : 0.055));
+      } else {
+        const j = i - entityDots;
+        const ei = Math.min(edges.length - 1, Math.floor(j / perEdge));
+        const t = ((j % perEdge) + 0.5) / perEdge;
+        const [a, b] = edges[ei];
+        put(5, i, jitter(lerp3(hubs[a], hubs[b], 0.04 + t * 0.92), 0.005));
+        flow5[i * 2] = t;
+        flow5[i * 2 + 1] = (ei * 0.6180339) % 1;
+      }
+    }
+  }
+
+  return { targets, seed, flow0, flow2, flow3, flow5 };
 }

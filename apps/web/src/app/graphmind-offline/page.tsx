@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function GraphMindOffline() {
   return (
-    <Section scene={4} className="flex min-h-[100dvh] flex-col items-center justify-center text-center">
+    <Section scene={5} className="flex min-h-[100dvh] flex-col items-center justify-center text-center">
       <div className="reveal flex items-center gap-3 rounded-full border border-line bg-ink/60 py-1.5 pl-2 pr-4" style={stagger(0)}>
         <Orb state="listening" size={20} label="Offline" />
         <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-fg-muted">

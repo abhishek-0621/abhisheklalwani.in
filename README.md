@@ -28,7 +28,7 @@ A project with a live app gets its own Vercel project on a subdomain (`<slug>.ab
 
 - Tokens: `packages/ui/src/tokens.css` — change `--color-accent` once, it flows to CSS, Tailwind and the WebGL scene.
 - Loading states: `<Orb />` / `<OrbFallback />` from `@al/ui/orb` only (thinking-orbs).
-- Sections bind to a particle scene via `<Section scene={0-4}>`: 0 graph · 1 clusters · 2 layers · 3 pipeline · 4 orb.
+- Sections bind to a particle scene via `<Section scene={0-5}>`: 0 big bang · 1 galaxy · 2 neural net · 3 warp tunnel · 4 orb · 5 knowledge graph.
 - Scroll reveals: add `className="reveal"` and `style={stagger(i)}`.
 
 ## Stray Signals (easter egg + agent)
