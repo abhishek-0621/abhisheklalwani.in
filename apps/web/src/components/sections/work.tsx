@@ -17,6 +17,7 @@ const visuals: Record<string, ReactNode> = {
 
 const statusLabel: Record<Project["status"], string> = {
   live: "Live on this site",
+  selfhosted: "Live when my Mac is on",
   local: "Demo on request",
   archived: "Archived",
 };
@@ -30,7 +31,7 @@ function FeaturedCard({ p }: { p: Project }) {
             <span>{p.year}</span>
             <span className="h-px w-6 bg-line-strong" />
             <span className="flex items-center gap-2">
-              <span className={`size-1.5 rounded-full ${p.status === "live" ? "bg-accent" : "bg-fg-faint"}`} />
+              <span className={`size-1.5 rounded-full ${p.status === "live" || p.status === "selfhosted" ? "bg-accent" : "bg-fg-faint"}`} />
               {statusLabel[p.status]}
             </span>
           </div>
@@ -43,7 +44,14 @@ function FeaturedCard({ p }: { p: Project }) {
             ))}
           </div>
           <div className="mt-auto flex flex-wrap gap-3 pt-10">
-            <PillLink href={`/work/${p.slug}`}>Read case study</PillLink>
+            {p.demo && (
+              <PillLink href={p.demo} external>
+                Open {p.title}
+              </PillLink>
+            )}
+            <PillLink href={`/work/${p.slug}`} variant={p.demo ? "ghost" : "solid"}>
+              Read case study
+            </PillLink>
             {p.repo && (
               <PillLink href={p.repo} variant="ghost" external icon={<GithubLogo size={14} weight="light" />}>
                 Source

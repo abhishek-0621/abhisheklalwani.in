@@ -2,6 +2,7 @@ const email = "abhisheklalwani2009@gmail.com";
 const whatsappNumber = "917020688599"; // country code + number, no "+" (wa.me format)
 const mailSubject = "Hello from abhisheklalwani.in";
 const whatsappText = "Hi Abhishek, I came across your portfolio at abhisheklalwani.in and would like to connect.";
+export const whatsappLink = (text: string) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
 
 export const site = {
   name: "Abhishek Lalwani",
@@ -14,7 +15,11 @@ export const site = {
   links: {
     github: "https://github.com/abhishek-0621",
     linkedin: "https://www.linkedin.com/in/abhishek-lalwani/",
-    whatsapp: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`,
+    whatsapp: whatsappLink(whatsappText),
+    /** Pre-filled for visitors who find GraphMind offline. */
+    whatsappGraphMind: whatsappLink("Hi Abhishek, I'd like to try GraphMind — could you bring it online?"),
+    /** GraphMind itself, served from Abhishek's Mac through the portfolio (see src/proxy.ts). */
+    graphmind: "/graphmind",
     /** Desktop: Gmail web compose. Touch devices: mailto, which opens the Gmail / Mail app. */
     gmail: `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(mailSubject)}`,
     mailto: `mailto:${email}?subject=${encodeURIComponent(mailSubject)}`,

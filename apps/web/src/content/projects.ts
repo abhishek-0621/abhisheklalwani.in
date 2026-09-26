@@ -13,7 +13,8 @@ export type Project = {
   summary: string;
   year: string;
   role: string;
-  status: "live" | "local" | "archived";
+  /** selfhosted = live on this site while Abhishek's Mac is online. */
+  status: "live" | "selfhosted" | "local" | "archived";
   tags: string[];
   metrics: { value: string; label: string }[];
   repo?: string;
@@ -31,7 +32,7 @@ export const projects: Project[] = [
       "A multimodal knowledge-graph platform: documents, code, audio, video and whole repositories become queryable Neo4j graphs, with GraphRAG chat and an MCP server so other agents can use them.",
     year: "2026",
     role: "Architect & sole engineer — M.Tech thesis, BITS Pilani",
-    status: "local",
+    status: "selfhosted",
     tags: ["GraphRAG", "Neo4j", "FastAPI", "Celery", "MCP", "Lit"],
     metrics: [
       { value: "2.4×", label: "lower token cost, graph-first mode" },
@@ -40,6 +41,7 @@ export const projects: Project[] = [
       { value: "3", label: "LLMs benchmarked on 35 questions" },
     ],
     repo: "https://github.com/graphMindv2/graphmind",
+    demo: "/graphmind",
     featured: true,
   },
   {

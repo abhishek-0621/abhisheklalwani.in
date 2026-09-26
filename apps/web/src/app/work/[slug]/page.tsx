@@ -50,7 +50,7 @@ export default async function CaseStudy({ params }: PageProps<"/work/[slug]">) {
           {[
             ["Year", p.year],
             ["Role", p.role],
-            ["Status", p.status === "live" ? "Live" : "Runs locally — demo on request"],
+            ["Status", p.status === "live" ? "Live" : p.status === "selfhosted" ? "Live when my Mac is on" : "Runs locally — demo on request"],
             ["Stack", p.tags.slice(0, 4).join(" · ")],
           ].map(([k, v]) => (
             <div key={k}>
@@ -63,7 +63,7 @@ export default async function CaseStudy({ params }: PageProps<"/work/[slug]">) {
         <div className="reveal mt-10 flex flex-wrap gap-3" style={stagger(4)}>
           {p.demo && (
             <PillLink href={p.demo} external>
-              Open live app
+              Open {p.title}
             </PillLink>
           )}
           {p.repo && (
