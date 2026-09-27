@@ -3,7 +3,8 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "passThroughEnv": ["GRAPHMIND_ORIGIN", "GRAPHMIND_PROXY_SECRET"]
     },
     "typecheck": { "dependsOn": ["^typecheck"] },
     "dev": { "cache": false, "persistent": true }
