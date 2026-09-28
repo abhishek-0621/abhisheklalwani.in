@@ -1,6 +1,6 @@
 {
-  "version": "2026-W39",
-  "generatedAt": "2026-09-25T23:45:26.691Z",
+  "version": "2026-W40",
+  "generatedAt": "2026-09-28T03:30:06.285Z",
   "items": [
     {
       "id": "FimKKk5bf2",
@@ -49,6 +49,54 @@
       "hook": "Why do soccer players kick after the whistle?",
       "publishedAt": "2026-07-18T18:09:47.000Z",
       "score": 16
+    },
+    {
+      "id": "nU04fENk6P",
+      "url": "https://elifshafak.substack.com/p/a-lovers-quarrel-with-the-world",
+      "title": "A Lover’s Quarrel with the World",
+      "publication": "Unmapped Storylands with Elif Shafak",
+      "author": "Elif Shafak",
+      "topic": "ideas",
+      "quote": "A poem begins as a lump in the throat, a sense of wrong, a homesickness, a lovesickness. It is a reaching-out expression; an effort to find fulfillment.",
+      "hook": "How literature is born from a wound.",
+      "publishedAt": "2026-09-06T19:34:05.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "61V5hyK4k5",
+      "url": "https://elifshafak.substack.com/p/every-heart-sings-an-incomplete-song",
+      "title": "Every Heart Sings an Incomplete Song",
+      "publication": "Unmapped Storylands with Elif Shafak",
+      "author": "Elif Shafak",
+      "topic": "ideas",
+      "quote": "In the face of death and destruction, all differences had evaporated. There was not a single soul that the grocer scowled at that night.",
+      "hook": "A moment of unity in the face of an earthquake reveals the power of shared humanity.",
+      "publishedAt": "2026-09-27T17:11:46.000Z",
+      "score": 19.3
+    },
+    {
+      "id": "RmvgL76jDi",
+      "url": "https://elifshafak.substack.com/p/home-is-a-place-where-you-have-never",
+      "title": "Home Is A Place Where You Have Never Been",
+      "publication": "Unmapped Storylands with Elif Shafak",
+      "author": "Elif Shafak",
+      "topic": "ideas",
+      "quote": "‘You… you traveled to Istanbul on the trail of an imaginary character ?”‘\n‘Yup, we even went to the Cemetery of the Companionless.’",
+      "hook": "Discover how a novel inspired a journey to Istanbul and redefined the concept of home.",
+      "publishedAt": "2026-09-20T20:09:46.000Z",
+      "score": 23.1
+    },
+    {
+      "id": "gPEylWZklS",
+      "url": "https://elifshafak.substack.com/p/hope-is-the-last-thing-that-remains",
+      "title": "Hope is the Last Thing that Remains",
+      "publication": "Unmapped Storylands with Elif Shafak",
+      "author": "Elif Shafak",
+      "topic": "ideas",
+      "quote": "Perhaps we are right in putting hope into our novels, our stories and our poems. Perhaps this is how we resist and rebel, for we know, or we sense, intuitively rather than intellectually, that hope, such an essential source for humanity, needs literature to survive and thrive.",
+      "hook": "How literature preserves hope in times of crisis",
+      "publishedAt": "2026-09-13T15:39:42.000Z",
+      "score": 20.1
     },
     {
       "id": "GjUpIEJyFG",
@@ -159,6 +207,18 @@
       "score": 18.3
     },
     {
+      "id": "PbEL_PNos9",
+      "url": "https://jamescrews.substack.com/p/a-little-hope",
+      "title": "A Little Hope",
+      "publication": "Poetry Is Life",
+      "author": "James Crews",
+      "topic": "poetry",
+      "quote": "I held the hydrangeas under the hose\nand watched a few white crab spiders\nskitter out of the interlocking blossoms,\nand down my hand. Untouched by\ntheir beauty, by the amplified buzzing\nof a bumblebee rolling inside the pollen-\nrich cup of a windflower, I was tired\nof news unspooling everything that’s wrong\nwith the world, weary of endless lies.",
+      "hook": "Finding hope in nature amidst a world filled with negativity.",
+      "publishedAt": "2026-08-28T10:53:43.000Z",
+      "score": 17.8
+    },
+    {
       "id": "peEGhmT5nZ",
       "url": "https://jamescrews.substack.com/p/allowed-to-be-ordinary",
       "title": "Allowed To Be Ordinary",
@@ -181,6 +241,18 @@
       "hook": "Finding grounding in nature amidst life's uncertainties.",
       "publishedAt": "2026-09-18T10:13:28.000Z",
       "score": 17.8
+    },
+    {
+      "id": "BEV1qWHN28",
+      "url": "https://jamescrews.substack.com/p/in-dark-times",
+      "title": "In Dark Times",
+      "publication": "Poetry Is Life",
+      "author": "James Crews",
+      "topic": "poetry",
+      "quote": "What I’m trying to say is that you have\nno idea what kind of night someone\nmight be holding inside, and a single\nsoft word …",
+      "hook": "Discover the unseen burdens we carry and the power of a soft word.",
+      "publishedAt": "2026-08-14T10:18:53.000Z",
+      "score": 18.6
     },
     {
       "id": "vpum-KdtQ-",
@@ -255,6 +327,30 @@
       "score": 23.1
     },
     {
+      "id": "WLHTqYsS1C",
+      "url": "https://lauraerickson.substack.com/p/botflies-blowflies-and-other-parasites",
+      "title": "Botflies, Blowflies, and Other Parasites",
+      "publication": "Laura Erickson's For the Birds",
+      "author": "Laura Erickson",
+      "topic": "nature",
+      "quote": "The scientists found that in every single nest, the fur was contaminated with at least 2 pesticides—in some, as many as 11—each one in common veterinary use to protect livestock and pets. But are these pesticides actually dangerous for birds? The researchers discovered that the more of these pesticides present in the fur incorporated into a nest, the fewer eggs produced and the higher the chick mortality.",
+      "hook": "Discover how treated pet fur in bird nests can harm more than it helps.",
+      "publishedAt": "2026-09-03T17:19:35.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "C_MyE59kZl",
+      "url": "https://lauraerickson.substack.com/p/forget-forgetfulness",
+      "title": "Forget Forgetfulness",
+      "publication": "Laura Erickson's For the Birds",
+      "author": "Laura Erickson",
+      "topic": "nature",
+      "quote": "Whether in an oak tree or on the ground below, Blue Jays sort through acorns, selecting the most viable ones to store away.",
+      "hook": "Discover why Blue Jays are strategic acorn hoarders, not forgetful.",
+      "publishedAt": "2026-08-17T02:54:37.000Z",
+      "score": 18.3
+    },
+    {
       "id": "y66aL7bg0a",
       "url": "https://lauraerickson.substack.com/p/o-frabjous-day-callooh-callay",
       "title": "O frabjous day! Callooh! Callay!",
@@ -265,6 +361,30 @@
       "hook": "Discover the emotional bond between a woman and a Pileated Woodpecker.",
       "publishedAt": "2025-07-16T03:32:03.634Z",
       "score": 19.1
+    },
+    {
+      "id": "DkyDkNBUPD",
+      "url": "https://lauraerickson.substack.com/p/piping-plovers-nest-on-wisconsin",
+      "title": "Piping Plovers Nest on Wisconsin Point!",
+      "publication": "Laura Erickson's For the Birds",
+      "author": "Laura Erickson",
+      "topic": "nature",
+      "quote": "Captive rearing has been used in the Great Lakes since 1992 to salvage eggs that would otherwise have no chance of survival after a nest is abandoned, usually because one of the parents is killed or high water floods the nest.",
+      "hook": "Discover how habitat restoration brought Piping Plovers back to Wisconsin Point.",
+      "publishedAt": "2026-09-09T11:59:06.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "Xm-GWzDdzZ",
+      "url": "https://lauraerickson.substack.com/p/seasonal-transitions",
+      "title": "Seasonal Transitions",
+      "publication": "Laura Erickson's For the Birds",
+      "author": "Laura Erickson",
+      "topic": "nature",
+      "quote": "The birds themselves, both as individuals and as species, see seasonal transitions with much more nuance.",
+      "hook": "Discover how birds mark the transition from summer to autumn with nuanced precision.",
+      "publishedAt": "2026-08-21T12:53:22.000Z",
+      "score": 18.3
     },
     {
       "id": "ZQ6iJYy0UV",
@@ -387,6 +507,54 @@
       "score": 18.3
     },
     {
+      "id": "wk_0F6ktjk",
+      "url": "https://ordinaryplots.substack.com/p/charlie-smiths-the-rose",
+      "title": "Charlie Smith's \"The Rose\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "I'm almost naked here, skinnier than I used to be, almost helpless or maybe I'm completely helpless as the religious say is the way to heaven—all right I'm helpless—",
+      "hook": "Explore the vulnerability and searching wonder in Charlie Smith's 'The Rose.'",
+      "publishedAt": "2026-07-19T11:02:29.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "Oz373huxLV",
+      "url": "https://ordinaryplots.substack.com/p/claudia-emersons-metaphor",
+      "title": "Claudia Emerson's \"Metaphor\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "Isn’t that what today’s poem does? Isn’t that what a metaphor does? It takes the seeming-smallness of a moment—a bat flying through a house—and makes it worth the whole universe. It makes what once was trivial related, now, to everything.",
+      "hook": "How metaphors transform ordinary moments into universal truths.",
+      "publishedAt": "2026-07-12T11:00:14.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "9i-f2Q5N3r",
+      "url": "https://ordinaryplots.substack.com/p/jennifer-grotzs-over-and-above",
+      "title": "Jennifer Grotz’s “Over and Above”",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "I attended the summer rain. When it pelted the lake like fingers across a keyless piano, I attended the fingertips’ perforations on the soft surface.",
+      "hook": "Discover how 'attended' transforms in poetry to mean more than presence.",
+      "publishedAt": "2026-08-30T11:03:39.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "iRmxchG-yT",
+      "url": "https://ordinaryplots.substack.com/p/kyle-carrero-lopezs-performance-studies",
+      "title": "Kyle Carrero Lopez’s “Performance Studies”",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "Every act of being in front of others is an act of performance, and so, to choose to be yourself in such a moment is an honest choice at the heart of such a performance.",
+      "hook": "Exploring the authenticity and politics of performance through poetry.",
+      "publishedAt": "2026-09-13T11:02:50.000Z",
+      "score": 16.8
+    },
+    {
       "id": "FObT7-aA2D",
       "url": "https://ordinaryplots.substack.com/p/linda-pastans-imaginary-conversation",
       "title": "Linda Pastan's \"Imaginary Conversation\"",
@@ -397,6 +565,90 @@
       "hook": "Rethinking time: live each day as if it were your first.",
       "publishedAt": "2025-03-23T11:02:54.282Z",
       "score": 18.3
+    },
+    {
+      "id": "j3o9CtDVWb",
+      "url": "https://ordinaryplots.substack.com/p/margaret-drafts-colic",
+      "title": "Margaret Draft's \"Colic\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "You hollow out the land,\nyou try to make enough space, and when you think you have enough,\nkeep digging.",
+      "hook": "Exploring loss and memory through the metaphor of horses.",
+      "publishedAt": "2025-11-23T12:00:32.401Z",
+      "score": 18.3
+    },
+    {
+      "id": "dUxI1MK8Fc",
+      "url": "https://ordinaryplots.substack.com/p/marie-howes-hurry",
+      "title": "Marie Howe's \"Hurry\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "writing",
+      "quote": "And, Hurry up, she says, over her shoulder, looking back at me, laughing.",
+      "hook": "Exploring the profound connections in Marie Howe's poetry through the word 'and'.",
+      "publishedAt": "2025-05-11T11:02:24.998Z",
+      "score": 16.8
+    },
+    {
+      "id": "dSGnoXRHOo",
+      "url": "https://ordinaryplots.substack.com/p/mary-olivers-clam",
+      "title": "Mary Oliver's \"Clam\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "Do not mock them for their gentleness, they have a muscle that loves being alive.",
+      "hook": "Finding profound meaning in a simple poem about clams.",
+      "publishedAt": "2025-10-05T11:02:17.167Z",
+      "score": 18.3
+    },
+    {
+      "id": "KPA_mN9Hlo",
+      "url": "https://ordinaryplots.substack.com/p/mary-olivers-some-questions-you-might",
+      "title": "Mary Oliver's \"Some Questions You Might Ask\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "Is the soul solid, like iron? Or is it tender and breakable, like the wings of a moth in the beak of the owl?",
+      "hook": "Explore the soul's nature through Mary Oliver's poetic questions.",
+      "publishedAt": "2023-12-31T12:01:02.756Z",
+      "score": 18.3
+    },
+    {
+      "id": "1C8zQOaQgV",
+      "url": "https://ordinaryplots.substack.com/p/mary-omalleys-holy",
+      "title": "Mary O’Malley’s “Holy”",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "ideas",
+      "quote": "I will remember what is holy. I will say the word without shame.",
+      "hook": "Exploring the holiness in everyday moments through poetry and parenthood.",
+      "publishedAt": "2026-08-23T11:00:41.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "g_EiRY-AZA",
+      "url": "https://ordinaryplots.substack.com/p/maya-c-popas-had-we-but-world-enough",
+      "title": "Maya C. Popa's \"Had We But World Enough\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "I’m relenting, life: It’s always you who wins, and we keep living.",
+      "hook": "A meditation on poetry and life's beauty through Maya C. Popa's work.",
+      "publishedAt": "2026-07-26T11:02:28.000Z",
+      "score": 16.8
+    },
+    {
+      "id": "TBielvcoHA",
+      "url": "https://ordinaryplots.substack.com/p/michael-bazzetts-the-man-kept-reaching",
+      "title": "Michael Bazzett's \"The Man Kept Reaching\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "I love a prize that centers voices speaking from the other side of a half century. We live in this moment of 30 under 30 lists and all sorts of things that put pressure on young people to refine and present themselves in such a way that allows them to reach some semblance of fame or prestige or notoriety before it seems like it is too late.",
+      "hook": "Exploring the surreal pursuit of the unattainable in poetry",
+      "publishedAt": "2026-08-16T11:02:05.000Z",
+      "score": 16.8
     },
     {
       "id": "83RLMEk1KE",
@@ -411,6 +663,54 @@
       "score": 18.3
     },
     {
+      "id": "YHe6Qv6N4J",
+      "url": "https://ordinaryplots.substack.com/p/naomi-shihab-nyes-the-art-of-disappearing",
+      "title": "Naomi Shihab Nye's \"The Art of Disappearing\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "ideas",
+      "quote": "When they say Don't I know you? say no.\n\nWhen they invite you to the party remember what parties are like before answering. Someone telling you in a loud voice they once wrote a poem. Greasy sausage balls on a paper plate. Then reply.",
+      "hook": "Discover the art of disappearing into your own world.",
+      "publishedAt": "2023-09-10T11:00:49.937Z",
+      "score": 18.3
+    },
+    {
+      "id": "dfYvzPEcDn",
+      "url": "https://ordinaryplots.substack.com/p/norman-dubies-a-grandfathers-last",
+      "title": "Norman Dubie's \"A Grandfather's Last Letter\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "The very young and old are best at finding Little things to do. The world is jealous of us, you know?",
+      "hook": "A grandfather's tender letter explores life's wonders and mysteries.",
+      "publishedAt": "2026-06-21T11:01:35.000Z",
+      "score": 17.6
+    },
+    {
+      "id": "Bc56FH_OYU",
+      "url": "https://ordinaryplots.substack.com/p/phillip-b-williams-paradise",
+      "title": "Phillip B. Williams' \"Paradise\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "The repetition of sameness over time allows such sameness to begin to strike a different note, to reveal, to clarify, but only if you listen.",
+      "hook": "Explore how repetition in poetry can transform language and evoke collective experience.",
+      "publishedAt": "2026-08-02T11:01:16.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "b3gEW7QrwW",
+      "url": "https://ordinaryplots.substack.com/p/rachel-zuckers-hours-days-years-unmoor",
+      "title": "Rachel Zucker's \"Hours Days Years Unmoor Their Orbits\"",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "Both today’s poem and the one I just mentioned perform an act of holding in the midst of all of that forgetting.",
+      "hook": "Exploring how poetry transforms our understanding of time and love.",
+      "publishedAt": "2026-07-05T11:02:30.000Z",
+      "score": 18.3
+    },
+    {
       "id": "Vi4su61GB0",
       "url": "https://ordinaryplots.substack.com/p/ron-padgetts-in-fact",
       "title": "Ron Padgett's \"In Fact\"",
@@ -421,6 +721,90 @@
       "hook": "Exploring gendered criticism and the treatment of emotionality in literature.",
       "publishedAt": "2026-08-09T11:00:48.000Z",
       "score": 15.3
+    },
+    {
+      "id": "BAK23Yt9cV",
+      "url": "https://ordinaryplots.substack.com/p/sanna-wanis-what-i-thought-love-was",
+      "title": "Sanna Wani’s “What I Thought Love Was”",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "Love, instead, as the way there, with the billboards and the tall grass rushing past in the periphery as the road ahead seems to curve with such slowness that it seems to move almost away from you, over the edge of the earth, even as you move toward it.",
+      "hook": "Exploring love through the lens of poetry and the ordinary.",
+      "publishedAt": "2026-09-20T11:03:08.000Z",
+      "score": 19.3
+    },
+    {
+      "id": "F0rueE72Fs",
+      "url": "https://ordinaryplots.substack.com/p/tove-ditlevsens-my-best-time-translated",
+      "title": "Tove Ditlevsen’s “My Best Time” (translated by Sophia Hersi Smith & Jennifer Russell)",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "And I am of no use unlike people out there, but in my mind's dark refuge something is renewed— and something knotted daily is soundlessly undone as a branch at dawn sways in a bird's wake.",
+      "hook": "Exploring solitude and childhood in Tove Ditlevsen's 'My Best Time'.",
+      "publishedAt": "2026-09-27T11:02:48.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "AHC5cL_gTV",
+      "url": "https://oxfordpoetry.substack.com/p/a-poem-by-derek-chan",
+      "title": "A poem by Derek Chan",
+      "publication": "Oxford Poetry’s Substack",
+      "author": "Oxford Poetry",
+      "topic": "poetry",
+      "quote": "I mourn you now despite not knowing who I am. I mourn this moment despite standing in the future where there is already too much light to ignore.",
+      "hook": "Mourning the unknown and the future in vivid, poetic imagery.",
+      "publishedAt": "2025-04-13T09:16:11.870Z",
+      "score": 18.6
+    },
+    {
+      "id": "tF0GzgSlX9",
+      "url": "https://oxfordpoetry.substack.com/p/a-poem-by-hua-xi",
+      "title": "A poem by Hua Xi",
+      "publication": "Oxford Poetry’s Substack",
+      "author": null,
+      "topic": "poetry",
+      "quote": "You answer the phone in the ﬁrst person even though you are only snow falling.",
+      "hook": "A haunting poem about communication and loss.",
+      "publishedAt": "2026-06-28T09:00:55.000Z",
+      "score": 21.6
+    },
+    {
+      "id": "GJFo9JvPDX",
+      "url": "https://oxfordpoetry.substack.com/p/a-poem-by-margaret-atwood",
+      "title": "A poem by Margaret Atwood",
+      "publication": "Oxford Poetry’s Substack",
+      "author": null,
+      "topic": "poetry",
+      "quote": "Maybe I’ll make something of them, these little scraps of fabric abandoned in their drawers, these buttons, fallen from vanished shirts I mended once, with care – these little words I tucked away for later.",
+      "hook": "Crafting new beginnings from the remnants of the past.",
+      "publishedAt": "2026-01-27T11:07:20.000Z",
+      "score": 19.6
+    },
+    {
+      "id": "JylBjFsHcp",
+      "url": "https://oxfordpoetry.substack.com/p/a-poem-by-rowan-ricardo-phillips",
+      "title": "A poem by Rowan Ricardo Phillips",
+      "publication": "Oxford Poetry’s Substack",
+      "author": "Oxford Poetry",
+      "topic": "poetry",
+      "quote": "The thought comes sharp at first, Then room tone – The motor in the refrigerator, The faint pressure of air on your skin Forgotten until the wind rises.",
+      "hook": "Exploring the cyclical nature of life and thought through lyrical beauty.",
+      "publishedAt": "2026-02-22T10:02:15.000Z",
+      "score": 23.1
+    },
+    {
+      "id": "uZ9s1bvI_k",
+      "url": "https://oxfordpoetry.substack.com/p/a-poem-by-sinead-morrissey",
+      "title": "A poem by Sinéad Morrissey",
+      "publication": "Oxford Poetry’s Substack",
+      "author": "Oxford Poetry",
+      "topic": "poetry",
+      "quote": "The runway, an immensity of permissible trespass, is performing its own apotheosis as Berliners hardier than us pound round its lots.",
+      "hook": "A family's summer in Berlin, exploring survival and memory.",
+      "publishedAt": "2026-04-07T12:37:05.000Z",
+      "score": 19.6
     },
     {
       "id": "bckHSERfEJ",
@@ -1009,6 +1393,30 @@
       "hook": "Discover how Ozempic might be more than a diabetes drug.",
       "publishedAt": "2024-08-13T08:16:11.759Z",
       "score": 16
+    },
+    {
+      "id": "oCsK-nQbXj",
+      "url": "https://www.commonreader.co.uk/p/rather-better-pasturage-for-their",
+      "title": "Rather Better Pasturage for Their Cows",
+      "publication": "The Common Reader",
+      "author": "Henry Oliver",
+      "topic": "writing",
+      "quote": "When we laugh with her, she is preparing us for a more permanent and persistent joy.",
+      "hook": "Rediscover Jane Austen's novels as joyful romances, not just social critiques.",
+      "publishedAt": "2026-09-24T15:56:10.000Z",
+      "score": 16.8
+    },
+    {
+      "id": "h-v_03ARo6",
+      "url": "https://www.commonreader.co.uk/p/what-is-literary-criticism-if-it",
+      "title": "What is literary criticism if it is not close reading? Art, Magic, and Common Sense.",
+      "publication": "The Common Reader",
+      "author": "Henry Oliver",
+      "topic": "writing",
+      "quote": "The magic of poetry is the way that it can create a new sense of the world—can make you believe in things not merely unbelievable, but which we know to be untrue. The art of poetry is in the specific wording of the spell—change the words, get the order wrong, and the magic will not manifest.",
+      "hook": "Exploring the dual nature of poetry: art and magic.",
+      "publishedAt": "2026-09-11T14:44:00.000Z",
+      "score": 16.8
     },
     {
       "id": "GKufSHSUn6",
@@ -1827,6 +2235,30 @@
       "score": 15.3
     },
     {
+      "id": "P9FAg_Sny3",
+      "url": "https://www.personalcanon.com/p/the-life-you-were-meant-to-live",
+      "title": "the life you were meant to live",
+      "publication": "personal canon",
+      "author": "Celine Nguyen",
+      "topic": "philosophy",
+      "quote": "It seems, initially, like this is the right move for the Wheelers. And as Frank looks back at his life, he thinks: Wasn’t it true, then, that everything in his life from that point on had been a succession of things he hadn’t really wanted to do?",
+      "hook": "Explore the tension between professional success and artistic fulfillment.",
+      "publishedAt": "2026-08-11T02:30:01.000Z",
+      "score": 15.3
+    },
+    {
+      "id": "68kG8oWfVw",
+      "url": "https://www.robkhenderson.com/p/apparently-criminals-dont-have-free",
+      "title": "Apparently Criminals Don’t Have Free Will, But Elites Do",
+      "publication": "Rob Henderson's Newsletter",
+      "author": "Rob Henderson",
+      "topic": "philosophy",
+      "quote": "Free will works the same way. A choice exists at the scale of a person thinking, weighing and deciding. Looking at the molecules underneath and finding no choice there doesn’t prove that choice is an illusion.",
+      "hook": "Exploring the illusion of free will and its moral implications.",
+      "publishedAt": "2026-09-13T15:54:31.000Z",
+      "score": 19.3
+    },
+    {
       "id": "XhMWt5fRJV",
       "url": "https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything",
       "title": "No One Expects Young Men To Do Anything and They Are Responding By Doing Nothing",
@@ -1848,6 +2280,18 @@
       "quote": "The answer lies in a less romantic story than Carnegie’s or Oprah’s. It is the story of downward mobility.",
       "hook": "Why do the affluent turn radical? Explore the psychology of downward mobility.",
       "publishedAt": "2025-09-21T13:50:35.904Z",
+      "score": 18.3
+    },
+    {
+      "id": "7_gaLcCGOd",
+      "url": "https://www.robkhenderson.com/p/some-status-games-are-worth-playing",
+      "title": "Some Status Games Are Worth Playing",
+      "publication": "Rob Henderson's Newsletter",
+      "author": "Rob Henderson",
+      "topic": "psychology",
+      "quote": "Congleton suggests this story is too simple. Some status games are wasteful. But others produce real benefits for people who are not actually playing the game.",
+      "hook": "Exploring the complex role of status-seeking in human behavior and society.",
+      "publishedAt": "2026-09-06T14:12:42.000Z",
       "score": 18.3
     },
     {

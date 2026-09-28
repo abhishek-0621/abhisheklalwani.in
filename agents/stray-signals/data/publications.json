@@ -1,4 +1,21 @@
 {
+  "1000wordsofsummer.substack.com": {
+    "host": "1000wordsofsummer.substack.com",
+    "name": "CRAFT TALK",
+    "id": 12223,
+    "description": "CRAFT TALK is a weekly newsletter about writing, creativity and productivity from author Jami Attenberg. This is also the home of #1000wordsofsummer, where, once a year, we write 1000 words a day together for two weeks straight. ",
+    "topics": [
+      "writing"
+    ],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication 'CRAFT TALK' focuses on writing, creativity, and productivity, which aligns with the craft of writing and reading. However, it also includes elements related to writing-career advice and productivity, which "
+  },
   "acotra.substack.com": {
     "host": "acotra.substack.com",
     "name": "Good Bones",
@@ -49,7 +66,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0
   },
@@ -70,6 +87,51 @@
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0,
     "note": "no accepted essays after 4 runs"
+  },
+  "allthingsurban.substack.com": {
+    "host": "allthingsurban.substack.com",
+    "name": "URBAN CAREER BOOST by All Things Urban",
+    "id": 2304245,
+    "description": "Join a global network of 100,000+ urbanists shaping better cities.\nGet curated jobs, learning programs, and events – plus fresh ideas and career tips from All Things Urban, the trusted hub for professionals in urbanism, planning, and design.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Climate & Environment — The publication 'URBAN CAREER BOOST by All Things Urban' primarily focuses on career advice and job opportunities within the fields of urbanism, planning, and design. It does not align with the main subjects of p"
+  },
+  "ancientneareasttoday.substack.com": {
+    "host": "ancientneareasttoday.substack.com",
+    "name": "The Ancient Near East Today",
+    "id": 3497924,
+    "description": "The Ancient Near East Today delivers the latest news about the ancient world.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication is mainly about news related to the ancient world, which does not fit the criteria for 'Stray Signals'. The focus is on news rather than original essays or poems on the specified topics like philosophy, psychol"
+  },
+  "beachreadsandbubbly.substack.com": {
+    "host": "beachreadsandbubbly.substack.com",
+    "name": "Club Bubbly by Beach Reads & Bubbly",
+    "id": 2800714,
+    "description": "A place to celebrate all of your (not-so-guilty) reading pleasures! Welcome to the club. ",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication 'Club Bubbly by Beach Reads & Bubbly' seems to focus on celebrating reading pleasures, which might include book recommendations, reviews, or discussions about various genres. However, it does not explicitly "
   },
   "bigthinkbooks.substack.com": {
     "host": "bigthinkbooks.substack.com",
@@ -128,6 +190,21 @@
     "lastRecsCrawlAt": null,
     "note": "rec:startswithabang.substack.com — Big Think primarily focuses on providing content from a wide range of thinkers across various fields, including technology, AI, and personal development, which may not align with the specific focus on phil"
   },
+  "bookishmedia.substack.com": {
+    "host": "bookishmedia.substack.com",
+    "name": "Bookish Media",
+    "id": 2484568,
+    "description": "Your new home for all things books - from new podcasts, newsletters, and shows all centred around your favourite reads.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication 'Bookish Media' primarily focuses on books, including podcasts, newsletters, and shows related to reading. This content does not align with the main subjects of philosophy, psychology and human nature, criti"
+  },
   "botharetrue.substack.com": {
     "host": "botharetrue.substack.com",
     "name": "Both Are True",
@@ -158,6 +235,21 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Dendrite' focuses on academia and neuroscience, which aligns with the science category. However, the inclusion of 'books' and 'other things' suggests a broader range of topics that may not"
   },
+  "chadevansweather.substack.com": {
+    "host": "chadevansweather.substack.com",
+    "name": "Chad’s Weather Blog",
+    "id": 4342831,
+    "description": "Chad Evans is a meteorologist based in Lafayette, Indiana. This Substack provides weather forecasts, weather history, Chad's tree of the week and more!",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Climate & Environment — The main subject of Chad’s Weather Blog is weather, which does not align with the specified topics for 'Stray Signals'. The content focuses on weather forecasts and history, which are not considered original essa"
+  },
   "cherryflavored111.substack.com": {
     "host": "cherryflavored111.substack.com",
     "name": "cherry-flavored",
@@ -172,6 +264,21 @@
     "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication's tagline and description suggest a focus on lifestyle or personality content, which does not align with the main subjects of philosophy, money and economics, science, deep space, or big id"
+  },
+  "chicgirlmoment.substack.com": {
+    "host": "chicgirlmoment.substack.com",
+    "name": "chicgirlmoment ",
+    "id": 4005158,
+    "description": "about literature and cinematography, the love of smelling perfumes, the thoughts that appear in my head after waking up in the middle of the night and everything else that will start to excite me tomorrow.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication 'chicgirlmoment' does not fit the criteria for 'Stray Signals' because its main subjects—literature, cinematography, perfumes, and personal thoughts—do not align with the specified topics of philosophy, psyc"
   },
   "coffeewithclio.substack.com": {
     "host": "coffeewithclio.substack.com",
@@ -222,6 +329,36 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'CounterfeitBees' is described as a blog for fictional things, which does not align with the requirement for essays on philosophy, money and economics, science, deep space, or big ideas or "
   },
+  "danielpiper.substack.com": {
+    "host": "danielpiper.substack.com",
+    "name": "Serious Literary Author",
+    "id": 1039884,
+    "description": "An unprecedented insight into the life of an SLA.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication 'Serious Literary Author' with the tagline 'An unprecedented insight into the life of an SLA' does not fit the criteria for 'Stray Signals'. The focus appears to be on the life and experiences of a literary "
+  },
+  "danjones.substack.com": {
+    "host": "danjones.substack.com",
+    "name": "History, Etc",
+    "id": 269538,
+    "description": "A weekly newsletter from Dan Jones, about medieval history (mostly)",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication 'History, Etc' focuses primarily on medieval history, which does not align with the main subjects recommended for 'Stray Signals'. The newsletter does not cover philosophy, psychology and human nature, critical"
+  },
   "davideagleman.substack.com": {
     "host": "davideagleman.substack.com",
     "name": "This is Your Brain On",
@@ -235,7 +372,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0
   },
@@ -278,6 +415,45 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The newsletter's focus on 'science and existential angst' aligns with the 'science' and 'big ideas or theories' topics. However, the description suggests it might lean towards hypothetical or absurd questi"
   },
+  "earthorg.substack.com": {
+    "host": "earthorg.substack.com",
+    "name": "Earth.Org",
+    "id": 331657,
+    "description": "Unapologetic climate journalism: weekly and monthly breakdowns of the world's defining story, delivered with the editorial perspective and global context missing from traditional news. ",
+    "topics": [
+      "nature",
+      "science"
+    ],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Climate & Environment — Earth.Org focuses primarily on climate journalism, which is closely related to nature and environmental science. However, it seems to emphasize news and breakdowns of current events rather than publishing origina"
+  },
+  "elifshafak.substack.com": {
+    "host": "elifshafak.substack.com",
+    "name": "Unmapped Storylands with Elif Shafak",
+    "id": 1980183,
+    "description": "For those who love literature and the art of storytelling, I want to offer humble tales, anecdotes, wise proverbs and foolish thoughts, literary musings, insights and conversations centred on my personal, unpublished notebooks   ",
+    "topics": [
+      "poetry",
+      "writing",
+      "philosophy",
+      "psychology"
+    ],
+    "source": "category",
+    "status": "active",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 4,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication 'Unmapped Storylands with Elif Shafak' appears to focus on literature and storytelling, which aligns with the interest in poetry and the craft of writing. The content described includes humble tales, anecdot",
+    "failStreak": 0
+  },
   "erictopol.substack.com": {
     "host": "erictopol.substack.com",
     "name": "Ground Truths",
@@ -291,7 +467,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 8,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0
   },
@@ -310,6 +486,21 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The main subject of Erika’s Newsletter is biological engineering, which does not align with the specified topics of philosophy, money and economics, science, deep space, or big ideas or theories. While it "
   },
+  "freelancewritingjobs.substack.com": {
+    "host": "freelancewritingjobs.substack.com",
+    "name": "Freelance Writing Jobs",
+    "id": 1987898,
+    "description": "Helping writers earn millions of pounds in commissions since 2018. Calls for pitches, freelance and part-time writing jobs, and creative submissions every week. All handpicked. All paid. All UK-based. Compiled by Sian Meades-Williams.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication is focused on freelance writing jobs, calls for pitches, and creative submissions, which are related to writing-career or publishing-industry advice. This does not align with the main subjects of philosophy,"
+  },
   "georgesaunders.substack.com": {
     "host": "georgesaunders.substack.com",
     "name": "Story Club with George Saunders",
@@ -323,7 +514,7 @@
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 1,
+    "runsWithoutYield": 2,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -344,6 +535,58 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Biomusings' focuses on neurobiology, bioenergetics, and kinesiology, which aligns with the science category. However, it is not explicitly stated that it publishes essays. The tagline sugg"
   },
+  "heatherash.substack.com": {
+    "host": "heatherash.substack.com",
+    "name": "Out of the Fire",
+    "id": 1347029,
+    "description": "How to Dance with Contradiction\n\n🔥 Author of the bestseller Warrior Goddess Training 🔥 Firewalk Instructor Trainer & Fiery Leader 🔥 Land Steward and Lover of Trees ",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Climate & Environment — The publication 'Out of the Fire' does not fit the criteria for 'Stray Signals' because it does not focus on one of the specified main subjects such as philosophy, psychology, human nature, critical thinking, mon"
+  },
+  "heydearwomen.substack.com": {
+    "host": "heydearwomen.substack.com",
+    "name": "Dear Women",
+    "id": 8307768,
+    "description": "Daily Stories on Hidden Women Inventors, Pioneers, Heroes, and Leaders the Patriarchy doesn't want you to know about",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication 'Dear Women' focuses on stories about women inventors, pioneers, heroes, and leaders. While it may touch on themes related to human nature and history, its primary focus is on highlighting specific individuals "
+  },
+  "historicalsnapshots.substack.com": {
+    "host": "historicalsnapshots.substack.com",
+    "name": "Historical Snapshots",
+    "id": 69997,
+    "description": "Honor people. Understand the past.",
+    "topics": [
+      "philosophy",
+      "psychology",
+      "science",
+      "poetry",
+      "writing",
+      "ideas"
+    ],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication 'Historical Snapshots' focuses on history, which is not explicitly listed as a main subject for 'Stray Signals'. The tagline suggests a focus on honoring people and understanding the past, which could potential"
+  },
   "ianleslie.substack.com": {
     "host": "ianleslie.substack.com",
     "name": "The Ruffian",
@@ -357,7 +600,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0
   },
@@ -373,10 +616,25 @@
     "status": "active",
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
-    "accepted": 3,
-    "runsWithoutYield": 1,
+    "accepted": 5,
+    "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "failStreak": 0
+  },
+  "jillianhess.substack.com": {
+    "host": "jillianhess.substack.com",
+    "name": "Noted",
+    "id": 1032351,
+    "description": "Tips from the world's best note takers",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication 'Noted' focuses on providing tips from the world's best note takers, which suggests its main subject is related to personal productivity or writing techniques. This does not align with the main subjects of phil"
   },
   "joecarlsmith.substack.com": {
     "host": "joecarlsmith.substack.com",
@@ -391,7 +649,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 5,
+    "runsWithoutYield": 6,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0
   },
@@ -434,7 +692,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 5,
+    "runsWithoutYield": 6,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0
   },
@@ -452,7 +710,7 @@
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
     "accepted": 4,
-    "runsWithoutYield": 1,
+    "runsWithoutYield": 2,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -486,8 +744,8 @@
     "status": "active",
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
-    "accepted": 2,
-    "runsWithoutYield": 1,
+    "accepted": 6,
+    "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -505,7 +763,7 @@
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 1,
+    "runsWithoutYield": 2,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -567,10 +825,25 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 7,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "note": "rec:startswithabang.substack.com — The publication 'Mini Philosophy' appears to focus on exploring philosophical ideas, which aligns with the 'philosophy' topic of interest for 'Stray Signals'. The tagline suggests that it features essays o",
     "failStreak": 0
+  },
+  "mirandajuly.substack.com": {
+    "host": "mirandajuly.substack.com",
+    "name": "Miranda July",
+    "id": 2864092,
+    "description": "Off the cuff MJ writing/videos/picts/audio for paid subscribers and an ongoing All Fours Group Chat for everyone (not a book club! A place to talk about your own life.) ",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication by Miranda July does not fit the criteria for 'Stray Signals' because it primarily focuses on personal content, including writing, videos, pictures, and audio, which are not centered around the specified top"
   },
   "mycostories.substack.com": {
     "host": "mycostories.substack.com",
@@ -582,13 +855,14 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
     "accepted": 0,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "no accepted essays after 4 runs"
   },
   "nabeelqu.substack.com": {
     "host": "nabeelqu.substack.com",
@@ -640,7 +914,7 @@
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 1,
+    "runsWithoutYield": 2,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -656,10 +930,25 @@
     "status": "active",
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
-    "accepted": 3,
-    "runsWithoutYield": 1,
+    "accepted": 20,
+    "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "failStreak": 0
+  },
+  "ottessathisottessathat.substack.com": {
+    "host": "ottessathisottessathat.substack.com",
+    "name": "\"It's Ottessa, bitch.\"",
+    "id": 2665028,
+    "description": "\"I give of myself unto thee.\"\n-Ottessa Moshfegh",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication does not fit the criteria for 'Stray Signals' as it is not clear that it focuses on one of the specified topics such as philosophy, psychology, human nature, critical thinking, money and economics, science, "
   },
   "oxfordpoetry.substack.com": {
     "host": "oxfordpoetry.substack.com",
@@ -673,8 +962,8 @@
     "status": "active",
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
-    "accepted": 0,
-    "runsWithoutYield": 3,
+    "accepted": 5,
+    "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -691,7 +980,7 @@
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
     "accepted": 5,
-    "runsWithoutYield": 1,
+    "runsWithoutYield": 2,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -708,7 +997,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 7,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -726,7 +1015,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -745,6 +1034,21 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Rabbit Cavern' is recommended as a 'BLOG COMPETITION WINNER 2025', but there is no information provided about its main subject. Without knowing if it focuses on philosophy, money and econo"
   },
+  "raymondibrahim.substack.com": {
+    "host": "raymondibrahim.substack.com",
+    "name": "Raymond Ibrahim",
+    "id": 6873559,
+    "description": "The definitive Substack for historical and textual insight into Islam, jihad, and the millennia‑long clash of civilizations — written by historian and translator Raymond Ibrahim",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication by Raymond Ibrahim focuses on historical and textual insights into Islam, jihad, and the clash of civilizations. While it touches on history, which can relate to human nature and big ideas, the primary focus on"
+  },
   "ruthdaniel.substack.com": {
     "host": "ruthdaniel.substack.com",
     "name": "The Righteous Mugwort",
@@ -761,6 +1065,27 @@
     "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The description suggests that 'The Righteous Mugwort' might delve into science topics, which aligns with the criteria for 'Stray Signals'. However, the tagline 'My personal Substack' and the recommendation"
+  },
+  "sammatey.substack.com": {
+    "host": "sammatey.substack.com",
+    "name": "The Weekly Anthropocene",
+    "id": 951083,
+    "description": "Dispatches Against Despair, from the Wild, Weird World of Humanity and its Biosphere.",
+    "topics": [
+      "nature",
+      "science",
+      "philosophy",
+      "psychology"
+    ],
+    "source": "category",
+    "status": "active",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 1,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Climate & Environment — The Weekly Anthropocene appears to fit the criteria for 'Stray Signals' based on its tagline, which suggests a focus on humanity and its biosphere. This aligns with topics such as nature, science, and potentially",
+    "failStreak": 0
   },
   "sashachapin.substack.com": {
     "host": "sashachapin.substack.com",
@@ -790,7 +1115,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -808,7 +1133,7 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 3,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Some Unpleasant Arithmetic' fits the criteria for 'Stray Signals' as it focuses on economics, which is part of the money and economics category. The tagline indicates it deals with the 'di",
     "failStreak": 0
@@ -846,7 +1171,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 12,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0
   },
@@ -863,9 +1188,39 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
+  },
+  "substack.nybooks.com": {
+    "host": "substack.nybooks.com",
+    "name": "The New York Review of Books",
+    "id": 4562373,
+    "description": "‘The premier literary-intellectual magazine in the English language.’",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The New York Review of Books primarily focuses on literary and intellectual discussions, which often include essays on philosophy, psychology, human nature, critical thinking, and big ideas. However, it also covers a wide r"
+  },
+  "tapinas.substack.com": {
+    "host": "tapinas.substack.com",
+    "name": "Andrius Tapinas ",
+    "id": 1156293,
+    "description": "Kronikos ir Echoskopijos. Podcastai. Paveikslų analizės. Rašomo romano fragmentai ir komentarai. Knygų draugija. Ir dar daug visko ",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication by Andrius Tapinas does not fit the criteria for 'Stray Signals' for several reasons. Firstly, it includes podcasts, which are explicitly excluded from the recommendations. Additionally, the content seems to"
   },
   "taxa.substack.com": {
     "host": "taxa.substack.com",
@@ -895,9 +1250,27 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
+  },
+  "theparisreview.substack.com": {
+    "host": "theparisreview.substack.com",
+    "name": "The Paris Review",
+    "id": 5288096,
+    "description": "",
+    "topics": [
+      "writing",
+      "poetry"
+    ],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The Paris Review primarily focuses on literature, including fiction, poetry, and interviews with writers. While it does publish original essays and poems, its main subject is literature rather than the specific topics recom"
   },
   "thephysicsjournal.substack.com": {
     "host": "thephysicsjournal.substack.com",
@@ -913,9 +1286,78 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 4,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
-    "failStreak": 1
+    "failStreak": 0
+  },
+  "thewesternspirit.blog": {
+    "host": "thewesternspirit.blog",
+    "name": "The Western Spirit",
+    "id": 5336464,
+    "description": "A publication devoted to the Catholic spirit that shaped Western civilization.",
+    "topics": [
+      "philosophy",
+      "psychology",
+      "science",
+      "poetry",
+      "writing",
+      "ideas",
+      "nature",
+      "space",
+      "money",
+      "thinking",
+      "nature",
+      "writing",
+      "poetry",
+      "ideas",
+      "science",
+      "space",
+      "nature",
+      "money",
+      "thinking",
+      "psychology",
+      "writing",
+      "poetry",
+      "ideas"
+    ],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication 'The Western Spirit' focuses on the Catholic spirit that shaped Western civilization, which does not align with the main subjects recommended for 'Stray Signals'. The focus on Catholicism and Western civilizati"
+  },
+  "timothygartonash.substack.com": {
+    "host": "timothygartonash.substack.com",
+    "name": "History of the Present",
+    "id": 1061857,
+    "description": "Join a European 'historian of the present' to follow history as it happens",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication 'History of the Present' focuses on history as it unfolds, which does not align with the main subjects recommended for 'Stray Signals'. The focus on current events and history does not fit the criteria of philo"
+  },
+  "unthinkable.substack.com": {
+    "host": "unthinkable.substack.com",
+    "name": "Unthinkable ",
+    "id": 64590,
+    "description": "Britt Wray's newsletter about staying sane in the climate crisis, psychological resilience, and courage for unthinkable times.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Climate & Environment — The newsletter 'Unthinkable' by Britt Wray focuses on psychological resilience and courage in the context of the climate crisis. While it touches on psychology and human nature, its primary focus is on the climat"
   },
   "visakanv.substack.com": {
     "host": "visakanv.substack.com",
@@ -931,6 +1373,41 @@
     "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "note": "rec:www.henrikkarlsson.xyz — The publication 'visakanv's Funhouse Mirror' does not fit the criteria for 'Stray Signals' because it is not clear that its main subject is philosophy, money and economics, science, deep space, or big ideas or t"
+  },
+  "weathertiger.substack.com": {
+    "host": "weathertiger.substack.com",
+    "name": "WeatherTiger's Hurricane Watch",
+    "id": 278612,
+    "description": "Expert analysis of Florida hurricane threats, with a twist of dad humor.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Climate & Environment — The publication 'WeatherTiger's Hurricane Watch' primarily focuses on providing expert analysis of Florida hurricane threats, which aligns more with weather and meteorology rather than the specified topics for 'S"
+  },
+  "wheremyheartwrites.substack.com": {
+    "host": "wheremyheartwrites.substack.com",
+    "name": "Where My Heart Writes 💌",
+    "id": 6155788,
+    "description": "a home for reflections, letters, and gentle reminders.",
+    "topics": [
+      "poetry",
+      "writing",
+      "philosophy",
+      "psychology"
+    ],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication 'Where My Heart Writes' seems to focus on reflections, letters, and gentle reminders, which could potentially align with the themes of poetry, the craft of writing, and possibly philosophy or psychology. How"
   },
   "worldspiritsockpuppet.substack.com": {
     "host": "worldspiritsockpuppet.substack.com",
@@ -961,9 +1438,24 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 3,
     "accepted": 6,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
+  },
+  "www.amyharder.com": {
+    "host": "www.amyharder.com",
+    "name": "Harder Line",
+    "id": 5607948,
+    "description": "Where to find my latest energy and climate reporting",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Climate & Environment — The publication 'Harder Line' focuses on energy and climate reporting, which does not align with the main subjects recommended for 'Stray Signals'. The topics of philosophy, psychology, human nature, critical thi"
   },
   "www.apricitas.io": {
     "host": "www.apricitas.io",
@@ -997,9 +1489,24 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 1,
     "accepted": 3,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 1
+    "failStreak": 0
+  },
+  "www.breakthroughjournal.org": {
+    "host": "www.breakthroughjournal.org",
+    "name": "The Ecomodernist",
+    "id": 2392380,
+    "description": "Building a new environmental paradigm through analyses and essays on politics, nuclear energy, agriculture, critical minerals, permitting reform, and much more. The Ecomodernist is a publication of the Breakthrough Institute.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Climate & Environment — The Ecomodernist primarily focuses on topics related to technology, energy, and policy, such as nuclear energy and permitting reform, which do not align with the main subjects recommended for 'Stray Signals'. Whi"
   },
   "www.cantgetmuchhigher.com": {
     "host": "www.cantgetmuchhigher.com",
@@ -1016,6 +1523,21 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Can't Get Much Higher' focuses on the intersection of music and data, which does not align with the main subjects of philosophy, money and economics, science, deep space, or big ideas or t"
   },
+  "www.civic-renaissance.com": {
+    "host": "www.civic-renaissance.com",
+    "name": "Civic Renaissance with Alexandra Hudson",
+    "id": 250833,
+    "description": "Civic Renaissance is a community of co-creators. We are recovering the wisdom of the past and deploying it to answer the defining question of our age: how do we flourish across difference? We are building a Civic Renaissance--starting with ourselves.",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication 'Civic Renaissance with Alexandra Hudson' focuses on civic engagement and community building, which could potentially touch on philosophy, human nature, and critical thinking. However, the description emphasize"
+  },
   "www.commonreader.co.uk": {
     "host": "www.commonreader.co.uk",
     "name": "The Common Reader",
@@ -1028,10 +1550,10 @@
     "status": "active",
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
-    "accepted": 1,
-    "runsWithoutYield": 1,
+    "accepted": 3,
+    "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
-    "failStreak": 1
+    "failStreak": 0
   },
   "www.derekthompson.org": {
     "host": "www.derekthompson.org",
@@ -1062,9 +1584,9 @@
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 1,
+    "runsWithoutYield": 2,
     "lastRecsCrawlAt": null,
-    "failStreak": 1
+    "failStreak": 2
   },
   "www.experimental-history.com": {
     "host": "www.experimental-history.com",
@@ -1080,7 +1602,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 13,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0
   },
@@ -1097,10 +1619,10 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 7,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "note": "rec:joecarlsmith.substack.com — The publication 'Good Thoughts' focuses on consequentialist moral philosophy and analysis, which aligns with the philosophical aspect of the topics we recommend. However, it is important to ensure that the pu",
-    "failStreak": 1
+    "failStreak": 2
   },
   "www.gurwinder.blog": {
     "host": "www.gurwinder.blog",
@@ -1116,7 +1638,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -1134,7 +1656,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 10,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
     "failStreak": 0
   },
@@ -1179,10 +1701,10 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 6,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Kitchen Counter' is recommended because it features essays, which aligns with the requirement for 'Stray Signals'. The tagline 'Essays about the world we create' suggests a focus on big id",
-    "failStreak": 0
+    "failStreak": 1
   },
   "www.maximum-progress.com": {
     "host": "www.maximum-progress.com",
@@ -1199,7 +1721,7 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 7,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Maximum Progress' fits the criteria as it focuses on economics, science, and philosophy, which are among the topics of interest for 'Stray Signals'. The tagline indicates that it publishes",
     "failStreak": 0
@@ -1217,10 +1739,10 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 6,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'MOD 171' seems to focus on the workings of the mind and the process of teaching, which aligns with the topic of science. The tagline suggests an exploration of cognitive processes and the ",
-    "failStreak": 1
+    "failStreak": 2
   },
   "www.netinterest.co": {
     "host": "www.netinterest.co",
@@ -1287,9 +1809,9 @@
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
     "accepted": 3,
-    "runsWithoutYield": 1,
+    "runsWithoutYield": 2,
     "lastRecsCrawlAt": null,
-    "failStreak": 1
+    "failStreak": 2
   },
   "www.overcomingbias.com": {
     "host": "www.overcomingbias.com",
@@ -1305,7 +1827,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 6,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -1322,8 +1844,8 @@
     "status": "active",
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
-    "accepted": 2,
-    "runsWithoutYield": 1,
+    "accepted": 3,
+    "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -1339,8 +1861,8 @@
     "status": "active",
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
-    "accepted": 4,
-    "runsWithoutYield": 1,
+    "accepted": 6,
+    "runsWithoutYield": 0,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -1358,7 +1880,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -1394,6 +1916,38 @@
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Secretorum' seems to focus on topics that are likely related to biology, possibly exploring themes that are dark and weird, which might align with science. However, the description suggest"
   },
+  "www.studyinghistory.gr": {
+    "host": "www.studyinghistory.gr",
+    "name": "Studying History",
+    "id": 4163057,
+    "description": "\"This is the display of inquiry, so that the deeds of men may not be forgotten by time.\" ",
+    "topics": [],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:History — The publication 'Studying History' primarily focuses on history, which is not explicitly listed as a main subject for 'Stray Signals'. While history can intersect with philosophy, psychology, and human nature, the description "
+  },
+  "www.theastropoets.com": {
+    "host": "www.theastropoets.com",
+    "name": "Astro Poets",
+    "id": 261459,
+    "description": "poetry | astrology | mystery",
+    "topics": [
+      "poetry"
+    ],
+    "source": "category",
+    "status": "rejected",
+    "addedAt": "2026-09-28T03:30:06.285Z",
+    "inDegree": 0,
+    "accepted": 0,
+    "runsWithoutYield": 0,
+    "lastRecsCrawlAt": null,
+    "note": "cat:Literature — The publication 'Astro Poets' does not fit the criteria for 'Stray Signals' because its main subjects include astrology, which is explicitly excluded. Additionally, while it does focus on poetry, which is a fitting topic, t"
+  },
   "www.theintrinsicperspective.com": {
     "host": "www.theintrinsicperspective.com",
     "name": "The Intrinsic Perspective",
@@ -1408,7 +1962,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 1,
     "accepted": 1,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   },
@@ -1441,9 +1995,9 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 7,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 1
+    "failStreak": 0
   },
   "www.thescrublands.com": {
     "host": "www.thescrublands.com",
@@ -1458,9 +2012,9 @@
     "addedAt": "2026-09-25T20:07:35.003Z",
     "inDegree": 0,
     "accepted": 2,
-    "runsWithoutYield": 1,
+    "runsWithoutYield": 2,
     "lastRecsCrawlAt": null,
-    "failStreak": 1
+    "failStreak": 2
   },
   "www.theseedsofscience.pub": {
     "host": "www.theseedsofscience.pub",
@@ -1475,7 +2029,7 @@
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 11,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "note": "rec:www.experimental-history.com — The publication 'Seeds of Science' focuses on publishing independent research and curating science writing, which aligns with the 'science' topic of interest for 'Stray Signals'. The tagline suggests a foc",
     "failStreak": 0
@@ -1493,7 +2047,7 @@
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
-    "runsWithoutYield": 3,
+    "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
     "failStreak": 0
   }
