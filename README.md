@@ -2,6 +2,8 @@
 
 Portfolio + project hub. Turborepo monorepo, deployed on Vercel.
 
+**How it all fits together (hosting, request flow, GraphMind proxy, weekly agent, deploys): [ARCHITECTURE.md](ARCHITECTURE.md).**
+
 ```
 apps/web                 Next.js 16 portfolio (abhisheklalwani.in)
 packages/ui              Shared design tokens, <Orb /> loader, helpers — reused by every future app
@@ -61,8 +63,8 @@ Add `?signal` to any URL to make the signal peek immediately.
 
    | Type  | Name | Value                  |
    |-------|------|------------------------|
-   | A     | @    | `76.76.21.21`          |
-   | CNAME | www  | `cname.vercel-dns.com` |
+   | A     | @    | Vercel's IP, as shown on its Domains page |
+   | CNAME | www  | the `*.vercel-dns-*.com` target Vercel shows |
 
    Remove GoDaddy's default `A @` parked record and any "Forwarding" rule first. Propagation is usually minutes, up to 48h.
 4. Future subdomain apps: add the domain in that Vercel project and a `CNAME <slug> → cname.vercel-dns.com` record.
