@@ -8,7 +8,7 @@ Anything in [brackets] needs a detail from you. Change anything that doesn't sou
 ### 2018 · Day one at MMCOE
 **Information Technology, with Honors in Data Science**
 It started back in school, making little games in Scratch. That curiosity walked me into Marathwada Mitra Mandal's College of Engineering to study IT, with no idea yet that data would become the thing I'd chase.
-📷 2022-mmcoe-project-completion.jpg (or a first-year photo if you find one)
+📷 2018-mmcoe-batch.jpg
 
 ### 2018 to 2022 · The events person
 **Hosting, organising, and raising the bar**
@@ -23,7 +23,7 @@ Microsoft's MTA certifications in JavaScript and Python. Small badges, but they 
 **An AI career guide for school students**
 Six of us, Team Psycool, built an Android app that suggests careers to school students based on their aptitude and personality, and it took us to the Grand Finale of one of India's biggest innovation competitions. We didn't just code it: we visited schools to run aptitude and psychometric tests ourselves, and sat with professional counsellors to map student traits to real career paths.
 *Behind the scenes: an AI recommendation system on Android, built on data we collected on the ground.*
-📷 2020-sih-team-psycool.jpg
+📷 2020-sih-team-selfie.jpg
 
 ### Jun to Aug 2021 · First taste of real data
 **Data Science intern at CareerGuide.com**

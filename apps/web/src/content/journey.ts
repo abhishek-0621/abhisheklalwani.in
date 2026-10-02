@@ -34,7 +34,7 @@ export const chapters: Chapter[] = [
   {
     year: "2018", kind: "Start", title: "Day one at MMCOE",
     note: "It started in school, making little games in Scratch. That curiosity walked me into MMCOE, Pune, for IT with Honors in Data Science.",
-    image: img("2022-mmcoe-project-completion.jpg", "Four classmates in white shirts holding bound final-year project reports"),
+    image: img("2018-mmcoe-batch.jpg", "The MMCOE class group on the steps of a glass building during a college visit"),
   },
   {
     year: "2019", kind: "Win", title: "The events person",
@@ -44,13 +44,14 @@ export const chapters: Chapter[] = [
     year: "2020", kind: "Win", title: "Smart India Hackathon finalist",
     note: "Team Psycool, six of us, reached the Grand Finale with an Android app that suggests careers to school students from their aptitude and personality.",
     detail: "We visited schools to run aptitude and psychometric tests ourselves, and mapped traits to careers with professional counsellors.",
-    image: img("2020-sih-team-psycool.jpg", "Team Psycool, six students seated in a college computer lab"),
+    image: img("2020-sih-team-selfie.jpg", "Team Psycool and their mentor smiling in a selfie in the college lab"),
   },
   { year: "2021", kind: "Milestone", title: "Data Science intern, CareerGuide.com", note: "Three months working with real data for a real product." },
   {
     year: "2022", kind: "Win", title: "Published in IJCA",
     note: "Our final-year project, revenue prediction and donor segmentation for NGOs, became a paper in the International Journal of Computer Applications.",
     detail: "SARIMA for forecasting, RFM and K-Means for segmentation.",
+    image: img("2022-mmcoe-project-completion.jpg", "Four classmates in white shirts holding their bound final-year project reports"),
   },
   {
     year: "2022", kind: "Start", title: "Dassault Systèmes Solutions Lab",
