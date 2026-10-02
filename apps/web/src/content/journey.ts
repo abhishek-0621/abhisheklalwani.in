@@ -79,6 +79,7 @@ export const chapters: Chapter[] = [
   {
     year: "2026", kind: "Win", title: "GraphMind",
     note: "My thesis became a platform: documents, code or audio in, a knowledge graph out. It runs from my own Mac.",
+    image: img("2026-graphmind-graph.jpg", "GraphMind showing a knowledge graph of 296 nodes and 446 edges built from a drug label"),
   },
   {
     year: "2026", kind: "Milestone", title: "M.Tech, done",
