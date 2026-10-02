@@ -72,7 +72,8 @@ export function StackLayout() {
                 </div>
                 <h2 className="mt-3 text-xl font-medium leading-snug text-fg md:text-2xl">{c.title}</h2>
                 <p className="mt-1.5 text-fg-muted">{c.note}</p>
-                {c.detail && <p className="mt-3 text-sm text-fg-muted">{c.detail}</p>}
+                {c.quote && <p className="mt-3 border-l-2 border-accent pl-3 font-serif text-lg italic leading-snug text-fg">{c.quote}</p>}
+                {c.detail && <p className="mt-3 text-sm text-fg-faint">{c.detail}</p>}
               </div>
             </article>
           </div>

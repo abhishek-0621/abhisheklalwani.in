@@ -28,7 +28,7 @@ export function LedgerLayout() {
         <div className="pointer-events-none absolute inset-x-0 top-0 z-10 grid grid-cols-[minmax(0,1fr)_2rem_minmax(0,1fr)] gap-3 bg-gradient-to-b from-ink from-60% to-transparent pb-10 pt-24 md:grid-cols-[minmax(0,1fr)_4rem_minmax(0,1fr)] md:gap-6 md:pt-28">
           <h2 className="font-serif text-3xl md:text-5xl">Wins</h2>
           <span />
-          <h2 className="text-right font-serif text-3xl italic text-accent md:text-5xl">Lessons</h2>
+          <h2 className="text-right font-serif text-3xl italic text-accent md:text-5xl">Learnings</h2>
         </div>
 
         <div data-col className="ledger-wins grid content-start gap-4 pb-10 pt-44 md:gap-6 md:pt-52">
@@ -54,7 +54,7 @@ export function LedgerLayout() {
           <span className="ledger-mark absolute left-1/2 h-0.5 w-8 -translate-x-1/2 bg-accent md:w-10" />
         </div>
 
-        {/* Newest at the top: the column slides down, so the oldest lesson is what you see first. */}
+        {/* Newest at the top: the column slides down, so the oldest learning is what you see first. */}
         <div data-col className="ledger-lessons grid content-start gap-4 pb-10 pt-44 md:gap-6 md:pt-52">
           {[...lessons].reverse().map((l) => (
             <article key={l.year + l.title} className="rounded-[var(--radius-shell)] border border-dashed border-line-strong p-4 md:p-5">

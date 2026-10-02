@@ -1,14 +1,15 @@
 /**
  * The /journey page. Edit this file to change the story; the layouts read everything from here.
+ * Long-form drafts live in docs/journey/writeups.md.
  *
- * Photos: drop files into apps/web/public/journey/ and set `image: "/journey/<file>.jpg"`.
+ * Photos: drop files into apps/web/public/journey/ and set `image: { src: "/journey/<file>.jpg", alt }`.
  * Anything without an image shows a tinted placeholder, so chapters can go in before photos do.
  */
 
-export type ChapterKind = "Start" | "Win" | "Award" | "Milestone" | "Lesson" | "Turn";
+export type ChapterKind = "Start" | "Win" | "Award" | "Milestone" | "Trip" | "Turn" | "Now";
 
 export type Photo = {
-  /** Path under /public, e.g. "/journey/sih-2020.jpg". */
+  /** Path under /public, e.g. "/journey/2020-sih-team-psycool.jpg". */
   src?: string;
   /** Describe the photo for screen readers. Required once src is set. */
   alt?: string;
@@ -19,29 +20,103 @@ export type Chapter = {
   kind: ChapterKind;
   title: string;
   note: string;
-  /** Optional longer detail: the technical side, what you built or used. */
+  /** Optional "behind the scenes" line: the technical side. */
   detail?: string;
+  /** Optional pull quote in your own words. */
+  quote?: string;
   image?: Photo;
 };
 
-/** Chronological, oldest first. Used by the stacked-cards layout, and its wins feed the ledger. */
+const img = (file: string, alt: string): Photo => ({ src: `/journey/${file}`, alt });
+
+/** Chronological, oldest first. */
 export const chapters: Chapter[] = [
-  { year: "2018", kind: "Start", title: "B.Tech in Information Technology begins", note: "Savitribai Phule Pune University, Pune." },
-  { year: "2020", kind: "Win", title: "Smart India Hackathon finalist", note: "An AI career recommender, built with the team." },
-  { year: "2021", kind: "Lesson", title: "A setback worth telling", note: "Placeholder: what went wrong, and what you did differently after." },
-  { year: "2022", kind: "Milestone", title: "Paper in IJCA, then Dassault Systèmes", note: "NGO revenue forecasting research. Joined as a software engineer." },
-  { year: "2023", kind: "Award", title: "Genius Award", note: "Recognised for individual excellence." },
-  { year: "2024", kind: "Award", title: "M.Tech at BITS Pilani, Applause Annual Award", note: "AI and ML study alongside full-time work." },
-  { year: "2025", kind: "Turn", title: "From web components to generative AI", note: "Assistants, agents and retrieval at Dassault Systèmes." },
-  { year: "2026", kind: "Win", title: "GraphMind ships", note: "The thesis became a platform: documents in, knowledge graph out." },
+  {
+    year: "2018", kind: "Start", title: "Day one at MMCOE",
+    note: "It started in school, making little games in Scratch. That curiosity walked me into MMCOE, Pune, for IT with Honors in Data Science.",
+    image: img("2022-mmcoe-project-completion.jpg", "Four classmates in white shirts holding bound final-year project reports"),
+  },
+  {
+    year: "2019", kind: "Win", title: "The events person",
+    note: "Vice Chair of ACM MMCOE. We ran hackathons with teams from across the country, including our first ever online edition during COVID, plus workshops, bootcamps and mock interviews with ISTE.",
+  },
+  {
+    year: "2020", kind: "Win", title: "Smart India Hackathon finalist",
+    note: "Team Psycool, six of us, reached the Grand Finale with an Android app that suggests careers to school students from their aptitude and personality.",
+    detail: "We visited schools to run aptitude and psychometric tests ourselves, and mapped traits to careers with professional counsellors.",
+    image: img("2020-sih-team-psycool.jpg", "Team Psycool, six students seated in a college computer lab"),
+  },
+  { year: "2021", kind: "Milestone", title: "Data Science intern, CareerGuide.com", note: "Three months working with real data for a real product." },
+  {
+    year: "2022", kind: "Win", title: "Published in IJCA",
+    note: "Our final-year project, revenue prediction and donor segmentation for NGOs, became a paper in the International Journal of Computer Applications.",
+    detail: "SARIMA for forecasting, RFM and K-Means for segmentation.",
+  },
+  {
+    year: "2022", kind: "Start", title: "Dassault Systèmes Solutions Lab",
+    note: "Straight out of college into R&D, building web components for a simulation platform. First lesson: in an enterprise, every process keeps you two steps ahead, so do it right.",
+    detail: "Lit, Polymer, TypeScript and Redux.",
+    image: img("2022-dassault-team.jpg", "The team standing on red steps in front of the glass Dassault Systèmes building in Pune"),
+  },
+  {
+    year: "2022", kind: "Trip", title: "Pondicherry, solo",
+    note: "My first solo trip, and my first ever scuba dive.",
+    quote: "Some fears can only be conquered by diving straight into them.",
+    image: img("2022-pondicherry-dive.jpg", "Underwater in scuba gear, making the OK sign"),
+  },
+  {
+    year: "2023", kind: "Award", title: "Star Alumni, Spoken Tutorial",
+    note: "IIT Bombay's Spoken Tutorial programme named me a Star Alumni from MMCOE's 2021-22 batch, presented at VMCC, IIT Bombay.",
+    image: img("2023-iit-bombay-spoken-tutorial.jpg", "Receiving a framed certificate on stage at the Spoken Tutorial awards, IIT Bombay"),
+  },
+  {
+    year: "2023", kind: "Award", title: "Genius Award",
+    note: "For work on Process Composer and Performance Study: better monitoring and debugging for simulation jobs, and one-click navigation to errors.",
+    image: img("2023-genius-award.jpg", "Receiving the Genius Award in front of a screen describing the contribution"),
+  },
+  {
+    year: "2024", kind: "Trip", title: "Bir Billing, paragliding",
+    note: "A few thousand metres up, and then nothing below my feet. Hell of an experience.",
+    quote: "Up in the sky, I realized how small I am in this vast universe, and how beautiful it is to simply be a part of it.",
+    image: img("2024-bir-paragliding.jpg", "Tandem paragliding high above forested hills at Bir Billing"),
+  },
+  {
+    year: "2024", kind: "Milestone", title: "Software Engineering Specialist",
+    note: "More ownership, a product-owner mindset, and room to push new ideas.",
+  },
+  {
+    year: "2024", kind: "Start", title: "M.Tech at BITS Pilani",
+    note: "Two years of a full-time job, academics and life, often on six hours of sleep. I learnt that being productive doesn't mean being available all the time.",
+  },
+  {
+    year: "2024", kind: "Award", title: "Applause Annual Award",
+    note: "Our team shipped 100+ features to make simulation inclusive and accessible to non-experts.",
+    detail: "A team that challenges ideas, not people, ships better work.",
+    image: img("2024-applause-award.jpg", "The team at the Dassault Systèmes 2024-2025 award ceremony in Pune"),
+  },
+  {
+    year: "2025", kind: "Turn", title: "Generative AI Engineer",
+    note: "No lightbulb moment. ML had hooked me since college, so I went all in: grounded assistants, retrieval, and agents that ask a human before they act.",
+    detail: "RAG, LangChain, MCP, human-in-the-loop tool calling.",
+  },
+  {
+    year: "2026", kind: "Win", title: "GraphMind",
+    note: "My thesis became a platform: documents, code or audio in, a knowledge graph out. It runs from my own Mac.",
+  },
+  {
+    year: "2026", kind: "Milestone", title: "M.Tech, done",
+    note: "Career and degree, side by side.",
+    quote: "You also have to make sure you don't lose yourself in the process.",
+  },
 ];
 
-/** Right-hand column of the ledger layout. Chronological, oldest first. */
-export const lessons: Pick<Chapter, "year" | "title" | "note">[] = [
-  { year: "2019", title: "A lesson from college", note: "Placeholder: your words here." },
-  { year: "2021", title: "A setback worth telling", note: "Placeholder: what went wrong, what changed after." },
-  { year: "2023", title: "A call you would make differently", note: "Placeholder: your words here." },
-  { year: "2025", title: "What moving to AI taught you", note: "Placeholder: your words here." },
+/** Right-hand column of the ledger layout: what each stretch taught me. Oldest first. */
+export const lessons: { year: string; title: string; note: string }[] = [
+  { year: "2020", title: "Talk to users first", note: "The hackathon app worked because we sat in classrooms before we wrote code." },
+  { year: "2022", title: "Process is speed", note: "Doing each step right keeps you two steps ahead." },
+  { year: "2022", title: "Dive into the fear", note: "Some fears only go away from the inside." },
+  { year: "2024", title: "Productive isn't always available", note: "Boundaries got me through a job and a degree." },
+  { year: "2024", title: "Challenge ideas, not people", note: "That's what made the award-winning team work." },
 ];
 
 /** Ledger wins: every chapter that is a win, award or milestone. */

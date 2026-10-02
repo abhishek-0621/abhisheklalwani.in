@@ -376,7 +376,7 @@ html[data-seen] {
 
 /* V2: odometer year and stacked cards. */
 .odometer { display: flex; height: 1em; line-height: 1; overflow: hidden; }
-.odometer-digit { display: flex; flex-direction: column; transform: translateY(calc(var(--n, 0) * -1em)); transition: transform 900ms var(--ease-spring); }
+.odometer-digit { width: 0.56em; align-items: center; display: flex; flex-direction: column; transform: translateY(calc(var(--n, 0) * -1em)); transition: transform 900ms var(--ease-spring); }
 .odometer-digit:last-child { color: var(--color-accent); }
 .stack-card {
   top: calc(9rem + var(--i) * 12px);
