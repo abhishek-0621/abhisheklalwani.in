@@ -5,7 +5,7 @@ import { Heading, Section, stagger } from "@/components/ui/primitives";
 export const metadata: Metadata = {
   title: "Journey",
   alternates: { canonical: "/journey" },
-  description: "From a classroom in Pune to building with AI: wins, trips, and what each one taught me.",
+  description: "From Scratch games to AI systems: wins, trips, and what each one taught me.",
 };
 
 export default function JourneyPage() {
@@ -13,7 +13,7 @@ export default function JourneyPage() {
     <Section scene={3} className="!pt-36 md:!pt-44">
       <div className="max-w-3xl">
         <Heading as="h1">
-          From a classroom in Pune to <em className="italic text-accent">building with AI</em>.
+          From Scratch games to <em className="italic text-accent">AI systems</em>.
         </Heading>
         <p className="reveal mt-6 max-w-xl text-lg text-fg-muted" style={stagger(2)}>
           Wins, trips, and what each one taught me.
