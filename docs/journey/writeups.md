@@ -73,15 +73,16 @@ Our team's mission that year: make simulation inclusive, accessible and open to 
 *What it taught me: a team that challenges ideas, not people, ships better work.*
 📷 2024-applause-award.jpg
 
+### 2024 · Manali and Bir
+**Paragliding off one of Asia's highest take-off points**
+Bir Billing, a few thousand metres up, and then nothing below my feet. Hell of an experience.
+> Up in the sky, I realized how small I am in this vast universe, and how beautiful it is to simply be a part of it and experience it.
+
+
 ### Apr 2025 · Generative AI Engineer
 **From web components to AI**
 No single lightbulb moment. Machine learning had hooked me since college, and every project pulled me further in, so I went all in on building with AI: assistants grounded in company knowledge, retrieval, and agents that stop and ask a human before they act.
 *Behind the scenes: RAG, LangChain, MCP, human-in-the-loop tool calling.*
-
-### 2025 · Manali and Bir
-**Paragliding off one of Asia's highest take-off points**
-Bir Billing, a few thousand metres up, and then nothing below my feet. Hell of an experience.
-> Up in the sky, I realized how small I am in this vast universe, and how beautiful it is to simply be a part of it and experience it.
 
 ### 2026 · GraphMind
 **My thesis became a platform**

@@ -25,7 +25,7 @@ Tone: semi casual. First person, short, a bit of personality. Tech detail goes i
 | Apr 2024 | Promoted: R&D Software Engineering Specialist | Milestone | From LinkedIn | How it felt, anything that led to it |
 | Sep 2024 | Started M.Tech AI/ML, BITS Pilani WILP | Start | Alongside full-time work | Why AI, how you balanced it |
 | 2024 | Applause Annual Award | Award | Inclusive Simulation Process Automation, core team | Your part in it |
-| 2025 | Manali and Bir: paragliding | Trip | Paragliding at Bir Billing, which you know as Asia's 3rd highest take-off point. "Hell of an experience" | Month, the flight photo or video still |
+| 2024 | Manali and Bir: paragliding | Trip | Paragliding at Bir Billing, which you know as Asia's 3rd highest take-off point. "Hell of an experience" | Month, the flight photo or video still |
 | Apr 2025 | Generative AI Engineer | Turn | RAG, assistants for 1,000+ users, MCP, human-in-the-loop agents | The moment you decided to switch |
 | 2025 to 2026 ? | A work lesson | Lesson | Nothing yet | Something that broke or a call you'd make differently |
 | 2026 | GraphMind | Win | Thesis to platform, runs from your own Mac | Screenshot or a photo of you demoing it |
