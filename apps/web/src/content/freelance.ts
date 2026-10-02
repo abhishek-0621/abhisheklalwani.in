@@ -17,7 +17,6 @@ export type Client = {
 const defaultWork = [
   { label: "Design", note: "Brand, layout, pages" },
   { label: "Build", note: "Fast, responsive, easy to edit" },
-  { label: "Ongoing maintenance", note: "Updates, fixes, hosting" },
 ];
 
 export const clients: Client[] = [
