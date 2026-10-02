@@ -8,21 +8,26 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { site } from "@/content/site";
 import { ThemeToggle } from "./theme-toggle";
 
-// In page order, so the highlight moves left to right as you scroll down.
+// Home sections in page order, so the highlight moves left to right as you scroll down.
+// Journey and Freelance are their own pages; they highlight while you're on them.
 const links = [
   { id: "about", href: "/#about", label: "About" },
   { id: "work", href: "/#work", label: "Work" },
   { id: "experience", href: "/#experience", label: "Experience" },
+  { id: "journey", href: "/journey", label: "Journey" },
+  { id: "freelance", href: "/freelance", label: "Freelance" },
   { id: "contact", href: "/#contact", label: "Contact" },
 ];
+const pageLinks = ["work", "journey", "freelance"];
 
 /** Which section is under the middle of the viewport; on /work pages, always "work". */
 function useActiveSection(pathname: string) {
   const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
-    if (pathname.startsWith("/work")) {
-      setActive("work");
+    const page = pageLinks.find((id) => pathname.startsWith(`/${id}`));
+    if (page) {
+      setActive(page);
       return;
     }
     if (pathname !== "/") {

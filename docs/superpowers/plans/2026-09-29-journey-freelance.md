@@ -21,5 +21,5 @@ Mockups of all ten options: https://claude.ai/artifact/W51dhgAy9x1ejLm4ebMmnB
 - [x] Picked V2 (stacked cards). V4 and the draft switch are removed.
 - [ ] Freelance: real client names, one-line descriptions, URLs, full-page screenshots. Confirm the second client can be named.
 - [ ] Check both themes, a phone width, and reduced motion (macOS: Accessibility, Display, Reduce motion).
-- [ ] Remove `robots: noindex` from both pages, add them to `sitemap.ts`, and add nav links in `components/ui/nav.tsx`.
+- [x] Remove `robots: noindex` from both pages, add them to `sitemap.ts`, and add nav links in `components/ui/nav.tsx`.
 - [ ] Run `npx tsc --noEmit -p apps/web` and `npx next build` in `apps/web`, then merge to `main`.

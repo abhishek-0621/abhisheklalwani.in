@@ -3,11 +3,10 @@ import { DeviceStage } from "@/components/journey/device-stage";
 import { Heading, Section, stagger } from "@/components/ui/primitives";
 import { clients } from "@/content/freelance";
 
-// Draft: not in the nav or sitemap, and kept out of search until the content is final.
 export const metadata: Metadata = {
   title: "Freelance",
+  alternates: { canonical: "/freelance" },
   description: "Websites for independent businesses: designed and built.",
-  robots: { index: false, follow: false },
 };
 
 export default function FreelancePage() {

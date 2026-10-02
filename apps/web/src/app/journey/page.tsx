@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import { StackLayout } from "@/components/journey/stack-layout";
 import { Heading, Section, stagger } from "@/components/ui/primitives";
 
-// Draft: not in the nav or sitemap, and kept out of search until the content is final.
 export const metadata: Metadata = {
   title: "Journey",
+  alternates: { canonical: "/journey" },
   description: "From a classroom in Pune to shipping GraphMind: wins, trips, and what each one taught me.",
-  robots: { index: false, follow: false },
 };
 
 export default function JourneyPage() {
