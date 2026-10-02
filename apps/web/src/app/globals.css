@@ -388,18 +388,16 @@ html[data-seen] {
 @media (min-width: 1024px) { .stack-card { top: calc(18dvh + var(--i) * 12px); } }
 .stack-progress { transform-origin: left; transform: scaleX(var(--sp, 0)); }
 
-/* F1: device straightens, screenshot scrolls inside, steps light up in order. */
-.device-frame {
-  transform: perspective(1200px) rotateY(calc((1 - min(var(--lp, 0) * 3, 1)) * 10deg)) rotateX(calc((1 - min(var(--lp, 0) * 3, 1)) * 4deg));
-  box-shadow: 0 40px 90px -40px rgb(0 0 0 / 0.6);
-}
-.device-shot { transform: translateY(calc(var(--lp, 0) * -1 * var(--travel, 0px))); will-change: transform; }
-.device-step { opacity: clamp(0.3, calc((var(--lp, 0) * 3.2 - var(--i)) * 1.6 + 0.3), 1); transition: border-color 400ms; }
+/* F1: the site preview is its own scroll area with a slim, visible scrollbar. */
+.device-frame { box-shadow: 0 40px 90px -40px rgb(0 0 0 / 0.6); }
+.device-screen { scrollbar-width: thin; scrollbar-color: var(--color-line-strong) transparent; }
+.device-screen::-webkit-scrollbar { width: 8px; }
+.device-screen::-webkit-scrollbar-thumb { background: var(--color-line-strong); border-radius: 8px; }
+.device-screen:focus-visible { outline: 2px solid var(--color-accent); outline-offset: -2px; }
 
 @media (prefers-reduced-motion: reduce) {
   .odometer-digit { transition: none; }
-  .stack-card, .device-frame, .device-shot { transform: none; filter: none; }
-  .device-step { opacity: 1; }
+  .stack-card { transform: none; filter: none; }
 }
 
 /* A quote standing in for a photo: soft ember glow on the raised surface. */
