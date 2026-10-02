@@ -6,7 +6,7 @@ import { clients } from "@/content/freelance";
 // Draft: not in the nav or sitemap, and kept out of search until the content is final.
 export const metadata: Metadata = {
   title: "Freelance",
-  description: "Websites for independent businesses: designed, built and looked after.",
+  description: "Websites for independent businesses: designed and built.",
   robots: { index: false, follow: false },
 };
 
@@ -17,7 +17,7 @@ export default function FreelancePage() {
         Websites for <em className="italic text-accent">independent</em> businesses.
       </Heading>
       <p className="reveal mt-6 max-w-xl text-lg text-fg-muted" style={stagger(2)}>
-        Designed, built and looked after.
+        Designed and built from scratch.
       </p>
       <div className="mt-10">
         {clients.map((c, i) => (
