@@ -20,9 +20,8 @@ Tone: semi casual. First person, short, a bit of personality. Tech detail goes i
 | Jul 2022 | Joined Dassault Systèmes Solutions Lab | Start | R&D Software Engineering Associate, web components (Lit, Polymer, TypeScript, Redux) | First-day or team photo, what surprised you |
 | Dec 2022 | Solo trip to Pondicherry, first scuba dive | Trip | First solo trip, first ever dive | Dive photos, where you dived, one moment underwater |
 | 2022 to 2024 | Frontend wins | Win | Redux + TS migration (2 to 3x adoption), load time cut 50 to 75%, MODSIM portfolio apps | Which one you're proudest of |
-| Mar 2023 | Spoken Tutorial Award, VMCC IIT Bombay | Award | Photo received, 4 March 2023 | What it was for |
+| Mar 2023 | Star Alumni, Spoken Tutorial (IIT Bombay) | Award | 4 March 2023 at VMCC, IIT Bombay; MMCOE 2021-22 batch. This is LinkedIn's "Budding STAR Alumni" honour | Done |
 | H2 2023 | Genius Award | Award | Individual excellence | What it was for, award photo |
-| ? | Budding STAR alumni resource | Award | On LinkedIn honors, no details | What is it, which year? |
 | Apr 2024 | Promoted: R&D Software Engineering Specialist | Milestone | From LinkedIn | How it felt, anything that led to it |
 | Sep 2024 | Started M.Tech AI/ML, BITS Pilani WILP | Start | Alongside full-time work | Why AI, how you balanced it |
 | 2024 | Applause Annual Award | Award | Inclusive Simulation Process Automation, core team | Your part in it |

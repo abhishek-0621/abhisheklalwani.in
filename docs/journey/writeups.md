@@ -49,9 +49,9 @@ I packed a bag, went to Pondicherry alone, and ended up underwater for the first
 **Rebuilding the front end**
 Moved a legacy codebase to Redux and TypeScript and chased rendering performance until load times dropped by 50 to 75%. Customer adoption grew two to three times after the rebuild.
 
-### Mar 2023 · Spoken Tutorial Award, IIT Bombay
-**Recognised at VMCC, IIT Bombay**
-[What it was for: one line.]
+### Mar 2023 · Star Alumni, Spoken Tutorial at IIT Bombay
+**Back on stage, this time for my college**
+IIT Bombay's Spoken Tutorial programme named me a Star Alumni from MMCOE's 2021-22 batch, and I received it at VMCC, IIT Bombay, in front of their faculty. A nice full-circle moment: the same college that let me run its events was now cheering from the other side.
 📷 2023-iit-bombay-spoken-tutorial.jpg
 
 ### H2 2023 · Genius Award
