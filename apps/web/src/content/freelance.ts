@@ -9,7 +9,8 @@ export type Client = {
   /** One line on who they are and what the site needed to do. */
   about: string;
   url?: string;
-  screenshot?: Photo;
+  /** Full-page capture; width and height are the image's pixel size. */
+  screenshot?: Photo & { width: number; height: number };
   work: { label: string; note: string }[];
 };
 
@@ -20,6 +21,18 @@ const defaultWork = [
 ];
 
 export const clients: Client[] = [
-  { name: "Wealth Her Way", about: "Placeholder: one line on who they are and what the site does.", work: defaultWork },
-  { name: "Second client", about: "Placeholder: one line on who they are and what the site does.", work: defaultWork },
+  {
+    name: "Wealth Her Way",
+    about: "Women × Money × Wealth. Owned by Pooja Surana, in partnership with Zenflow Finance.",
+    url: "https://www.wealthherway.in/",
+    screenshot: { src: "/freelance/wealth-her-way-full.jpg", alt: "The full Wealth Her Way homepage", width: 1200, height: 8192 },
+    work: defaultWork,
+  },
+  {
+    name: "The Artland",
+    about: "India's hub for DIY kits and art parties: creative, all inclusive and perfect for kids, adults and gifting, with fast delivery nationwide.",
+    url: "https://www.theartland.in/",
+    screenshot: { src: "/freelance/the-artland-full.jpg", alt: "The full Artland homepage", width: 1200, height: 3545 },
+    work: defaultWork,
+  },
 ];

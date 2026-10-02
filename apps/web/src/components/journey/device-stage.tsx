@@ -32,7 +32,7 @@ export function DeviceStage({ client, index }: { client: Client; index: number }
           <div className="device-screen relative h-[34dvh] overflow-hidden lg:h-[56dvh]">
             {client.screenshot?.src ? (
               <div className="device-shot relative w-full">
-                <Image src={client.screenshot.src} alt={client.screenshot.alt ?? `${client.name} website`} width={1440} height={4000} sizes="(min-width: 1024px) 55vw, 95vw" className="h-auto w-full" />
+                <Image src={client.screenshot.src} alt={client.screenshot.alt ?? `${client.name} website`} width={client.screenshot.width} height={client.screenshot.height} sizes="(min-width: 1024px) 55vw, 95vw" className="h-auto w-full" />
               </div>
             ) : (
               <Photo index={index ? 6 : 0} label="Full-page screenshot" className="device-shot h-[300%] !rounded-none" />
