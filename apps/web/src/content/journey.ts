@@ -87,16 +87,4 @@ export const chapters: Chapter[] = [
   },
 ];
 
-/** Right-hand column of the ledger layout: what each stretch taught me. Oldest first. */
-export const lessons: { year: string; title: string; note: string }[] = [
-  { year: "2020", title: "Talk to users first", note: "The hackathon app worked because we sat in classrooms before we wrote code." },
-  { year: "2022", title: "Process is speed", note: "Doing each step right keeps you two steps ahead." },
-  { year: "2022", title: "Dive into the fear", note: "Some fears only go away from the inside." },
-  { year: "2024", title: "Productive isn't always available", note: "Boundaries got me through a job and a degree." },
-  { year: "2024", title: "Challenge ideas, not people", note: "That's what made the award-winning team work." },
-];
-
-/** Ledger wins: every chapter that is a win, award or milestone. */
-export const wins = chapters.filter((c) => c.kind === "Win" || c.kind === "Award" || c.kind === "Milestone");
-
 export const isHighlight = (k: ChapterKind) => k === "Win" || k === "Award";

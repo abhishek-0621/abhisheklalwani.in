@@ -388,11 +388,6 @@ html[data-seen] {
 @media (min-width: 1024px) { .stack-card { top: calc(18dvh + var(--i) * 12px); } }
 .stack-progress { transform-origin: left; transform: scaleX(var(--sp, 0)); }
 
-/* V4: columns travel in opposite directions while the section is pinned. */
-.ledger-wins { transform: translateY(calc(var(--sp, 0) * -1 * var(--dv, 0px))); will-change: transform; }
-.ledger-lessons { transform: translateY(calc((var(--sp, 0) - 1) * var(--dv, 0px))); will-change: transform; }
-.ledger-mark { top: calc(var(--sp, 0) * 100%); box-shadow: 0 0 16px var(--color-accent); }
-
 /* F1: device straightens, screenshot scrolls inside, steps light up in order. */
 .device-frame {
   transform: perspective(1200px) rotateY(calc((1 - min(var(--lp, 0) * 3, 1)) * 10deg)) rotateX(calc((1 - min(var(--lp, 0) * 3, 1)) * 4deg));
@@ -403,13 +398,8 @@ html[data-seen] {
 
 @media (prefers-reduced-motion: reduce) {
   .odometer-digit { transition: none; }
-  .stack-card, .ledger-wins, .ledger-lessons, .device-frame, .device-shot { transform: none; filter: none; }
+  .stack-card, .device-frame, .device-shot { transform: none; filter: none; }
   .device-step { opacity: 1; }
-}
-@media (prefers-reduced-motion: reduce) {
-  /* Without motion there is nothing to pin: let the ledger flow as two plain columns. */
-  .ledger { height: auto; }
-  .ledger > div { position: static; height: auto; overflow: visible; }
 }
 
 /* A quote standing in for a photo: soft ember glow on the raised surface. */
