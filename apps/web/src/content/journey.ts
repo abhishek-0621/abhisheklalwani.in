@@ -37,21 +37,10 @@ export const chapters: Chapter[] = [
     image: img("2018-mmcoe-batch.jpg", "The MMCOE class group on the steps of a glass building during a college visit"),
   },
   {
-    year: "2019", kind: "Win", title: "The events person",
-    note: "Vice Chair of ACM MMCOE. We ran hackathons with teams from across the country, including our first ever online edition during COVID, plus workshops, bootcamps and mock interviews with ISTE.",
-  },
-  {
     year: "2020", kind: "Win", title: "Smart India Hackathon finalist",
     note: "Team Psycool, six of us, reached the Grand Finale with an Android app that suggests careers to school students from their aptitude and personality.",
     detail: "We visited schools to run aptitude and psychometric tests ourselves, and mapped traits to careers with professional counsellors.",
     image: img("2020-sih-team-selfie.jpg", "Team Psycool and their mentor smiling in a selfie in the college lab"),
-  },
-  { year: "2021", kind: "Milestone", title: "Data Science intern, CareerGuide.com", note: "Three months working with real data for a real product." },
-  {
-    year: "2022", kind: "Win", title: "Published in IJCA",
-    note: "Our final-year project, revenue prediction and donor segmentation for NGOs, became a paper in the International Journal of Computer Applications.",
-    detail: "SARIMA for forecasting, RFM and K-Means for segmentation.",
-    image: img("2022-mmcoe-project-completion.jpg", "Four classmates in white shirts holding their bound final-year project reports"),
   },
   {
     year: "2022", kind: "Start", title: "Dassault Systèmes Solutions Lab",
@@ -82,23 +71,10 @@ export const chapters: Chapter[] = [
     image: img("2024-bir-paragliding.jpg", "Tandem paragliding high above forested hills at Bir Billing"),
   },
   {
-    year: "2024", kind: "Milestone", title: "Software Engineering Specialist",
-    note: "More ownership, a product-owner mindset, and room to push new ideas.",
-  },
-  {
-    year: "2024", kind: "Start", title: "M.Tech at BITS Pilani",
-    note: "Two years of a full-time job, academics and life, often on six hours of sleep. I learnt that being productive doesn't mean being available all the time.",
-  },
-  {
     year: "2024", kind: "Award", title: "Applause Annual Award",
     note: "Our team shipped 100+ features to make simulation inclusive and accessible to non-experts.",
     detail: "A team that challenges ideas, not people, ships better work.",
     image: img("2024-applause-award.jpg", "The team at the Dassault Systèmes 2024-2025 award ceremony in Pune"),
-  },
-  {
-    year: "2025", kind: "Turn", title: "Generative AI Engineer",
-    note: "No lightbulb moment. ML had hooked me since college, so I went all in: grounded assistants, retrieval, and agents that ask a human before they act.",
-    detail: "RAG, LangChain, MCP, human-in-the-loop tool calling.",
   },
   {
     year: "2026", kind: "Win", title: "GraphMind",
@@ -107,7 +83,7 @@ export const chapters: Chapter[] = [
   {
     year: "2026", kind: "Milestone", title: "M.Tech, done",
     note: "Career and degree, side by side.",
-    quote: "You also have to make sure you don't lose yourself in the process.",
+    quote: "Turns out, you can build a career and earn a degree along the way, but you also have to make sure you don't lose yourself in the process.",
   },
 ];
 

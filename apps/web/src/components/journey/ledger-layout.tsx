@@ -34,7 +34,7 @@ export function LedgerLayout() {
         <div data-col className="ledger-wins grid content-start gap-4 pb-10 pt-44 md:gap-6 md:pt-52">
           {wins.map((c, i) => (
             <article key={c.year + c.title} className="rounded-[var(--radius-shell)] border border-line-strong bg-ink-raised p-2.5 pb-4">
-              <Photo photo={c.image} index={i + 1} className="hidden aspect-[16/10] md:block" />
+              <Photo photo={c.image} quote={c.image ? undefined : c.quote} index={i + 1} className="hidden aspect-[16/10] md:block" />
               <div className="px-2 pt-3">
                 <span className="font-mono text-[11px] text-fg-faint">{c.year}</span>
                 <h3 className="mt-1 font-medium leading-snug text-fg md:text-lg">{c.title}</h3>

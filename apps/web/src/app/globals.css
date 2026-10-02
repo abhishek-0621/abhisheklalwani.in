@@ -411,3 +411,12 @@ html[data-seen] {
   .ledger { height: auto; }
   .ledger > div { position: static; height: auto; overflow: visible; }
 }
+
+/* A quote standing in for a photo: soft ember glow on the raised surface. */
+.quote-slot {
+  background:
+    radial-gradient(120% 90% at 85% 10%, var(--color-accent-soft), transparent 60%),
+    radial-gradient(80% 70% at 0% 100%, rgb(from var(--color-fg) r g b / 0.04), transparent 70%),
+    var(--color-ink-sunken);
+  border: 1px solid var(--color-line);
+}

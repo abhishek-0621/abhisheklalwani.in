@@ -64,7 +64,7 @@ export function StackLayout() {
               className="stack-card sticky rounded-[var(--radius-shell)] border border-line-strong bg-ink-raised p-2.5 pb-5"
               style={{ "--i": i } as React.CSSProperties}
             >
-              <Photo photo={c.image} index={i} className="aspect-[16/9]" />
+              <Photo photo={c.image} quote={c.image ? undefined : c.quote} index={i} className="aspect-[16/9]" />
               <div className="px-2 pt-4">
                 <div className="flex items-center gap-3">
                   <KindTag kind={c.kind} />
@@ -72,7 +72,7 @@ export function StackLayout() {
                 </div>
                 <h2 className="mt-3 text-xl font-medium leading-snug text-fg md:text-2xl">{c.title}</h2>
                 <p className="mt-1.5 text-fg-muted">{c.note}</p>
-                {c.quote && <p className="mt-3 border-l-2 border-accent pl-3 font-serif text-lg italic leading-snug text-fg">{c.quote}</p>}
+                {c.quote && c.image && <p className="mt-3 border-l-2 border-accent pl-3 font-serif text-lg italic leading-snug text-fg">{c.quote}</p>}
                 {c.detail && <p className="mt-3 text-sm text-fg-faint">{c.detail}</p>}
               </div>
             </article>
