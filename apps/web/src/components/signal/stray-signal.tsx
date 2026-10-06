@@ -26,6 +26,37 @@ const MAX_PEEKS = 6;
 const VISIBLE_MS = 16_000;
 const rand = (min: number, max: number) => min + Math.random() * (max - min);
 
+/** Anything a visitor might be reading or tapping: the signal should never land on these. */
+const BUSY = "p, h1, h2, h3, h4, li, a, button, blockquote, dd, dt, figure, img, input, label, table, pre, [data-reading]";
+
+/**
+ * Picks an edge spot whose visible half of the glyph sits over empty space. Samples a small
+ * grid inside that area; returns null if every candidate covers text, so the peek can wait.
+ */
+function findClearPeek(): Peek | null {
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  const edges: Edge[] = w < 640 ? ["left", "right"] : ["left", "right", "bottom"];
+  const half = 36; // the glyph is ~72px and sits half out of frame
+  for (let attempt = 0; attempt < 14; attempt++) {
+    const edge = edges[Math.floor(Math.random() * edges.length)];
+    const offset = rand(22, 78);
+    const cx = (offset / 100) * w;
+    const cy = edge === "bottom" ? h - half / 2 : (offset / 100) * h;
+    // Probe a margin wider than the glyph itself, so its glow and hint never touch text either.
+    const reach = half + 16;
+    const xs = edge === "bottom" ? [cx - reach, cx, cx + reach] : edge === "left" ? [4, reach / 2, reach] : [w - 4, w - reach / 2, w - reach];
+    const ys = edge === "bottom" ? [h - 4, h - reach / 2, h - reach] : [cy - reach, cy, cy + reach];
+    const probes = xs.flatMap((x) => ys.map((y) => [x, y] as const));
+    const clear = probes.every(([x, y]) => {
+      const el = document.elementFromPoint(Math.min(w - 1, Math.max(0, x)), Math.min(h - 1, Math.max(0, y)));
+      return !el?.closest(BUSY);
+    });
+    if (clear) return { edge, offset };
+  }
+  return null;
+}
+
 /** This visitor's personal shuffle: a random seed plus how many signals they have caught. */
 function readCursor(): { seed: string; n: number } {
   try {
@@ -65,12 +96,14 @@ export function StraySignal({ openOnMount = false }: { openOnMount?: boolean }) 
         if (count >= MAX_PEEKS && !forced) return;
         // Never peek into a background tab; try again once the visitor might be looking.
         if (document.hidden && !forced) return schedule(10_000);
+        // Only land on empty space; if the screen is all text right now, look again shortly.
+        const spot = findClearPeek();
+        if (!spot && !forced) return schedule(6_000);
         count++;
         try {
           sessionStorage.setItem(SESSION_KEY, String(count));
         } catch {}
-        const edges: Edge[] = window.innerWidth < 640 ? ["left", "right"] : ["left", "right", "bottom"];
-        setPeek({ edge: edges[Math.floor(Math.random() * edges.length)], offset: rand(28, 72) });
+        setPeek(spot ?? { edge: "right", offset: rand(28, 72) });
         later(() => setShown(true), 60); // after mount, so the slide-in transition runs
         later(() => setShown(false), VISIBLE_MS);
         schedule(VISIBLE_MS + rand(25_000, 50_000));

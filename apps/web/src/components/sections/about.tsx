@@ -49,7 +49,7 @@ export function About() {
       <div className="relative mt-24 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]" aria-label="Tools I use">
         <ul className="marquee flex w-max gap-3">
           {[...about.stack, ...about.stack].map((t, i) => (
-            <li key={i} aria-hidden={i >= about.stack.length || undefined} className="whitespace-nowrap rounded-full border border-line-strong bg-ink px-4 py-2 font-mono text-[12.5px] text-fg-muted">
+            <li key={i} aria-hidden={i >= about.stack.length || undefined} className="whitespace-nowrap rounded-full border border-line-strong bg-ink-raised px-4 py-2 font-mono text-[12.5px] font-medium text-fg">
               {t}
             </li>
           ))}

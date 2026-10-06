@@ -1,4 +1,3 @@
-import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import type { ReactNode } from "react";
 import { SignalGlyph } from "@/components/signal/signal-glyph";
 import { GraphGlyph } from "@/components/ui/graph-glyph";
@@ -52,11 +51,6 @@ function FeaturedCard({ p }: { p: Project }) {
             <PillLink href={`/work/${p.slug}`} variant={p.demo ? "ghost" : "solid"}>
               Read case study
             </PillLink>
-            {p.repo && (
-              <PillLink href={p.repo} variant="ghost" external icon={<GithubLogo size={14} weight="light" />}>
-                Source
-              </PillLink>
-            )}
           </div>
         </div>
 
