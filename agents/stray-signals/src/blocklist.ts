@@ -12,6 +12,7 @@ export const BLOCKED_TITLES = new Set([
   "Rage of the Falling Elite",
   "Luxury Beliefs are Status Symbols",
   "King Ludd",
+  "When “DEI” research is cut, what happens to community health?",
 ]);
 
 /** Chartbook 429's title is long and may be truncated; match its prefix. */
