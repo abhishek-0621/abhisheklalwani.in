@@ -24,8 +24,6 @@
     "topics": [
       "philosophy",
       "money",
-      "science",
-      "space",
       "ideas"
     ],
     "source": "recommendation",
@@ -141,8 +139,6 @@
     "topics": [
       "philosophy",
       "money",
-      "science",
-      "space",
       "ideas"
     ],
     "source": "recommendation",
@@ -177,8 +173,6 @@
     "topics": [
       "philosophy",
       "money",
-      "science",
-      "space",
       "ideas"
     ],
     "source": "recommendation",
@@ -301,8 +295,7 @@
     "id": null,
     "description": "",
     "topics": [
-      "space",
-      "science"
+      "ideas"
     ],
     "source": "seed",
     "status": "rejected",
@@ -365,17 +358,16 @@
     "id": 4699541,
     "description": "",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "seed",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
-    "failStreak": 0,
-    "note": "removed by owner"
+    "failStreak": 0
   },
   "dgardner.substack.com": {
     "host": "dgardner.substack.com",
@@ -385,8 +377,6 @@
     "topics": [
       "philosophy",
       "money",
-      "science",
-      "space",
       "ideas"
     ],
     "source": "recommendation",
@@ -404,7 +394,6 @@
     "id": 327510,
     "description": "science and existential angst",
     "topics": [
-      "science",
       "philosophy"
     ],
     "source": "recommendation",
@@ -422,8 +411,7 @@
     "id": 331657,
     "description": "Unapologetic climate journalism: weekly and monthly breakdowns of the world's defining story, delivered with the editorial perspective and global context missing from traditional news. ",
     "topics": [
-      "nature",
-      "science"
+      "nature"
     ],
     "source": "category",
     "status": "rejected",
@@ -461,17 +449,16 @@
     "id": 587835,
     "description": "",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "seed",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 8,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
-    "failStreak": 0,
-    "note": "removed by owner"
+    "failStreak": 0
   },
   "erikaaldendeb.substack.com": {
     "host": "erikaaldendeb.substack.com",
@@ -526,7 +513,7 @@
     "id": 1102944,
     "description": "Musings on Neurobiology, Bioenergetics, and Kinesiology",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "recommendation",
     "status": "rejected",
@@ -575,7 +562,6 @@
     "topics": [
       "philosophy",
       "psychology",
-      "science",
       "poetry",
       "writing",
       "ideas"
@@ -661,16 +647,7 @@
     "id": 1331791,
     "description": "Thoughts, science, comics - served with a side salad of silliness.",
     "topics": [
-      "science",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science"
+      "ideas"
     ],
     "source": "recommendation",
     "status": "rejected",
@@ -853,8 +830,7 @@
     "id": 3077856,
     "description": "",
     "topics": [
-      "nature",
-      "science"
+      "nature"
     ],
     "source": "seed",
     "status": "rejected",
@@ -874,8 +850,6 @@
     "topics": [
       "philosophy",
       "money",
-      "science",
-      "space",
       "ideas"
     ],
     "source": "recommendation",
@@ -908,8 +882,7 @@
     "id": 3770931,
     "description": "",
     "topics": [
-      "nature",
-      "science"
+      "nature"
     ],
     "source": "seed",
     "status": "active",
@@ -1009,18 +982,16 @@
     "id": 393508,
     "description": "",
     "topics": [
-      "space",
       "ideas"
     ],
     "source": "seed",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0,
-    "note": "removed by owner"
+    "failStreak": 0
   },
   "rabbitcavern.substack.com": {
     "host": "rabbitcavern.substack.com",
@@ -1058,7 +1029,7 @@
     "id": 2507023,
     "description": "My personal Substack",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "recommendation",
     "status": "rejected",
@@ -1076,7 +1047,6 @@
     "description": "Dispatches Against Despair, from the Wild, Weird World of Humanity and its Biosphere.",
     "topics": [
       "nature",
-      "science",
       "philosophy",
       "psychology"
     ],
@@ -1111,17 +1081,16 @@
     "id": 1003231,
     "description": "",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "seed",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0,
-    "note": "removed by owner"
+    "failStreak": 0
   },
   "someunpleasant.substack.com": {
     "host": "someunpleasant.substack.com",
@@ -1148,8 +1117,7 @@
     "id": 8039672,
     "description": "",
     "topics": [
-      "space",
-      "science"
+      "ideas"
     ],
     "source": "seed",
     "status": "rejected",
@@ -1167,18 +1135,16 @@
     "id": 3253406,
     "description": "",
     "topics": [
-      "space",
-      "science"
+      "ideas"
     ],
     "source": "seed",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 12,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
-    "failStreak": 0,
-    "note": "removed by owner"
+    "failStreak": 0
   },
   "stuartritchie.substack.com": {
     "host": "stuartritchie.substack.com",
@@ -1186,17 +1152,16 @@
     "id": 823801,
     "description": "",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "seed",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0,
-    "note": "removed by owner"
+    "failStreak": 0
   },
   "substack.nybooks.com": {
     "host": "substack.nybooks.com",
@@ -1284,18 +1249,16 @@
     "id": 2772509,
     "description": "",
     "topics": [
-      "science",
-      "space"
+      "ideas"
     ],
     "source": "seed",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 4,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
-    "failStreak": 0,
-    "note": "removed by owner"
+    "failStreak": 0
   },
   "thewesternspirit.blog": {
     "host": "thewesternspirit.blog",
@@ -1305,20 +1268,16 @@
     "topics": [
       "philosophy",
       "psychology",
-      "science",
       "poetry",
       "writing",
       "ideas",
       "nature",
-      "space",
       "money",
       "thinking",
       "nature",
       "writing",
       "poetry",
       "ideas",
-      "science",
-      "space",
       "nature",
       "money",
       "thinking",
@@ -1437,8 +1396,7 @@
     "id": 18480,
     "description": "",
     "topics": [
-      "ideas",
-      "science"
+      "ideas"
     ],
     "source": "seed",
     "status": "active",
@@ -1488,8 +1446,7 @@
     "id": 89120,
     "description": "",
     "topics": [
-      "ideas",
-      "science"
+      "ideas"
     ],
     "source": "seed",
     "status": "active",
@@ -1601,7 +1558,6 @@
     "id": 656797,
     "description": "",
     "topics": [
-      "science",
       "ideas"
     ],
     "source": "seed",
@@ -1692,16 +1648,7 @@
     "id": 16243,
     "description": "Essays about the world we create.",
     "topics": [
-      "philosophy",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science",
-      "science"
+      "philosophy"
     ],
     "source": "recommendation",
     "status": "active",
@@ -1720,7 +1667,6 @@
     "description": "Maximum Progress is a blog by Max Tabarrok on economics, science, philosophy, and progress.",
     "topics": [
       "money",
-      "science",
       "philosophy"
     ],
     "source": "recommendation",
@@ -1739,7 +1685,7 @@
     "id": 1812488,
     "description": "How do minds work, and how do you teach them things? Actually, what are minds?",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "recommendation",
     "status": "active",
@@ -1897,7 +1843,7 @@
     "id": 1211889,
     "description": "Science and science, neurodiversity. All revenue goes to AAAS and Science.",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "recommendation",
     "status": "rejected",
@@ -1961,7 +1907,6 @@
     "id": 332996,
     "description": "",
     "topics": [
-      "science",
       "philosophy"
     ],
     "source": "seed",
@@ -1994,18 +1939,16 @@
     "id": 910761,
     "description": "",
     "topics": [
-      "space",
-      "science"
+      "ideas"
     ],
     "source": "seed",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 7,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0,
-    "note": "removed by owner"
+    "failStreak": 0
   },
   "www.thescrublands.com": {
     "host": "www.thescrublands.com",
@@ -2030,16 +1973,15 @@
     "id": 1065461,
     "description": "Publishing independent research and curating the best science writing from across the blogosphere. ",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "recommendation",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 11,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "note": "removed by owner",
     "failStreak": 0
   },
   "yourlocalepidemiologist.substack.com": {
@@ -2048,16 +1990,15 @@
     "id": 281219,
     "description": "",
     "topics": [
-      "science"
+      "ideas"
     ],
     "source": "seed",
-    "status": "rejected",
+    "status": "active",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0,
-    "note": "removed by owner"
+    "failStreak": 0
   }
 }

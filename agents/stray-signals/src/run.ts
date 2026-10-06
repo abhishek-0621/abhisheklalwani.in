@@ -6,7 +6,6 @@
  *   npm run signals -- --limit 50      cap model calls this run (0 = rebuild the list only)
  *   npm run signals -- --no-discovery  skip the recommendation-graph crawl
  */
-import { isBlocked } from "./blocklist";
 import { config } from "./config";
 import { collect } from "./collect";
 import { curate } from "./curate";
@@ -47,13 +46,6 @@ async function main() {
       host: s.host, name: s.host, id: null, description: "", topics: s.topics, source: "seed", status: "active",
       addedAt: now, inDegree: 0, accepted: 0, runsWithoutYield: 0, lastRecsCrawlAt: null,
     };
-  }
-  // Owner removals: blocked publications are never collected again.
-  for (const p of Object.values(pool)) {
-    if (isBlocked({ host: p.host, publication: p.name }) && p.status !== "rejected") {
-      p.status = "rejected";
-      p.note = "removed by owner";
-    }
   }
   const cache = await readJson<CurationCache>(config.paths.curated, {});
 

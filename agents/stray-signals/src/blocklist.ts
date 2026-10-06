@@ -1,38 +1,8 @@
 /**
- * Owner removals. Anything here is never collected again and never published, even if an
- * old verdict accepted it. Verdicts themselves stay in the cache as history.
+ * Owner removals of single essays. Publications are never blocked: a writer can cover many
+ * subjects, and off-topic essays (science, space, tech, politics) are already filtered one by
+ * one by the curator and by the topic list. Verdicts stay in the cache as history.
  */
-
-/** Whole publications: science, medicine, physics and astronomy newsletters. */
-export const BLOCKED_HOSTS = new Set([
-  "erictopol.substack.com", // Ground Truths
-  "yourlocalepidemiologist.substack.com",
-  "stuartritchie.substack.com", // Science Fictions
-  "thephysicsjournal.substack.com",
-  "www.thequantumcat.space",
-  "davideagleman.substack.com",
-  "seantrott.substack.com",
-  "www.theseedsofscience.pub",
-  "seedsofscience.substack.com",
-  "thisisyourbrainon.substack.com",
-  "startswithabang.substack.com",
-  "startalk.substack.com",
-  "coreypowell.substack.com",
-  "planetocracy.org",
-]);
-
-/** Publication names, for hosts whose exact address isn't known in advance. */
-export const BLOCKED_PUBLICATIONS = new Set([
-  "Ground Truths",
-  "Your Local Epidemiologist",
-  "Science Fictions",
-  "The Physics Journal",
-  "The Quantum Cat",
-  "Seeds of Science",
-  "This is Your Brain On",
-  "Starts With A Bang",
-  "Planetocracy",
-]);
 
 /** Single essays: current politics or tech that slipped past the curator. Matched on title. */
 export const BLOCKED_TITLES = new Set([
@@ -47,9 +17,7 @@ export const BLOCKED_TITLES = new Set([
 /** Chartbook 429's title is long and may be truncated; match its prefix. */
 const BLOCKED_TITLE_PREFIXES = ["Chartbook 429 From transition to rupture"];
 
-export function isBlocked(e: { host?: string; publication?: string; title?: string }) {
-  if (e.host && BLOCKED_HOSTS.has(e.host)) return true;
-  if (e.publication && BLOCKED_PUBLICATIONS.has(e.publication)) return true;
+export function isBlocked(e: { title?: string }) {
   if (e.title && (BLOCKED_TITLES.has(e.title) || BLOCKED_TITLE_PREFIXES.some((p) => e.title!.startsWith(p)))) return true;
   return false;
 }

@@ -1,6 +1,6 @@
 {
   "version": "2026-W40",
-  "generatedAt": "2026-10-06T08:51:14.851Z",
+  "generatedAt": "2026-10-06T08:55:48.385Z",
   "items": [
     {
       "id": "nU04fENk6P",
@@ -747,6 +747,18 @@
       "score": 16
     },
     {
+      "id": "RbVlRfZQJw",
+      "url": "https://planetocracy.org/p/the-accusation-of-fantasy",
+      "title": "The Accusation of Fantasy",
+      "publication": "Planetocracy",
+      "author": "Peter Hague",
+      "topic": "ideas",
+      "quote": "There is no reasonable well-informed observer who would consider O’Neill ‘nutty’ - he was a well-regarded Princeton professor, and his ideas had been developed under the constraints of good mathematics, physics and engineering.",
+      "hook": "Why are visionary ideas often dismissed as fantasies?",
+      "publishedAt": "2026-08-24T15:31:10.000Z",
+      "score": 16
+    },
+    {
       "id": "VOC5ophowU",
       "url": "https://samkriss.com/2021/02/08/what-if-we-kissed-in-the-abandoned-gamestop",
       "title": "What if we kissed in the abandoned GameStop?",
@@ -757,6 +769,42 @@
       "hook": "Discover the haunting beauty of abandoned malls.",
       "publishedAt": "2021-02-08T13:24:42.000Z",
       "score": 17
+    },
+    {
+      "id": "XO09dc5a1h",
+      "url": "https://seantrott.substack.com/p/coherentism-and-the-case-for-complementary",
+      "title": "Coherentism and the case for complementary science",
+      "publication": "The Counterfactual",
+      "author": "Sean Trott",
+      "topic": "philosophy",
+      "quote": "The groundlessness cannot be contained: if we follow through the empirical justifications we give for our beliefs, we have done in the case of thermometric fixed points, we arrive at bodily sensation; if that final basis of justification is seen as untrustworthy, then none of our empirical justifications can be trusted.",
+      "hook": "Explore how scientific knowledge is justified beyond mere sensory experience.",
+      "publishedAt": "2026-09-25T17:16:40.000Z",
+      "score": 17
+    },
+    {
+      "id": "xm4kE5FMe_",
+      "url": "https://seantrott.substack.com/p/escaping-the-extrapolators-circle",
+      "title": "Escaping the extrapolator's circle",
+      "publication": "The Counterfactual",
+      "author": "Sean Trott",
+      "topic": "philosophy",
+      "quote": "If the populations in question were perfectly homogenous, extrapolation would be easy: the result from the first population could be directly carried over to the second. But it is not reasonable to assume that the populations in the foregoing examples are homogeneous: they almost certainly differ with respect to characteristics that affect the causal relationship in question.",
+      "hook": "Explore the limits of extrapolation in science and philosophy.",
+      "publishedAt": "2026-07-22T20:42:01.000Z",
+      "score": 16
+    },
+    {
+      "id": "hL1d0Jk_CY",
+      "url": "https://seantrott.substack.com/p/language-models-and-the-ineffable",
+      "title": "Language models and the ineffable",
+      "publication": "The Counterfactual",
+      "author": "Sean Trott",
+      "topic": "philosophy",
+      "quote": "If a territory can be mapped linguistically, then it seems intuitively plausible that a language model could learn the map without knowing the territory; this renders it nigh-impossible to measure whether that model has, in fact, learned the territory.",
+      "hook": "Can language models truly understand the world?",
+      "publishedAt": "2025-08-15T03:41:11.001Z",
+      "score": 16
     },
     {
       "id": "YSCX1DVTD9",
@@ -852,6 +900,18 @@
       "quote": "A clear example of the thin and the contextual nature of inclusive vs extractive institutions can be found in the two main forms of exploitation of the native Peruvian population by the Spanish: mita and encomienda.",
       "hook": "Explore the nuanced critique of 'Why Nations Fail' and its thesis on institutions.",
       "publishedAt": "2022-11-11T18:18:33.105Z",
+      "score": 16
+    },
+    {
+      "id": "TZfKo39CjB",
+      "url": "https://startswithabang.substack.com/p/can-we-be-certain-that-time-really",
+      "title": "Can we be certain that time really exists?",
+      "publication": "Starts With A Bang",
+      "author": "Starts With A Bang",
+      "topic": "philosophy",
+      "quote": "When it comes to the question of existence, physics is very simple and straightforward about what it considers to be a satisfactory answer.",
+      "hook": "Explore the philosophical and scientific questions about the existence of time.",
+      "publishedAt": "2026-09-10T16:00:42.000Z",
       "score": 16
     },
     {
@@ -1875,6 +1935,18 @@
       "score": 18
     },
     {
+      "id": "dUZKabQgI9",
+      "url": "https://www.thequantumcat.space/p/did-we-invent-mathematics-or-did",
+      "title": "Did We Invent Mathematics? Or Did We Discover It?",
+      "publication": "The Quantum Cat",
+      "author": "Alastair Williams",
+      "topic": "philosophy",
+      "quote": "That might seem to rule out the physical reality of spheres. And, of course, it is not just true of the sphere: many of the things mathematics talks about - straight lines, triangles, circles - cannot really exist in our world.",
+      "hook": "Explore if mathematics is discovered or invented.",
+      "publishedAt": "2025-04-03T12:31:16.156Z",
+      "score": 16
+    },
+    {
       "id": "nHwiY6dcS_",
       "url": "https://www.thescrublands.com/p/cwd-is-a-trust-test-for-wildlife",
       "title": "CWD Is a Trust Test for Wildlife Agencies",
@@ -1897,6 +1969,90 @@
       "hook": "How the Endangered Species Act can balance conservation and economic interests.",
       "publishedAt": "2025-07-18T21:55:58.432Z",
       "score": 18.3
+    },
+    {
+      "id": "OQFhLlmmWv",
+      "url": "https://www.theseedsofscience.pub/p/biases-dont-exist-and-humans-are",
+      "title": "Biases Don't Exist, and Humans Are Not Irrational",
+      "publication": "Seeds of Science",
+      "author": "Seeds of Science",
+      "topic": "philosophy",
+      "quote": "Biases don’t exist. Biases aren’t things in the world and they are not cognitive processes. Biases are an artifact of what we are measuring against.",
+      "hook": "Discover why biases might not exist as we think they do.",
+      "publishedAt": "2026-06-10T13:19:15.000Z",
+      "score": 16
+    },
+    {
+      "id": "HOmekTflTF",
+      "url": "https://www.theseedsofscience.pub/p/hallucinated-gods",
+      "title": "Hallucinated Gods",
+      "publication": "Seeds of Science",
+      "author": "Seeds of Science",
+      "topic": "philosophy",
+      "quote": "Julian Jaynes believed that ancient people experienced their gods as auditory hallucinations.",
+      "hook": "Discover how ancient gods might have been auditory hallucinations.",
+      "publishedAt": "2025-11-04T17:49:52.450Z",
+      "score": 16
+    },
+    {
+      "id": "Mun7b1BL1Q",
+      "url": "https://www.theseedsofscience.pub/p/intrinsic-motivation-a-deep-dive",
+      "title": "Intrinsic Motivation: a deep dive",
+      "publication": "Seeds of Science",
+      "author": "Seeds of Science",
+      "topic": "ideas",
+      "quote": "Playing sport. Writing. Painting. Travelling. Exploring. Hiking. Reading. For the most part, we engage in these activities for their own sake – because they are inherently enjoyable.",
+      "hook": "Discover the power of doing things for their own sake.",
+      "publishedAt": "2025-07-30T14:59:10.083Z",
+      "score": 17
+    },
+    {
+      "id": "4AYRZg__Gf",
+      "url": "https://www.theseedsofscience.pub/p/iq-discourse-is-increasingly-unhinged",
+      "title": "IQ discourse is increasingly unhinged",
+      "publication": "Seeds of Science",
+      "author": "Seeds of Science",
+      "topic": "ideas",
+      "quote": "Yet it can also be true, at the exact same time, that such criticisms have had a reverse psychology effect, making it seem like intelligence being genetically determined from conception is some sort of golden glowing scientific truth being covered up by the harshest censors.",
+      "hook": "Unraveling the myths of IQ research and its societal implications.",
+      "publishedAt": "2025-02-12T17:27:57.624Z",
+      "score": 16
+    },
+    {
+      "id": "2q_nRALKit",
+      "url": "https://www.theseedsofscience.pub/p/psychology-experiments-are-gardens",
+      "title": "Psychology Experiments Are Gardens, Not Digsites",
+      "publication": "Seeds of Science",
+      "author": "Seeds of Science",
+      "topic": "philosophy",
+      "quote": "Rather, I think they are something we prompt through the context of the experiment. More like flowers cultivated in a garden than fossils at a digsite.",
+      "hook": "Psychological effects are cultivated, not discovered.",
+      "publishedAt": "2026-05-27T11:55:43.000Z",
+      "score": 16
+    },
+    {
+      "id": "IUylIGhjiK",
+      "url": "https://www.theseedsofscience.pub/p/there-is-a-path-to-meat-without-misery",
+      "title": "There is a path to meat without misery",
+      "publication": "Seeds of Science",
+      "author": "Seeds of Science",
+      "topic": "ideas",
+      "quote": "Replication was a new force harnessing and shaping the free energy of the universe around it. It introduced its own singular law: whichever better converts free energy into new copies shall proliferate; whichever does not shall be swallowed.",
+      "hook": "Explore how replication reshaped the universe and human history.",
+      "publishedAt": "2026-09-08T14:07:03.000Z",
+      "score": 16
+    },
+    {
+      "id": "L-iuWIW4W-",
+      "url": "https://www.theseedsofscience.pub/p/why-psychology-hasnt-had-a-big-new",
+      "title": "Why Psychology Hasn’t Had a Big New Idea in Decades",
+      "publication": "Seeds of Science",
+      "author": "Seeds of Science",
+      "topic": "philosophy",
+      "quote": "A science needs a paradigm because we underrate a simple fact: there are an infinite number of things you can study and infinite ways to study them.",
+      "hook": "Why hasn't psychology had a big new idea in decades?",
+      "publishedAt": "2025-05-07T15:32:36.433Z",
+      "score": 16
     }
   ]
 }

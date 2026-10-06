@@ -4,7 +4,6 @@
  *
  *   npm run signals:republish
  */
-import { isBlocked } from "./blocklist";
 import { config } from "./config";
 import { readJson, writeJson } from "./lib/store";
 import type { SignalFile, SignalMeta } from "./schema";
@@ -17,15 +16,6 @@ async function main() {
   const pool = await readJson<PublicationPool>(config.paths.publications, {});
   const cache = await readJson<CurationCache>(config.paths.curated, {});
   const previous = await readJson<SignalFile | null>(config.paths.signals, null);
-
-  let blockedPubs = 0;
-  for (const p of Object.values(pool)) {
-    if (isBlocked({ host: p.host, publication: p.name }) && p.status !== "rejected") {
-      p.status = "rejected";
-      p.note = "removed by owner";
-      blockedPubs++;
-    }
-  }
 
   const items = publishAll(cache);
   const now = new Date().toISOString();
@@ -42,7 +32,7 @@ async function main() {
   await writeJson(config.paths.publications, sortKeys(pool));
   await writeJson(config.paths.signals, { version, generatedAt: now, items } satisfies SignalFile);
   await writeJson(config.paths.meta, meta);
-  console.log(`Republished ${items.length} signals (was ${previous?.items.length ?? 0}); ${blockedPubs} publications newly blocked.`);
+  console.log(`Republished ${items.length} signals (was ${previous?.items.length ?? 0}).`);
   console.log(`By topic: ${Object.entries(meta.byTopic).map(([t, n]) => `${t} ${n}`).join(" · ")}`);
 }
 
