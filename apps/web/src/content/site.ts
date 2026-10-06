@@ -32,9 +32,9 @@ export const site = {
 export const about = {
   lead: "I build AI systems that turn scattered knowledge into answers people can check — and trust.",
   body: [
-    "At Dassault Systèmes I started on the interface side, building web components for an enterprise engineering platform. Today I lead generative-AI work there: assistants grounded in company knowledge, agents that pause for a human before they act, and MCP integrations that let them work inside real engineering tools.",
-    "I hold an M.Tech in Artificial Intelligence & Machine Learning from BITS Pilani. My thesis became GraphMind — give it documents, code, audio or a whole repository and it returns a knowledge graph you can explore, question, and hand to other agents.",
-    "Away from the keyboard I read far outside my field — philosophy, psychology, the odd poem. That is where the stray signals on this site come from.",
+    "At Dassault Systèmes I started on the interface side, building web components for an enterprise engineering platform. Today I **lead generative-AI work** there: **assistants grounded in company knowledge**, **agents that pause for a human** before they act, and **MCP integrations** that let them work inside real engineering tools.",
+    "I hold an **M.Tech in AI & Machine Learning from BITS Pilani**. My thesis became **GraphMind** — give it documents, code, audio or a whole repository and it returns **a knowledge graph you can explore**, question, and hand to other agents.",
+    "Away from the keyboard I read far outside my field: **philosophy, psychology, the odd poem**. That is where the stray signals on this site come from.",
   ],
   principles: [
     { word: "Grounded", line: "An answer should point to where it came from." },

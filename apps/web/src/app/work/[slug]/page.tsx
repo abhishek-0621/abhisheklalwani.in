@@ -89,7 +89,7 @@ export default async function CaseStudy({ params }: PageProps<"/work/[slug]">) {
       </Section>
 
       <Section scene={3} className="!pt-8">
-        <article className="prose-case reveal mx-auto max-w-3xl">
+        <article data-reading className="prose-case reveal mx-auto max-w-3xl">
           <Body />
         </article>
         <div className="mx-auto mt-24 flex max-w-3xl flex-wrap items-center justify-between gap-6 border-t border-line pt-10">

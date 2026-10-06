@@ -8,6 +8,7 @@ import { SignalLoader } from "@/components/signal/signal-loader";
 import { Footer } from "@/components/sections/footer";
 import { bootScript, Intro } from "@/components/ui/intro";
 import { Nav } from "@/components/ui/nav";
+import { ReadingDimmer } from "@/components/ui/reading-dimmer";
 import { RevealObserver } from "@/components/ui/reveal-observer";
 import signalMeta from "@/content/signals-meta.json";
 import { site } from "@/content/site";
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main className="relative z-10">{children}</main>
         <Footer />
         <RevealObserver />
+        <ReadingDimmer />
         <SignalLoader enabled={signalMeta.count > 0} />
       </body>
     </html>

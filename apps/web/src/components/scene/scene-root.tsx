@@ -46,7 +46,10 @@ export function SceneRoot() {
         className="absolute inset-0 transition-opacity duration-[1600ms] ease-[var(--ease-out-expo)]"
         style={{ opacity: ready ? 1 : 0 }}
       >
-        {cap && <ParticleCanvas count={cap.count} routeKey={pathname} onReady={() => setReady(true)} />}
+        {/* Fades back while long text is being read (see ReadingDimmer). */}
+        <div className="scene-dim absolute inset-0">
+          {cap && <ParticleCanvas count={cap.count} routeKey={pathname} onReady={() => setReady(true)} />}
+        </div>
       </div>
       {!orbGone && (
         <div

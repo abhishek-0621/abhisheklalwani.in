@@ -1,6 +1,19 @@
 import { Eyebrow, Section, stagger } from "@/components/ui/primitives";
 import { about } from "@/content/site";
 
+/** Turns **phrase** into a brighter, medium-weight highlight for skimming. */
+function highlight(text: string) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 ? (
+      <strong key={i} className="font-medium text-fg">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export function About() {
   return (
     <Section id="about" scene={1} className="min-h-[100dvh]">
@@ -9,15 +22,18 @@ export function About() {
         <p className="reveal mt-8 font-serif text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.12] tracking-[-0.02em] text-fg" style={stagger(1)}>
           {about.lead}
         </p>
-        <div className="mt-10 space-y-5 text-fg-muted">
+        <div data-reading className="mt-10 space-y-5 text-fg-muted">
           {about.body.map((p, i) => (
             <p key={i} className="reveal" style={stagger(2 + i)}>
-              {p}
+              {highlight(p)}
             </p>
           ))}
         </div>
 
-        <ul className="mt-16 grid grid-cols-1 border-t border-line sm:grid-cols-2">
+        <h3 className="reveal mt-16 font-serif text-2xl tracking-tight text-fg sm:text-3xl" style={stagger(0)}>
+          What I hold to when I build
+        </h3>
+        <ul data-reading className="mt-6 grid grid-cols-1 border-t border-line sm:grid-cols-2">
           {about.principles.map((p, i) => (
             <li key={p.word} className={`reveal border-b border-line py-6 ${i % 2 === 0 ? "sm:border-r sm:pr-6" : "sm:pl-6"}`} style={stagger(i)}>
               <span className="flex items-baseline gap-3">

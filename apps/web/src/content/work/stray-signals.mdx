@@ -2,7 +2,7 @@
 
 Somewhere on this site a small signal drifts in from the edge of the screen, lingers for a few seconds, and slips away. Catch it and it hands you one essay — a quote from it, and the link. Catch it again and you get another. You never see the same essay twice until you have caught every one on the list.
 
-The essays are chosen by an agent, not by me. Every week it goes looking for writing on philosophy, psychology and human nature, critical thinking, money, nature, poetry, writing and big ideas — deliberately far from the tech world and the science desk — and keeps only what it would send to a curious friend.
+The essays are **chosen by an agent, not by me**. Every week it goes looking for writing on philosophy, psychology and human nature, critical thinking, money, nature, poetry, writing and big ideas — deliberately far from the tech world and the science desk — and keeps only **what it would send to a curious friend**.
 
 <SummonSignal>Catch one now</SummonSignal>
 
@@ -19,7 +19,7 @@ The essays are chosen by an agent, not by me. Every week it goes looking for wri
   ]}
 />
 
-It runs every Monday on my own Mac through `launchd`, using Ollama — no API bill. When it finishes it commits the new list and Vercel redeploys the site.
+It runs **every week on my own Mac** through `launchd`, using Ollama, so there is **no API bill**. When it finishes it commits the new list and Vercel redeploys the site.
 
 ## Discovery is a graph crawl
 
@@ -51,8 +51,8 @@ phi4 is slower but judges like an editor, so it is the default. The weekly run o
 
 ## Handing out the links
 
-Nothing is ever thrown away. Every essay the curator accepts joins a library that only grows, and the site ships it as JSON. There is no database: each visitor's browser keeps a random seed and a count of how many signals they have caught.
+**Nothing is ever thrown away.** Every essay the curator accepts joins a library that only grows, and the site ships it as JSON. There is **no database**: each visitor's browser keeps a random seed and a count of how many signals they have caught.
 
-Each catch is chosen in two steps. First a topic, from a weighted round-robin that favours philosophy, psychology and clear thinking, so the balance holds however lopsided the library becomes. Then the visitor's next unseen essay within that topic, from a shuffle that leans toward five-minute reads and quotes that stand on their own. Nobody sees a repeat within a topic until they have read all of it. Bots are turned away, and nothing is fetched until you actually click.
+Each catch is chosen in two steps. First a topic, from a weighted round-robin that favours philosophy, psychology and clear thinking, so the balance holds however lopsided the library becomes. Then the visitor's next unseen essay within that topic, from a shuffle that leans toward five-minute reads and quotes that stand on their own. **Nobody sees a repeat** within a topic until they have read all of it. Bots are turned away, and nothing is fetched until you actually click.
 
 If you never manage to catch it, there is a quieter way in at the bottom of every page.

@@ -408,3 +408,8 @@ html[data-seen] {
     var(--color-ink-sunken);
   border: 1px solid var(--color-line);
 }
+
+/* ---------- Reading mode: the scene steps back while long text is on screen ---------- */
+.scene-dim { transition: opacity 900ms var(--ease-out-expo); }
+:root[data-reading] .scene-dim { opacity: 0.28; }
+@media (prefers-reduced-motion: reduce) { .scene-dim { transition: none; } }
