@@ -7,7 +7,7 @@ const file = data as SignalFile;
  * How a catch is chosen, with no server state (each visitor's browser keeps a seed and a count n):
  *
  * 1. Topic — a smooth weighted round-robin over TOPIC_WEIGHTS, offset by the visitor's seed.
- *    Over any stretch of catches, philosophy and psychology come up most and science least,
+ *    Over any stretch of catches, philosophy and psychology come up most,
  *    no matter how large any topic's share of the library is.
  * 2. Essay — the next unseen essay in that topic, from a shuffle seeded by the visitor that
  *    leans toward high-scoring essays (five-minute reads, memorable quotes) without excluding any.

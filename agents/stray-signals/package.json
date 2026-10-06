@@ -9,7 +9,8 @@
   },
   "scripts": {
     "run": "tsx src/run.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "republish": "tsx src/republish.ts"
   },
   "dependencies": {
     "fast-xml-parser": "^5.11.1",

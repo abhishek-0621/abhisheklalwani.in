@@ -368,13 +368,14 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "removed by owner"
   },
   "dgardner.substack.com": {
     "host": "dgardner.substack.com",
@@ -463,13 +464,14 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 8,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "removed by owner"
   },
   "erikaaldendeb.substack.com": {
     "host": "erikaaldendeb.substack.com",
@@ -1111,13 +1113,14 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "removed by owner"
   },
   "someunpleasant.substack.com": {
     "host": "someunpleasant.substack.com",
@@ -1184,13 +1187,14 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 3,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "removed by owner"
   },
   "substack.nybooks.com": {
     "host": "substack.nybooks.com",
@@ -1282,13 +1286,14 @@
       "space"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 4,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "removed by owner"
   },
   "thewesternspirit.blog": {
     "host": "thewesternspirit.blog",
@@ -1991,13 +1996,14 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 7,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "removed by owner"
   },
   "www.thescrublands.com": {
     "host": "www.thescrublands.com",
@@ -2025,13 +2031,13 @@
       "science"
     ],
     "source": "recommendation",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:28:36.746Z",
     "inDegree": 1,
     "accepted": 11,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "note": "rec:www.experimental-history.com — The publication 'Seeds of Science' focuses on publishing independent research and curating science writing, which aligns with the 'science' topic of interest for 'Stray Signals'. The tagline suggests a foc",
+    "note": "removed by owner",
     "failStreak": 0
   },
   "yourlocalepidemiologist.substack.com": {
@@ -2043,12 +2049,13 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 2,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "removed by owner"
   }
 }

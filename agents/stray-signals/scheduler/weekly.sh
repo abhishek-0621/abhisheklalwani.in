@@ -6,7 +6,20 @@ set -euo pipefail
 
 REPO="$(cd "$(dirname "$0")/../../.." && pwd)"
 cd "$REPO"
-echo "── $(date '+%Y-%m-%d %H:%M:%S') Stray Signals weekly run in $REPO"
+
+# launchd calls this every hour and at login, because a Monday 09:00 calendar trigger is
+# silently skipped if the Mac sleeps through it. Run only once per ISO week, from Monday 09:00.
+week="$(date +%G-W%V)"
+published="$(node -e 'try{console.log(require("./apps/web/src/content/signals-meta.json").version)}catch{}' 2>/dev/null || true)"
+[[ "$published" == "$week" ]] && exit 0
+[[ "$(date +%u)" == 1 && "$(date +%H)" -lt 9 ]] && exit 0
+
+# One run at a time: a full run can take over an hour.
+LOCK="${TMPDIR:-/tmp}/stray-signals.lock"
+mkdir "$LOCK" 2>/dev/null || exit 0
+trap 'rmdir "$LOCK"' EXIT
+
+echo "── $(date '+%Y-%m-%d %H:%M:%S') Stray Signals weekly run for $week in $REPO"
 
 branch="$(git branch --show-current)"
 if [[ "$branch" != "main" ]]; then
@@ -29,7 +42,6 @@ if git diff --cached --quiet -- "${outputs[@]}"; then
   echo "No changes to publish."
   exit 0
 fi
-week="$(node -e 'const d=require("./apps/web/src/content/signals-meta.json");console.log(d.version)')"
 git commit --quiet -m "chore(signals): weekly refresh ${week}" -- "${outputs[@]}"
 # The run takes a while: pick up anything pushed meanwhile before publishing.
 git pull --rebase --autostash --quiet origin main

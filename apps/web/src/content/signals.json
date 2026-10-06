@@ -1,55 +1,7 @@
 {
   "version": "2026-W40",
-  "generatedAt": "2026-09-28T03:30:06.285Z",
+  "generatedAt": "2026-10-06T08:48:34.939Z",
   "items": [
-    {
-      "id": "FimKKk5bf2",
-      "url": "https://adamtooze.substack.com/p/chartbook-184-nostalgia-for-decline",
-      "title": "Chartbook #184 - Nostalgia for decline in deconvergent Britain",
-      "publication": "Chartbook",
-      "author": "Adam Tooze",
-      "topic": "ideas",
-      "quote": "The shock of 2016 cannot by itself explain what really ought to alarm us, namely the astonishing stagnation in productivity and real incomes that now stretches back over more than a decade.",
-      "hook": "Explore the UK's economic stagnation beyond Brexit.",
-      "publishedAt": "2022-12-30T11:38:15.287Z",
-      "score": 16
-    },
-    {
-      "id": "FzuMx57giw",
-      "url": "https://adamtooze.substack.com/p/chartbook-249-from-transition-to",
-      "title": "Chartbook 429 From transition to rupture: The evolution of Carney-thought 2019-2026. ",
-      "publication": "Chartbook",
-      "author": "Adam Tooze",
-      "topic": "ideas",
-      "quote": "Hegemons cannot continually monetize their relationships. Allies will diversify to hedge against uncertainty. They’ll buy insurance, increase options in order to rebuild sovereignty – sovereignty that was once grounded in rules, but will increasingly be anchored in the ability to withstand pressure.",
-      "hook": "Explore strategic autonomy in a fragmented global order.",
-      "publishedAt": "2026-01-21T17:37:28.316Z",
-      "score": 16
-    },
-    {
-      "id": "e8ssabLWRM",
-      "url": "https://davideagleman.substack.com/p/remembering-francis-crick",
-      "title": "Remembering Francis Crick",
-      "publication": "This is Your Brain On",
-      "author": "David Eagleman",
-      "topic": "science",
-      "quote": "He was one of the few people always willing to criticize his own ideas. He never filtered beliefs through his own ego and never hesitated to applaud other people’s theories.",
-      "hook": "Discover the humility and intellectual rigor of Francis Crick.",
-      "publishedAt": "2026-07-28T13:14:13.000Z",
-      "score": 17
-    },
-    {
-      "id": "h-kczlvHKF",
-      "url": "https://davideagleman.substack.com/p/the-unstoppable-soccer-kick",
-      "title": "The Unstoppable Soccer Kick",
-      "publication": "This is Your Brain On",
-      "author": "David Eagleman",
-      "topic": "science",
-      "quote": "The lag between hearing the whistle and kicking the ball is what happens as the brain works to catch up with the external reality.",
-      "hook": "Why do soccer players kick after the whistle?",
-      "publishedAt": "2026-07-18T18:09:47.000Z",
-      "score": 16
-    },
     {
       "id": "nU04fENk6P",
       "url": "https://elifshafak.substack.com/p/a-lovers-quarrel-with-the-world",
@@ -97,102 +49,6 @@
       "hook": "How literature preserves hope in times of crisis",
       "publishedAt": "2026-09-13T15:39:42.000Z",
       "score": 20.1
-    },
-    {
-      "id": "GjUpIEJyFG",
-      "url": "https://erictopol.substack.com/p/medicine-is-moving-from-calendars",
-      "title": "Medicine is Moving From Calendars to Clocks",
-      "publication": "Ground Truths",
-      "author": "Eric Topol",
-      "topic": "science",
-      "quote": "Discovering organ clocks can be considered a breakthrough in their own right. But it goes deeper—to cell clocks.",
-      "hook": "Discover how medicine is shifting from calendars to biological clocks.",
-      "publishedAt": "2026-07-12T17:25:03.000Z",
-      "score": 17
-    },
-    {
-      "id": "dWSL3JYHsG",
-      "url": "https://erictopol.substack.com/p/new-anti-aging-evidence-for-estrogen",
-      "title": "New Anti-Aging Evidence For Estrogen",
-      "publication": "Ground Truths",
-      "author": "Eric Topol",
-      "topic": "science",
-      "quote": "The adverse risks were seen with the combination of estrogen and progestin, similar to the trends seen in the preceding, much smaller randomized Heart and Estrogen/progestin Replacement Study HERS trial that enrolled women with a mean age of 67 years.",
-      "hook": "Reevaluating the impact of estrogen therapy post-menopause",
-      "publishedAt": "2025-07-05T16:52:02.510Z",
-      "score": 17
-    },
-    {
-      "id": "N-7Ml2JMyT",
-      "url": "https://erictopol.substack.com/p/the-breakthrough-blood-test-for-alzheimers",
-      "title": "The Breakthrough Blood Test for Alzheimer's Disease",
-      "publication": "Ground Truths",
-      "author": "Eric Topol",
-      "topic": "science",
-      "quote": "The p-tau217 predicted with nearly 100% certainty whether or not the trial participants had Alzheimer’s disease pathology in their brains.",
-      "hook": "Discover how a blood test predicts Alzheimer's with near certainty.",
-      "publishedAt": "2025-04-13T14:21:11.536Z",
-      "score": 17
-    },
-    {
-      "id": "GC2YzKs3ax",
-      "url": "https://erictopol.substack.com/p/the-coronary-artery-inflammation",
-      "title": "The Coronary Artery Inflammation Controversy",
-      "publication": "Ground Truths",
-      "author": "Eric Topol",
-      "topic": "science",
-      "quote": "That these biomarkers are actually indicative of heightened arterial inflammation could be assessed using non-invasive AI quantitative assessment (FAI) of inflammation in the coronary arteries. That has now been done for high-sensitivity CRP (hs-CRP) and the results are informative.",
-      "hook": "Rethinking heart disease: Beyond biomarkers to AI-driven insights",
-      "publishedAt": "2026-09-05T15:18:58.000Z",
-      "score": 16
-    },
-    {
-      "id": "dzVXxB_--v",
-      "url": "https://erictopol.substack.com/p/the-covid-capitulation",
-      "title": "The Covid Capitulation",
-      "publication": "Ground Truths",
-      "author": "Eric Topol",
-      "topic": "science",
-      "quote": "BA.2.12.1 is quite distinct from Omicron BA.1 and BA.2. As you can see on this mutation map of the spike, which is just one part of the virus sequence, albeit a critical one, there is a key, unique mutation L452Q.",
-      "hook": "Exploring the implications of the BA.2.12.1 variant on pandemic dynamics",
-      "publishedAt": "2022-05-15T19:37:25.437Z",
-      "score": 17
-    },
-    {
-      "id": "82fzgs-iJX",
-      "url": "https://erictopol.substack.com/p/the-flawed-v02-max-craze",
-      "title": "The Flawed V02 Max Craze",
-      "publication": "Ground Truths",
-      "author": "Eric Topol",
-      "topic": "science",
-      "quote": "V02 max by wearables are obviously not measured by gas exchange or directly, but instead through various imputations based upon population-based algorithms of heart rate and movement (GPS/accelerometry). Studies have assessed the Apple Watch, Garmin Fenix 6, and Fitbit with a mean absolute percentage error of 7-16%.",
-      "hook": "Unraveling the V02 Max Craze: A Critical Examination",
-      "publishedAt": "2026-02-23T16:44:14.077Z",
-      "score": 17
-    },
-    {
-      "id": "7NX9W-UyAG",
-      "url": "https://erictopol.substack.com/p/the-remarkable-proliferation-of-cancer",
-      "title": "The Remarkable Proliferation of Cancer Immunotherapies",
-      "publication": "Ground Truths",
-      "author": "Eric Topol",
-      "topic": "science",
-      "quote": "The takeaway lesson is we can’t have enough in the armamentarium of ways to amp up the immune response to cancer. If we’re going to achieve long term success and cures, in many patients it will take more than 1 drug class within the immunotherapy umbrella, i.e. combinations to get us to the goal.",
-      "hook": "Explore the future of cancer treatment through immunotherapy.",
-      "publishedAt": "2026-05-24T17:38:38.000Z",
-      "score": 17
-    },
-    {
-      "id": "g2woGx_JJR",
-      "url": "https://erictopol.substack.com/p/why-our-memory-slips-after-age-50",
-      "title": "Why Our Memory Slips After Age 50",
-      "publication": "Ground Truths",
-      "author": "Eric Topol",
-      "topic": "science",
-      "quote": "As soon as they take residence in the brain, they change their identity to microglial.",
-      "hook": "Discover how brain aging is not a linear process.",
-      "publishedAt": "2026-08-12T23:00:47.000Z",
-      "score": 17
     },
     {
       "id": "i4EY9zo4QK",
@@ -915,54 +771,6 @@
       "score": 17
     },
     {
-      "id": "13v1eCiCx4",
-      "url": "https://samkriss.com/2021/06/25/whats-so-bad-about-critical-race-theory",
-      "title": "What’s so bad about critical race theory?",
-      "publication": "Idiot Joy Showland",
-      "author": "Sam Kriss",
-      "topic": "ideas",
-      "quote": "The notions of merit that were so glibly employed to determine access and status within the intellectual arena were themselves repositories of racial power.",
-      "hook": "Merit as a repository of racial power",
-      "publishedAt": "2021-06-25T15:21:10.000Z",
-      "score": 16
-    },
-    {
-      "id": "XO09dc5a1h",
-      "url": "https://seantrott.substack.com/p/coherentism-and-the-case-for-complementary",
-      "title": "Coherentism and the case for complementary science",
-      "publication": "The Counterfactual",
-      "author": "Sean Trott",
-      "topic": "philosophy",
-      "quote": "The groundlessness cannot be contained: if we follow through the empirical justifications we give for our beliefs, we have done in the case of thermometric fixed points, we arrive at bodily sensation; if that final basis of justification is seen as untrustworthy, then none of our empirical justifications can be trusted.",
-      "hook": "Explore how scientific knowledge is justified beyond mere sensory experience.",
-      "publishedAt": "2026-09-25T17:16:40.000Z",
-      "score": 17
-    },
-    {
-      "id": "xm4kE5FMe_",
-      "url": "https://seantrott.substack.com/p/escaping-the-extrapolators-circle",
-      "title": "Escaping the extrapolator's circle",
-      "publication": "The Counterfactual",
-      "author": "Sean Trott",
-      "topic": "philosophy",
-      "quote": "If the populations in question were perfectly homogenous, extrapolation would be easy: the result from the first population could be directly carried over to the second. But it is not reasonable to assume that the populations in the foregoing examples are homogeneous: they almost certainly differ with respect to characteristics that affect the causal relationship in question.",
-      "hook": "Explore the limits of extrapolation in science and philosophy.",
-      "publishedAt": "2026-07-22T20:42:01.000Z",
-      "score": 16
-    },
-    {
-      "id": "hL1d0Jk_CY",
-      "url": "https://seantrott.substack.com/p/language-models-and-the-ineffable",
-      "title": "Language models and the ineffable",
-      "publication": "The Counterfactual",
-      "author": "Sean Trott",
-      "topic": "philosophy",
-      "quote": "If a territory can be mapped linguistically, then it seems intuitively plausible that a language model could learn the map without knowing the territory; this renders it nigh-impossible to measure whether that model has, in fact, learned the territory.",
-      "hook": "Can language models truly understand the world?",
-      "publishedAt": "2025-08-15T03:41:11.001Z",
-      "score": 16
-    },
-    {
       "id": "YSCX1DVTD9",
       "url": "https://smallpotatoes.paulbloom.net/p/are-parents-better-people",
       "title": "Are parents better people?",
@@ -1059,18 +867,6 @@
       "score": 16
     },
     {
-      "id": "U2PhymHsps",
-      "url": "https://startswithabang.substack.com/p/ask-ethan-why-does-something-exist",
-      "title": "Ask Ethan: Why does something exist instead of nothing?",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "science",
-      "quote": "Perhaps the most remarkable fact about the Universe, if you think about it on a truly fundamental level, is that it exists at all.",
-      "hook": "Why does the Universe exist instead of nothing?",
-      "publishedAt": "2025-12-24T17:01:54.353Z",
-      "score": 16
-    },
-    {
       "id": "TZfKo39CjB",
       "url": "https://startswithabang.substack.com/p/can-we-be-certain-that-time-really",
       "title": "Can we be certain that time really exists?",
@@ -1107,18 +903,6 @@
       "score": 17
     },
     {
-      "id": "EQq4_CxU_X",
-      "url": "https://startswithabang.substack.com/p/donnie-darko-offers-a-time-travel",
-      "title": "“Donnie Darko” offers a time travel lesson you won’t find elsewhere",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "science",
-      "quote": "The idea of an Einstein-Rosen bridge dates back to the 1930s, when Albert Einstein, working with his student Nathan Rosen, had a profound realization: The presence of matter and energy can curve, deform, and distort the fabric of spacetime, and both positive and negative types of curvature are possible.",
-      "hook": "Explore the scientific and philosophical depths of time travel in 'Donnie Darko.'",
-      "publishedAt": "2026-09-24T16:01:59.000Z",
-      "score": 16
-    },
-    {
       "id": "j-v74wsd-v",
       "url": "https://startswithabang.substack.com/p/flying-through-time",
       "title": "Flying through time",
@@ -1128,66 +912,6 @@
       "quote": "If light’s polarization is inherently rotated, even by a fraction of a degree, it could reveal a preferred direction in the Universe, pointing to exotic new physics or even a flaw in our cosmic picture.",
       "hook": "Discover how cosmic birefringence could challenge our understanding of the universe.",
       "publishedAt": "2026-08-22T13:01:03.000Z",
-      "score": 16
-    },
-    {
-      "id": "DK16TUSv2k",
-      "url": "https://startswithabang.substack.com/p/largest-scale-cosmic-test-ever-favors",
-      "title": "Largest-scale cosmic test ever favors dark matter over MOND ",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "science",
-      "quote": "When the results are obtained, on enormous cosmic scales – between 100 million and up to 750 million light-years – they were able to show that the laws of gravity behaved as Einstein’s general relativity predicted, and not as the alternative, MOND, predicts on those same cosmic scales.",
-      "hook": "How cosmic tests challenge our understanding of gravity.",
-      "publishedAt": "2026-08-27T16:00:24.000Z",
-      "score": 17
-    },
-    {
-      "id": "hDiimjBlRY",
-      "url": "https://startswithabang.substack.com/p/one-blip-isnt-enough-to-declare-dark",
-      "title": "One blip isn’t enough to declare “dark matter has been detected”",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "science",
-      "quote": "However, no matter how good the data is for this one single event, that isn’t sufficient to claim that we’ve detected dark matter.",
-      "hook": "Why one event isn't enough to detect dark matter",
-      "publishedAt": "2026-09-17T16:02:33.000Z",
-      "score": 17
-    },
-    {
-      "id": "hcUSLDP4Ir",
-      "url": "https://startswithabang.substack.com/p/sciences-answer-to-the-ultimate-question",
-      "title": "Science’s answer to the ultimate question: Where do we come from?",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "science",
-      "quote": "For millennia, we had only stories to be our guide: mythologies and untested, unsubstantiated ideas that sprung forth from human imagination. However, the enterprise of science has, for the first time in the history of our species, brought to us compelling, fact-based answers to many of these questions that enable us to make sense not just of nature, but of the story for how we came to be.",
-      "hook": "Discover science's compelling answers to our origins.",
-      "publishedAt": "2025-09-17T16:05:59.146Z",
-      "score": 18
-    },
-    {
-      "id": "sfml5LiGia",
-      "url": "https://startswithabang.substack.com/p/the-most-important-quantum-advance",
-      "title": "The most important quantum advance of the 21st century",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "science",
-      "quote": "Nevertheless, despite how slow progress has been in uncovering the full nature of our quantum reality, humanity has taken many important steps since the founding of quantum mechanics.",
-      "hook": "Explore the PBR theorem's profound impact on quantum reality.",
-      "publishedAt": "2026-02-05T17:03:01.425Z",
-      "score": 17
-    },
-    {
-      "id": "0sKyekHr8B",
-      "url": "https://startswithabang.substack.com/p/the-strongest-experimental-hint-that",
-      "title": "The strongest experimental hint that gravity is quantum in nature",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "science",
-      "quote": "This bizarre, indeterminate behavior has been thoroughly observed, studied, and characterized for three of our fundamental forces: the electromagnetic force and the strong and weak nuclear forces.",
-      "hook": "Explore the quantum nature of gravity through the Aharonov-Bohm effect.",
-      "publishedAt": "2026-08-13T16:03:02.000Z",
       "score": 16
     },
     {
@@ -1237,54 +961,6 @@
       "hook": "Explore the cultural loss of the night sky due to modern technology.",
       "publishedAt": "2026-07-19T00:22:37.000Z",
       "score": 16
-    },
-    {
-      "id": "ecc3v5ayeQ",
-      "url": "https://thephysicsjournal.substack.com/p/closed-timelike-curves",
-      "title": "Closed Timelike Curves ",
-      "publication": "The Physics Journal",
-      "author": "Dr. Manhattan",
-      "topic": "science",
-      "quote": "In 1915, general relativity supplanted the fixed, universal space and time of Newtonian physics with a dynamical spacetime geometry for which the motion of bodies is determined by the distribution of mass, energy, momentum, and pressure in a given volume.",
-      "hook": "Explore how general relativity allows for time travel through closed timelike curves.",
-      "publishedAt": "2026-09-11T15:22:08.000Z",
-      "score": 16
-    },
-    {
-      "id": "nsMzmaBIAX",
-      "url": "https://thephysicsjournal.substack.com/p/cosmic-inflation",
-      "title": "Cosmic Inflation ",
-      "publication": "The Physics Journal",
-      "author": "Dr. Manhattan",
-      "topic": "space",
-      "quote": "Such a dramatic initial expansion would be driven by a false vacuum state with a large positive energy density. The uncertainty principle of quantum mechanics allows classically empty space to possess a non-zero energy density, which remains constant as the universe expands.",
-      "hook": "How a rapid expansion explains the universe's uniformity and flatness",
-      "publishedAt": "2026-03-28T10:03:22.000Z",
-      "score": 16
-    },
-    {
-      "id": "kuoxa7aP7R",
-      "url": "https://thephysicsjournal.substack.com/p/the-one-way-speed-of-light-problem",
-      "title": "The One-Way Speed of Light Problem",
-      "publication": "The Physics Journal",
-      "author": "Dr. Manhattan",
-      "topic": "science",
-      "quote": "Reichenbach proposes that we assign the time of the reflection or arrival event at B as: where ε is any real number from 0 to 1. When ε = 1/2, we recover Einstein’s standard synchronization convention; the reflection event is assigned the midpoint of the round-trip, and the one-way speed of light is c in both directions.",
-      "hook": "Explore the hidden assumptions in measuring the speed of light.",
-      "publishedAt": "2026-05-08T21:53:49.000Z",
-      "score": 17
-    },
-    {
-      "id": "3nxTqdOBaw",
-      "url": "https://thephysicsjournal.substack.com/p/what-exactly-is-mass",
-      "title": "What Exactly is Mass?",
-      "publication": "The Physics Journal",
-      "author": "Dr. Manhattan",
-      "topic": "science",
-      "quote": "The genius of the Principia lay in turning the Aristotelian idea of motion on its head. Instead of an object requiring a cause to move, motion became part of the object’s inherent state.",
-      "hook": "Discover how Newton revolutionized our understanding of motion and mass.",
-      "publishedAt": "2026-04-10T11:23:31.000Z",
-      "score": 18
     },
     {
       "id": "juIeU86ILO",
@@ -1369,30 +1045,6 @@
       "hook": "A theory of charity based on mutual aid and moral character.",
       "publishedAt": "2026-03-19T03:31:17.266Z",
       "score": 17
-    },
-    {
-      "id": "B80AFUIx1P",
-      "url": "https://www.astralcodexten.com/p/king-ludd",
-      "title": "King Ludd",
-      "publication": "Astral Codex Ten",
-      "author": "Scott Alexander",
-      "topic": "ideas",
-      "quote": "Nodens was a river god; if you dam up a river in one spot, it will flow down other channels. Sometimes it will vanish underground, bursting out of some unexpected cavern miles away. Nodens was a hunter, and hunters know when to stay camouflaged.",
-      "hook": "Explore how a minor Celtic god influenced modern mythology and literature.",
-      "publishedAt": "2026-09-14T23:56:40.000Z",
-      "score": 16
-    },
-    {
-      "id": "PzLYWKKPMX",
-      "url": "https://www.astralcodexten.com/p/why-does-ozempic-cure-all-diseases",
-      "title": "Why Does Ozempic Cure All Diseases?",
-      "publication": "Astral Codex Ten",
-      "author": "Scott Alexander",
-      "topic": "science",
-      "quote": "The brain is protected by the blood-brain barrier which usually blocks large molecules. Ozempic is a large molecule. Scientists are still figuring out exactly how it gets through.",
-      "hook": "Discover how Ozempic might be more than a diabetes drug.",
-      "publishedAt": "2024-08-13T08:16:11.759Z",
-      "score": 16
     },
     {
       "id": "oCsK-nQbXj",
@@ -2127,18 +1779,6 @@
       "score": 19.3
     },
     {
-      "id": "Q5rra29cbW",
-      "url": "https://www.optimallyirrational.com/p/why-and-how-political-ideas-matter",
-      "title": "Why and how political ideas matter",
-      "publication": "Optimally Irrational",
-      "author": "Lionel Page",
-      "topic": "ideas",
-      "quote": "Ideologies serve to justify a coalition’s claims externally and to coordinate and bind its members internally, while also developing a logic of their own.",
-      "hook": "Explore how political ideologies shape and reflect societal dynamics.",
-      "publishedAt": "2025-05-15T13:07:15.181Z",
-      "score": 16.8
-    },
-    {
       "id": "rBk2AOnqOS",
       "url": "https://www.overcomingbias.com/p/aliens-are-not-crazy-unlikely",
       "title": "Aliens Are Not Crazy Unlikely",
@@ -2271,18 +1911,6 @@
       "score": 18.3
     },
     {
-      "id": "Ki3o2W2Evc",
-      "url": "https://www.robkhenderson.com/p/rage-of-the-falling-elite",
-      "title": "Rage of the Falling Elite",
-      "publication": "Rob Henderson's Newsletter",
-      "author": "Rob Henderson",
-      "topic": "ideas",
-      "quote": "The answer lies in a less romantic story than Carnegie’s or Oprah’s. It is the story of downward mobility.",
-      "hook": "Why do the affluent turn radical? Explore the psychology of downward mobility.",
-      "publishedAt": "2025-09-21T13:50:35.904Z",
-      "score": 18.3
-    },
-    {
       "id": "7_gaLcCGOd",
       "url": "https://www.robkhenderson.com/p/some-status-games-are-worth-playing",
       "title": "Some Status Games Are Worth Playing",
@@ -2292,18 +1920,6 @@
       "quote": "Congleton suggests this story is too simple. Some status games are wasteful. But others produce real benefits for people who are not actually playing the game.",
       "hook": "Exploring the complex role of status-seeking in human behavior and society.",
       "publishedAt": "2026-09-06T14:12:42.000Z",
-      "score": 18.3
-    },
-    {
-      "id": "Uxy6wGjMdJ",
-      "url": "https://www.robkhenderson.com/p/status-symbols-and-the-struggle-for",
-      "title": "Luxury Beliefs are Status Symbols",
-      "publication": "Rob Henderson's Newsletter",
-      "author": "Rob Henderson",
-      "topic": "ideas",
-      "quote": "Luxury beliefs are ideas and opinions that confer status on the upper class, while often inflicting costs on the lower classes.",
-      "hook": "How luxury beliefs have replaced luxury goods as status symbols.",
-      "publishedAt": "2022-06-12T12:00:29.856Z",
       "score": 18.3
     },
     {
@@ -2317,42 +1933,6 @@
       "hook": "Explore the psychological underpinnings of envy through the lens of pornography.",
       "publishedAt": "2022-06-05T09:52:49.171Z",
       "score": 19.1
-    },
-    {
-      "id": "fBMP0z1O6e",
-      "url": "https://www.sciencefictions.org/p/erectile",
-      "title": "Does watching pornography cause erectile dysfunction?",
-      "publication": "Science Fictions",
-      "author": "Stuart Ritchie",
-      "topic": "science",
-      "quote": "In general, among sexually active pornography-using men, serious erectile problems seem rare, a finding that runs counter to a popular narrative suggesting that pornography use is driving an epidemic of ED.",
-      "hook": "Does pornography cause erectile dysfunction?",
-      "publishedAt": "2022-11-05T13:30:06.467Z",
-      "score": 16
-    },
-    {
-      "id": "n79sjRIp_E",
-      "url": "https://www.sciencefictions.org/p/hot-drinks",
-      "title": "Please stop saying hot drinks cool you down",
-      "publication": "Science Fictions",
-      "author": "Stuart Ritchie",
-      "topic": "science",
-      "quote": "…a hot drink can cool you down, but only in specific circumstances. “If you drink a hot drink, it does result in a lower amount of heat stored inside your body, provided the additional sweat that’s produced when you drink the hot drink can evaporate,” Jay says.",
-      "hook": "Discover why hot drinks might cool you down, under the right conditions.",
-      "publishedAt": "2022-07-17T10:31:42.184Z",
-      "score": 16
-    },
-    {
-      "id": "sFKbHuUA9y",
-      "url": "https://www.sciencefictions.org/p/science-isnt-storytelling",
-      "title": "Science isn't storytelling",
-      "publication": "Science Fictions",
-      "author": "Stuart Ritchie",
-      "topic": "science",
-      "quote": "Having a pre-existing conclusion—a “take-home message”—in mind is one of the most reality-distorting influences on our thinking.",
-      "hook": "Why science should resist the allure of storytelling",
-      "publishedAt": "2022-12-27T13:29:24.218Z",
-      "score": 16
     },
     {
       "id": "1ChlhO5oJN",
@@ -2379,90 +1959,6 @@
       "score": 18
     },
     {
-      "id": "dUZKabQgI9",
-      "url": "https://www.thequantumcat.space/p/did-we-invent-mathematics-or-did",
-      "title": "Did We Invent Mathematics? Or Did We Discover It?",
-      "publication": "The Quantum Cat",
-      "author": "Alastair Williams",
-      "topic": "philosophy",
-      "quote": "That might seem to rule out the physical reality of spheres. And, of course, it is not just true of the sphere: many of the things mathematics talks about - straight lines, triangles, circles - cannot really exist in our world.",
-      "hook": "Explore if mathematics is discovered or invented.",
-      "publishedAt": "2025-04-03T12:31:16.156Z",
-      "score": 16
-    },
-    {
-      "id": "zDNgsQ0WZK",
-      "url": "https://www.thequantumcat.space/p/the-myth-and-mystery-of-the-tunguska",
-      "title": "The Myth and Mystery of The Tunguska Impact",
-      "publication": "The Quantum Cat",
-      "author": "Alastair Williams",
-      "topic": "science",
-      "quote": "The majority explode high in the atmosphere, and cause little damage on the ground. But a large one can penetrate further, and when it explodes it can be hard to ignore.",
-      "hook": "What exploded over Siberia in 1908?",
-      "publishedAt": "2025-10-09T12:32:09.423Z",
-      "score": 16
-    },
-    {
-      "id": "Owa_NLEOMV",
-      "url": "https://www.thequantumcat.space/p/the-remarkable-underground-voyages",
-      "title": "The Remarkable Underground Voyages of Michel Siffre ",
-      "publication": "The Quantum Cat",
-      "author": "Alastair Williams",
-      "topic": "science",
-      "quote": "With no day or night he slept whenever he felt tired, and ate whenever he felt hungry. But the seconds, he later said, began to stretch out, and long periods of time could pass in what seemed to him like a mere instant.",
-      "hook": "How does the human body perceive time in isolation?",
-      "publishedAt": "2025-05-15T12:31:27.171Z",
-      "score": 16
-    },
-    {
-      "id": "fJsJrNcQYS",
-      "url": "https://www.thequantumcat.space/p/the-sun-and-superflares",
-      "title": "The Sun and Superflares",
-      "publication": "The Quantum Cat",
-      "author": "Alastair Williams",
-      "topic": "science",
-      "quote": "In 2012 Fusa Miyake, a researcher at the University of Nagoya, took delivery of two Japanese cedar trees, each of which lived and died during the eighth century. In most of the tree rings the carbon-14 levels were steady, a sign of normal solar activity. In one of the rings, however, she saw an abrupt spike, a spike larger than any other seen.",
-      "hook": "Discover the Sun's potential for superflares and their ancient impacts on Earth.",
-      "publishedAt": "2025-02-20T13:31:36.760Z",
-      "score": 17
-    },
-    {
-      "id": "XmqSfP1l1l",
-      "url": "https://www.thequantumcat.space/p/the-week-in-space-and-physics-the-1ca",
-      "title": "The Week in Space and Physics: The Magic of an Eclipse",
-      "publication": "The Quantum Cat",
-      "author": "Alastair Williams",
-      "topic": "space",
-      "quote": "They say that in 585 BC an eclipse stopped a war. One can almost imagine the scene: the stench of blood and the glint of metal, the churning mud, the cries of rage and desperation. Warfare has never been pretty, yet amid all this the Sun suddenly turned black, a terrible crown of white flames appeared all around it, and the day, shorn of its light, faded into night.",
-      "hook": "How an eclipse in 585 BC stopped a war and transformed human understanding.",
-      "publishedAt": "2026-08-26T12:31:19.000Z",
-      "score": 16
-    },
-    {
-      "id": "CdHDZ23Osy",
-      "url": "https://www.thequantumcat.space/p/what-lies-beyond-exploring-interstellar",
-      "title": "What Lies Beyond: Exploring Interstellar Space",
-      "publication": "The Quantum Cat",
-      "author": "Alastair Williams",
-      "topic": "space",
-      "quote": "The boundary they have traversed, that which marks the frontier between the Solar System and the rest of the galaxy, is a still mysterious place. When they crossed that border the data they sent back shocked researchers, forcing them to rethink models of the solar system.",
-      "hook": "Explore the mysterious frontier between our solar system and the galaxy.",
-      "publishedAt": "2023-06-15T12:31:02.112Z",
-      "score": 16
-    },
-    {
-      "id": "R6A2wdgQN0",
-      "url": "https://www.thequantumcat.space/p/why-is-the-earth-coated-in-the-dust",
-      "title": "Why Is the Earth Coated in the Dust of a Supernova?",
-      "publication": "The Quantum Cat",
-      "author": "Alastair Williams",
-      "topic": "space",
-      "quote": "The ashes at the bottom of the Pacific Ocean tell us something about where we have been. But they are also a reminder that things operate on scales far beyond our own; that if you stretch a sheet under the stars, you will slowly gather their dust.",
-      "hook": "Discover how supernova debris shapes our cosmic journey.",
-      "publishedAt": "2026-07-09T12:31:43.000Z",
-      "score": 16
-    },
-    {
       "id": "nHwiY6dcS_",
       "url": "https://www.thescrublands.com/p/cwd-is-a-trust-test-for-wildlife",
       "title": "CWD Is a Trust Test for Wildlife Agencies",
@@ -2485,162 +1981,6 @@
       "hook": "How the Endangered Species Act can balance conservation and economic interests.",
       "publishedAt": "2025-07-18T21:55:58.432Z",
       "score": 18.3
-    },
-    {
-      "id": "0D1v2n4ug9",
-      "url": "https://www.theseedsofscience.pub/p/all-placebos-are-not-created-equal",
-      "title": "All Placebos are not created equal",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "science",
-      "quote": "An intra-articular placebo is more effective at relieving pain than topical placebos, and topical placebos are more effective than oral placebos.",
-      "hook": "Discover how different placebos and doctor traits affect pain relief.",
-      "publishedAt": "2023-09-26T19:03:46.266Z",
-      "score": 16
-    },
-    {
-      "id": "OQFhLlmmWv",
-      "url": "https://www.theseedsofscience.pub/p/biases-dont-exist-and-humans-are",
-      "title": "Biases Don't Exist, and Humans Are Not Irrational",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "philosophy",
-      "quote": "Biases don’t exist. Biases aren’t things in the world and they are not cognitive processes. Biases are an artifact of what we are measuring against.",
-      "hook": "Discover why biases might not exist as we think they do.",
-      "publishedAt": "2026-06-10T13:19:15.000Z",
-      "score": 16
-    },
-    {
-      "id": "z9gAdefYiJ",
-      "url": "https://www.theseedsofscience.pub/p/destroying-the-universe-how-hard",
-      "title": "Destroying the universe: How hard can it be?",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "science",
-      "quote": "Vacuum decay is the ultimate ecological catastrophe; in the new vacuum there are new constants of nature; after vacuum decay, not only is life as we know it impossible, so is chemistry as we know it.",
-      "hook": "Explore the catastrophic implications of vacuum decay on life and chemistry.",
-      "publishedAt": "2026-07-22T12:04:49.000Z",
-      "score": 16
-    },
-    {
-      "id": "HOmekTflTF",
-      "url": "https://www.theseedsofscience.pub/p/hallucinated-gods",
-      "title": "Hallucinated Gods",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "philosophy",
-      "quote": "Julian Jaynes believed that ancient people experienced their gods as auditory hallucinations.",
-      "hook": "Discover how ancient gods might have been auditory hallucinations.",
-      "publishedAt": "2025-11-04T17:49:52.450Z",
-      "score": 16
-    },
-    {
-      "id": "99EuO69qBU",
-      "url": "https://www.theseedsofscience.pub/p/how-american-gray-wolves-and-integrated",
-      "title": "How American Gray Wolves and Integrated Pest Management Explain a New Way To Treat Prostate Cancer",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "science",
-      "quote": "The re-introduction of wolves into Yellowstone is the quintessential example of a tropic cascade: powerful, indirect interactions and knock-on effects that alter and control entire ecosystems.",
-      "hook": "Discover how wolves and pest management inspire new cancer treatments.",
-      "publishedAt": "2026-07-01T13:06:55.000Z",
-      "score": 16
-    },
-    {
-      "id": "BohxhHfHBF",
-      "url": "https://www.theseedsofscience.pub/p/how-to-build-a-cancer-vaccine-and",
-      "title": "How to build a cancer vaccine, and whether they will work this time",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "science",
-      "quote": "Neoantigens are the natural way to build a cancer vaccine. They are displayed on MHC. And the T-cell repertoire that can recognize them is, in principle, fully intact, because they did not exist when the immune system was learning what to ignore.",
-      "hook": "Discovering the potential of neoantigens in cancer vaccines",
-      "publishedAt": "2026-09-02T12:50:52.000Z",
-      "score": 17
-    },
-    {
-      "id": "Mun7b1BL1Q",
-      "url": "https://www.theseedsofscience.pub/p/intrinsic-motivation-a-deep-dive",
-      "title": "Intrinsic Motivation: a deep dive",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "ideas",
-      "quote": "Playing sport. Writing. Painting. Travelling. Exploring. Hiking. Reading. For the most part, we engage in these activities for their own sake – because they are inherently enjoyable.",
-      "hook": "Discover the power of doing things for their own sake.",
-      "publishedAt": "2025-07-30T14:59:10.083Z",
-      "score": 17
-    },
-    {
-      "id": "4AYRZg__Gf",
-      "url": "https://www.theseedsofscience.pub/p/iq-discourse-is-increasingly-unhinged",
-      "title": "IQ discourse is increasingly unhinged",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "ideas",
-      "quote": "Yet it can also be true, at the exact same time, that such criticisms have had a reverse psychology effect, making it seem like intelligence being genetically determined from conception is some sort of golden glowing scientific truth being covered up by the harshest censors.",
-      "hook": "Unraveling the myths of IQ research and its societal implications.",
-      "publishedAt": "2025-02-12T17:27:57.624Z",
-      "score": 16
-    },
-    {
-      "id": "2q_nRALKit",
-      "url": "https://www.theseedsofscience.pub/p/psychology-experiments-are-gardens",
-      "title": "Psychology Experiments Are Gardens, Not Digsites",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "philosophy",
-      "quote": "Rather, I think they are something we prompt through the context of the experiment. More like flowers cultivated in a garden than fossils at a digsite.",
-      "hook": "Psychological effects are cultivated, not discovered.",
-      "publishedAt": "2026-05-27T11:55:43.000Z",
-      "score": 16
-    },
-    {
-      "id": "IUylIGhjiK",
-      "url": "https://www.theseedsofscience.pub/p/there-is-a-path-to-meat-without-misery",
-      "title": "There is a path to meat without misery",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "ideas",
-      "quote": "Replication was a new force harnessing and shaping the free energy of the universe around it. It introduced its own singular law: whichever better converts free energy into new copies shall proliferate; whichever does not shall be swallowed.",
-      "hook": "Explore how replication reshaped the universe and human history.",
-      "publishedAt": "2026-09-08T14:07:03.000Z",
-      "score": 16
-    },
-    {
-      "id": "L-iuWIW4W-",
-      "url": "https://www.theseedsofscience.pub/p/why-psychology-hasnt-had-a-big-new",
-      "title": "Why Psychology Hasn’t Had a Big New Idea in Decades",
-      "publication": "Seeds of Science",
-      "author": "Seeds of Science",
-      "topic": "philosophy",
-      "quote": "A science needs a paradigm because we underrate a simple fact: there are an infinite number of things you can study and infinite ways to study them.",
-      "hook": "Why hasn't psychology had a big new idea in decades?",
-      "publishedAt": "2025-05-07T15:32:36.433Z",
-      "score": 16
-    },
-    {
-      "id": "ZeC9RwX1-X",
-      "url": "https://yourlocalepidemiologist.substack.com/p/does-the-shingles-vaccine-prevent",
-      "title": "Does the shingles vaccine prevent dementia?",
-      "publication": "Your Local Epidemiologist",
-      "author": "Jenn Dowd, PhD",
-      "topic": "science",
-      "quote": "The virus that causes shingles, varicella zoster virus (VZV) is neurotropic: after causing chickenpox in childhood, it remains latent in nerve tissue for decades and can reactivate later in life, sometimes without obvious symptoms.",
-      "hook": "Could a shingles vaccine protect your brain?",
-      "publishedAt": "2026-09-02T13:11:50.000Z",
-      "score": 16
-    },
-    {
-      "id": "Q6gUTwDZzt",
-      "url": "https://yourlocalepidemiologist.substack.com/p/why-you-cant-find-a-primary-care",
-      "title": "Why you can’t find a primary care doctor",
-      "publication": "Your Local Epidemiologist",
-      "author": "Dr. Lucy McBride",
-      "topic": "science",
-      "quote": "Prevention is not the priority in U.S. health care; damage control is, and the money proves it. Less than 5% of health care spending in the U.S. goes toward primary care, while the other 95% flows to hospitals, procedures, prescriptions, and administration.",
-      "hook": "Discover why U.S. healthcare prioritizes damage control over prevention.",
-      "publishedAt": "2026-08-12T10:31:11.000Z",
-      "score": 16
     }
   ]
 }

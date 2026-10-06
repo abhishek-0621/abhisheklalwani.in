@@ -1,15 +1,19 @@
 import { hashId } from "./lib/text";
+import { isBlocked } from "./blocklist";
 import { TOPICS, type Signal, type Topic } from "./schema";
 import type { Accepted, CurationCache } from "./state";
 
 /**
- * The published library is every essay the curator has ever accepted: it only grows.
+ * The published library is every essay the curator has ever accepted, minus owner removals
+ * (see blocklist.ts) and retired topics.
  * Topic balance is not enforced here but when an essay is handed out — the site picks each
  * catch's topic by TOPIC_WEIGHTS — so a prolific topic can never crowd out the others.
  */
 export function publishAll(cache: CurationCache): Signal[] {
   return Object.entries(cache)
     .filter((e): e is [string, Accepted] => e[1].ok)
+    // Retired topics (science) and owner removals stay in the cache but are never published.
+    .filter(([, a]) => (TOPICS as readonly string[]).includes(a.topic) && !isBlocked(a))
     .sort(([a], [b]) => a.localeCompare(b)) // stable order keeps weekly diffs small
     .map(([url, a]) => ({
       id: hashId(url),

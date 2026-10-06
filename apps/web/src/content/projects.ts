@@ -49,7 +49,7 @@ export const projects: Project[] = [
     title: "Stray Signals",
     tagline: "An agent that crawls Substack each week and hides one great essay for every visitor.",
     summary:
-      "A local-LLM agent that walks Substack's recommendation graph, judges thousands of essays on philosophy, psychology, critical thinking, money, science and deep space, verifies every quote word-for-word, and adds every essay it accepts to a library that only grows — handed out on this site one catch at a time.",
+      "A local-LLM agent that walks Substack's recommendation graph, judges thousands of essays on philosophy, psychology, critical thinking, money, nature, poetry and deep space, verifies every quote word-for-word, and adds every essay it accepts to a library that only grows — handed out on this site one catch at a time.",
     year: "2026",
     role: "Design, agent and site integration",
     status: "live",

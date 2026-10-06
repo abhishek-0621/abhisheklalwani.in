@@ -3,7 +3,7 @@
  * Keep this file dependency-free: the web app imports it as types only.
  */
 
-export const TOPICS = ["philosophy", "psychology", "thinking", "money", "science", "space", "nature", "poetry", "writing", "ideas"] as const;
+export const TOPICS = ["philosophy", "psychology", "thinking", "money", "space", "nature", "poetry", "writing", "ideas"] as const;
 
 /** Short-form topics: poems are judged, quoted and filtered differently from essays. */
 export const VERSE_TOPICS: readonly Topic[] = ["poetry"];
@@ -14,7 +14,6 @@ export const TOPIC_LABELS: Record<Topic, string> = {
   psychology: "Psychology & human nature",
   thinking: "Critical thinking",
   money: "Money & economics",
-  science: "Science",
   space: "Deep space",
   nature: "Nature",
   poetry: "Poetry",
@@ -24,7 +23,7 @@ export const TOPIC_LABELS: Record<Topic, string> = {
 
 /**
  * Editorial tilt, shared by the agent and the site. Thoughts outside work first: more
- * philosophy, psychology and clear thinking, less science. The agent uses these to size
+ * philosophy, psychology and clear thinking. The agent uses these to size
  * publication targets and its judging budget; the site uses them to choose which topic
  * each catch comes from, so the balance holds however large the library grows.
  */
@@ -38,7 +37,6 @@ export const TOPIC_WEIGHTS: Record<Topic, number> = {
   writing: 1.0,
   money: 0.9,
   space: 0.8,
-  science: 0.5,
 };
 
 /** Chip labels for the "retune" picker. */
@@ -47,7 +45,6 @@ export const TOPIC_SHORT: Record<Topic, string> = {
   psychology: "Psychology",
   thinking: "Clear thinking",
   money: "Money",
-  science: "Science",
   space: "Deep space",
   nature: "Nature",
   poetry: "Poetry",

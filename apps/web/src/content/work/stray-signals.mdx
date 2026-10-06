@@ -2,7 +2,7 @@
 
 Somewhere on this site a small signal drifts in from the edge of the screen, lingers for a few seconds, and slips away. Catch it and it hands you one essay — a quote from it, and the link. Catch it again and you get another. You never see the same essay twice until you have caught every one on the list.
 
-The essays are chosen by an agent, not by me. Every week it goes looking for writing on philosophy, psychology and human nature, critical thinking, money, science, deep space and big ideas — deliberately far from the tech world — and keeps only what it would send to a curious friend.
+The essays are chosen by an agent, not by me. Every week it goes looking for writing on philosophy, psychology and human nature, critical thinking, money, nature, poetry, deep space and big ideas — deliberately far from the tech world and the science desk — and keeps only what it would send to a curious friend.
 
 <SummonSignal>Catch one now</SummonSignal>
 
@@ -44,7 +44,7 @@ I ran the same 30 essays through two local models.
 | --- | --- | --- |
 | Speed on an M5 Pro | ~3 s / essay | ~11 s / essay |
 | Accepted | 17 / 30 | 9 / 30 |
-| Topic labels | almost all "ideas" | physics → science, friendship → philosophy |
+| Topic labels | almost all "ideas" | eclipses → space, friendship → philosophy |
 | Partisan pieces caught | missed several | caught them |
 
 phi4 is slower but judges like an editor, so it is the default. The weekly run only judges essays it has never seen, so after the first run it finishes in well under an hour.
@@ -53,6 +53,6 @@ phi4 is slower but judges like an editor, so it is the default. The weekly run o
 
 Nothing is ever thrown away. Every essay the curator accepts joins a library that only grows, and the site ships it as JSON. There is no database: each visitor's browser keeps a random seed and a count of how many signals they have caught.
 
-Each catch is chosen in two steps. First a topic, from a weighted round-robin that favours philosophy, psychology and clear thinking over science, so the balance holds however lopsided the library becomes. Then the visitor's next unseen essay within that topic, from a shuffle that leans toward five-minute reads and quotes that stand on their own. Nobody sees a repeat within a topic until they have read all of it. Bots are turned away, and nothing is fetched until you actually click.
+Each catch is chosen in two steps. First a topic, from a weighted round-robin that favours philosophy, psychology and clear thinking, so the balance holds however lopsided the library becomes. Then the visitor's next unseen essay within that topic, from a shuffle that leans toward five-minute reads and quotes that stand on their own. Nobody sees a repeat within a topic until they have read all of it. Bots are turned away, and nothing is fetched until you actually click.
 
 If you never manage to catch it, there is a quieter way in at the bottom of every page.

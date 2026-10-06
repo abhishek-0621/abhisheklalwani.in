@@ -12,6 +12,7 @@
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "signals": "npm run run --workspace @al/stray-signals --",
+    "signals:republish": "npm run republish --workspace @al/stray-signals",
     "signals:install": "zsh agents/stray-signals/scheduler/install.sh",
     "signals:uninstall": "zsh agents/stray-signals/scheduler/uninstall.sh"
   },
