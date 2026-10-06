@@ -16,7 +16,6 @@ Topics that belong:
 - psychology: psychology, human behaviour, human nature, emotions, relationships, motivation, why people do what they do
 - thinking: critical thinking, reasoning, cognitive biases, rationality, weighing evidence, changing your mind, how to think clearly
 - money: economics, finance, economic history, how markets and wealth actually work
-- space: astronomy, cosmology, planets, the search for life, exploration
 - nature: the living world — animals, birds, plants, forests, oceans, seasons, ecology, being outdoors
 - poetry: poems, and essays about reading a poem
 - writing: the craft of writing and the pleasure of reading — style, stories, books, language
@@ -27,7 +26,7 @@ Reject (set the flag) when:
 - isShallow: listicle, link roundup, news recap, product or company exposé, hot take, outrage, self-help platitudes, productivity advice, clickbait, promotion, fundraising, housekeeping.
 - isPartisan: mainly about current politics — parties, elections, culture wars, or an ongoing war or geopolitical conflict. History of long-past events is fine.
 - isTruncated: the text stops at a paywall or is only a preview.
-- fitsTopics false: none of the topics above is the main subject. Physics, chemistry, biology, medicine, health and science news are out of scope (astronomy is "space"; animals and ecology are "nature").
+- fitsTopics false: none of the topics above is the main subject. Physics, chemistry, biology, medicine, health, astronomy, space and science news are out of scope (animals and ecology are "nature").
 
 Score four criteria from 1 to 5. Be strict and use the whole range; a typical competent blog post is 3 on each.
 - originality: 5 = an idea the reader has almost certainly never met; 1 = conventional wisdom restated.
@@ -46,12 +45,12 @@ Score quotable 1-5 for the quote you picked: 5 = a line someone would copy into 
 
 The hook: at most 12 words, plain and specific, no hype, telling the reader what idea they will meet.
 
-The topic label: pick the most specific one. Anything about stars, planets, galaxies, the universe or spaceflight is "space". Why people think, feel and behave as they do is "psychology". How to reason well, biases, evidence and rationality is "thinking". Economics, markets, banks and wealth are "money". Poems are "poetry". Birds, animals, plants, landscapes and ecology are "nature". Essays about writing, books and reading are "writing". Use "ideas" only when none of the others fits.`;
+The topic label: pick the most specific one. Why people think, feel and behave as they do is "psychology". How to reason well, biases, evidence and rationality is "thinking". Economics, markets, banks and wealth are "money". Poems are "poetry". Birds, animals, plants, landscapes and ecology are "nature". Essays about writing, books and reading are "writing". Use "ideas" only when none of the others fits.`;
 
 const Verdict = z.object({
   reason: z.string().describe("One sentence explaining the judgement"),
   // Specific topics first: small models drift toward whichever label they read last.
-  topic: z.enum(["space", "nature", "poetry", "writing", "psychology", "thinking", "money", "philosophy", "ideas"]),
+  topic: z.enum(["nature", "poetry", "writing", "psychology", "thinking", "money", "philosophy", "ideas"]),
   fitsTopics: z.boolean(),
   isTech: z.boolean(),
   isShallow: z.boolean(),

@@ -1,6 +1,6 @@
 {
   "version": "2026-W40",
-  "generatedAt": "2026-10-06T08:48:34.939Z",
+  "generatedAt": "2026-10-06T08:51:14.851Z",
   "items": [
     {
       "id": "nU04fENk6P",
@@ -747,18 +747,6 @@
       "score": 16
     },
     {
-      "id": "RbVlRfZQJw",
-      "url": "https://planetocracy.org/p/the-accusation-of-fantasy",
-      "title": "The Accusation of Fantasy",
-      "publication": "Planetocracy",
-      "author": "Peter Hague",
-      "topic": "ideas",
-      "quote": "There is no reasonable well-informed observer who would consider O’Neill ‘nutty’ - he was a well-regarded Princeton professor, and his ideas had been developed under the constraints of good mathematics, physics and engineering.",
-      "hook": "Why are visionary ideas often dismissed as fantasies?",
-      "publishedAt": "2026-08-24T15:31:10.000Z",
-      "score": 16
-    },
-    {
       "id": "VOC5ophowU",
       "url": "https://samkriss.com/2021/02/08/what-if-we-kissed-in-the-abandoned-gamestop",
       "title": "What if we kissed in the abandoned GameStop?",
@@ -864,66 +852,6 @@
       "quote": "A clear example of the thin and the contextual nature of inclusive vs extractive institutions can be found in the two main forms of exploitation of the native Peruvian population by the Spanish: mita and encomienda.",
       "hook": "Explore the nuanced critique of 'Why Nations Fail' and its thesis on institutions.",
       "publishedAt": "2022-11-11T18:18:33.105Z",
-      "score": 16
-    },
-    {
-      "id": "TZfKo39CjB",
-      "url": "https://startswithabang.substack.com/p/can-we-be-certain-that-time-really",
-      "title": "Can we be certain that time really exists?",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "philosophy",
-      "quote": "When it comes to the question of existence, physics is very simple and straightforward about what it considers to be a satisfactory answer.",
-      "hook": "Explore the philosophical and scientific questions about the existence of time.",
-      "publishedAt": "2026-09-10T16:00:42.000Z",
-      "score": 16
-    },
-    {
-      "id": "8zN6mi3jZo",
-      "url": "https://startswithabang.substack.com/p/cosmic-birefringence-the-signal-that",
-      "title": "Cosmic birefringence: the signal that could upend cosmology",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "space",
-      "quote": "However, it’s important to check the CMB’s light for those effects, because there are three main explanations for cosmic birefringence if we do, indeed, observe it.",
-      "hook": "Discover cosmic birefringence and its potential to reshape cosmology.",
-      "publishedAt": "2026-08-20T16:03:56.000Z",
-      "score": 17
-    },
-    {
-      "id": "rnxc54ms_5",
-      "url": "https://startswithabang.substack.com/p/do-we-live-inside-a-baby-universe",
-      "title": "Do we live inside a baby universe that’s really a black hole on the outside?",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "space",
-      "quote": "Remarkably, the Schwarzschild radius of a black hole with the mass of all the matter in the observable Universe is almost exactly equal to the observed size of the visible Universe!",
-      "hook": "Could our Universe be inside a black hole?",
-      "publishedAt": "2026-09-03T16:01:13.000Z",
-      "score": 17
-    },
-    {
-      "id": "j-v74wsd-v",
-      "url": "https://startswithabang.substack.com/p/flying-through-time",
-      "title": "Flying through time",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "space",
-      "quote": "If light’s polarization is inherently rotated, even by a fraction of a degree, it could reveal a preferred direction in the Universe, pointing to exotic new physics or even a flaw in our cosmic picture.",
-      "hook": "Discover how cosmic birefringence could challenge our understanding of the universe.",
-      "publishedAt": "2026-08-22T13:01:03.000Z",
-      "score": 16
-    },
-    {
-      "id": "0iG63Ws3IV",
-      "url": "https://startswithabang.substack.com/p/the-universe-has-changed-by-the-time",
-      "title": "The Universe has changed by the time you finish this sentence",
-      "publication": "Starts With A Bang",
-      "author": "Starts With A Bang",
-      "topic": "space",
-      "quote": "But all of these events take time: enormous amounts of time. Stars occasionally pass through our Oort Cloud, but that only happens a couple of times every million years. The Sun will continue burning for 5-7 billion more years before it evolves to the next stage of its life.",
-      "hook": "Discover how the universe changes in just three seconds.",
-      "publishedAt": "2026-04-02T16:02:16.435Z",
       "score": 16
     },
     {
@@ -1777,18 +1705,6 @@
       "hook": "Rethinking happiness through evolution and neuroscience",
       "publishedAt": "2024-07-12T12:22:34.117Z",
       "score": 19.3
-    },
-    {
-      "id": "rBk2AOnqOS",
-      "url": "https://www.overcomingbias.com/p/aliens-are-not-crazy-unlikely",
-      "title": "Aliens Are Not Crazy Unlikely",
-      "publication": "Overcoming Bias",
-      "author": "Robin Hanson",
-      "topic": "space",
-      "quote": "But as an author of the great filter and grabby aliens analysis, I say that I’m a world class expert on the prior for this hypothesis. The possibility that some-UFOs-are-aliens is completely consistent with all known physical, biological, and social laws.",
-      "hook": "Rethinking the likelihood of extraterrestrial life and UFOs",
-      "publishedAt": "2026-08-31T02:14:38.000Z",
-      "score": 17
     },
     {
       "id": "kneZL3ogsk",

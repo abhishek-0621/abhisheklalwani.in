@@ -1013,13 +1013,14 @@
       "ideas"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 1,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": null,
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "removed by owner"
   },
   "rabbitcavern.substack.com": {
     "host": "rabbitcavern.substack.com",
@@ -1170,13 +1171,14 @@
       "science"
     ],
     "source": "seed",
-    "status": "active",
+    "status": "rejected",
     "addedAt": "2026-09-25T18:12:49.734Z",
     "inDegree": 0,
     "accepted": 12,
     "runsWithoutYield": 4,
     "lastRecsCrawlAt": "2026-09-25T18:28:36.746Z",
-    "failStreak": 0
+    "failStreak": 0,
+    "note": "removed by owner"
   },
   "stuartritchie.substack.com": {
     "host": "stuartritchie.substack.com",

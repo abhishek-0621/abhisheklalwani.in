@@ -31,7 +31,7 @@ const Screen = z.object({
   topics: z.array(z.enum(TOPICS)),
 });
 
-const SYSTEM = `You screen Substack publications for "Stray Signals", which recommends writing on philosophy, psychology and human nature, critical thinking, money and economics, deep space, nature, poetry, the craft of writing and reading, and big ideas or theories to curious generalists.
+const SYSTEM = `You screen Substack publications for "Stray Signals", which recommends writing on philosophy, psychology and human nature, critical thinking, money and economics, nature, poetry, the craft of writing and reading, and big ideas or theories to curious generalists.
 A publication fits only if its main subject is one of those topics AND it publishes original essays or poems (not news, not link digests, not podcasts, not writing-career or publishing-industry advice, not book-deal marketing).
 It does NOT fit if it is mainly about technology, AI, software, startups, crypto, marketing, personal productivity, partisan politics, celebrity, astrology or lifestyle content.
 It must be in English.`;

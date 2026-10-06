@@ -50,21 +50,14 @@ export const SEEDS: { host: string; topics: Topic[] }[] = [
   { host: "kyla.substack.com", topics: ["money"] },
   { host: "www.apricitas.io", topics: ["money"] },
   { host: "adamtooze.substack.com", topics: ["money", "ideas"] },
-  // deep space
-  { host: "startswithabang.substack.com", topics: ["space"] },
-  { host: "startalk.substack.com", topics: ["space"] },
-  { host: "www.thequantumcat.space", topics: ["space"] },
-  { host: "planetocracy.org", topics: ["space", "ideas"] },
-  { host: "coreypowell.substack.com", topics: ["space"] },
 ];
 
 /**
  * Substack category leaderboards scanned for new publications, two pages per run,
  * rotating deeper each week. Subcategory filters are not supported by the endpoint,
- * so space writers are found through Science and the recommendation graph.
+ * so niche writers are found through the recommendation graph.
  */
 export const CATEGORIES: { id: number; name: string; topics: Topic[] }[] = [
-  { id: 134, name: "Science", topics: ["space", "psychology"] },
   { id: 114, name: "Philosophy", topics: ["philosophy", "thinking"] },
   { id: 153, name: "Finance", topics: ["money"] },
   { id: 18, name: "History", topics: ["ideas"] },

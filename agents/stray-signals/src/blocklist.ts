@@ -3,7 +3,7 @@
  * old verdict accepted it. Verdicts themselves stay in the cache as history.
  */
 
-/** Whole publications: science-only, medicine and physics-news newsletters. */
+/** Whole publications: science, medicine, physics and astronomy newsletters. */
 export const BLOCKED_HOSTS = new Set([
   "erictopol.substack.com", // Ground Truths
   "yourlocalepidemiologist.substack.com",
@@ -15,6 +15,10 @@ export const BLOCKED_HOSTS = new Set([
   "www.theseedsofscience.pub",
   "seedsofscience.substack.com",
   "thisisyourbrainon.substack.com",
+  "startswithabang.substack.com",
+  "startalk.substack.com",
+  "coreypowell.substack.com",
+  "planetocracy.org",
 ]);
 
 /** Publication names, for hosts whose exact address isn't known in advance. */
@@ -26,6 +30,8 @@ export const BLOCKED_PUBLICATIONS = new Set([
   "The Quantum Cat",
   "Seeds of Science",
   "This is Your Brain On",
+  "Starts With A Bang",
+  "Planetocracy",
 ]);
 
 /** Single essays: current politics or tech that slipped past the curator. Matched on title. */
