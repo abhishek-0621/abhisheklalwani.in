@@ -82,6 +82,12 @@ export const chapters: Chapter[] = [
     image: img("2026-graphmind-graph.jpg", "GraphMind showing a knowledge graph of 296 nodes and 446 edges built from a drug label"),
   },
   {
+    year: "2026", kind: "Award", title: "Evangelist Award, H1 2026",
+    note: "For modernizing Performance Study in SIMULIA: from legacy Polymer to Lit and Redux, a unified UI, and a foundation for the AI features to come.",
+    quote: "Modernizing the foundation. Enabling the future.",
+    image: img("2026-evangelist-award.jpg", "Dassault Systèmes Evangelist award certificate, H1 2026 Awards, presented to Abhishek Lalwani, SIMULIA"),
+  },
+  {
     year: "2026", kind: "Milestone", title: "M.Tech, done",
     note: "Career and degree, side by side.",
     quote: "Turns out, you can build a career and earn a degree along the way, but you also have to make sure you don't lose yourself in the process.",
