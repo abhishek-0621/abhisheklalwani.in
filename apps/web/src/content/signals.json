@@ -1,6 +1,6 @@
 {
-  "version": "2026-W41",
-  "generatedAt": "2026-10-06T10:11:15.304Z",
+  "version": "2026-W42",
+  "generatedAt": "2026-10-12T16:47:46.709Z",
   "items": [
     {
       "id": "nU04fENk6P",
@@ -63,6 +63,30 @@
       "score": 23.1
     },
     {
+      "id": "cMMigRjFGs",
+      "url": "https://elifshafak.substack.com/p/those-who-give-up-the-intellect-for",
+      "title": "Those Who Give Up the Intellect for Love",
+      "publication": "Unmapped Storylands with Elif Shafak",
+      "author": "Elif Shafak",
+      "topic": "ideas",
+      "quote": "Give up the intellect for love and see in one brief moment all eternity.",
+      "hook": "Exploring the intersection of Eastern and Western storytelling traditions.",
+      "publishedAt": "2026-10-11T16:33:52.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "L2RwVoUGhF",
+      "url": "https://erictopol.substack.com/p/a-tale-of-two-t-cells",
+      "title": "Connecting Our Immune System and Healthspan",
+      "publication": "Ground Truths",
+      "author": "Eric Topol",
+      "topic": "ideas",
+      "quote": "This turns out to be a tale of two cells—different subtypes of memory T cells—that contain distinct types of granules resulting in divergent functions. And, importantly, major health outcomes.",
+      "hook": "Discover how two types of T cells influence aging and health outcomes.",
+      "publishedAt": "2026-10-11T18:50:39.000Z",
+      "score": 18.5
+    },
+    {
       "id": "i4EY9zo4QK",
       "url": "https://georgesaunders.substack.com/p/what-is-a-character-anyway",
       "title": "What Is “a Character,” Anyway?",
@@ -97,6 +121,18 @@
       "hook": "Discover the holiness in everyday tasks.",
       "publishedAt": "2026-09-11T10:02:09.000Z",
       "score": 21.1
+    },
+    {
+      "id": "ORK3TbCbbs",
+      "url": "https://jamescrews.substack.com/p/endless-ways-to-pray",
+      "title": "Endless Ways to Pray",
+      "publication": "Poetry Is Life",
+      "author": "James Crews",
+      "topic": "poetry",
+      "quote": "I promise, your willingness to cease from endless doing and drop into simple being will reward you with an increased capacity to pay attention to what is and an irresistible impulse to praise it.",
+      "hook": "Discover how everyday moments can become profound prayers.",
+      "publishedAt": "2026-10-09T11:11:11.000Z",
+      "score": 20.1
     },
     {
       "id": "Bq7OKOD-qk",
@@ -579,6 +615,78 @@
       "score": 18.3
     },
     {
+      "id": "WcVk3qa5R9",
+      "url": "https://openquestionsblog.substack.com/p/can-soccer-be-fixed",
+      "title": "Can Soccer Be Fixed?",
+      "publication": "Open Questions",
+      "author": "Victor Kumar",
+      "topic": "ideas",
+      "quote": "Low-scoring is precisely what makes the World Cup worth watching—it’s what allows 32 (now 48) countries, rich and poor, to assemble from across the globe and play competitively, with those who appear for the very first time having a real shot against elite teams, sometimes winning.",
+      "hook": "Exploring why soccer's low scoring makes it thrilling and fair.",
+      "publishedAt": "2026-07-26T17:00:33.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "oqxysfJqm7",
+      "url": "https://openquestionsblog.substack.com/p/does-it-matter-if-trans-people-are",
+      "title": "Does It Matter if Trans People Are Born That Way? ",
+      "publication": "Open Questions",
+      "author": "Victor Kumar",
+      "topic": "psychology",
+      "quote": "Cultural changes unleashed a latency that had been present all along, and trans identities would soon stabilize.",
+      "hook": "Exploring the innate vs. social origins of trans identities.",
+      "publishedAt": "2026-01-15T11:03:19.516Z",
+      "score": 16.8
+    },
+    {
+      "id": "YVJsN-fsEO",
+      "url": "https://openquestionsblog.substack.com/p/my-philosophy-lab",
+      "title": "My Philosophy Lab",
+      "publication": "Open Questions",
+      "author": "Victor Kumar",
+      "topic": "philosophy",
+      "quote": "This was all foreign to me, and I wasn’t always a well-behaved guest.",
+      "hook": "A philosopher's journey to blend adversarial dialogue with cooperative inquiry.",
+      "publishedAt": "2026-06-08T10:01:10.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "EiUvwMKzm6",
+      "url": "https://openquestionsblog.substack.com/p/the-mother-of-all-trolley-problems",
+      "title": "The Mother of All Trolley Problems",
+      "publication": "Open Questions",
+      "author": "Victor Kumar",
+      "topic": "philosophy",
+      "quote": "No good person would fail to sacrifice some number of strangers to save their child. Someone who chose even a few strangers over their own child would, I’m prepared to say, demonstrate a wretched deficiency of love.",
+      "hook": "Exploring the moral limits of parental love in a trolley problem scenario.",
+      "publishedAt": "2026-09-10T18:57:15.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "zauWsfApWO",
+      "url": "https://openquestionsblog.substack.com/p/the-view-from-somewhere-reprise",
+      "title": "The View From Somewhere (Reprise)",
+      "publication": "Open Questions",
+      "author": "Victor Kumar",
+      "topic": "ideas",
+      "quote": "Standpoint theory fueled #MeToo, which urged the public to trust women’s accounts of sexual assault, alleviating the epistemic injustice of excessive skepticism toward women’s testimony (even if #MeToo’s excesses sometimes compromised due process for the accused).",
+      "hook": "Exploring the reach and limits of marginalized insights in various fields.",
+      "publishedAt": "2026-09-28T14:36:26.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "yqDI_yjEUU",
+      "url": "https://openquestionsblog.substack.com/p/why-is-your-talk-so-bad",
+      "title": "Why is Your Talk So Bad?",
+      "publication": "Open Questions",
+      "author": "Victor Kumar",
+      "topic": "ideas",
+      "quote": "A good paper is a chain of arguments, each hooked to the previous one. If you miss something or forget, you can go back. Obviously, you can’t do that in a talk. Stop paying attention for a moment and you lose the whole thread. The talk unravels.",
+      "hook": "Why do academic talks often fail to engage?",
+      "publishedAt": "2026-06-25T11:09:46.000Z",
+      "score": 18.3
+    },
+    {
       "id": "wk_0F6ktjk",
       "url": "https://ordinaryplots.substack.com/p/charlie-smiths-the-rose",
       "title": "Charlie Smith's \"The Rose\"",
@@ -769,6 +877,18 @@
       "hook": "A grandfather's tender letter explores life's wonders and mysteries.",
       "publishedAt": "2026-06-21T11:01:35.000Z",
       "score": 17.6
+    },
+    {
+      "id": "BnI-OoAwX-",
+      "url": "https://ordinaryplots.substack.com/p/olav-hauges-its-cold-in-big-houses",
+      "title": "Olav Hauge’s “It’s Cold in Big Houses” (translated by Robert Bly & Robert Hedin)",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "My forest is forest in my loneliness's forest, my mountain is mountain in her mountain, and the day is shiny opening in her night.",
+      "hook": "Exploring Olav Hauge's metaphors of loneliness and nature.",
+      "publishedAt": "2026-10-11T11:03:42.000Z",
+      "score": 18.3
     },
     {
       "id": "xJ7aQrfEwK",
@@ -1033,6 +1153,18 @@
       "hook": "How rationalization paralyzes action and stifles personal growth.",
       "publishedAt": "2026-02-14T11:15:05.348Z",
       "score": 18.3
+    },
+    {
+      "id": "XCMK0sH-hG",
+      "url": "https://philosophyvault.substack.com/p/the-pain-you-keep-avoiding-is-running",
+      "title": "THE PAIN YOU KEEP AVOIDING IS RUNNING YOUR LIFE",
+      "publication": "Philosophy Vault",
+      "author": "Philosophy Vault",
+      "topic": "philosophy",
+      "quote": "Avoidance does not reduce pain. It can amplify it. Every time you route around a fear, your brain learns something. Threat confirmed. Too dangerous to face. And the next approach can cost more than the last.",
+      "hook": "How avoidance amplifies pain and shapes our lives.",
+      "publishedAt": "2026-10-06T16:49:14.000Z",
+      "score": 19.6
     },
     {
       "id": "3PASbSR9YA",
@@ -1428,6 +1560,54 @@
       "quote": "Grammar is logic. Sound is married to sense. That paragraph works because it embodies what it says!",
       "hook": "Discover why conventional writing advice often misses the mark.",
       "publishedAt": "2024-10-07T22:30:14.101Z",
+      "score": 18.3
+    },
+    {
+      "id": "v8n3q2ISqU",
+      "url": "https://www.economicforces.xyz/p/and-the-2026-economics-nobel-goes",
+      "title": "And the 2026 Economics Nobel Goes to...",
+      "publication": "Economic Forces",
+      "author": "Brian Albrecht",
+      "topic": "money",
+      "quote": "The hard part, empirically, is that expectations matter in the other direction too. Suppose you learn today that you’re going to lose your job in 6 months. You may cut spending now while your paycheck hasn’t changed. When you end up losing the job, the income drop may not be very large, and your spending may barely move.",
+      "hook": "Exploring the empirical challenges in macroeconomic theory.",
+      "publishedAt": "2026-10-12T15:38:10.000Z",
+      "score": 17.8
+    },
+    {
+      "id": "l019tp2sL3",
+      "url": "https://www.economicforces.xyz/p/hotelling-doesnt-say-what-you-think",
+      "title": "Hotelling doesn't say what you think it says",
+      "publication": "Economic Forces",
+      "author": "Brian Albrecht",
+      "topic": "money",
+      "quote": "In general, there are really two forces going on in the Hotelling model. You can pick a location, but you can also pick a price, and the interaction between those two pushes against each other.",
+      "hook": "Revisiting Hotelling: Beyond Seller Convergence",
+      "publishedAt": "2026-08-13T17:25:17.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "TOL04m5yac",
+      "url": "https://www.economicforces.xyz/p/price-is-opportunity-cost",
+      "title": "Price is Opportunity Cost",
+      "publication": "Economic Forces",
+      "author": "Josh Hendrickson",
+      "topic": "ideas",
+      "quote": "Prices just measure what I have to give up to get something I want. The price is the opportunity cost.",
+      "hook": "Discover how price theory applies beyond markets to everyday decisions and societal phenomena.",
+      "publishedAt": "2026-09-24T17:13:51.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "VpiDPYoMIl",
+      "url": "https://www.economicforces.xyz/p/should-central-banks-be-independent",
+      "title": "Should Central Banks Be Independent?",
+      "publication": "Economic Forces",
+      "author": "Josh Hendrickson",
+      "topic": "money",
+      "quote": "The benefit of central bank independence is that it removes politicians from the decision-making process. In doing so, it helps to reduce or eliminate government spending financed by money creation and the type of political business cycle I just described.",
+      "hook": "Exploring the nuanced tradeoffs of central bank independence",
+      "publishedAt": "2026-08-27T10:02:53.000Z",
       "score": 18.3
     },
     {
@@ -2473,6 +2653,18 @@
       "hook": "Discover how ancient gods might have been auditory hallucinations.",
       "publishedAt": "2025-11-04T17:49:52.450Z",
       "score": 16
+    },
+    {
+      "id": "GZ0mcTm87n",
+      "url": "https://www.theseedsofscience.pub/p/how-to-make-more-prodigies",
+      "title": "How to make more prodigies",
+      "publication": "Seeds of Science",
+      "author": "Seeds of Science",
+      "topic": "ideas",
+      "quote": "I think this is a neat explanation of why we don’t have empirical prodigies. I also think it is probably wrong.",
+      "hook": "Can children be prodigies in empirical sciences?",
+      "publishedAt": "2026-10-06T13:02:17.000Z",
+      "score": 18.3
     },
     {
       "id": "Mun7b1BL1Q",
