@@ -1,7 +1,115 @@
 {
-  "version": "2026-W42",
-  "generatedAt": "2026-10-12T16:47:46.709Z",
+  "version": "2026-W43",
+  "generatedAt": "2026-10-19T04:40:41.673Z",
   "items": [
+    {
+      "id": "OZdUAUBd0V",
+      "url": "https://adamtooze.substack.com/p/chartbook-478-money-and-empire-for",
+      "title": "Chartbook 478 Money and Empire - for Perry Mehrling ",
+      "publication": "Chartbook",
+      "author": "Adam Tooze",
+      "topic": "ideas",
+      "quote": "Kindleberger was a theorist of money and banking as inherently transnational, as cosmopolitan, as anchored in a mesh of private balance sheets as well as in the power of empires and nation states.",
+      "hook": "Explore the cosmopolitan vision of global finance through Kindleberger's lens.",
+      "publishedAt": "2026-10-16T11:43:07.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "6aGmoj-_iL",
+      "url": "https://bigifftrue.substack.com/p/a-mans-gotta-do-what-a-mans-gotta",
+      "title": "It is what it is",
+      "publication": "Big iff True",
+      "author": "Daniel Muñoz",
+      "topic": "thinking",
+      "quote": "To communicate is, fundamentally, the joint activity of ruling out possible worlds.",
+      "hook": "Exploring the depths of human communication beyond literal meanings.",
+      "publishedAt": "2026-09-16T04:06:26.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "sR03cn0Xvs",
+      "url": "https://bigifftrue.substack.com/p/individual-rights-are-good-actually",
+      "title": "Moral rights without metaphysical baggage",
+      "publication": "Big iff True",
+      "author": "Daniel Muñoz",
+      "topic": "philosophy",
+      "quote": "The answer is that your rights don’t just flow from your own nature. Rather than being the product of an individual essence, rights are better understood as solutions to problems of collective action.",
+      "hook": "Rethinking individual rights as solutions to collective action problems.",
+      "publishedAt": "2026-09-21T10:02:20.000Z",
+      "score": 16.8
+    },
+    {
+      "id": "nzvBQz09Lf",
+      "url": "https://bigifftrue.substack.com/p/jon-stewart-is-fractally-wrong-about",
+      "title": "In defense of the shareholder",
+      "publication": "Big iff True",
+      "author": "Daniel Muñoz",
+      "topic": "ideas",
+      "quote": "Shareholderism is not just false but fractally false: untrue at every level of magnification. No matter where you zoom in on the view, all you see is fresh confusion. You never hit upon a single kernel of truth.",
+      "hook": "Reconsider the misunderstood role of shareholders in capitalism.",
+      "publishedAt": "2026-02-10T11:45:31.801Z",
+      "score": 16.8
+    },
+    {
+      "id": "d2-xtqxJCY",
+      "url": "https://bigifftrue.substack.com/p/no-ac-is-not-a-short-term-fix",
+      "title": "No, New York Times, AC is not a \"short-term fix\"",
+      "publication": "Big iff True",
+      "author": "Daniel Muñoz",
+      "topic": "ideas",
+      "quote": "We shouldn’t ban things just because they use electricity—otherwise we’d have to ban lights, phones, laptops, fridges, ovens, vacuums, and laundry machines.",
+      "hook": "Air conditioning: a sustainable solution to Europe's heat crisis.",
+      "publishedAt": "2026-07-08T13:26:29.296Z",
+      "score": 18.3
+    },
+    {
+      "id": "X7ukYxO7wk",
+      "url": "https://bigifftrue.substack.com/p/obviously-the-point-is-to-blow-your",
+      "title": "The point is to blow your mind",
+      "publication": "Big iff True",
+      "author": "Daniel Muñoz",
+      "topic": "philosophy",
+      "quote": "That’s the feeling I’m chasing. For me, it’s a spiritual pursuit—words like “devotion,” “longing,” and “higher purpose” come to mind.",
+      "hook": "Exploring the tension between mind-blowing ideas and intellectual rigor in philosophy.",
+      "publishedAt": "2026-08-10T05:03:49.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "aGfXDo1-5X",
+      "url": "https://bigifftrue.substack.com/p/our-job-is-to-lie-cheat-and-stealand",
+      "title": "“Our job is to lie, cheat, and steal—and your job is to do the show”",
+      "publication": "Big iff True",
+      "author": "Daniel Muñoz",
+      "topic": "philosophy",
+      "quote": "Our job is to lie, cheat, and steal—and your job is to do the show.",
+      "hook": "Exploring the ethics of business through the lens of late-night TV.",
+      "publishedAt": "2026-08-31T11:20:30.000Z",
+      "score": 16.8
+    },
+    {
+      "id": "B_gOZ_9zNA",
+      "url": "https://bigifftrue.substack.com/p/the-costs-of-colorblindness",
+      "title": "The costs of colorblindness",
+      "publication": "Big iff True",
+      "author": "Daniel Muñoz",
+      "topic": "ideas",
+      "quote": "According to “neoracists,” our racial problems need racial solutions. White people should openly proclaim their privileges and “strive to be ‘less white’”—which Robin DiAngelo defines pejoratively as being “less racially oppressive.",
+      "hook": "Exploring the moral and political implications of colorblindness in race relations.",
+      "publishedAt": "2025-05-05T11:20:21.004Z",
+      "score": 15.3
+    },
+    {
+      "id": "KfKdEIfCck",
+      "url": "https://bigifftrue.substack.com/p/why-everyone-needs-2d-policy-analysis",
+      "title": "The efficiency vs. equity dilemma is (usually) fake",
+      "publication": "Big iff True",
+      "author": "Daniel Muñoz",
+      "topic": "ideas",
+      "quote": "In the ethics of policy, the efficiency/equity dilemma typically arises as a sort of mirage, which disappears once we properly lay out the space of all policy options at our disposal.",
+      "hook": "Discover how the efficiency vs. equity dilemma can be resolved with nuanced policy.",
+      "publishedAt": "2026-08-03T10:55:25.000Z",
+      "score": 18.3
+    },
     {
       "id": "nU04fENk6P",
       "url": "https://elifshafak.substack.com/p/a-lovers-quarrel-with-the-world",
@@ -75,6 +183,18 @@
       "score": 18.3
     },
     {
+      "id": "adDobfBmgC",
+      "url": "https://elifshafak.substack.com/p/we-mortals-have-our-divine-moments",
+      "title": "‘We Mortals Have Our Divine Moments’",
+      "publication": "Unmapped Storylands with Elif Shafak",
+      "author": "Elif Shafak",
+      "topic": "ideas",
+      "quote": "We reach those moments through transcendental journeys, through the abandonment of the ego, (or what Iris Murdoch would call un-selfing), through empathy, through literature, through art, through connectivity, and through love.",
+      "hook": "Reading as an act of rebellion and hope in the Age of 3As and 5As.",
+      "publishedAt": "2026-10-18T17:10:16.000Z",
+      "score": 19.3
+    },
+    {
       "id": "L2RwVoUGhF",
       "url": "https://erictopol.substack.com/p/a-tale-of-two-t-cells",
       "title": "Connecting Our Immune System and Healthspan",
@@ -120,6 +240,18 @@
       "quote": "When I stop comparing and allow myself\nto be ordinary—folding tea towels\nand T-shirts into neat squares, rinsing out\nthe sticky jar that once held honey—I taste\na piece of eternity.",
       "hook": "Discover the holiness in everyday tasks.",
       "publishedAt": "2026-09-11T10:02:09.000Z",
+      "score": 21.1
+    },
+    {
+      "id": "S8BJOFK1bT",
+      "url": "https://jamescrews.substack.com/p/anniversary",
+      "title": "Anniversary",
+      "publication": "Poetry Is Life",
+      "author": "James Crews",
+      "topic": "poetry",
+      "quote": "Because we fear what is most sacred. Because tenderness is terrifying to those who have felt it least.",
+      "hook": "A reflection on love, tenderness, and overcoming prejudice.",
+      "publishedAt": "2026-10-16T11:29:26.000Z",
       "score": 21.1
     },
     {
@@ -181,6 +313,18 @@
       "hook": "Rethink gratitude with Senegal's teranga: 'It is shared, it is for both of us.'",
       "publishedAt": "2026-09-25T09:41:35.000Z",
       "score": 17.8
+    },
+    {
+      "id": "cMvNtBRS9i",
+      "url": "https://jaredhenderson.substack.com/p/depression-plays-for-the-draw",
+      "title": "Depression plays for the draw",
+      "publication": "Commonplace Philosophy",
+      "author": "Jared Henderson",
+      "topic": "psychology",
+      "quote": "Depression is fine with dying as long as he gets to take you with him because, in his warped logic, a draw is a win.",
+      "hook": "How to fight depression like a chess game for the draw.",
+      "publishedAt": "2026-08-26T02:54:17.854Z",
+      "score": 18.3
     },
     {
       "id": "wilJljIV2B",
@@ -351,6 +495,18 @@
       "score": 18.3
     },
     {
+      "id": "Cr88ce88S6",
+      "url": "https://laurencepevsner.substack.com/p/cheating-at-chess",
+      "title": "Cheating at Chess",
+      "publication": "Sorry Not Sorry",
+      "author": "Laurence Pevsner",
+      "topic": "ideas",
+      "quote": "The win will feel hollow and fraudulent, because it is and you are.",
+      "hook": "Why cheating at chess reveals more about character than skill.",
+      "publishedAt": "2025-05-02T23:24:15.000Z",
+      "score": 18.3
+    },
+    {
       "id": "gEUWFUMGHC",
       "url": "https://maggiesmith.substack.com/p/pep-talk-04d",
       "title": "Pep Talk",
@@ -361,6 +517,18 @@
       "hook": "Writing and poetry's significance in challenging times",
       "publishedAt": "2026-01-28T16:12:37.000Z",
       "score": 16.8
+    },
+    {
+      "id": "040TLbMC8g",
+      "url": "https://miniphilosophy.substack.com/p/be-more-elephant-but-be-less-cat",
+      "title": "Which animal are you?",
+      "publication": "Mini Philosophy",
+      "author": "Jonny Thomson",
+      "topic": "ideas",
+      "quote": "We easily fall into this habit of seeing animals as embodying certain virtues and vices. Like some Stone Age cave dweller, drawing bears on the wall, we extrapolate from animals.",
+      "hook": "Discover your spirit animal and the virtues it embodies.",
+      "publishedAt": "2026-10-16T17:01:32.000Z",
+      "score": 18.3
     },
     {
       "id": "IhRXmlX0-K",
@@ -445,6 +613,18 @@
       "hook": "Discover the Buddhist perspective on love versus attachment.",
       "publishedAt": "2026-09-19T11:31:09.000Z",
       "score": 16
+    },
+    {
+      "id": "U1ouLCNnGn",
+      "url": "https://miniphilosophy.substack.com/p/why-your-cat-is-the-best-philosopher",
+      "title": "Why your cat is the best philosopher",
+      "publication": "Mini Philosophy",
+      "author": "Jonny Thomson",
+      "topic": "philosophy",
+      "quote": "Cats, though, have no such sickness. Imagine a cat called Mo. Mo does not search for meaning in her life, and she is not trying to become a better cat.",
+      "hook": "Discover why cats might be the ultimate philosophers.",
+      "publishedAt": "2026-10-14T17:24:09.000Z",
+      "score": 18.3
     },
     {
       "id": "nUt7j_TnVu",
@@ -552,6 +732,18 @@
       "quote": "The basic problem with the superpower zone is that…it’s actually quite diminishing of us as persons in the fullness of what we were meant to be.",
       "hook": "Discover why working with your hands can enrich your soul and community.",
       "publishedAt": "2026-04-30T09:47:38.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "gtYVrfTk6W",
+      "url": "https://morefullyalive.substack.com/p/you-dont-need-optimism-or-pessimism",
+      "title": "You don’t need optimism or pessimism (or even hope*)",
+      "publication": "Fully Alive by Elizabeth Oldfield",
+      "author": "Elizabeth Oldfield",
+      "topic": "philosophy",
+      "quote": "The future doesn’t exist yet, and my brain’s desire to create an accurate projection so I am not surprised is not serving me.",
+      "hook": "Embrace uncertainty to live more meaningfully in the present.",
+      "publishedAt": "2026-10-15T13:53:56.000Z",
       "score": 18.3
     },
     {
@@ -1287,6 +1479,30 @@
       "score": 16
     },
     {
+      "id": "FCFXvysD2d",
+      "url": "https://sixwordmemoirs.substack.com/p/fall-down-six-get-up-seven",
+      "title": "Fall Down Six, Get Up Seven",
+      "publication": "Say Less by Larry Smith & The Six-Word Memoir Project",
+      "author": "Larry Smith",
+      "topic": "ideas",
+      "quote": "Six Words may have been broken, but its community did not break.",
+      "hook": "How a tech glitch turned into a testament of community resilience.",
+      "publishedAt": "2024-02-25T16:45:21.337Z",
+      "score": 18.3
+    },
+    {
+      "id": "NqWZFRauG-",
+      "url": "https://sixwordmemoirs.substack.com/p/openings-and-closings",
+      "title": "Openings & Closings",
+      "publication": "Say Less by Larry Smith & The Six-Word Memoir Project",
+      "author": "Larry Smith",
+      "topic": "ideas",
+      "quote": "The stories are part of the sale, my friend. It was a pleasure to meet you.",
+      "hook": "Exploring life's transitions through personal stories and storytelling.",
+      "publishedAt": "2025-03-01T17:00:52.875Z",
+      "score": 18.3
+    },
+    {
       "id": "YSCX1DVTD9",
       "url": "https://smallpotatoes.paulbloom.net/p/are-parents-better-people",
       "title": "Are parents better people?",
@@ -1429,6 +1645,102 @@
       "hook": "Explore the cultural loss of the night sky due to modern technology.",
       "publishedAt": "2026-07-19T00:22:37.000Z",
       "score": 16
+    },
+    {
+      "id": "AsVqZ6Fng6",
+      "url": "https://theeggandtherock.com/p/an-introduction-to-the-egg-and-the",
+      "title": "An introduction to The Egg and the Rock",
+      "publication": "THE EGG AND THE ROCK",
+      "author": "Julian Gough",
+      "topic": "ideas",
+      "quote": "Science says the first word on everything, and the last word on nothing. –Victor Hugo",
+      "hook": "Explore the philosophical implications of science's rise as the arbiter of truth.",
+      "publishedAt": "2023-01-11T13:15:41.303Z",
+      "score": 15.3
+    },
+    {
+      "id": "MMtAVVfos-",
+      "url": "https://theeggandtherock.com/p/down-to-the-flickering-sea-of-quarks",
+      "title": "Down to the flickering sea of quarks",
+      "publication": "THE EGG AND THE ROCK",
+      "author": "Julian Gough",
+      "topic": "ideas",
+      "quote": "We live, then, in a living universe, endlessly generating orderly complex structures, at higher and higher levels of complexity, in sequenced, integrated, steps. A universe where all the various parts work surprisingly well together – and do so with all the exuberant, wasteful, brilliant, messy, improvisational logic of an evolved system at such a scale.",
+      "hook": "Exploring the universe as an evolving organism",
+      "publishedAt": "2024-02-26T14:01:16.000Z",
+      "score": 21.6
+    },
+    {
+      "id": "s83jvf961L",
+      "url": "https://theeggandtherock.com/p/guest-post-robert-hazen-on-whether",
+      "title": "GUEST POST: Robert Hazen on whether there’s a “missing law of nature”",
+      "publication": "THE EGG AND THE ROCK",
+      "author": "Julian Gough",
+      "topic": "ideas",
+      "quote": "We have these 10 or so laws of nature, only one of which currently has an arrow of time. That's the second law of thermodynamics, the increase in entropy—it's disorder; it's decay.",
+      "hook": "Exploring a potential 'missing law of nature' that explains the universe's increase in order.",
+      "publishedAt": "2024-07-04T11:47:22.000Z",
+      "score": 18.1
+    },
+    {
+      "id": "SvgTUzzh6i",
+      "url": "https://theeggandtherock.com/p/in-cosmology-all-our-errors-lean",
+      "title": "In cosmology, all our errors lean the same way. The implications are... interesting",
+      "publication": "THE EGG AND THE ROCK",
+      "author": "Julian Gough",
+      "topic": "ideas",
+      "quote": "Our universe has always turned out to be more complex in structure (at both large and small scales). Its energy production has always turned out to be more efficient than we had assumed.",
+      "hook": "Why does the universe consistently surprise us with its complexity and efficiency?",
+      "publishedAt": "2023-05-09T13:15:43.732Z",
+      "score": 15.3
+    },
+    {
+      "id": "nnaiVZ79GM",
+      "url": "https://unpublishablepapers.substack.com/p/god-and-other-things-that-are-just",
+      "title": "God, and other things that are just for fun",
+      "publication": "Unpublishable Papers",
+      "author": "Eli Stark-Elster",
+      "topic": "ideas",
+      "quote": "So much of what we so carefully call religion is, perhaps, just a means for collective joy.",
+      "hook": "Religious rituals as a means for collective joy and celebration.",
+      "publishedAt": "2025-12-06T19:14:14.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "5Oc7hZ0Ce0",
+      "url": "https://unpublishablepapers.substack.com/p/some-works-of-art-are-objectively",
+      "title": "Some works of art are objectively better ",
+      "publication": "Unpublishable Papers",
+      "author": "Eli Stark-Elster",
+      "topic": "philosophy",
+      "quote": "I think we can come up with defensible principles that distinguish some works of art as better or worse than others, just as we can come up with defensible principles that distinguish some moral choices as better or worse than others.",
+      "hook": "Can art be objectively better? Explore the principle of generativity.",
+      "publishedAt": "2026-01-15T11:23:48.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "PJ8L-Ft8xq",
+      "url": "https://unpublishablepapers.substack.com/p/to-the-stone-cutters",
+      "title": "To the Stone-Cutters",
+      "publication": "Unpublishable Papers",
+      "author": "Eli Stark-Elster",
+      "topic": "ideas",
+      "quote": "The ultimate truth remained; but the ghosts had not ceased roaming, not yet, and how remarkable that such things as ghosts could live on beyond their time.",
+      "hook": "Exploring ancient San rock art and its enduring impact on memory and culture.",
+      "publishedAt": "2026-02-09T20:41:05.000Z",
+      "score": 18.3
+    },
+    {
+      "id": "vI50SxIawQ",
+      "url": "https://unpublishablepapers.substack.com/p/where-do-the-children-play",
+      "title": "Where Do the Children Play? ",
+      "publication": "Unpublishable Papers",
+      "author": "Eli Stark-Elster",
+      "topic": "ideas",
+      "quote": "For most of our evolutionary history, childhood wasn’t an adult affair. Independent worlds and peer cultures were the crux of development, as they still are among the BaYaka; kids spent their time together, largely beyond the prying eyes of grown-ups.",
+      "hook": "Why do children prefer digital worlds over forests?",
+      "publishedAt": "2025-11-06T22:46:41.865Z",
+      "score": 16.8
     },
     {
       "id": "juIeU86ILO",
@@ -2557,6 +2869,18 @@
       "hook": "Explore the psychological underpinnings of envy through the lens of pornography.",
       "publishedAt": "2022-06-05T09:52:49.171Z",
       "score": 19.1
+    },
+    {
+      "id": "yxLS9gz2PK",
+      "url": "https://www.speakandregret.michaelinzlicht.com/p/youre-not-wrong-youre-just-not-neighbourly",
+      "title": "You're Not Wrong, You're Just Not Neighbourly",
+      "publication": "Speak Now Regret Later",
+      "author": "Michael Inzlicht",
+      "topic": "ideas",
+      "quote": "It’s one thing to privately support or disagree with policies; it’s another to publicly announce those views to anyone who walks by.",
+      "hook": "Why political lawn signs might be harming your neighborhood",
+      "publishedAt": "2026-09-30T11:03:56.000Z",
+      "score": 18.3
     },
     {
       "id": "1ChlhO5oJN",

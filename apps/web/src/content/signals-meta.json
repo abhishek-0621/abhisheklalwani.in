@@ -1,17 +1,17 @@
 {
-  "version": "2026-W42",
-  "generatedAt": "2026-10-12T16:47:46.709Z",
-  "count": 228,
-  "publications": 47,
+  "version": "2026-W43",
+  "generatedAt": "2026-10-19T04:40:41.673Z",
+  "count": 255,
+  "publications": 55,
   "byTopic": {
-    "philosophy": 70,
-    "psychology": 13,
-    "thinking": 6,
+    "philosophy": 76,
+    "psychology": 14,
+    "thinking": 7,
     "money": 9,
     "nature": 10,
-    "poetry": 26,
+    "poetry": 27,
     "writing": 9,
-    "ideas": 85
+    "ideas": 103
   },
-  "candidatesReviewed": 935
+  "candidatesReviewed": 1074
 }
