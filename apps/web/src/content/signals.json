@@ -1,6 +1,6 @@
 {
-  "version": "2026-W43",
-  "generatedAt": "2026-10-19T04:40:41.673Z",
+  "version": "2026-W44",
+  "generatedAt": "2026-10-26T03:40:34.733Z",
   "items": [
     {
       "id": "OZdUAUBd0V",
@@ -159,6 +159,18 @@
       "score": 20.1
     },
     {
+      "id": "H9XcBMYO5u",
+      "url": "https://elifshafak.substack.com/p/precious-lessons-to-learn-from-a",
+      "title": "Precious Lessons to Learn from a Humble Onion",
+      "publication": "Unmapped Storylands with Elif Shafak",
+      "author": "Elif Shafak",
+      "topic": "ideas",
+      "quote": "‘It is better than nothing,’ thought the guardian angel and he went to God, asking for the woman to be forgiven.",
+      "hook": "Discovering profound lessons from a humble onion.",
+      "publishedAt": "2026-10-25T13:45:31.000Z",
+      "score": 19.3
+    },
+    {
       "id": "fKIGbmqeZb",
       "url": "https://elifshafak.substack.com/p/the-golden-emotion-of-love-and-longing",
       "title": "The Golden Emotion of Love and Longing",
@@ -313,6 +325,18 @@
       "hook": "Rethink gratitude with Senegal's teranga: 'It is shared, it is for both of us.'",
       "publishedAt": "2026-09-25T09:41:35.000Z",
       "score": 17.8
+    },
+    {
+      "id": "tSLkjlAU1v",
+      "url": "https://jamescrews.substack.com/p/the-medicine-of-surrender",
+      "title": "The Medicine of Surrender",
+      "publication": "Poetry Is Life",
+      "author": "James Crews",
+      "topic": "poetry",
+      "quote": "Maybe surrender is its own kind of blessing, and we meet the sacred each day by remembering that other delicious word for the holy—numinous, which finds its origins in the simple act of nodding the head yes, agreeing to all life brings us, even when we say, This should not be happening, even when we ask, Why me? at last nodding our acceptance of who we’ve become, leaving the window partway open for every strange angel who swoops down to enter.",
+      "hook": "Discover how surrender can be a pathway to the sacred in everyday life.",
+      "publishedAt": "2026-10-23T10:36:37.000Z",
+      "score": 21.1
     },
     {
       "id": "cMvNtBRS9i",
@@ -975,6 +999,18 @@
       "score": 16.8
     },
     {
+      "id": "ui4biakLMT",
+      "url": "https://ordinaryplots.substack.com/p/mark-dotys-brian-age-seven",
+      "title": "Mark Doty’s “Brian Age Seven”",
+      "publication": "Ordinary Plots: Meditations on Poems + Verse",
+      "author": "Devin Kelly",
+      "topic": "poetry",
+      "quote": "Brian draws just balls and lines, in wobbly crayon strokes. Why do some marks seem to thrill with life, possess a portion of the nervous energy in their maker’s hand?",
+      "hook": "Discover the life in simple lines: a meditation on art and emotion.",
+      "publishedAt": "2026-10-25T11:01:05.000Z",
+      "score": 19.1
+    },
+    {
       "id": "dSGnoXRHOo",
       "url": "https://ordinaryplots.substack.com/p/mary-olivers-clam",
       "title": "Mary Oliver's \"Clam\"",
@@ -1383,6 +1419,18 @@
       "score": 16.8
     },
     {
+      "id": "N50Z7U-_zt",
+      "url": "https://philosophyvault.substack.com/p/the-trap-of-needing-to-be-liked",
+      "title": "THE TRAP OF NEEDING TO BE LIKED",
+      "publication": "Philosophy Vault",
+      "author": "Philosophy Vault",
+      "topic": "psychology",
+      "quote": "The real trap isn't that people might dislike you, it's that you begin disliking yourself whenever they do.",
+      "hook": "Discover why seeking approval can trap you in a cycle of self-doubt.",
+      "publishedAt": "2026-10-18T11:17:51.000Z",
+      "score": 17.8
+    },
+    {
       "id": "Gx6-_gi24w",
       "url": "https://philosophyvault.substack.com/p/when-silence-becomes-a-sign-of-intelligence",
       "title": "When Silence Becomes a Sign of Intelligence",
@@ -1477,6 +1525,18 @@
       "hook": "Can language models truly understand the world?",
       "publishedAt": "2025-08-15T03:41:11.001Z",
       "score": 16
+    },
+    {
+      "id": "o4Xk1QA8d3",
+      "url": "https://seantrott.substack.com/p/the-epistemology-of-lower-back-pain-369",
+      "title": "The epistemology of lower-back pain (pt. 3)",
+      "publication": "The Counterfactual",
+      "author": "Sean Trott",
+      "topic": "psychology",
+      "quote": "Pain is a felt phenomenon and the man felt himself to be in terrible agony. But the suggestion that felt pain is not necessarily synonymous with tissue damage can feel, to some, like a kind of accusation.",
+      "hook": "Exploring the epistemology of chronic back pain and the limits of language in conveying pain.",
+      "publishedAt": "2026-10-19T22:58:28.000Z",
+      "score": 16.8
     },
     {
       "id": "FCFXvysD2d",
@@ -1825,6 +1885,18 @@
       "hook": "A theory of charity based on mutual aid and moral character.",
       "publishedAt": "2026-03-19T03:31:17.266Z",
       "score": 17
+    },
+    {
+      "id": "CTPYDDG6Ri",
+      "url": "https://www.astralcodexten.com/p/your-book-review-the-ghost-in-my",
+      "title": "Your Book Review: The Ghost In My Brain",
+      "publication": "Astral Codex Ten",
+      "author": "Scott Alexander",
+      "topic": "psychology",
+      "quote": "To simulate concussion damage to a human brain then, we’ll need to gather together […] 50 million desktop computers, a 500,000-mile-high stack of paper, and the almost inconceivable amount of information it takes to construct a human mind, then loose a hurricane on the system, ripping out network lines, laying waste to vast sections of memory, and sending landslides to smash hundreds of thousands of computers.",
+      "hook": "A memoir of surviving a decade-long battle with severe concussion.",
+      "publishedAt": "2026-10-23T23:45:42.000Z",
+      "score": 17.1
     },
     {
       "id": "oCsK-nQbXj",
@@ -3061,6 +3133,18 @@
       "hook": "Why hasn't psychology had a big new idea in decades?",
       "publishedAt": "2025-05-07T15:32:36.433Z",
       "score": 16
+    },
+    {
+      "id": "WtQU8gokme",
+      "url": "https://yourlocalepidemiologist.substack.com/p/forget-living-to-150-what-actually",
+      "title": "Forget living to 150: What actually helps you age well",
+      "publication": "Your Local Epidemiologist",
+      "author": "Anna Chodos, MD",
+      "topic": "psychology",
+      "quote": "A longer lifespan shouldn’t be the goal. What is the use of living to 150 if you’re not well enough to enjoy it? The prize is healthspan—the years you spend healthy and independent doing things you enjoy, whether it’s gardening, visiting grandkids, or simply remembering names.",
+      "hook": "Rethinking aging: Healthspan over lifespan",
+      "publishedAt": "2026-10-21T11:03:51.000Z",
+      "score": 19.3
     }
   ]
 }
