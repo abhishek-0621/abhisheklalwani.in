@@ -1,6 +1,6 @@
 {
-  "version": "2026-W45",
-  "generatedAt": "2026-11-02T10:43:26.098Z",
+  "version": "2026-W46",
+  "generatedAt": "2026-11-10T17:41:37.340Z",
   "count": 262,
   "publications": 56,
   "byTopic": {
@@ -13,5 +13,5 @@
     "writing": 9,
     "ideas": 104
   },
-  "candidatesReviewed": 1116
+  "candidatesReviewed": 1125
 }
